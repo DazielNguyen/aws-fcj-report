@@ -5,27 +5,26 @@ weight: 1
 chapter: false
 ---
 
-# Internship Report
-
 ### Student Information:
 
-&emsp; **Full Name:** Le Vu Phuong Hoa
+&emsp; **Full Name:** Nguyen Van Anh Duy
 
-&emsp; **Phone Number:** 0327 030 024
+&emsp; **Phone Number:** 0387 883 041
 
-&emsp; **Email:** danielleee241@gmail.com
+&emsp; **Email:** duynguyenvananh@gmail.com
 
 &emsp; **University:** FPT University Campus Ho Chi Minh
 
-&emsp; **Major:** Information Technology
+&emsp; **Major:** Artificial Intelligent
 
-&emsp; **Class:** SE181951
+&emsp; **Class:** SE181823
 
 &emsp; **Internship Company:** Amazon Web Services Vietnam Co., Ltd.
 
 &emsp; **Internship Position:** FCJ Cloud Intern
 
 &emsp; **Internship Duration:** From 12/08/2025 to 12/11/2025
+
 
 <img src="/images/avatar_new.png" alt="Your profile picture" width="450"/>
 
