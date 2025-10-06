@@ -8,56 +8,56 @@ pre: " <b> 1.1. </b> "
 
 ### Week 1 Objectives:
 
-- Understand the fundamentals of **cloud computing** and AWS global infrastructure.
-- Learn how to manage AWS services using **Management Console, CLI, and SDK**.
-- Explore **AWS security, IAM, and cost management** through practical labs.
-- Build foundational knowledge of **VPC networking and connectivity** (Subnets, Route Tables, IGW, NAT, Peering, Transit Gateway).
-- Gain hands-on experience by performing **AWS labs** to reinforce theoretical knowledge with practical skills.
+- Connect with teammates and get acquainted with the Champions in the First Cloud Journey.
+- Learn about the AWS services provided to customers.
+- Complete the Lab as well as the knowledge in Module 1 of FJC 2025.
 
 ### Tasks to be carried out this week:
 
-| Day | Task                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | Start Date | Completion Date | Reference Material |
-| --- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | --------------- | ------------------ |
-| 1   | - Read and take note of internship unit rules and regulations<br>- Learning module 01:<br> + Cloud computing: Concept, benefits<br> + AWS Overview:<br> + AWS differentiation, pricing philosophy, leadership principles<br> + Cloud journey<br> + AWS infrastructure: Data center, AZ, Region, Edge Locations<br> + Managing AWS services:<br> + AWS Management Console<br> + AWS CLI<br> + AWS SDK<br>- Practice:<br> + Lab 01: Create AWS account, enable MFA, set up IAM User/Group, Access keys<br> + Lab 07: Create different budget types<br> + Lab 09: Using AWS support plans and case<br><br>- Research:<br> + AWS Well-Architected Framework                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | 08/09/2025 | 08/09/2025      |                    |
-| 2   | - Networking overview: Importance of networking in AWS cloud architecture<br>+ Amazon VPC: Concept, difference with traditional private cloud, multi-AZ deployment<br>+ VPC CIDR: IPv4 (required), IPv6 (optional), limit of 5 VPC per Region<br>+ Subnet: Public vs Private, reserved IP addresses<br>+ Route Table: Default route, custom route, public subnet routing<br>+ Elastic Network Interface (ENI), Elastic IP address<br>+ VPC Endpoint: Interface Endpoint, Gateway Endpoint (S3, DynamoDB)<br>+ Internet Gateway: requirements for Internet access (public IP + route)<br>+ NAT Gateway: outbound Internet access from private subnet                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | 09/09/2025 | 09/09/2025      |                    |
-| 3   | VPC Security:<br>+ Security Group (stateful, allow rules only, applied to ENI)<br>+ Network ACL (stateless, inbound/outbound rules, applied to Subnet)<br>+ VPC Flow Logs (monitor traffic, detect denied requests, store in CloudWatch/S3)<br>+ Multi-VPC connectivity:<br>+ VPC Peering: 1:1 connection, no transitive routing, non-overlapping CIDR<br>+ Transit Gateway: hub-and-spoke model, simplify routing, Transit Gateway Attachment per AZ<br>+ Hybrid connectivity:<br>+ VPN Site-to-Site: Virtual Private Gateway (AWS side) & Customer Gateway (on-premises)<br>+ VPN Client-to-Site: costly, usually third-party solution<br>+ Direct Connect: dedicated/hosted connection, stable latency (20–30ms), VN providers (Viettel, FPT)<br>+ Elastic Load Balancing (ELB):<br>+ Concepts: health check, sticky session, access logs (stored in S3)<br>+ Types:<br>- Application Load Balancer (Layer 7, HTTP/HTTPS, path-based routing)<br>- Network Load Balancer (Layer 4, TCP/TLS, static IP, high performance)<br>- Classic Load Balancer (Layer 4 & 7, legacy)<br>- Gateway Load Balancer (Layer 3, appliance traffic forwarding) | 10/09/2025 | 10/09/2025      |                    |
-| 4   | - Review:<br>- Revised knowledge from Day 2 & Day 3: VPC, Subnet, Route Table, Internet Gateway, NAT Gateway, Security Group, Network ACL, VPC Peering, Transit Gateway, VPN, Direct Connect, Elastic Load Balancing.<br>+ Lab:<br>- Lab 1:<br>+ Created VPC, Subnet, Internet Gateway, Route Table, Security Group.<br>+ Enabled VPC Flow Logs.<br>+ Launched EC2 instance and tested SSH connectivity.<br>+ Created NAT Gateway for private subnet Internet access.<br>+ Used Reachability Analyzer to verify network connectivity.<br>+ Managed EC2 using AWS Systems Manager Session Manager.<br>+ Enabled CloudWatch Monitoring & Alerting for EC2 monitoring.<br>- Lab 2:<br>+ Repeated the same steps to reinforce knowledge and improve hands-on practice.                                                                                                                                                                                                                                                                                                                                                                              | 11/09/2025 | 11/09/2025      |                    |
-| 5   | - Practice on AWS:<br>+ Lab 02-02: Session Manager (preparation, connect to EC2, manage session logs, port forwarding)<br>+ Lab 02-03: VPC Peering (prepare, update Network ACL, create peering connection, configure route tables, enable cross-peer DNS)<br>+ Lab 02-04: Transit Gateway (setup infrastructure, create TGW, TGW attachments, create TGW route table, add gateways, verify result)<br>+ Lab 02-05: Hybrid DNS (setup, create outbound endpoint, create Route 53 resolver rule, create inbound endpoint)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | 12/09/2025 | 12/09/2025      |                    |
+| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
+| 2   | - Read carefully the notes, rules, and regulations at AWS <br> - Connect and interact with team members <br> - Form groups and plan study schedules as well as project timing needed for the internship at the company. <br> - Create a Google Sheet to manage study activities and track the progress of team members. | 07/09/2025   | 07/09/2025      | Link:  [https://docs.google.com/spreadsheets/d/109nNQttEEgCjLB2rTbaEer1LfLowyL1Fmh8PA\_WuxwU/edit?usp=sharing](https://docs.google.com/spreadsheets/d/109nNQttEEgCjLB2rTbaEer1LfLowyL1Fmh8PA_WuxwU/edit?usp=sharing)
+| 3   | - Learn about the basic concepts: <br>  + Understand what cloud computing is. <br>  + What are the benefits of using cloud computing? <br>  + What makes AWS different. <br>  + How to start a cloud journey? | 08/09/2025   | 08/09/2025      | Document: [https://cloudjourney.awsstudygroup.com/](https://cloudjourney.awsstudygroup.com/) <br> Youtube: [https://youtube.com/playlist?list=PLahN4TLWtox2a3vElknwzU\_urND8hLn1i\&si=W80Cdf\_fSc6sjOV\_](https://youtube.com/playlist?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&si=W80Cdf_fSc6sjOV_) <br>Notes: [https://github.com/DazielNguyen/AWS\_FCJ\_FA25\_VAD\_NOTES\_LESSON/blob/main/Module\_01/take\_notes\_module\_01.md](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_01/take_notes_module_01.md)|
+| 4   | - Learn about AWS global infrastructure. <br> - Learn about AWS Services Management tools. <br> - How to optimize costs on AWS. <br> - **Practice Lab 01:** <br>  + Create an AWS account. <br>  + Set up MFA for the account and understand what MFA is. <br>  + Create Admin Group and Admin User. <br>  + Experiment with AWS Support. | 09/09/2025   | 09/09/2025      | Document: [https://000001.awsstudygroup.com/](https://000001.awsstudygroup.com/) <br> Youtube:  [https://www.youtube.com/watch?v=pjr5a-HYAjI\&list=PLahN4TLWtox2a3vElknwzU\_urND8hLn1i\&index=7](https://www.youtube.com/watch?v=pjr5a-HYAjI&list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&index=7) <br> Notes: [https://github.com/DazielNguyen/AWS\_FCJ\_FA25\_VAD\_NOTES\_LESSON/blob/main/Module\_01/take\_notes\_module\_01.md](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_01/take_notes_module_01.md) <br> Lab 01 Notes: [https://github.com/DazielNguyen/AWS\_FCJ\_FA25\_VAD\_NOTES\_LESSON/blob/main/Module\_01/Lab\_01\_module\_01.md](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_01/Lab_01_module_01.md)|
+| 5   | - **Practice Lab 07:** <br>  + Create Budget <br>  + Create Cost Budget <br>  + Create Usage Budget <br>  + Create RI Budget <br>  + Create Saving Plan Budget <br>  + How to delete resources. <br> - Learn about the services of each Budget <br> - And identify which Budgets are suitable for which users. | 10/09/2025   | 10/09/2025      | Document: [https://000007.awsstudygroup.com/vi/](https://000007.awsstudygroup.com/vi/) <br> Youtube: [https://youtube.com/playlist?list=PLahN4TLWtox2a3vElknwzU\_urND8hLn1i\&si=W80Cdf\_fSc6sjOV\_](https://youtube.com/playlist?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&si=W80Cdf_fSc6sjOV_) <br>Notes: [https://github.com/DazielNguyen/AWS\_FCJ\_FA25\_VAD\_NOTES\_LESSON/blob/main/Module\_01/Lab\_07\_module\_01.md](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_01/Lab_07_module_01.md)|
+| 6   | - **Practice Lab 09:** <br>  + Learn about AWS Support packages <br>  + Access AWS Support <br>  + Initiate support requests. | 11/09/2025   | 11/09/2025      | Document: [https://000009.awsstudygroup.com/vi/](https://000009.awsstudygroup.com/vi/) <br> Youtube: [https://youtube.com/playlist?list=PLahN4TLWtox2a3vElknwzU\_urND8hLn1i\&si=W80Cdf\_fSc6sjOV\_](https://youtube.com/playlist?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&si=W80Cdf_fSc6sjOV_) <br>Notes: [https://github.com/DazielNguyen/AWS\_FCJ\_FA25\_VAD\_NOTES\_LESSON/blob/main/Module\_01/Lab\_09\_module\_01.md](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_01/Lab_09_module_01.md) |
 
 ### Week 1 Achievements:
 
-- **Gained solid knowledge of AWS and Cloud Computing**
+- Understand what AWS is and the concepts and services AWS provides:
 
-  - Understood cloud computing concepts, benefits, and the cloud adoption journey.
-  - Learned AWS global infrastructure (Regions, AZs, Edge Locations, Data Centers).
+  - Cloud computing
+  - The differences of AWS
+  - How to start a cloud journey
+  - AWS global infrastructure
+  - AWS Services management tools
+  - How to optimize costs on AWS
 
-- **Hands-on with AWS management tools**
+- Successfully created and configured an AWS Free Tier account.
 
-  - Practiced with AWS Management Console, AWS CLI, and AWS SDK.
-  - Created and managed IAM Users/Groups, enabled MFA, and configured Access Keys.
+- Get familiar with AWS Management Console and know how to find, access, and use services from the web interface.
 
-- **Cost management & support**
+- Installed and configured AWS CLI on the computer including:
 
-  - Created and configured different AWS Budgets.
-  - Learned AWS Support Plans and practiced opening support cases.
+  - Access Key
+  - Secret Key
+  - Default Region
+  - MFA for the account
+  - Admin Group
+  - Admin User
+  - AWS Support
 
-- **AWS Networking & Security**
+- Know how to set up Budgets:
 
-  - Built and configured VPC, Subnet, Route Table, Internet Gateway, NAT Gateway.
-  - Implemented Security Groups, Network ACLs, and VPC Flow Logs.
-  - Understood VPC Peering vs. Transit Gateway, and hybrid connectivity (VPN, Direct Connect).
+  - Cost Budget
+  - Usage Budget
+  - RI Budget
+  - Saving Plan Budget
+  - Clean resources
 
-- **System management on AWS**
+- Clearly understand the support packages and how to access AWS Support:
 
-  - Managed EC2 instances with **Session Manager** instead of SSH.
-  - Practiced Port Forwarding and Session Logs.
-  - Enabled **CloudWatch Monitoring & Alerts** for EC2.
-
-- **Advanced solutions**
-  - Set up **VPC Peering** and **Transit Gateway** for multi-VPC connectivity.
-  - Configured **Hybrid DNS** with Route 53 Resolver (Inbound/Outbound Endpoints).
-  - Practiced **Elastic Load Balancer** (ALB, NLB, CLB, GWLB).
-
----
-
-👉 **Outcome:** After Week 1, I have built a strong foundation in AWS fundamentals and intermediate networking concepts, while successfully completing multiple **hands-on labs directly on AWS** to strengthen my practical skills.
+  - Basic Package
+  - Developer Package
+  - Business Package
+  - Enterprise Package

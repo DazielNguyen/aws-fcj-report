@@ -9,17 +9,17 @@ chapter: false
 
 ### Thông tin sinh viên:
 
-&emsp; **Họ và tên:** Lê Vũ Phương Hòa
+&emsp; **Họ và tên:** Nguyễn Văn Anh Duy
 
-&emsp; **Số điện thoại:** 0327 030 024
+&emsp; **Số điện thoại:** 0387 883 041
 
-&emsp; **Email:** danielleee241@gmail.com
+&emsp; **Email:** duynguyenvananh@gmail.com
 
 &emsp; **Trường:** Đại học FPT TP.HCM
 
-&emsp; **Ngành:** Công nghệ thông tin
+&emsp; **Ngành:** Trí Tuệ Nhân Tạo
 
-&emsp; **Lớp:** SE181951
+&emsp; **Lớp:** SE181823
 
 &emsp; **Công ty thực tập:** Công ty TNHH Amazon Web Services Vietnam
 
@@ -27,7 +27,7 @@ chapter: false
 
 &emsp; **Thời gian thực tập:** Từ ngày 12/08/2025 đến ngày 12/11/2025
 
-![Ảnh đại diện của bạn](/images/avatar_new.png)
+<img src="/images/duyavatar.png" alt="Ảnh cá nhân" width="450"/>
 
 ### Nội dung báo cáo
 
