@@ -1,4 +1,5 @@
 # **Module 2 - Các dịch vụ mạng trên AWS**
+
 ## **I. AWS Virtual Private Cloud (VPC)**
 ### 1. Giới thiệu về Amazon VPC 
 - Là một dịch vụ cung cấp môi trường mạng ảo riêng tư, nó được cô lập về mặt logic khỏi các mạng khác ở AWS Cloud, nó hoàn toàn tách biệt với thế giới bên ngoài.
@@ -262,3 +263,257 @@
 
 **Lưu ý:**
 - Trong ví dụ này thì chúng ta thấy được VPC FLow Logs sẽ Capture được thông tin gì. 
+
+## **II. VPC Peering & Transit Gateway**
+### 1. VPC Peering
+- Khi tạo 2 VPC trong thực tế thì 2 VPC này không liên quan gì đến với nhau, thì nếu bạn có nhu cầu kết nối giữa 2 VPC này, hoặc 1 máy chủ trong VPC và kết nối được 5 máy chủ trong VPC 2 thì phải làm như thế nào? -> Dùng **VPC Peering**.
+- **VPC Peering** là tính năng giúp kết nối **hai hay nhiều VPC** đề các tài nguyên bên trong hai VPC đó có thể liên lạc **trực tiếp** với nhau không cần thông qua Internet, góp phần gia tăng tính bảo mật cho VPC. 
+
+- **VPC Peering** là kết nối cần tạo 1:1 giữa hai VPC thành viên, không hỗ trợ Transitive Routing.
+
+- **VPC Peering** không hỗ trợ khi 2 VPC bị overlap IP address space.
+
+***Kiến trúc VPC Peering***
+![2.1 VPC Peering](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/Module_02_02_VPC%20Peering%20%26%20Transit%20Gate%20/Image_module_02_02/2.1%20VPC%20Peering.png)
+
+***Lưu ý:***
+- Khi tạo Peering Connection trong kiến trúc bạn đã thấy, đã được chấp thuận bởi VPC có Peering Connection, nhưng chúng vẫn không thể nào kết nối được với nhau, thì phải làm sao? 
+- Giải pháp: Mình phải tự tay cấu hình cái bảng định tuyến Custom Route Table mà được associate và gán được vào cái Subnet có máy chủ EC2. 
+- Muốn đi tới đâu phải set up ID của VPC này đến IP của VCP mình muốn đến và ngược lại. 
+
+***Kiến trúc VPC Peering_Real_time***
+
+![2.2 VPC Peering Real_time](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/Module_02_02_VPC%20Peering%20%26%20Transit%20Gate%20/Image_module_02_02/2.2%20VPC%20Peering%20Real_time.png)
+
+***Lưu ý:***
+
+- Tuy nhiên trong thực tế chúng ta có rất nhiều VPC, và tính năng **Peering** có thể hỗ trợ chúng ta tạo ra các Peering giữa các VPC trong điều kiện như: 
+    + Nằm trong các Region khác nhau. 
+    + Nằm trong các Account khác nhau. 
+- Trong một doanh nghiệp thực tế họ có cả ngàn Account khác nhau, nên việc Peering hỗ trợ giữa các Account rất giúp ích cho doanh nghiệp, có thể kết nối nhiều máy chủ khác nhau ở các VPC khác nhau mượt mà, nhưng chúng ta phải ra rất nhiều VPC Connection
+
+***Chuyện gì sẽ xảy ra nếu chúng ta kết nối 30 VPC?***
+
+- **30 VPC Peering** => **435 Peering connections!!!** 
+Ngồi cấu hình từng cái thôi cũng đù người=))))) Vấn đề giải quyết ở dưới.....
+
+### 2. Transit Gateway
+- Kiến trúc Transit Gateway không giống như VPC Peering là quan hệ 1:1, và chúng ta có thể hiểu rằng Transit Gateway như 1 cái hub trung tâm mạng.
+
+- **Transit Gateway** được dùng kết nối các VPC và mạng on-premises thông qua một hub trung tâm. Điều này đơn giản hóa mạng và kết thúc các mối quan hệ định tuyến phức tạp 
+
+- **Transit Gateway Attachment** là một công cụ để gán các subnet từng VPC cần kết nối với nhau vào một TGW đã được khởi tạo. Transit Gateway Attachment hoạt động ở quy mô Availability Zone *(AZ-level)*.
+
+- Trong VPC, khi một subnet ở một AZ sẽ gán Transit Gateway Attachment với một TGW, các subnet khác trong cùng AZ đều có thể kết nối tới TGW đó.   
+
+    + Giả sử VPC của mình có các Subnet rãi đều ở 3 AZ khác nhau, mình có thể cần đến 3 Transit Gateway Attachment.
+
+- Các tập đoàn lớn thường ưa chuộng việc sử dụng 
+**Transit Gateway**.
+
+***Kiến trúc Transit Gateway***
+
+![2.3 Transit Gateway](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/Module_02_02_VPC%20Peering%20%26%20Transit%20Gate%20/Image_module_02_02/2.3%20Transit%20Gateway.png)
+
+***Lưu ý***:
+
+- Chúng ta có 4 cái VPC, như ảnh cấu trúc VPC Peering thì chúng ta cần phải tạo 6 cái Peering Connection.
+
+- Nhưng trong cấu trúc này chỉ cần tạo 1 cái Transit Gateway thôi.
+
+- Khi tạo Transit Gateway xong, thì mình tạo các Transit Gateway Attachment trong từng VPC khác nhau sẽ kết nối với nhau. 
+
+- Nhưng nó vẫn giống VPC Peering ở chỗ là mình phải cấu hình cái Route table cho từng cái Transit Gateway Attachment đó.
+
+## **III. VPN & Direct Connect**
+### 1. Giới thiệu về VPN & và Direct Connet
+
+- Đây là tính năng dùng để kết nối giữa môi trường on-premises và môi trường trên Cloud. Hay người ta thường hay gọi là môi trường Hybrid. 
+
+- Hybrid ở đây là gì? Là có nghĩa rằng chúng ta chạy một phần dịch vụ ở local hay được gọi là on-premises và một phần dịch vụ trên chạy trên điện toán đám mây ở trên AWS. 
+### 2. VPN Site to Site
+
+- **VPN Site to Site** dùng trong mô hình hybrid để thiết lập kết nối liên tục giữa môi trường trung tâm dữ liệu truyền thống tới môi trường VPC của AWS. 
+
+- Việc thiết lập kết nối sẽ cần 2 đầu endpoint ở phía AWS và phía khách hàng: 
+
+    + **Virtual Private Gateway** Được quản lí hoàn toàn AWS (chia 2 endpoint ở 2 đầu 2 AZ)
+
+    + **Customer Gateway**: Đầu endpoint phía khách hàng, có thể là thiết bị phần cứng hoặc software appliance. 
+
+***Link hướng dẫn tất cả những thiết bị, software application...***: [https://docs.aws.amazon.com/vpn/latest/s2svpn/your-cgw.html]
+
+### 3. VPN Client to Site
+- **VPN Client to Site**: Cho phép một host truy cập tới tài nguyên trong VPC. 
+
+- Chi phí dịch vụ khá cao, cho nên thường khi sử dụng Client to Site thì thường sẽ dùng qua dịch vụ **Third Party** của AWS cung cấp. 
+
+- Khuyến khích sử dụng VPN Client to Site trong **AWS Market Place**.
+
+### 4. AWS Direct Connect
+
+- **AWS Direct Connect** là dịch vụ cho phép tạo kết nối riêng tư từ trung tâm dữ liệu truyền thống tới AWS.
+
+- Độ trễ khoảng **20ms - 30ms**. 
+
+- **AWS Direct Connect** ở Việt Nam hiện tại sẽ thông qua AWS Direct Connect partners và hoạt động dưới dạng ***Hosted Connections***. (Nếu trực tiếp tới AWS thì là ***Dedicated Connections***)
+
+    + Băng thông Direct Connect có thể thay đổi lên/xuống tùy nhu cầu.   
+
+- Trong thực tế khi đi làm Cloud Engineer thì mình không bao giờ được cấu hình **Direct Connect** này, hầu hết sẽ có đội ngũ Partner sẽ làm thay.
+
+- **Direct Connect** là đường kết nối ở mức thấp không có thực hiện mã hóa dữ liệu, sau khi đấu nối thực hiện Direct Connect xong thì chúng ta phải sử dụng thêm VPN Site to Site.
+
+## **IV. Elastic Load Balancing**
+
+### 1. Tổng quan về Elastic Load Balancing.
+- **Elastic Load Balancing** (ELB) là một dịch vụ cân bằng tải được quản lí bởi AWS, có chức năng phân phối lưu lượng cho nhiều EC2 Instance hoặc Container.
+
+- Sử dụng giao thức **HTTP, HTTPS, TCP và SSL (TCP bảo mật).**
+
+- Có thể nằm ở -> **Public** hoặc **Private** Subnet.
+
+- Mỗi ELB sẽ được cấp tên DNS và kết nối thông qua DNS. Chỉ có Network Load Balancer hỗ trợ gán IP tĩnh. 
+
+- ELB không kết nối qua địa chỉ IP, chỉ kết nối qua DNS trừ ELB - Network Load Balancer.
+
+- ELB có tính năng **health check**, không gửi lưu lượng đến các Instance không đạt **health check**.
+
+- Bao gồm 4 loại: 
+    + **Application Load Balancer**
+    + **Network Load Balancer** -> Hỗ trợ gán IP tĩnh
+    + **Classic Load Balancer** -> Giá cao
+    + **Gateway Load Balancer** -> Mới nhất
+
+- **Sticky session (session affinity):** Tính năng cho phép các kết nối được gán vào một target nhất định. Việc này đảm bảo các requests từ một user trong một session sẽ được gửi tới cùng một target. 
+
+- **Sticky session** là cần thiết trong trường hợp các máy chủ ứng dụng **lưu trữ thông tin trạng thái của người dùng** tại server. 
+
+    + Hoạt động trên **Network Load Balancer, Application Load Balancer, Classic Load Balancer.**
+
+- ELB cung cấp tính năng lưu trữ logs truy cập **(access logs)** chugns ta có thể sử dụng access logs để phân tích truy cập, trouble shoot. Logs truy cập sẽ được lưu trữ vào một dịch vụ lưu trữ đối tượng là **Amazon S3** (Simple Storage Service).
+
+
+### 2. ELB - Application Load Balancer
+
+- **Application Load Balancer** (ALB) là một dịch vụ cân bằng tải được quản lí bởi AWS, hoạt động ở **Layer 7**. 
+
+- Sử dụng giao thức **HTTP, HTTPS**
+
+- Hỗ trợ tính năng **path-based routing**. (/mobile /desktop sẽ được route tới 2 target group khác nhau) 
+    
+    + Application Load Balancer -> Hỗ trợ tính năng **path-based routing** -> Giả sử các ứng dụng mobile có nhóm máy chủ ứng dụng riêng -> Sẽ được Route tới 2 target group khác nhau. -> Target group (gồm nhiều target nhỏ khác nhau). 
+
+- Cho phép **route traffic** tới cả target nằm ngoài VPC (IP address), EC2, Lambda, Container (ECS, EKS). 
+
+***Kiến trúc ELB - Application Load Balancer***
+
+![4.2 ELB - Application Load Balancer](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/Module_02_03_VPN_DirectConnect_LoadBalancer_ExtraResources/Image_module_02_03/4.2%20ELB%20-%20Application%20Load%20Balancer.png)
+
+### 3. ELB - Network Load Balancer
+
+- **Network Load Balancer** (NLB) là một dịch vụ cân bằng tải được quản lí bởi AWS, protocol hoạt động ở Layer 4. 
+
+    + ***Quản lí hoàn toàn bởi AWS hiểu sao cho đúng?*** 
+    + Thì mình không cần phải lo về việc **auto-scale** cho nó.
+
+- Sử dụng giao thức **TCP, TLS**. 
+
+- Hỗ trợ tính năng **set IP tĩnh**. 
+
+- Hỗ trợ **Hiệu năng cao nhất trong các loại Load Balancer** có khả năng xử lý đến hàng triệu request. 
+    + **Performance:** Extreme Performance
+
+- Cho phép route traffic tới cả target nằm ngoài VPC (IP address), EC2, Container (ECS, EKS).
+
+### 4. ELB - Classic Load Balancer
+
+- **Classic Load Balancer** (CLB) là một dịch vụ cân bằng tải được quản lý bởi AWS, hoạt động ở Layer 4 và Layer 7. 
+
+- Sử dụng giao thức **HTTP, HTTPS, TCP, TLS.**
+
+- Cost: Cao hơn ALB và NLB. 
+
+- Tính năng: Ít tính năng cao cấp hơn ALB và NLB, hiện tại rất ít được sử dụng 
+ 
+- Cho phép Route traffic tới EC2. 
+
+### 5. ELB - Gateway Load Balancer
+
+- **Gate Load Balancer** (GLB) là một dịch vụ cân bằng tải được quản lí bởi AWS, protocol hoạt động ở Layer 3.
+
+- **Gate Load Balancer** lắng nghe toàn bộ IP packets và foward tới target group chỉ định. 
+
+- Sử dụng GENEVE protocol trên Port 6081
+
+- Cho phép route traffic tới các Virtual appliance được AWS hỗ trợ.
+
+- Danh sách vendor hỗ trợ.
+
+[https://aws.amazon.com/vi/elasticloadbalancing/partners/]
+
+***Mô hình thường thấy khi sử dụng Gateway Load Balancer:***
+
+![4.5 Model Gateway Load Balancer](https://github.com/DazielNguyen/AWS_FCJ_FA25_VAD_NOTES_LESSON/blob/main/Module_02/Module_02_03_VPN_DirectConnect_LoadBalancer_ExtraResources/Image_module_02_03/4.5%20Model%20Gateway%20Load%20Balancer.png)
+
+***Giải thích:***
+- Để ý chiều đi của mô hình từ 1 -> 5 gạch màu tím , còn đường về thì ngược lại.
+- Ta thấy một lớp tường lửa nằm ở VPC khác nó là dịch vụ hỗ trở ở VPC của chúng ta.
+
+_______________________________________________________________
+## **V. Thực hành và nghiên cứu bổ sung.** 
+
+### **Lab: 000003**
+ - Khởi tạo VPC.
+    + Cấu hình tường lửa VPC 
+    + Thực hành tạo 1 VPC
+    + Cấu hình Site to Site VPN
+
+### **Lab: 000058**
+ - System Manager - Session Manager 
+    + Tạo kết nối đến máy chủ EC2
+    + Quản lí sessioin logs
+    + Sử tính năng Port Forwarding
+
+### **Lab: 000019**
+ - Thiết lập VPC Peering
+    + Cập nhật Network ACL 
+    + Tạo kết nối Peering 
+    + Cấu hình Route tables 
+    + Kích hoạt Cross-Peer DNS. 
+
+### **Lab: 000020**
+ - Thiết lập Transit Gateway
+    + Thiết lập hạ tầng
+    + Tạo Transit Gateway -> Nối nhiều VPC lại với nhau
+    + Transit Gateway Attachments
+    + Tạo Route Table cho TGW
+    + Thêm Gateway vào Route Tables & Kiểm tra kết quả
+
+### **Lab: 000010**
+ - Hybrid DNS
+    + Thiết lập Hybrid DNS
+    + Tạo Outbound Endpoint
+    + Tạo Route 53 Resolver Rule
+    + Tạo Inbound Endpoint.
+
+### **[Nghiên cứu bổ sung] - AWS Advanced Networking - Specialty Study Guide**
+
+Link: [https://www.amazon.com/Certified-Advanced-Networking-Official-Study/dp/1119439833]
+
+***Phần hướng dẫn của Tuần 2:***
+
+- Tài liệu giúp chuẩn bị kiến thức cho bài thi AWS Advanced Networking - Specialty Study Guide
+
+- Đánh giá của chuyên gia về các nguyên tác thiết kế của AWS phù hợp với mục tiêu thi và giải thích chi tiết về các chủ đề thi chính kết hợp với các kịch bản trong thực tế.
+
+***Phần hướng dẫn của Tuần 1:***
+
+- Tìm hiểu về các: 
+	+ Khái nghiệm 
+	+ Nguyên tắc thiết kế
+	+ Biện pháp tốt nhất về kiến trúc để thiết kế và vận hành hệ thống của bạn trong môi trường điện toán đám mây. 
+
+- Sử dụng Framework bằng cách trả lời các câu hỏi. 
+	+ Cần biết được mức độ phù hợp giữa kiến trúc của mình với các phương pháp tốt nhất được khuyến nghị. 
+- Khi sử dụng AWS WAF tích hợp trên AWS Management Console sẽ có hướng dẫn để cải thiện kiến trúc hiện tại của mình. 
