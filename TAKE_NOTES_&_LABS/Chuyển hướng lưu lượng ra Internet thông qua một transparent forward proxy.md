@@ -1,11 +1,3 @@
----
-title: "Blog 2"
-date: "2025-09-08"
-weight: 1
-chapter: false
-pre: " <b> 3.2. </b> "
----
-
 # **Chuyển hướng lưu lượng ra Internet thông qua một transparent forward proxy**
 
 bởi Vijay Menon | vào ngày 08 tháng 09 năm 2025 | trong [Amazon VPC](https://aws.amazon.com/vi/blogs/networking-and-content-delivery/category/compute/amazon-vpc/), [AWS Transit Gateway](https://aws.amazon.com/vi/blogs/networking-and-content-delivery/category/networking-content-delivery/aws-transit-gateway/), [AWS Transit Gateway network manager](https://aws.amazon.com/vi/blogs/networking-and-content-delivery/category/networking-content-delivery/aws-transit-gateway/aws-transit-gateway-network-manager/), [Networking & Content Delivery](https://aws.amazon.com/vi/blogs/networking-and-content-delivery/category/networking-content-delivery/) | [Permalink](https://aws.amazon.com/vi/blogs/networking-and-content-delivery/redirecting-internet-bound-traffic-through-a-transparent-forward-proxy/) | Share
