@@ -16,9 +16,47 @@
     + Khi mình upload 1 file ảnh lên S3, thì mình có thể **trigger** 1 cái **serverless fuction** dùng để *resize* file ảnh, thành 1 file ảnh nhỏ hơn. 
 - Khi upload 1 file lên S3, bản chất trong file đó sẽ có những file chạy ngầm của S3 để đảm bảo dữ liệu được toàn vẹn và đồng nhất. 
 ### **3. Độ toàn vẹn Amazon S3**
-- Amazon S3 được thiết kế để đạt được độ bền (**durability**) lên đến 99.999999999% (11 con số 9) và độ sẵn sàng (**high availability) 99.99% (4 con số 9). 
+- Amazon S3 được thiết kế để đạt được độ bền (**durability**) lên đến 99.999999999% (11 con số 9) và độ sẵn sàng (**high availability**) 99.99% (4 con số 9). 
+- Amazon S3 hỗ trợ **multiplepart** để upload các đối tượng lớn lên bucket.
+- Chúng ta cần tạo các **S3 bucket** để có thể lưu trữ các dối tượng trong Amazon S3.
+    + https://[tên bucket].s3.amazonaws.com -> URL của bucket khi được tạo 
+    + https://[tên bucket].s3.amazonaws.com/capture.mp4 -> URL của object khi chúng ta Upload lên S3
+### **4. Cách thức Upload và Truy cập dữ liệu trên S3**
+- Có nhiều cách để upload dữ liệu lên S3 như: 
+    + Sử dụng giao diện web AWS Management Console
+    + Sử dụng AWS CLI
+    + Sử dụng SDK của AWS
+    + Sử dụng API của AWS
+- Dùng API PUT
+    + Sử dụng 1 Protocol HTTP để tương tác với S3 
+    + Dùng HTTP PUT để Upload dữ liệu lên S3 -> Object: Key = photo.gif 
+    + Key thứ 2 Key = /image/phôt.gif
+- Dùng API GET
+    + Để lấy dữ liệu thì dùng HTTP GET - Nếu lấy được thành công nó sẽ báo quyền **200 OK - photo.gif**
+- Làm việc với S3 thông qua REST API.(HTTP)
+### **5. S3 - Access Point**
 
-## **II. Amazon Storage Gateway**
+- **Amazon S3 Access Point** là tính năng cho phép tạo các điểm kết nối *(hostname unique)* dành cho ứng dụng, người dùng đơn lẻ hoặc theo nhóm. 
+    + Chúng ta có thể cấu hình phân quyền khác nhau cho mỗi access point được tạo ra
+    + Tạo S3 access points cho các ứng dụng với **quyền truy cập khác nhau**.
+
+- Amazon S3 chia vùng lưu trữ ra nhiều lớp lưu trữ ( storage class ) giúp chúng ta tối ưu hóa chi phí.
+- Các cấp lưu trữ ( Storage Class của S3 ):
+    + **S3 Standard:** Dữ liệu được truy cập thường xuyên
+    + **S3 Standard IA:** Dữ liệu không truy cập thường xuyên
+    + **S3 Intelligent Tiering:** Tự động di chuyển các đối tượng giữa các cấp lưu trữ theo số ngày đối tượng không được truy cập.
+    + **S3 One Zone IA:** Dữ liệu có thể tái tạo lại, được lưu trữ dài hạn, không truy cập thường xuyên nhưng cần truy cập nhanh
+    + **Amazon Glacier / Deep Archive:** Lưu trữ dữ liệu ít truy cập
+
+    + Chúng ta có thể thiết lập tự động hóa vòng đời của dữ liệu **(Object Life Cycle Management)** được lưu trữ trong Amazon S3. Bằng cách sử dụng chính sách vòng đời, chúng ta có thể luân chuyển dữ liệu trong 1 S3 bucket giữa các cấp lưu trữ theo thời gian (ngày) tùy chỉnh.
+
+>Hiểu về vòng đời của các cấp lưu trữ như thế nào?
+
+![Module04_1.5_AccessPoint](aws-fcj-report/TAKE_NOTES_&_LABS/Module_04/Image_module_04/Module04_1.5_AccessPoint.png)
+
+- **Object Life Cycle Managenment** sẽ được di chuyển object sau **số ngày chúng ta quy định**, được tính từ ngày object được tạo. 
+
+## **II. Amazon Storage Gateway** 
 
 ## **III. Snow Family**
 
