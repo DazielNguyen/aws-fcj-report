@@ -75,6 +75,19 @@
 
 - **Amazon S3** cho phép **cấu hình chính sách CORS** (Cross Origin Resource Sharing) cho phép client web applications tương tác với các tài nguyên nằm ở domain khác.
 
+### **7. S3 - Control access**
+- Amazon S3 có 2 cơ chế kiểm soát quyền truy cập tới bucket
+- **S3 Access Control List (ACL)** là một cơ chế kiểm soát truy cập có trước IAM. Tuy nhiên, nếu bạn đã sử dụng S3 ACL và thấy đủ thì không cần thay đổi. **ACL S3 được gắn bucket và object của S3**. Nó xác định tài khoản hoặc nhóm AWS nào được cấp quyền truy cập và loại quyền truy cập.
+- **S3 Bucket Policy** và IAM policy xác định quyền cấp đối tượng bằng cách cung cấp các đối tượng đó trong phần Resource trong policy của bạn. Câu lệnh sẽ áp dụng cho các đối tượng đó trong bucket. Việc **hợp nhất các quyền dành riêng cho đối tượng thành một chính sách** (trái ngược với nhiều ACL S3) giúp bạn **dễ dàng hơn trong việc xác định các quyền truy cập.**
+> Ví dụ xóa một object
+
+![Module04_1.7_Control_access](aws-fcj-report/TAKE_NOTES_&_LABS/Module_04/Image_module_04/Module04_1.7_Control_access.png)
+
+- Đối với các object tất cả đều ở ngang hàng với nhau, được thiết kế nhằm mục đích để hệ thống có thể scale-out, mở rộng theo chiều ngang hiệu quả hơn
+- Khi có thêm những object S3 mới, hệ thống S3 tự động phân vùng, và tự chia nhỏ thành nhiều phân vùng khác nhau. 
+- Dùng thuật toán Hash
+- Mỗi **object** trong S3 đều **ngang hàng**, không phân cấp (**hierarchy**) và được gán 1 **object key**. 
+- Ví dụ : /image/sample.jpg , sample.jpg
 
 ## **II. Amazon Storage Gateway** 
 
