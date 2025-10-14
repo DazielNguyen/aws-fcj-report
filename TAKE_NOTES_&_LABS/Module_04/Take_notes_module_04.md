@@ -56,6 +56,26 @@
 
 - **Object Life Cycle Managenment** sẽ được di chuyển object sau **số ngày chúng ta quy định**, được tính từ ngày object được tạo. 
 
+### **6. S3 - Static Website & CORS**
+
+- Amazon S3 có tính năng cho phép host các static website (html, media ...), phù hợp cho **Single Page Application.** (Ứng dụng web hoặc trang web tương tác với người dùng bằng cách tự động viết lại trang web hiện tại với dữ liệu mới từ máy chủ web sử dụng javascript và các framework của nó như AngularJs, ReactJS, thay vì phương pháp mặc định của trình duyệt web tải toàn bộ trang mới).
+
+- Amazon S3 hỗ trợ **CORS.** CORS là một cơ chế cho phép nhiều tài nguyên khác nhau (fonts, Javascript, v.v...) của một trang web có thể được truy vấn từ domain khác với domain của trang đó. CORS là viết tắt của từ **Cross-origin resource sharing.**
+
+*https://docs.aws.amazon.com/AmazonS3/latest/userguide/cors.html*
+
+> Kiến trúc S3 - Static Website (Web tĩnh)
+
+![Module04_1.6_StaticWebsite](aws-fcj-report/TAKE_NOTES_&_LABS/Module_04/Image_module_04/Module04_1.6_StaticWebsite.png)
+
+- **Amazon S3** có tính năng cho phép host các static website (html, media,..) phù hợp cho **Single Page Application**.
+
+> Kiến trúc S3 - CORS
+![Module04_1.6_CORS](aws-fcj-report/TAKE_NOTES_&_LABS/Module_04/Image_module_04/Module04_1.6_CORS.png)
+
+- **Amazon S3** cho phép **cấu hình chính sách CORS** (Cross Origin Resource Sharing) cho phép client web applications tương tác với các tài nguyên nằm ở domain khác.
+
+
 ## **II. Amazon Storage Gateway** 
 
 ## **III. Snow Family**
