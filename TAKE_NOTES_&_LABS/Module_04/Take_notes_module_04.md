@@ -106,9 +106,14 @@
 
 - **Versioning** cho phép bạn khôi phục đối tượng sau khi vô tình xóa hay ghi đè, có thể hỗ trợ trước việc bị tấn công **randomware / encryption attack. 
 
-
-
 => Trong cả 2 trường hợp chúng ta đều có thể khôi phục phiên bản trước đó.
+
+### **9. S3 - Object Key & Performance**
+- Mỗi object trong S3 đều ngang hàng, không phân cấp (hierachy) và được gán 1 object key. 
+    + Ví dụ: /image/sample.jpg ,sample.jpg
+- Sâu bên dưới S3 chia ra các Partitions, Partition sẽ được chia ra tự động khi lượng request tăng cao hoặc số lượng S3 object keys lớn. (làm chậm tốc độ tìm kiếm object trong partition). 
+- S3 lưu trữ key map (key map cũng được chia ra nhiều partition và được hash bởi prefix - tiền tố của object key). 
+- Để tối ưu S3 performance có thể dùng **random prefix** (**/fscd**/img/sample.jpg **thay vì** /img/sample.jpg). Mục tiêu của việc làm này là khiến S3 lưu trữ các object trên nhiều partitions nhất có thể vì **performance của S3 dựa trên số lượng partitions**. 
 
 
 
