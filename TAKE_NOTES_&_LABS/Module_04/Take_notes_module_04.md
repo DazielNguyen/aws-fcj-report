@@ -89,6 +89,32 @@
 - Mỗi **object** trong S3 đều **ngang hàng**, không phân cấp (**hierarchy**) và được gán 1 **object key**. 
 - Ví dụ : /image/sample.jpg , sample.jpg
 
+### **8. S3 - Endpoint & Versioning**
+> Kiến trúc S3 - Endpoint
+
+![Module04_1.8_Endpoint](aws-fcj-report/TAKE_NOTES_&_LABS/Module_04/Image_module_04/Module04_1.8_Endpoint.png)
+
+- Điểm truy cập Amazon S3 (**S3 Endpoint**) là tính năng cho phép truy cập đến S3 bucket thông qua mạng riêng của AWS. Mặc định, việc truy cập tới S3 là thông qua internet.
+- S3 Endpoint không kết nối qua Internet
+> Kiến trúc S3 - Version
+
+![Module04_1.8_Versioning](aws-fcj-report/TAKE_NOTES_&_LABS/Module_04/Image_module_04/Module04_1.8_Versioning.png)
+
+- Chúng ta có thể kích hoạt tính năng lập phiên bản (**Versioning**) cho phép bạn **khôi phục đối tượng sau khi vô tình xóa hay ghi đè**, có thể hỗ trợ trước việc bị tấn công ransomware/encryption attack
+    + Nếu xóa một đối tượng, thay vì xóa đối tượng đó, thì Amazon S3 sẽ đánh dấu tập tin đã Xóa.
+    + Nếu ghi đè đối tượng, thì một phiên bản đối tượng mới sẽ xuất hiện trong bucket.
+
+- **Versioning** cho phép bạn khôi phục đối tượng sau khi vô tình xóa hay ghi đè, có thể hỗ trợ trước việc bị tấn công **randomware / encryption attack. 
+
+
+
+=> Trong cả 2 trường hợp chúng ta đều có thể khôi phục phiên bản trước đó.
+
+
+
+
+
+
 ## **II. Amazon Storage Gateway** 
 
 ## **III. Snow Family**
