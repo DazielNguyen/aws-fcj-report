@@ -115,14 +115,26 @@
 - S3 lưu trữ key map (key map cũng được chia ra nhiều partition và được hash bởi prefix - tiền tố của object key). 
 - Để tối ưu S3 performance có thể dùng **random prefix** (**/fscd**/img/sample.jpg **thay vì** /img/sample.jpg). Mục tiêu của việc làm này là khiến S3 lưu trữ các object trên nhiều partitions nhất có thể vì **performance của S3 dựa trên số lượng partitions**. 
 
+### 10. **S3 - Glacier**
+- Amazon S3 Glacier là lựa chọn lưu trữ có **chi phí thấp**, phù hợp với dữ liệu **không yêu cầu truy suất trực tiếp**, dữ liệu lưu trữ dài hạn. Nếu ứng dụng yêu cầu truy cập dữ liệu nhanh chóng hoặc thường xuyên, hãy chọn Amazon S3.
+- Khi lưu trữ dữ liệu trong Amazon S3 Glacier bạn **không thể truy xuất dữ liệu trực tiếp** mà phải đưa (**retrieve**) dữ liệu về lại một S3 Bucket.
+- Có ba tùy chọn để truy xuất dữ liệu với thời gian truy cập và chi phí khác nhau:
+    + Truy xuất **Nhanh (Expedited)** thường hoàn tất trong vòng *1 - 5 phút.*
+    + Truy xuất **Tiêu chuẩn (Standard)** thường hoàn tất trong vòng *3 - 5 giờ.*
+    + Truy xuất **Hàng loạt (Bulk)** thường hoàn tất trong vòng *5 - 12 giờ.*
 
+> Kiến trúc S3 - Glacier
 
+![Module04_1.10_Glacier](aws-fcj-report/TAKE_NOTES_&_LABS/Module_04/Image_module_04/Module04_1.10_Glacier.png)
 
+- **Amazon S3 Glacier** là lựa chọn lưu trữ có **chi phí phất**, phù hợp với dữ liệu **không yêu cầu truy suất trực tiếp, dữ liệu lưu trữ dài hạn.**
 
+- S3 Gracier rẻ thì rẻ hơn được bao nhiêu??? -> Rẻ hơn **20 lần so với mức giá của S3 Standard**
+- Gracier còn cung cấp tính năng **vault block**, để cho phép gán những chính sách không cho xóa hoặc chỉnh sửa dữ liệu. 
 
-## **II. Amazon Storage Gateway** 
+## **II. Snow Family**
 
-## **III. Snow Family**
+## **III. Amazon Storage Gateway** 
 
 ## **IV. Disaster Recovery on AWS**
 
