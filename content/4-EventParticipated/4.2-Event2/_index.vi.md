@@ -1,12 +1,12 @@
 ---
 title: "Event 2"
-date: "2025-09-09"
+date: "2025-10-16"
 weight: 1
 chapter: false
 pre: " <b> 4.2. </b> "
 ---
 
-# Bài thu hoạch “GenAI-powered App-DB Modernization workshop”
+# Bài thu hoạch “WORKSHOP KHOA HỌC DỮ LIỆU TRÊN AWS”
 
 ### Mục Đích Của Sự Kiện
 
@@ -17,49 +17,58 @@ pre: " <b> 4.2. </b> "
 
 ### Danh Sách Diễn Giả
 
-- **Jignesh Shah** - Director, Open Source Databases
-- **Erica Liu** - Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** - Assc. Specialist SA, Serverless Amazon Web Services
+- **Van Hoang Kha** - Cloud Solutions Architec AWS User Group Leader
+- **Bach Doan Vuong** - Cloud Develops Engineer AWS Community Builder
 
 ### Nội Dung Nổi Bật
+- Tổng quan quản lý dịch vụ AI với từng trường hợp. 
+- Feature Engineering
+- Train, Tune, Deploy 
+- Bring your own models. 
+#### Giới thiệu & Tầm quan trọng của Cloud trong Data Science
+- Các dịch vụ phổ biến cảu AWS có thể hỗ trợ được sinh viên trong quá trình train model như SageMarker
+- 
+- 
+#### Amazon Comprehend
+- Chuyên tóm tắt phân loại dữ liệu, và giải pháp cho bài toàn xử lý ngôn ngữ tự nhiên hỗ trợ được nhiều ngôn nhữ khác nhau. 
+- Các trường hợp sử dụng thực tế của Amazon Comprehend.   
+  + Xử lý tài liệu thông minh
+  + Xử lý mail hàng loạt -> Hướng trả lời cho người dùng tích cực hay tieuw cực 
+  + Phân tích cảm xúc khách hàng
+  + Phân loại và gắn cho tag các type dữ liệu khác nhau. 
+  + Phân tích tâm lý khách hàng
+  + Phân tích cho tổng đài tư vấn viên -> Trung tâm liên lạc
+  + Xác thực thông tin các nhân. 
 
-#### Đưa ra các ảnh hưởng tiêu cực của kiến trúc ứng dụng cũ
+#### Amazon Translate - Neurak machine translation service.
+- Tương tự google dịch
+- Có thể tích hợp các website làm đa ngôn ngữ 
+- Dễ tích hợp vào ứng dụng 
+- Độ chính xác cao theo từng ngữ cảnh khác nhau
 
-- Thời gian release sản phẩm lâu → Mất doanh thu/bỏ lỡ cơ hội
-- Hoạt động kém hiệu quả → Mất năng suất, tốn kém chi phí
-- Không tuân thủ các quy định về bảo mật → Mất an ninh, uy tín
+#### Amazon Texttrack
+- Triết xuất 
+#### Tổng quan về Data Science Pipeline trên AWS (S3, Glue, SageMaker).
+-
+-
+-
 
-#### Chuyển đổi sang kiến trúc ứng dụng mới - Microservice Architecture
+#### Demo 1: Xử lý và làm sạch dữ liệu từ dataset IMDb với AWS Glue.
 
-Chuyển đổi thành hệ thống modular – từng chức năng là một **dịch vụ độc lập** giao tiếp với nhau qua **sự kiện** với 3 trụ cột cốt lõi:
+- 
+-
+-
 
-- **Queue Management**: Xử lý tác vụ bất đồng bộ
-- **Caching Strategy:** Tối ưu performance
-- **Message Handling:** Giao tiếp linh hoạt giữa services
+#### Thảo luận chuyên sâu về chi phí, hiệu năng (Cloud vs. On-premise).
+-
+-
+-
 
-#### Domain-Driven Design (DDD)
+#### Hướng dẫn dự án nhỏ sau workshop để củng cố kiến thức.
 
-- **Phương pháp 4 bước**: Xác định domain events → sắp xếp timeline → identify actors → xác định bounded contexts
-- **Case study bookstore**: Minh họa cách áp dụng DDD thực tế
-- **Context mapping**: 7 patterns tích hợp bounded contexts
 
-#### Event-Driven Architecture
 
-- **3 patterns tích hợp**: Publish/Subscribe, Point-to-point, Streaming
-- **Lợi ích**: Loose coupling, scalability, resilience
-- **So sánh sync vs async**: Hiểu rõ trade-offs (sự đánh đổi)
 
-#### Compute Evolution
-
-- **Shared Responsibility Model**: Từ EC2 → ECS → Fargate → Lambda
-- **Serverless benefits**: No server management, auto-scaling, pay-for-value
-- **Functions vs Containers**: Criteria lựa chọn phù hợp
-
-#### Amazon Q Developer
-
-- **SDLC automation**: Từ planning đến maintenance
-- **Code transformation**: Java upgrade, .NET modernization
-- **AWS Transform agents**: VMware, Mainframe, .NET migration
 
 ### Những Gì Học Được
 

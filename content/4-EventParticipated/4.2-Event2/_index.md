@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 4.2. </b> "
 ---
 
-# Summary Report: Report 2
+# Summary Report: DATA SCIENCE ON AWS WORKSHOP
 
 ### Event Objectives
 
