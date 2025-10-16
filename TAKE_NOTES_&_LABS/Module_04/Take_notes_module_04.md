@@ -150,8 +150,18 @@
 - Dịch vụ hỗ trợ migratr dữ liệu từ môi trường on-premiese tới AWS ở quy mô lên đến Exabyte. Mỗi snowmobile có thể chứa tới 100PB
 - Snowmobile sẽ trở về AWS region mà chúng ta lựa chọn để lưu trữ dữ liệu và lưu trữ trong dịch vụ chúng ta lựa chọn bao gồm S3 hoặc Glacier. 
 
+## **III. Amazon Storage Gateway** - Thiết bị lưu trữ lai. 
+- AWS Storage Gateway là giải pháp lưu trữ Hybrid, kết hợp dung lượng lưu trữ trên AWS với dung lượng lưu trữ tại chỗ (on-premise). 
+- Chúng ta có thể tận dụng **quy mô và giá thành hợp lý** của các dịch vụ lưu trữ trên cloud để giúp lưu trữ các dữ liệu lớn có thời gian yêu cầu lưu trữ dài hạn. 
+- AWS Storage Gateway hỗ trợ ba phương thức lưu trữ chính :**tập tin, ổ đĩa và băng từ**.
+    + Cổng **kết nối tập tin (File Gateway)** cho phép bạn lưu trữ và truy xuất đối tượng trong Amazon S3 bằng cách sử dụng các giao thức tệp NFS và SMB. Đối tượng được ghi thông qua cổng kết nối tập tin có thể được truy cập trực tiếp trong S3.
+    + Cổng **kết nối ổ đĩa (Volume Gateway)** cung cấp lưu trữ dạng khối cho ứng dụng của bạn bằng cách sử dụng giao thức iSCSI. Dữ liệu trên ổ đĩa được lưu trữ trong Amazon S3. Để truy cập ổ đĩa iSCSI trong AWS, bạn có thể tạo EBS snapshot (tự động bằng AWSBackup)từ đó tạo ra thành EBS Volumes.
+    + Cổng **kết nối băng từ (Tape Gateway)** cung cấp cho ứng dụng sao lưu của bạn một giao diện thư viện băng từ ảo (VTL) iSCSI, các ổ tape drive ảo và tape ảo. Dữ liệu tape ảo được lưu trữ trong Amazon S3 hoặc có thể được lưu trữ vào Amazon Glacier.
 
-## **III. Amazon Storage Gateway** 
+> Kiến trúc Storage Gateway
+![Module04_3_StorageGateway](aws-fcj-report/TAKE_NOTES_&_LABS/Module_04/Image_module_04/Module04_3_StorageGateway.png)
+
+- **AWS Storage Gateway** là giải pháp lưu trữ Hybrid, kết hợp dung lượng lưu trữ trên AWS với dung lượng lưu trữ tại chỗ (on-premise).
 
 ## **IV. Disaster Recovery on AWS**
 
