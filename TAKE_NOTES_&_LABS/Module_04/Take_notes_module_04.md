@@ -133,10 +133,22 @@
 - Glacier còn cung cấp tính năng **vault block**, để cho phép gán những chính sách không cho xóa hoặc chỉnh sửa dữ liệu. 
 
 ## **II. Snow Family**
+
 ### 1. **Snow Family - Snowball**
 - Dịch vụ hỗ trợ migrate dữ liệu từ môi trường on-premises tới AWS ở quy mô lên PetaByte (PB). Mỗi Snowball có thể chứa tới 80 TeraByte(TB)
 - Snowball sẽ được ship trở về AWS Region mà chúng ta lựa chọn để lưu trữ dữ liệu và lưu trong dịch vụ chúng ta lựa chọn bao gồm S3 hoặc Glacier
 - Chúng ta sẽ cần cài Snowball Client tại máy local để thực hiện xác minh, nén, mã hóa và tranfer dữ liệu. 
+
+### 2. **Snow Family - Snowball Edge**
+- Dich vụ hỗ trợ migrate dữ liệu từ môi trường on-premise tới AWS ở quy mô lên đến PetaByte (PB). Mỗi Snowball Edge có thể chứa tới 100 TeraByte(TB). 
+- Snowball Edge sẽ được ship trở về AWS region mà chúng ta lựa chọn để lưu trữ dữ liệu và lưu trong dịch vụ chúng ta lựa chọn bao gồm S3 hoặc Glacier. 
+- Chúng ta sẽ cần cài Snowball Client tại máy local để thực hiện xác minh, nén, mã hóa và transfer dữ liệu. 
+- Snowball Edge là thiết bị đặc biệt có sẵn các tài nguyên tính toán để xử lý dữ liệu local trước khi import vào thiết bị. 
+
+### 3. **Snow Family - Snowmobile**
+
+- Dịch vụ hỗ trợ migratr dữ liệu từ môi trường on-premiese tới AWS ở quy mô lên đến Exabyte. Mỗi snowmobile có thể chứa tới 100PB
+- Snowmobile sẽ trở về AWS region mà chúng ta lựa chọn để lưu trữ dữ liệu và lưu trữ trong dịch vụ chúng ta lựa chọn bao gồm S3 hoặc Glacier. 
 
 
 ## **III. Amazon Storage Gateway** 
