@@ -52,7 +52,7 @@
 
 >Hiểu về vòng đời của các cấp lưu trữ như thế nào?
 
-![Module04_1.5_AccessPoint](aws-fcj-report/TAKE_NOTES_&_LABS/Module_04/Image_module_04/Module04_1.5_AccessPoint.png)
+![Module04_1.5_AccessPoint](https://github.com/DazielNguyen/aws-fcj-report/blob/main/TAKE_NOTES_%26_LABS/Module_04/Image_module_04/Module04_1.5_AccessPoint.png)
 
 - **Object Life Cycle Managenment** sẽ được di chuyển object sau **số ngày chúng ta quy định**, được tính từ ngày object được tạo. 
 
@@ -66,12 +66,12 @@
 
 > Kiến trúc S3 - Static Website (Web tĩnh)
 
-![Module04_1.6_StaticWebsite](aws-fcj-report/TAKE_NOTES_&_LABS/Module_04/Image_module_04/Module04_1.6_StaticWebsite.png)
+![Module04_1.6_StaticWebsite](https://github.com/DazielNguyen/aws-fcj-report/blob/main/TAKE_NOTES_%26_LABS/Module_04/Image_module_04/Module04_1.6_StaticWebsite_CORS.png)
 
 - **Amazon S3** có tính năng cho phép host các static website (html, media,..) phù hợp cho **Single Page Application**.
 
 > Kiến trúc S3 - CORS
-![Module04_1.6_CORS](aws-fcj-report/TAKE_NOTES_&_LABS/Module_04/Image_module_04/Module04_1.6_CORS.png)
+![Module04_1.6_CORS](https://github.com/DazielNguyen/aws-fcj-report/blob/main/TAKE_NOTES_%26_LABS/Module_04/Image_module_04/Module04_1.6_CORS.png)
 
 - **Amazon S3** cho phép **cấu hình chính sách CORS** (Cross Origin Resource Sharing) cho phép client web applications tương tác với các tài nguyên nằm ở domain khác.
 
@@ -81,7 +81,7 @@
 - **S3 Bucket Policy** và IAM policy xác định quyền cấp đối tượng bằng cách cung cấp các đối tượng đó trong phần Resource trong policy của bạn. Câu lệnh sẽ áp dụng cho các đối tượng đó trong bucket. Việc **hợp nhất các quyền dành riêng cho đối tượng thành một chính sách** (trái ngược với nhiều ACL S3) giúp bạn **dễ dàng hơn trong việc xác định các quyền truy cập.**
 > Ví dụ xóa một object
 
-![Module04_1.7_Control_access](aws-fcj-report/TAKE_NOTES_&_LABS/Module_04/Image_module_04/Module04_1.7_Control_access.png)
+![Module04_1.7_Control_access](https://github.com/DazielNguyen/aws-fcj-report/blob/main/TAKE_NOTES_%26_LABS/Module_04/Image_module_04/Module04_1.7_Control_access.png)
 
 - Đối với các object tất cả đều ở ngang hàng với nhau, được thiết kế nhằm mục đích để hệ thống có thể scale-out, mở rộng theo chiều ngang hiệu quả hơn
 - Khi có thêm những object S3 mới, hệ thống S3 tự động phân vùng, và tự chia nhỏ thành nhiều phân vùng khác nhau. 
@@ -92,13 +92,13 @@
 ### **8. S3 - Endpoint & Versioning**
 > Kiến trúc S3 - Endpoint
 
-![Module04_1.8_Endpoint](aws-fcj-report/TAKE_NOTES_&_LABS/Module_04/Image_module_04/Module04_1.8_Endpoint.png)
+![Module04_1.8_Endpoint](https://github.com/DazielNguyen/aws-fcj-report/blob/main/TAKE_NOTES_%26_LABS/Module_04/Image_module_04/Module04_1.8_Endpoint.png)
 
 - Điểm truy cập Amazon S3 (**S3 Endpoint**) là tính năng cho phép truy cập đến S3 bucket thông qua mạng riêng của AWS. Mặc định, việc truy cập tới S3 là thông qua internet.
 - S3 Endpoint không kết nối qua Internet
 > Kiến trúc S3 - Version
 
-![Module04_1.8_Versioning](aws-fcj-report/TAKE_NOTES_&_LABS/Module_04/Image_module_04/Module04_1.8_Versioning.png)
+![Module04_1.8_Versioning](https://github.com/DazielNguyen/aws-fcj-report/blob/main/TAKE_NOTES_%26_LABS/Module_04/Image_module_04/Module04_1.8_Versioning.png)
 
 - Chúng ta có thể kích hoạt tính năng lập phiên bản (**Versioning**) cho phép bạn **khôi phục đối tượng sau khi vô tình xóa hay ghi đè**, có thể hỗ trợ trước việc bị tấn công ransomware/encryption attack
     + Nếu xóa một đối tượng, thay vì xóa đối tượng đó, thì Amazon S3 sẽ đánh dấu tập tin đã Xóa.
@@ -125,7 +125,7 @@
 
 > Kiến trúc S3 - Glacier
 
-![Module04_1.10_Glacier](aws-fcj-report/TAKE_NOTES_&_LABS/Module_04/Image_module_04/Module04_1.10_Glacier.png)
+![Module04_1.10_Glacier](https://github.com/DazielNguyen/aws-fcj-report/blob/main/TAKE_NOTES_%26_LABS/Module_04/Image_module_04/Module04_1.10_Glacier.png)
 
 - **Amazon S3 Glacier** là lựa chọn lưu trữ có **chi phí phất**, phù hợp với dữ liệu **không yêu cầu truy suất trực tiếp, dữ liệu lưu trữ dài hạn.**
 
@@ -159,7 +159,7 @@
     + Cổng **kết nối băng từ (Tape Gateway)** cung cấp cho ứng dụng sao lưu của bạn một giao diện thư viện băng từ ảo (VTL) iSCSI, các ổ tape drive ảo và tape ảo. Dữ liệu tape ảo được lưu trữ trong Amazon S3 hoặc có thể được lưu trữ vào Amazon Glacier.
 
 > Kiến trúc Storage Gateway
-![Module04_3_StorageGateway](aws-fcj-report/TAKE_NOTES_&_LABS/Module_04/Image_module_04/Module04_3_StorageGateway.png)
+![Module04_3_StorageGateway](https://github.com/DazielNguyen/aws-fcj-report/blob/main/TAKE_NOTES_%26_LABS/Module_04/Image_module_04/Module04_3_StorageGateway.png)
 
 - **AWS Storage Gateway** là giải pháp lưu trữ Hybrid, kết hợp dung lượng lưu trữ trên AWS với dung lượng lưu trữ tại chỗ (on-premise).
 
