@@ -164,6 +164,21 @@
 - **AWS Storage Gateway** là giải pháp lưu trữ Hybrid, kết hợp dung lượng lưu trữ trên AWS với dung lượng lưu trữ tại chỗ (on-premise).
 
 ## **IV. Disaster Recovery on AWS**
+- Các dịch vụ, ứng dụng có độ phức tạp khác nhau và có mức cam kết dịch vụ (Service Level Agreement - SLA) trong đó bao gồm RTP/RPO khác nhau. Tùy theo loại dịch vụ và mức cam kết chúng ta sẽ lựa chọn chiến lược phục hồi sau thảm họa tương ứng. 
+
+- Có 4 chiến lược phục hồi sau thảm họa trên AWS bao gồm 
+    + Sao lưu và khôi phục
+    + Pilot Light (Active - Standby)
+    + Low Capacity Active - Active 
+    + Full Capacicty Active - Active
+     
+### **1. RTO/RPO**
+- Thời gian phục hồi mục tiêu (Recovery Time Object RTO) là thời gian cần thiết để được phục hồi một dịch vụ trở lại trạng thái hoạt động bình thường. 
+    + Ví dụ: Nếu một thảm họa xảy ra lúc 2:00 giờ chiều và RTO là 4 giờ, quá trình DR phải phục hồi dịch vụ trễ nhất vào thời điểm 6:00 giờ tối. 
+
+- Thời điểm phục hồi mục tiêu (Recovery Point Object RPO) là khoảng thời gian tối đa mà dữ liệu có thể bị mất. 
+
+    + Ví dụ: Nếu chúng ta thực hiện backup mỗi ngày 1 lần thì trong trường hợp xấu nhất chúng ta có thể mất dữ liệu 24 giờ, RPO = 24 hours
 
 ## **V. AWS Backup**
 
