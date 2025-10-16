@@ -182,6 +182,13 @@
 
 ## **V. AWS Backup**
 
+- **AWS Backup** là một dịch vụ quản lý các tác vụ sao lưu. Chúng ta có thể cấu hình và lập trình (**backup schedule**), chính sách sao lưu (backup retention) và giám sát hoạt động sao lưu sao cho các tài nguyên trên AWS bao gồm: 
+    + Amazon EBS
+    + Amazon EC2
+    + Cơ sở dữ liệu Amazon RDS
+    + Cơ sở dữ liệu DynamoDB
+    + Amazon EFS
+    + AWS Storage Gateway volumes
 
 
 
