@@ -190,7 +190,44 @@
     + Amazon EFS
     + AWS Storage Gateway volumes
 
+_______________________________________________________________
+## **VI. Thực hành và nghiên cứu bổ sung.** 
 
+### **Lab: 000057** - Khởi đầu với Amazon S3
+ - Tạo S3 Bucket
+ - Upload dữ liệu trên S3
+ - Host static website trên S3
+
+### **Lab: 000013** - AWS Backup
+- Chuẩn bị hạ tầng
+- Khởi tạo Backup Plan
+- Thiết lập Notification
+- Kiểm tra hoạt động 
+
+### **Lab: 000014** - AWS Import/Export
+- Chuẩn bị máy ảo 
+- Import máy ảo lên AWS
+- Export máy ảo từ AWS
+
+### **Lab: 000024** - Storage Gateway
+- Khởi tạo Storage Gateway
+- Khởi tạo File Sharing 
+- Kết nối File Share với máy
+
+### **Lab: 000025** - FSX
+- AWS Managed MS AD
+- Triển khai Instance
+- Thiết lập và sử dụng FSx
+
+### **[Nghiên cứu bổ sung] - AWS Skill Builder**
+
+Link: [https://explore.skillbuilder.aws/]
+
+***Phần hướng dẫn của Tuần 4:***
+
+- Series các bài lý thuyết chuyên sâu cho chuyên gia lưu trữ trên AWS.
+- Storage Learning Plan: Block Storage
+- Storage Learning Plan: Object Storage
 
 
 
