@@ -139,7 +139,7 @@ hay còm gọi là IAM Role trust policy, quy định xem ai có thể sử dụ
 
 > Kiến trúc AWS Identify Center (SSO)
 
-![Module_05_11_AWS_Identify_Center_SSO]()
+![Module_05_11_AWS_Identify_Center_SSO](https://github.com/DazielNguyen/aws-fcj-report/blob/main/TAKE_NOTES_%26_LABS/Module_05/Image_module_05/Module_05_11_AWS_Identify_Center_SSO.png)
 
 ## **VI. AWS Key Management Service - KMS**
 
@@ -149,8 +149,24 @@ hay còm gọi là IAM Role trust policy, quy định xem ai có thể sử dụ
 
 > Kiến trúc AWS KMS
 
-![Module_05_12_AWS_KMS]()
+![Module_05_12_AWS_KMS](https://github.com/DazielNguyen/aws-fcj-report/blob/main/TAKE_NOTES_%26_LABS/Module_05/Image_module_05/Module_05_12_AWS_KMS.png)
 
 - AWS Key Managenment Service giúp tạo và quản lý các encryption key, phục vụ cho mục đích encrypt/decrypt dữ liệu trên AWS. 
 
-## **VII. Thực hành và nghiên cứu bổ sung**
+## **VII. AWS Security Hub**
+- **AWS Security Hub** là dịch vụ cho phép chúng ta thực hiện kiểm tra bảo mật dựa trên các tiêu chuẩn và best practices.
+- **Security Hub** chạy liên tục, kiểm tra cấu hình các dịch vụ trong tài khoản AWS và kiểm tra bảo mật dựa trên các best practice của AWS và tiêu chuẩn ngành (VD: **PCIDSS**).
+- **Security Hub** cung cấp kết quả kiểm tra dưới dạng điểm số và giúp chúng ta xác định các tài khoản và tài nguyên cụ thể cần được chú ý.
+> Ví dụ dùng Security Hub
+
+![Module_05_13_AWS_Security_Hub](https://github.com/DazielNguyen/aws-fcj-report/blob/main/TAKE_NOTES_%26_LABS/Module_05/Image_module_05/Module_05_13_AWS_Security_Hub.png)
+
+- **Security Hub** chạy liên tục, kiểm tra cấu hình các dịch vụ trong tài khoản AWS và kiểm tra bảo mật dựa trên các best practice của AWS và tiêu chuẩn ngành (VD: **PCIDSS**)
+
+> Giao diện khi Test Security Hub
+
+![Module_05_14_AWS_Security_Hub_Test](https://github.com/DazielNguyen/aws-fcj-report/blob/main/TAKE_NOTES_%26_LABS/Module_05/Image_module_05/Module_05_14_AWS_Security_Hub_Test.png)
+
+- Security Hub cung cấp kết quả kiểm tra dưới dạng điểm số và giúp chúng ta xác định các tài khoản và tài nguyên cụ thể cần được chú ý. 
+
+## **VIII. Thực hành và nghiên cứu bổ sung**
