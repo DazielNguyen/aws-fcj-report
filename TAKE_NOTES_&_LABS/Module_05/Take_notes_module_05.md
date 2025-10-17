@@ -143,4 +143,14 @@ hay còm gọi là IAM Role trust policy, quy định xem ai có thể sử dụ
 
 ## **VI. AWS Key Management Service - KMS**
 
+- **AWS Key Management Service** giúp tạo và quản lý các encryption key, phục vụ cho mục đích encrypt/decrypt dữ liệu trên AWS. (**Encryption at rest**)
+- **Encryption key** luôn nằm trong AWS KMS, đảm bảo tiêu chuẩn FIPS 140-2.
+- **CMK (Customer Managed Key)** đóng vai trò là tài nguyên chính trong AWS KMS. CMK có thể có kích thước tới 4KB. Tuy nhiên thông thường, chúng ta chỉ sử dụng CMK cho mục đích tạo, mã hóa và giải mã **Data Key** - loại khóa được dùng bên ngoài AWS KMS để mã hóa dữ liệu.
+
+> Kiến trúc AWS KMS
+
+![Module_05_12_AWS_KMS]()
+
+- AWS Key Managenment Service giúp tạo và quản lý các encryption key, phục vụ cho mục đích encrypt/decrypt dữ liệu trên AWS. 
+
 ## **VII. Thực hành và nghiên cứu bổ sung**
