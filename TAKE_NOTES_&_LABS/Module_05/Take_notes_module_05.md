@@ -100,33 +100,49 @@ hay còm gọi là IAM Role trust policy, quy định xem ai có thể sử dụ
     + **Identity Pool** cấp cho người dùng quyền truy cập vào các dịch vụ AWS khác.
 > Ví dụ Amazon Cognito - User Pool 1
 
-![Module_05_6_Amazon_Cognito_User_Pool_1]()
+![Module_05_6_Amazon_Cognito_User_Pool_1](https://github.com/DazielNguyen/aws-fcj-report/blob/main/TAKE_NOTES_%26_LABS/Module_05/Image_module_05/Module_05_6_Amazon_Cognito_User_Pool_1.png)
 
 - **User Pool**: Người dùng có thể đăng nhập trực tiếp bằng tên người dùng và mật khẩu hoặc thông qua một bên thứ ba như Facebook, Amazon hoặc Google. 
 
 > Ví dụ Amazon Cognito - User Pool 2
 
-![Module_05_7_Amazon_Cognito_User_Pool_2]()
+![Module_05_7_Amazon_Cognito_User_Pool_2](https://github.com/DazielNguyen/aws-fcj-report/blob/main/TAKE_NOTES_%26_LABS/Module_05/Image_module_05/Module_05_7_Amazon_Cognito_User_Pool_2.png)
 
 - **User Pool**: Sau khi đăng nhập với user pool, người dùng ứng dụng có thể truy cập các tài nguyên mà ứng dụng cho phép. 
 
 > Ví dụ Amazon Cognito - User Pool 3
-![Module_05_8_Amazon_Cognito_User_Pool_3]()
+
+![Module_05_8_Amazon_Cognito_User_Pool_3](https://github.com/DazielNguyen/aws-fcj-report/blob/main/TAKE_NOTES_%26_LABS/Module_05/Image_module_05/Module_05_8_Amazon_Cognito_User_Pool_3.png)
 
 - **User Pool**: Sau khi đăng nhập với user pool, người dùng ứng dụng có thể gọi đến API Endpoint (Backend) mà ứng dụng cho phép.
 
 > Kiến trúc Amazon Cognito - User Pool kết hợp với Identity Pool
-![Module_05_9_Amazon_Cognito_User_Pool_and_Identity_Pool]()
+
+![Module_05_9_Amazon_Cognito_User_Pool_and_Identity_Pool](https://github.com/DazielNguyen/aws-fcj-report/blob/main/TAKE_NOTES_%26_LABS/Module_05/Image_module_05/Module_05_9_Amazon_Cognito_User_Pool_and_Identity_Pool.png)
 
 - **User Pool** kết hợp với **Identity Pool** để truy cập trực tiếp vào các dịch vụ của AWS. 
 
+## **IV. AWS Organization**
+- **AWS Organizations** giúp quản lý và điều hành tập trung môi trường của mình bao gồm nhiều AWS account.
+- **AWS Organizations** có thể tạo các tài khoản AWS mới và phân bổ tài nguyên, sắp xếp các AWS account theo **OU (Organization Unit)**, đồng thời đơn giản việc thanh toán với thanh toán tập trung (**consolidated billing**).
+- **AWS Organization** có thể áp các chính sách kiểm soát dịch vụ (**Service Control Policies**) lên các **OU hoặc các AWS account**, SCP chỉ thiết lập giới hạn quyền tối đa cho các IAM User hoặc IAM role trong OU hoặc AWS account được gán.
+- **SCP cũng cho phép thiết lập deny-based policy**.
+
+> Kiến trúc AWS Organization
+
+![Module_05_10_AWS_Organization]()
 
 
-## **IV. AWS Organization & AWS Identify Center (SSO)**
 
 
 
-## **V. AWS KMS**
 
 
-## **VI. Thực hành và nghiên cứu bổ sung**
+
+
+
+## **V. AWS Identify Center (SSO)**
+
+## **VI. AWS KMS**
+
+## **VII. Thực hành và nghiên cứu bổ sung**
