@@ -130,19 +130,17 @@ hay còm gọi là IAM Role trust policy, quy định xem ai có thể sử dụ
 
 > Kiến trúc AWS Organization
 
-![Module_05_10_AWS_Organization]()
-
-
-
-
-
-
-
-
-
+![Module_05_10_AWS_Organization](https://github.com/DazielNguyen/aws-fcj-report/blob/main/TAKE_NOTES_%26_LABS/Module_05/Image_module_05/Module_05_10_AWS_Organization.png)
 
 ## **V. AWS Identify Center (SSO)**
+- **AWS Identity Center** giúp quản lý quyền truy cập tới AWS account và cả các ứng dụng bên ngoài.
+    + **Identity source** có thể nằm trong AWS Identity Center hoặc được liên kết với Active Directory. (AWS Managed Microsoft AD, On-premises Microsoft AD thông qua Two way trust hoặc AD Connector).
+- **Permission Set** xác định khả năng truy cập mà User và Group có đối với các tài khoản AWS trong AWS Organization. Các bộ quyền được lưu trữ trong AWS Identity Center và được cung cấp cho tài khoản AWS dưới dạng IAM roles. Bạn có thể gán nhiều quyền cho một User.
 
-## **VI. AWS KMS**
+> Kiến trúc AWS Identify Center (SSO)
+
+![Module_05_11_AWS_Identify_Center_SSO]()
+
+## **VI. AWS Key Management Service - KMS**
 
 ## **VII. Thực hành và nghiên cứu bổ sung**
