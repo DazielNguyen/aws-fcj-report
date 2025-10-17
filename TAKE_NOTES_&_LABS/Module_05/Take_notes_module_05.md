@@ -170,3 +170,85 @@ hay còm gọi là IAM Role trust policy, quy định xem ai có thể sử dụ
 - Security Hub cung cấp kết quả kiểm tra dưới dạng điểm số và giúp chúng ta xác định các tài khoản và tài nguyên cụ thể cần được chú ý. 
 
 ## **VIII. Thực hành và nghiên cứu bổ sung**
+
+### **Lab: 000002** - Bắt đầu với IAM và IAM Role
+
+1. IAM Group và IAM User
+2. Tạo IAM Role
+3. Assume Role
+
+### **Lab: 000044** - IAM Role và Condition
+
+1. Giới thiệu về IAM
+2. Tạo User quản trị EC2
+3. Tạo User quản trị RDS
+4. Tạo Group quản trị 
+5. Cấu hình IAM Role Condition
+
+    5.1 Tạo IAM Role có quyền Admin
+    5.2 Tạo IAM User
+    5.3 Cấu hình Switch role 
+    5.4 Giới hạn IP
+    5.5 Giới hạn theo thời gian.
+
+### **Lab: 000048** - IAM Role và Application
+
+1. Sử dụng access key
+2. IAM Role trên EC2
+
+### **Lab: 000030** - IAM Permission Boundary
+
+1. Giới thiệu IAM Permission Boundary
+2. Tạo Policy giới hạn
+3. Tạo IAM User giới hạn quyền
+4. Kiểm tra User bị giới hạn
+
+### **Lab: 000027** - Tag và Resource Groups
+
+1. Sử dụng thẻ
+- Sử dụng thẻ bằng Console
+- Hiển thị các thẻ
+- Thêm hoặc xóa thẻ
+- Gắn thẻ cho một máy ảo
+- Lọc tài nguyên theo thẻ
+- Sử dụng thẻ bằng CLI
+2. Resource Group
+
+### **Lab: 000028** - Quản lý EC2 qua Resource Tag
+
+1. Tạo IAM Policy
+2. Tạo IAM Role
+3. Kiểm tra IAM Role
+
+### **Lab: 000018** - Sử dụng AWS Security Hub
+
+1. Các tiêu chuẩn bảo mật
+2. Kích hoạt Security HUb
+3. Điểm từng bộ tiêu chuẩn
+
+### **Lab: 000012** - Sử dụng AWS SSO
+
+1. Các bước chuẩn bị
+- Tạo AWS Account trong AWS Organizations
+- Thiết lập Organization Unit
+2. Thiết lập AWS SSO
+3. Kiểm tra
+
+### **Lab: 000033** - KMS Workshop
+
+1. Thiết lập môi trường
+2. Bắt đầu với AWS KMS
+3. Mã hóa với AWS KMS
+4. Key Policy và các best practices
+5. Giám sát việc sử dụng AWS KMS.
+
+### **[Nghiên cứu bổ sung] - AWS Certified Security Special All-in-One-Exam Guide (Exam SCS-C01)**
+- Tài liệu học để thi chúng chỉ Security Specialty
+
+Link: [https://www.amazon.com/Certified-Security-Specialty-Guide-SCS-C01/dp/1260461726]
+
+***Phần hướng dẫn của Tuần 4:***
+
+- Series các bài lý thuyết chuyên sâu cho chuyên gia lưu trữ trên AWS.
+- Storage Learning Plan: Block Storage
+- Storage Learning Plan: Object Storage
