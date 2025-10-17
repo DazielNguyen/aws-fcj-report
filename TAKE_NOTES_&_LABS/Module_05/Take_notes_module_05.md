@@ -46,7 +46,8 @@
     + IAM Group không thể là thành viên của 1 IAM Group khác.
 
 > Kiến trúc IAM User
-![Module_05_2_IAM_User]()
+
+![Module_05_2_IAM_User](https://github.com/DazielNguyen/aws-fcj-report/blob/main/TAKE_NOTES_%26_LABS/Module_05/Image_module_05/Module_05_2_IAM_User.png)
 
 ### **3. IAM Policy**
 - Được viết dưới dạng JSON. 
@@ -57,14 +58,39 @@
 
 > IAM Plolicy JSON Example 
 
-![Module_05_3_IAM_Policy]()
+![Module_05_3_IAM_Policy](https://github.com/DazielNguyen/aws-fcj-report/blob/main/TAKE_NOTES_%26_LABS/Module_05/Image_module_05/Module_05_3_IAM_Policy.png)
 
 - Ví dụ này cho thấy cách bạn có thể IAM Policy giới hạn việc quản lý S3 bằng cách: 
     + Cho phép tất cả các hành động của S3 trên bucket cụ thể
     + Deny tường minh (explicit deny) quyền truy cập vào mọi dịch vụ AWS ngoại trừ Amazon S3. 
 
+### **4. IAM Role**
+- **IAM Role** cho phép xác định một tập hợp quyền truy cập vào các tài nguyên (thông qua việc gán **IAM Policy vào IAM role**). IAM Role không có thông tin chứng thực **(credentials)** để truy cập vào management console hay AWS CLI/SDK.
+- Khi một **IAM User** muốn sử dụng IAM Role , **IAM User sẽ cần assume** (đảm nhận) 1 IAM Role, ngay sau khi assume role, quyền hiện tại của user sẽ được thay bằng quyền đang được cấp cho IAM Role. Ngoài ra, thông tin xác thực bảo mật tạm thời sẽ được cấp cho IAM User hoặc một AWS Service để có thể truy cập tới các dich vụ của AWS. Việc assume role sẽ làm việc với dịch vụ **AWS STS - Security Token Service** giúp tạo ra các thông tin chứng thực tạm (tương tự như access key). 
+- IAM Role có thể được sử dụng bởi: 
+    + IAM User trong cùng một AWS Account
+    + IAM User trong một AWS Account khác (cross-account access)
+    + AWS Service (ví dụ: EC2, Lambda, ECS task)
+    + Ứng dụng bên ngoài (federated user)
 
- 
+- Để một user có thể sử dụng IAM Role, IAM Role sẽ được gán một resource base IAM policy, 
+hay còm gọi là IAM Role trust policy, quy định xem ai có thể sử dụng IAM Role. 
+- IAM Role thường được dùng trong các thức tế để đảm bảo nguyên tác cấp quyền tối thiểu và dùng trong các trường hợp cấp quyền cho các AWS account khác truy cập tài nguyên của AWS account hiện tại. 
+> IAM Role Example
+
+![Module_05_4_IAM_Role]()
+
+- IAM Role thường được dụng trong thực tế để đảm bảo **nguyên tắc cấp quyền tối thiểu** và dùng trong trường hợp **cấp quyền cho các AWS Account khác truy cập tài nguyên của AWS account hiện tại**. 
+- Ngoài được sử dụng cho IAM User, IAM Role còn được sử dụng để cấp quyền truy cập các resource của AWS cho chính các AWS Service. 
+
+- Trường hợp sử dụng thường thấy nhất là dùng IAM Role cấp quyền cho các ứng dụng chạy bên trong dịch vụ tính toán (EC2). 
+
+> IAM Role for EC2 Example
+
+![Module_05_5_IAM_Role_for_EC2]()
+
+- Ngoài được sử dụng cho IAM User, IAM Role còn được sử dụng để cấp **quyền truy cấp các resource của AWS** cho chính **các AWS Service**. 
+
 
 ## **III. Amazon Cognito**
 
