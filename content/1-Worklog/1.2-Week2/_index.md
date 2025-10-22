@@ -34,9 +34,9 @@ pre: " <b> 1.2. </b> "
 - **Evaluate** the pros and cons of two VPC connection solutions: VPC Peering (1:1 connection, no transitive support) and Transit Gateway (hub-and-spoke model, simplifies management).
 - **Describe** methods for establishing a hybrid cloud connection, including Site-to-Site VPN (over the Internet) and AWS Direct Connect (private physical connection).
 - **Classify** and **select** the appropriate Elastic Load Balancer type for specific scenarios:
-      + **Application Load Balancer (ALB):** For HTTP/HTTPS traffic (Layer 7), supports path-based routing.
-      + **Network Load Balancer (NLB):** For TCP/TLS traffic (Layer 4), requires ultra-high performance and static IP.
-      + **Gateway Load Balancer (GLB):** Used for integrating virtual appliances.
+   + **Application Load Balancer (ALB):** For HTTP/HTTPS traffic (Layer 7), supports path-based routing.
+   + **Network Load Balancer (NLB):** For TCP/TLS traffic (Layer 4), requires ultra-high performance and static IP.
+   + **Gateway Load Balancer (GLB):** Used for integrating virtual appliances.
 - **Identify** the necessary labs to reinforce knowledge of VPC, Peering, Transit Gateway, and related services.
 
 
