@@ -163,13 +163,13 @@
 
 ![08_Aurora_Back_track](https://github.com/DazielNguyen/aws-fcj-report/blob/main/TAKE_NOTES_%26_LABS/Module_06/Image_module_06/08_Aurora_Back_track.png)
 
-    + **Backtrack:** Cho phép "tua ngược" CSDL về một thời điểm trong quá khứ mà không cần khôi phục từ backup.
+- **Backtrack:** Cho phép "tua ngược" CSDL về một thời điểm trong quá khứ mà không cần khôi phục từ backup.
 
 > Aurora Global Database
 
 ![09_Aurora_Global_Database](https://github.com/DazielNguyen/aws-fcj-report/blob/main/TAKE_NOTES_%26_LABS/Module_06/Image_module_06/09_Aurora_Global_Database.png)
 
-    + **Global Database:** Cho phép tạo các bản sao chỉ đọc ở các **Region (khu vực địa lý) khác nhau** trên toàn thế giới, phục vụ cho các ứng dụng toàn cầu.
+- **Global Database:** Cho phép tạo các bản sao chỉ đọc ở các **Region (khu vực địa lý) khác nhau** trên toàn thế giới, phục vụ cho các ứng dụng toàn cầu.
 
 ### 4. So sánh RDS Multi-AZ và Aurora
 
@@ -182,5 +182,93 @@
 | **Read Replica Lag** | Có độ trễ (Asynchronous Replication) | **Không có độ trễ (Zero Lag)** |
 | **Tự động Failover** | Có (Tự động chuyển sang bản Standby) | Có (Tự động thăng cấp 1 bản Reader lên Writer) |
 
-## **IV. Amazon ElastiCache**
-## **V. Amazon Redshift**
+## **IV. Amazon Redshift** 
+### 1. Amazon Redshift (Dịch vụ Kho dữ liệu - Data Warehouse)
+
+> Kiến trúc Redshift
+
+![10_Amazon_Redshift](https://github.com/DazielNguyen/aws-fcj-report/blob/main/TAKE_NOTES_%26_LABS/Module_06/Image_module_06/10_Amazon_Redshift.png)
+
+- **Amazon Redshift** là dịch vụ Data warehouse được quản lý bởi AWS. Lõi là Postgre SQL nhưng được tôi ưu cho OLAP. Là một dịch vụ kho dữ liệu quy mô petabyte (hàng ngàn terabyte), được thiết kế đặc biệt cho các tác vụ phân tích dữ liệu lớn (Big Data)
+- **Redshift** sử dụng kiến trúc **Massively-Parallel Processing (MPP)** Database, dữ liệu được chia (partition) và lưu trữ tại các **Compute node** (bao gồm cả compute / storage). **Leader node** nhận vai trò điều phối và tổng hợp truy vấn.
+- **Redshift** lưu trữ dữ liệu dưới dạng **columnar storage**, phù hợp cho ứng dụng OLAP.
+- **Redshift** sử dụng SQL và các driver **JDBC, ODBC** thông dụng.
+- Hỗ trợ những tính năng để tối ưu hóa chi phí (**Transient cluster, Redshift spectrum**)
+
+### 2. Kiến trúc Cốt lõi: MPP
+
+- Redshift sử dụng kiến trúc **Massively Parallel Processing (MPP)**, hay còn gọi là "Xử lý Song song Hàng loạt".
+- **Leader Node (Nút Lãnh đạo):** Tiếp nhận các câu truy vấn từ người dùng/ứng dụng, sau đó phân tích, điều phối và chia nhỏ công việc cho các nút bên dưới.
+- **Compute Nodes (Nút Tính toán):** Đây là nơi lưu trữ dữ liệu (đã được chia nhỏ) và thực thi các phần công việc song song với nhau. Sau khi xử lý xong, chúng gửi kết quả về cho Leader Node để tổng hợp.
+
+### 3. Điểm khác biệt chính: Lưu trữ dạng Cột (Columnar Storage)
+
+> Kiến trúc Comlumnar Storage
+
+![11_Columnar_Storage](https://github.com/DazielNguyen/aws-fcj-report/blob/main/TAKE_NOTES_%26_LABS/Module_06/Image_module_06/11_Columnar_Storage.png)
+
+
+- Đây là khái niệm quan trọng nhất của Redshift, giúp nó xử lý phân tích nhanh hơn CSDL quan hệ (như RDS) vốn lưu trữ theo hàng.
+
+| **Lưu trữ dạng Hàng (Row Base - OLTP)** | **Lưu trữ dạng Cột (Columnar - OLAP)** |
+| :--- | :--- |
+| Dữ liệu của *cùng một hàng* được lưu gần nhau. | Dữ liệu của *cùng một cột* được lưu gần nhau. |
+| `Hàng 1 (ID, Tên, Tuổi) -> Hàng 2 (ID, Tên, Tuổi)` | `Cột ID (1, 2, 3...) -> Cột Tên (A, B, C...)` |
+| **Tốt cho:** Ứng dụng giao dịch (OLTP). Ví dụ: "Lấy *tất cả* thông tin của khách hàng có ID=1". | **Tốt cho:** Ứng dụng phân tích (OLAP). Ví dụ: "Tính *tuổi trung bình* của *tất cả* khách hàng". |
+
+- Vì các truy vấn phân tích thường chỉ quan tâm đến một vài cột trong bảng (ví dụ: `SUM(DoanhThu)`), Redshift chỉ cần đọc dữ liệu của cột đó, mang lại hiệu năng vượt trội.
+
+### 4. Các Tính năng Tối ưu Chi phí và Mở rộng
+
+- **Redshift Spectrum:** Một tính năng cực kỳ mạnh mẽ, cho phép Redshift chạy các câu truy vấn **trực tiếp trên dữ liệu nằm trong Amazon S3**.
+    + **Lợi ích:** Doanh nghiệp có thể lưu trữ một lượng lớn dữ liệu "cũ" hoặc "ít dùng" trên S3 với chi phí rẻ hơn nhiều, nhưng vẫn có thể phân tích khi cần mà không cần tải dữ liệu vào Redshift.
+- **Concurrency Scaling (Tạm dịch: Mở rộng Đồng thời):** Khi có quá nhiều truy vấn cùng lúc, Redshift có thể tự động "clon" (tạo bản sao) các cluster mới để xử lý, sau khi xong việc sẽ tự động xóa đi để tiết kiệm chi phí.
+
+
+## **V. Amazon ElastiCache** - (Dịch vụ Bộ nhớ đệm - Caching)
+
+> Kiến trúc Amazon ElastiCache
+
+![12_Amazon_ElastiCache](https://github.com/DazielNguyen/aws-fcj-report/blob/main/TAKE_NOTES_%26_LABS/Module_06/Image_module_06/12_Amazon_ElastiCache.png)
+
+
+**Amazon ElastiCache** là một dịch vụ được quản lý, giúp triển khai một lớp bộ nhớ đệm (cache) trong bộ nhớ RAM tốc độ cao, nhằm tăng tốc độ cho ứng dụng và giảm tải cho cơ sở dữ liệu chính (như RDS).
+
+- **Mục tiêu:** Các dữ liệu được truy cập thường xuyên (ví dụ: thông tin sản phẩm hot, kết quả báo cáo cuối tháng) sẽ được lưu tạm trong ElastiCache. Vì đọc từ RAM nhanh hơn rất nhiều so với đọc từ ổ đĩa (CSDL), ứng dụng sẽ phản hồi gần như tức thời.
+- **Các Engine hỗ trợ:** Dịch vụ này hỗ trợ hai nền tảng bộ nhớ đệm phổ biến là **Redis** và **Memcached**. Trong đó, Redis thường được ưu tiên cho các ứng dụng mới vì hỗ trợ nhiều kiểu dữ liệu và tính năng đa dạng hơn.
+- Sử dụng ElasticCache yêu cầu **phải viết và quản lý caching logic trên ứng dụng.**  
+#### Trách nhiệm của Người dùng (Caching Logic)
+
+AWS sẽ quản lý hạ tầng cho ElastiCache (ví dụ: tự động phát hiện và thay thế các nút bị hỏng). Tuy nhiên, **người dùng phải chịu trách nhiệm về "Caching Logic"** trong ứng dụng của mình, tức là phải tự quyết định:
+
+## **VI. Thực hành và nghiên cứu bổ sung**
+
+### **Lab: 000005** - Bắt đầu với Amazon RDS
+
+1. Tạo cơ sở dữ liệu (database) trên Amazon RDS
+2. Kết nối ứng dụng vào CSDL
+3. Sao lưu và Phục hồi
+
+### **Lab: 000043** - Dịch chuyển CSDL với DMS và SCT
+
+1. Các bước chuẩn bị
+2. Oracle sang Amazon Aurora (PostgreSQL)
+    2.1 Chuyển dổi Schema
+    2.2 Dịch chuyển cơ sở dữ liệu. 
+
+### **[Nghiên cứu bổ sung] - Database Internals**
+- Tài liệu tìm hiểu cách thức vận hành bên trong của cơ sở dữ liệu. 
+
+Link: [https://www.amazon.com/Database-Internals-Deep-Distributed-Systems/dp/1492040347]
+
+### **[Nghiên cứu bổ sung] - The Data Warehouse Toolkit**
+- Tài liệu tìm hiểu cách thức thiết kế và các kỹ thuật được sử dụng trong việc xây dựng Data-warehouse
+
+Link: [https://www.amazon.com/Data-Warehouse-Toolkit-Definitive-Dimensional/dp/1118530802]
+
+
+
+
+
+
+
