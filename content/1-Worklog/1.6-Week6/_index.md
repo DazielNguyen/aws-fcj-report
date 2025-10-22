@@ -8,48 +8,47 @@ pre: " <b> 1.6. </b> "
 
 ### Week 6 Objectives:
 
-- Connect and get acquainted with members of First Cloud Journey.
-- Understand basic AWS services, how to use the console & CLI.
+- Review foundational database (DB) concepts, including RDBMS (primary key, foreign key), optimization techniques (Index, Partition), and operational concepts (Database Log, Buffer).
+- Clearly differentiate between the two main DB system types: **OLTP** (Online Transaction Processing) and **OLAP** (Online Analytical Processing or Data Warehouse).
+- Understand the managed relational database service **Amazon RDS**, including core features like **Multi-AZ** (for high availability) and **Read Replicas** (for read performance).
+- Learn about **Amazon Aurora**, AWS's cloud-native DB service, with its unique shared storage architecture, high performance, and superior features like **Zero Replication Lag**.
+- Learn about **Amazon Redshift**, the petabyte-scale Data Warehouse service designed for OLAP, and understand its **MPP** architecture and **Columnar Storage** technique.
+- Understand the role of **Amazon ElastiCache** (Redis, Memcached) as a high-speed caching layer to reduce load on the primary database.
 
 ### Tasks to be carried out this week:
 
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP <br>                              | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Day 	| Task 	| Start Date 	| Completion Date 	| Reference Material 	|
+|---	|---	|---	|---	|---	|
+| 2 	| **Database Concepts**<br><br>- **Lesson:** Review fundamental database concepts like **Database** (a structured information system) and **Session** (a working session).<br>- **Learn about architecture:** Relational Databases (RDBMS), including **Primary Key** (to uniquely identify a row) and **Foreign Key** (to create links between tables).<br>- **Understand the technique:** **Normalization**, a technique of dividing data into multiple tables (using keys) to prevent data duplication.<br>- **Understand the technique:** Performance Optimization:<br>+ **Index:** A data structure that speeds up retrieval (read) operations, but increases the cost of writes.<br>+ **Partition:** Dividing a large table into many smaller parts to speed up queries.<br>+ **Execution Plan:** The set of steps the database decides to use to access data (e.g., whether to use an Index or not).<br>- **Understand the technique:** Ensuring integrity and speed:<br>+ **Database Log:** Records all changes, important for recovery and replication.<br>+ **Buffer:** A temporary storage area in RAM, helping to speed up reads because reading from RAM is faster than reading from disk.<br>- **Lesson:** Database Classification:<br>+ **RDBMS (ACID):** Fixed structure (Schema), storage optimized (Normalization), scales vertically (Vertical Scaling).<br>+ **NoSQL (BASE):** Flexible structure (Dynamic Schema), performance optimized (Denormalization), scales horizontally (Horizontal Scaling).<br>- **Lesson:** System Classification:<br>+ **OLTP (Online Transaction Processing):** Transaction processing systems (banking, ordering), need to quickly handle read/write/update operations and ensure integrity (roll back).<br>+ **OLAP (Online Analytical Processing):** Data Warehouse systems, store historical data for complex analysis (reporting, finding trends). 	| 13/10/2025 	| 13/10/2025 	| **Documentation:** https://cloudjourney.awsstudygroup.com/<br>**Youtube:** https://youtube.com/playlist?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&si=W80Cdf_fSc6sjOV<br>**Notes:** https://github.com/DazielNguyen/aws-fcj-report/blob/main/TAKE_NOTES_%26_LABS/Module_06/Take_notes_module_06.md 	|
+| 3 	| **Amazon RDS**<br><br>- **Learn about the service:** **Amazon RDS (Relational Database Service)**, a fully managed relational database service, supporting popular engines (MySQL, PostgreSQL, Oracle, etc.).<br>- **Lesson:** The goal of RDS is to automate administrative tasks (updates, backups) so users can focus on the application.<br>- **Understand the technique:** **Automated Backups** of the database and transaction logs, allowing for **Point-in-Time Recovery** within a 35-day window.<br>- **Learn about architecture:** **Multi-AZ (High Availability)**<br>+ Automatically creates a *standby* replica in another AZ.<br>+ Uses **Synchronous Replication**.<br>+ Supports **Automatic Failover** if the primary database fails.<br>- **Learn about architecture:** **Read Replicas (Read Performance Optimization)**<br>+ Creates *read-only* copies to offload the primary database (e.g., for reporting tasks).<br>+ Uses **Asynchronous Replication**, which can cause "replication lag".<br>- **Lesson:** RDS is often used for **OLTP** applications and is protected by **Security Groups**. 	| 14/10/2025 	| 14/10/2025 	| **Documentation:** https://cloudjourney.awsstudygroup.com/<br>**Youtube:** https://youtube.com/playlist?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&si=W80Cdf_fSc6sjOV<br>**Notes:** https://github.com/DazielNguyen/aws-fcj-report/blob/main/TAKE_NOTES_%26_LABS/Module_06/Take_notes_module_06.md 	|
+| 4 	| **Amazon Aurora**<br><br>- **Learn about the service:** **Amazon Aurora**, a database developed by AWS, compatible with MySQL/PostgreSQL, part of the RDS service but with higher performance (3-5x faster).<br>- **Learn about architecture:** The biggest difference for Aurora is the **redesigned storage layer**.<br>- **Learn about architecture:** An Aurora "Cluster" consists of 1 **Writer** (write instance) and up to 15 **Readers** (read instances), all **sharing a single (Cluster Volume) storage partition**.<br>- **Understand the technique:** Data on the Cluster Volume is **replicated 6 times across 3 AZs** to ensure durability.<br>- **Lesson:** Aurora's outstanding advantage is **Zero Replication Lag** because the Readers read from the same volume as the Writer.<br>- **Understand the technique:** Enterprise features like **Backtrack** (rewind the database without restoring) and **Global Database** (create read-only replicas in different Regions). 	| 15/10/2025 	| 15/10/2025 	| **Documentation:** https://cloudjourney.awsstudygroup.com/<br>**Youtube:** https://youtube.com/playlist?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&si=W80Cdf_fSc6sjOV<br>**Notes:** https://github.com/DazielNguyen/aws-fcj-report/blob/main/TAKE_NOTES_%26_LABS/Module_06/Take_notes_module_06.md 	|
+| 5 	| **Amazon Redshift**<br><br>- **Learn about the service:** **Amazon Redshift**, a petabyte-scale **Data Warehouse** service, optimized for **OLAP**.<br>- **Learn about architecture:** **Massively Parallel Processing (MPP)**.<br>+ **Leader Node:** Receives, parses, and coordinates queries.<br>+ **Compute Nodes:** Store and execute parts of the work in parallel.<br>- **Understand the technique:** **Columnar Storage**.<br>+ Unlike OLTP (stores by row), Redshift stores data from the *same column* together.<br>+ This technique is extremely efficient for analytical (OLAP) queries (e.g., `Calculate average age` only needs to read the `Age` column).<br>- **Understand the technique:** **Redshift Spectrum**, allows running SQL queries **directly on data in Amazon S3** without needing to load it.<br><br>**Amazon ElastiCache**<br><br>- **Learn about the service:** **Amazon ElastiCache**, a high-speed in-memory caching service.<br>- **Objective:** Speed up applications and **reduce the load on the primary database** (like RDS).<br>- **Learn about** supported engines: **Redis** (supports many data types, often preferred) and **Memcached**.<br>- **Lesson:** It is the user's responsibility to write and manage the **Caching Logic** (logic that decides *what* and *when* to cache) within their application. 	| 16/10/2025 	| 16/10/2025 	| **Documentation:** https://cloudjourney.awsstudygroup.com/<br>**Youtube:** https://youtube.com/playlist?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&si=W80Cdf_fSc6sjOV<br>**Notes:** https://github.com/DazielNguyen/aws-fcj-report/blob/main/TAKE_NOTES_%26_LABS/Module_06/Take_notes_module_06.md 	|
+| 6 	| **Lab: 000005 - Getting Started with Amazon RDS**<br><br>1. Create a database on Amazon RDS<br>2. Connect the application to the DB<br>3. Backup and Restore<br><br>**Lab: 000043 - Migrating Databases with DMS and SCT**<br><br>1. Preparation steps<br>2. Oracle to Amazon Aurora (PostgreSQL)<br>2.1 Convert Schema<br>2.2 Migrate database.<br><br>**[Supplemental Research] - Database Internals**<br><br>- Document to learn how databases work internally.<br><br>Link: [[https://www.amazon.com/Database-Internals-Deep-Distributed-Systems/dp/1492040347](https://www.amazon.com/Database-Internals-Deep-Distributed-Systems/dp/1492040347)]<br><br>**[Nghiên cứu bổ sung] - The Data Warehouse Toolkit**<br>- Document to learn how to design and the techniques used in building a Data-warehouse<br><br>Link: [[https://www.amazon.com/Data-Warehouse-Toolkit-Definitive-Dimensional/dp/1118530802](https://www.amazon.com/Data-Warehouse-Toolkit-Definitive-Dimensional/dp/1118530802)] 	| 17/10/2025 	| 17/10/2025 	| **Documentation:** https://cloudjourney.awsstudygroup.com/<br>**Youtube:** https://youtube.com/playlist?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&si=W80Cdf_fSc6sjOV<br>**Notes:** https://github.com/DazielNguyen/aws-fcj-report/blob/main/TAKE_NOTES_%26_LABS/Module_06/Take_notes_module_06.md 	|
+|  	| <br><br><br><br><br><br><br> 	|  	|  	|  	|
 
 ### Week 6 Achievements:
 
-- Understood what AWS is and mastered the basic service groups:
-
-  - Compute
-  - Storage
-  - Networking
-  - Database
-  - ...
-
-- Successfully created and configured an AWS Free Tier account.
-
-- Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-- Installed and configured AWS CLI on the computer, including:
-
-  - Access Key
-  - Secret Key
-  - Default Region
-  - ...
-
-- Used AWS CLI to perform basic operations such as:
-
-  - Check account & configuration information
-  - Retrieve the list of regions
-  - View EC2 service
-  - Create and manage key pairs
-  - Check information about running services
-  - ...
-
-- Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-- ...
+- **Lesson (Foundational):**
+  + Clearly differentiate between the two system models: **OLTP** (Online Transaction Processing) and **OLAP** (Online Analytical Processing, data warehouse).
+  + Master basic DB optimization techniques: **Index** (speeds up reads) and **Partition** (divides tables).
+  + Understand the role of **Database Log** (for recovery/replication) and **Buffer** (uses RAM for speed).
+- **Service (RDS):**
+  + Know **Amazon RDS** is a managed relational database (OLTP) service.
+  + Clearly distinguish RDS's 2 main features: **Multi-AZ** (used for High Availability - HA) and **Read Replicas** (used to increase read performance).
+- **Technique (Replication):**
+  + Differentiate **Synchronous Replication** (used for RDS Multi-AZ) and **Asynchronous Replication** (used for RDS Read Replicas, can have lag).
+- **Service (Aurora):**
+  + Know **Amazon Aurora** is a high-performance, cloud-native database.
+  + Understand Aurora's **shared storage (Cluster Volume)** architecture and its superior benefit of **Zero Replication Lag**.
+  + Be aware of advanced features like **Backtrack** and **Global Database**.
+- **Service (Redshift):**
+  + Know **Amazon Redshift** is a data warehouse (OLAP) service.
+  + Understand the **MPP (Massively Parallel Processing)** architecture (includes Leader Node and Compute Nodes).
+  + Master the core technique of OLAP: **Columnar Storage**, which speeds up analytical queries.
+- **Service (ElastiCache):**
+  + Know **Amazon ElastiCache** (Redis/Memcached) is an in-RAM caching service.
+  + Understand the role of caching is to reduce load on the primary DB.
+  + Be aware of the responsibility to write the **Caching Logic** in the application.
+- **Hands-on:**
+  + Know how to create and operate (backup/restore) an **RDS** database.
+  + Know how to use DMS and SCT services to **migrate** a DB from Oracle to Aurora.
