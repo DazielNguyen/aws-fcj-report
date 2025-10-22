@@ -20,7 +20,7 @@ Thông thường và cũng là tiêu chuẩn, một worklog được thực hi�
 
 **Tuần 5:** [Dịch vụ Bảo Mật trên AWS - "Security is job zero" (Share Responsibility Model, AWS Identify and Access Management, Amazon Cognito, AWS Organization, AWS Identify Center (SSO), AWS Key Management Service - KMS, AWS Security Hub)](1.5-week5/)
 
-**Tuần 6:** [Làm công việc E...](1.6-week6/)
+**Tuần 6:** [Dịch vụ Cơ sở dữ liệu trên AWS (Database Concepts, Amazon RDS, Amazon Aurora, Amazon Redshift, Amazon ElastiCache)](1.6-week6/)
 
 **Tuần 7:** [Làm công việc G...](1.7-week7/)
 
