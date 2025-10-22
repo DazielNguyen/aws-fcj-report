@@ -20,7 +20,7 @@ Typically, and as a standard, a worklog is carried out over about 3 months (thro
 
 **Week 5:** [Security Services on AWS - "Security is job zero" (Shared Responsibility Model, AWS Identity and Access Management, Amazon Cognito, AWS Organizations, AWS Identity Center (SSO), AWS Key Management Service - KMS, AWS Security Hub)](1.5-week5/)
 
-**Week 6:** [Doing task E...](1.6-week6/)
+**Week 6:** [Database Services on AWS (Database Concepts, Amazon RDS, Amazon Aurora, Amazon Redshift, Amazon ElastiCache)](1.6-week6/)
 
 **Week 7:** [Doing task G...](1.7-week7/)
 
