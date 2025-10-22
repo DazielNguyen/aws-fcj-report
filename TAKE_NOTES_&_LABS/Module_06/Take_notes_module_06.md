@@ -80,6 +80,107 @@
     + **Đặc điểm:** Lưu trữ một lượng lớn dữ liệu lịch sử. Mục tiêu là để **phân tích dữ liệu phức tạp** (ví dụ: chạy báo cáo, tìm kiếm xu hướng kinh doanh) chứ không phải để xử lý giao dịch. Dữ liệu từ hệ thống OLTP thường sẽ được chuyển sang hệ thống OLAP để phân tích.
 
 ## **II. Amazon RDS**
+### 1. Amazon RDS (Relational Database Service)
+**Amazon RDS** là một dịch vụ cơ sở dữ liệu quan hệ được quản lý hoàn toàn (managed service).
+- **Khái niệm:** Thay vì tự cài đặt, quản lý và bảo trì cơ sở dữ liệu trên các máy chủ ảo (EC2), AWS sẽ làm hết các công việc quản trị hạ tầng này.
+- **Hỗ trợ đa nền tảng:** RDS hỗ trợ các hệ quản trị CSDL phổ biến như:
+    + MySQL
+    + PostgreSQL
+    + Oracle
+    + Microsoft SQL Server
+    + MariaDB
+* **Mục tiêu:** Dịch vụ này giúp tự động hóa các tác vụ quản trị tốn thời gian như cập nhật phần mềm, sao lưu, và khôi phục. Điều này cho phép người dùng (như lập trình viên, quản trị CSDL) tập trung vào việc tối ưu ứng dụng thay vì lo lắng về hạ tầng.
+* **Kiến trúc:** Về bản chất, RDS chạy trên các máy chủ EC2 đã được AWS tối ưu hóa, sử dụng ổ cứng EBS cho lưu trữ và được bảo mật bằng Security Group.
+
+### 2. Các Tính năng Chính của Amazon RDS
+
+- Tập trung vào 3 tính năng quan trọng giúp giải quyết các thách thức của việc vận hành CSDL truyền thống:
+    
+    1. Tự động Sao lưu (Automated Backups) - Cả log và database - max 35 ngày
+
+    + RDS tự động sao lưu CSDL và cả các file "log" giao dịch.
+    + Tính năng này cho phép **Phục hồi tại một thời điểm chỉ định (Point-in-Time Recovery)**, giúp lấy lại dữ liệu về chính xác bất kỳ thời điểm nào trong vòng 35 ngày qua.
+    + Việc sao lưu được thực hiện tăng dần (incremental) để tiết kiệm chi phí lưu trữ.
+    
+    2. Multi-AZ (Đa Vùng Sẵn sàng) - Cho Tính Sẵn sàng Cao (HA)
+    > Cơ chế tự động fail over, Primary / Standby, hay còn gọi là cơ chế **Multi-AZ**
+
+    ![05_Multi_AZ]()
+
+    + **Vấn đề:** Nếu máy chủ CSDL chính bị hỏng, ứng dụng sẽ ngừng hoạt động.
+    + **Giải pháp Multi-AZ:** Khi được kích hoạt, RDS tự động tạo ra một bản sao (standby) đồng bộ hoàn toàn của CSDL chính và đặt ở một Vùng Sẵn sàng (Availability Zone - AZ) khác.
+    + **Cơ chế:** Dữ liệu được sao chép **đồng bộ (Synchronous Replication)**. Điều này có nghĩa là khi ứng dụng ghi dữ liệu, nó phải được xác nhận ghi thành công ở cả CSDL chính và CSDL dự phòng.
+    + **Tự động Chuyển đổi (Automatic Failover):** Nếu CSDL chính gặp sự cố, RDS sẽ tự động chuyển hướng kết nối của ứng dụng sang CSDL dự phòng mà không cần can thiệp thủ công.
+    + **Chi phí:** Tính năng này làm tăng gấp đôi chi phí CSDL, nên thường chỉ dùng cho các môi trường production quan trọng.
+
+    3. Read Replicas (Bản sao chỉ đọc) - Để Tối ưu Hiệu năng Đọc
+
+    + **Vấn đề:** Các tác vụ báo cáo (reporting) hoặc truy vấn phức tạp có thể làm chậm CSDL chính, ảnh hưởng đến người dùng.
+    + **Giải pháp Read Replica:** RDS cho phép tạo ra một hoặc nhiều bản sao chỉ đọc của CSDL chính.
+    + **Cơ chế:** Dữ liệu được sao chép **bất đồng bộ (Asynchronous Replication)**. Điều này có nghĩa là bản sao chỉ đọc có thể có "độ trễ" (replication lag) vài giây so với bản chính.
+    + **Ứng dụng:** Các ứng dụng báo cáo, phân tích sẽ được cấu hình để kết nối vào các bản sao chỉ đọc này, giúp giảm tải hoàn toàn cho CSDL chính.
+    
+    4. Chạy với cơ chế tự động fail over , Primary / Standby , hay còn gọi là cơ chế Multi-AZ
+    5. RDS thường được sử dụng cho các ứng dụng OLTP.
+    6. RDS cung cấp tính năng mã hóa dữ liệu at rest và in transit.
+    7. RDS cũng được bảo vệ bởi tính năng tường lửa giống như EC2 ( Security Group và NACL )
+    8. Thay đổi quy mô (Thay đổi instance size ).
+    9. Tự động tăng dung lượng lưu trữ ( Storage Auto scaling ).
+> Kiến trúc RDS
+
+![06_AWS_RDS]()
+
 ## **III. Amazon Aurora**
+
+**Amazon Aurora** là một hệ quản trị CSDL do chính AWS phát triển thuộc Amazon RDS nên thừa hưởng các tính năng của RDS, được thiết kế để tương thích với MySQL và PostgreSQL.
+
+- **Sự khác biệt lớn nhất:** Aurora **tái thiết kế lại hoàn toàn kiến trúc tầng lưu trữ (storage layer) bên dưới**. Nó không sử dụng ổ đĩa EBS như RDS thông thường.
+- **Hiệu năng:** Cung cấp hiệu suất cao hơn (được quảng cáo là gấp 3-5 lần) so với RDS MySQL/PostgreSQL tiêu chuẩn, đặc biệt là với các tác vụ có **độ song song (concurrency) cao**.
+- Các tính năng Amazon Aurora cung cấp: 
+    + **Back Track** - Phục hồi lại DB về thời điểm trước đó. 
+    + **Clone** - Tạo bản sao
+    + **Global Database** - 1 Master bà Multi Read nằm ở các Region khác nhau
+    + **Multi Master** - Multi Master database. 
+
+#### Kiến trúc và Tính năng Vượt trội của Aurora
+> Kiến trúc của Aurora
+
+![07_Aurora]()
+
+1.  **Mô hình Cluster và Lưu trữ Chia sẻ:**
+    + Một CSDL Aurora là một "Cluster" bao gồm một phiên bản ghi (Writer) và có thể có nhiều phiên bản đọc (Reader - lên đến 15).
+    + Tất cả các phiên bản này **cùng chia sẻ một phân vùng lưu trữ (Cluster Volume) duy nhất**.
+    + Dữ liệu trên phân vùng này được AWS tự động nhân bản 6 lần qua 3 Vùng Sẵn sàng (AZ) để đảm bảo độ bền bỉ.
+
+2.  **Không có Độ trễ Sao chép (Zero Replication Lag):**
+    + Vì tất cả các phiên bản (cả Ghi và Đọc) đều đọc chung từ một volume, các bản sao chỉ đọc (Read Replicas) **không hề có độ trễ** so với bản chính. Đây là ưu điểm vượt trội so với Read Replica của RDS thông thường.
+
+3.  **Tính sẵn sàng cao (HA) và Failover:**
+    + Nếu phiên bản Ghi (Writer) bị lỗi, Aurora sẽ tự động "thăng cấp" (promote) một trong các phiên bản Đọc (Reader) lên làm Writer mới trong thời gian rất ngắn.
+
+4.  **Các tính năng Doanh nghiệp (Enterprise):**
+> Aurora Back Track
+
+![08_Aurora_Back_track]()
+
+    + **Backtrack:** Cho phép "tua ngược" CSDL về một thời điểm trong quá khứ mà không cần khôi phục từ backup.
+
+> Aurora Global Database
+
+![09_Aurora_Global_Database]()
+
+    + **Global Database:** Cho phép tạo các bản sao chỉ đọc ở các **Region (khu vực địa lý) khác nhau** trên toàn thế giới, phục vụ cho các ứng dụng toàn cầu.
+
+### 4. So sánh RDS Multi-AZ và Aurora
+
+| Tính năng | **RDS Multi-AZ (cho MySQL/PostgreSQL...)** | **Amazon Aurora** |
+| :--- | :--- | :--- |
+| **Mục đích** | Sẵn sàng cao (High Availability) | Sẵn sàng cao (HA) **VÀ** Hiệu năng cao |
+| **Bản sao** | 1 bản chính (Primary), 1 bản dự phòng (Standby) | 1 bản ghi (Writer), tối đa 15 bản đọc (Reader) |
+| **Bản dự phòng** | Không thể truy cập (chỉ để dự phòng) | Các bản đọc có thể truy cập để phục vụ truy vấn |
+| **Sao chép (Replication)** | **Đồng bộ (Synchronous)** ở tầng CSDL | **Đồng bộ** ở tầng Lưu trữ (Storage Layer) |
+| **Read Replica Lag** | Có độ trễ (Asynchronous Replication) | **Không có độ trễ (Zero Lag)** |
+| **Tự động Failover** | Có (Tự động chuyển sang bản Standby) | Có (Tự động thăng cấp 1 bản Reader lên Writer) |
+
 ## **IV. Amazon ElastiCache**
 ## **V. Amazon Redshift**
