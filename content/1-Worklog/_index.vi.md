@@ -18,7 +18,7 @@ Thông thường và cũng là tiêu chuẩn, một worklog được thực hi�
 
 **Tuần 4:** [Dịch vụ lưu trữ trên AWS (S3, Snow Family, Amazon Storage Gateway, Disaster Recovery on AWS, AWS Backup)](1.4-week4/)
 
-**Tuần 5:** [Làm công việc D...](1.5-week5/)
+**Tuần 5:** [Dịch vụ Bảo Mật trên AWS - "Security is job zero" (Share Responsibility Model, AWS Identify and Access Management, Amazon Cognito, AWS Organization, AWS Identify Center (SSO), AWS Key Management Service - KMS, AWS Security Hub)](1.5-week5/)
 
 **Tuần 6:** [Làm công việc E...](1.6-week6/)
 

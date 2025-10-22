@@ -8,48 +8,45 @@ pre: " <b> 1.5. </b> "
 
 ### Week 5 Objectives:
 
-- Connect and get acquainted with members of First Cloud Journey.
-- Understand basic AWS services, how to use the console & CLI.
+- Learn foundational knowledge and core security services on AWS, centered around the "Security is job zero" philosophy.
+- Start with the most basic concept: the **Shared Responsibility Model**.
+- Focus deeply on managing identity and access (**Identity and Access Management - IAM**), including components: **User**, **Group**, **Policy**, and **Role**.
+- Expand learning to identity management services at a larger scale, such as **AWS Organizations** (managing multiple accounts), **AWS Identity Center (SSO)** (single sign-on), and **Amazon Cognito** (user management for web/mobile apps).
+- Gain solid knowledge of data protection through encryption with **AWS KMS** and monitoring/compliance checks with **AWS Security Hub**.
 
 ### Tasks to be carried out this week:
 
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP <br>                              | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Day 	| Task 	| Start Date 	| Completion Date 	| Reference Material 	|
+|---	|---	|---	|---	|---	|
+| 2 	| **Shared Responsibility Model**<br><br>- Learn about the **Shared Responsibility Model**, in which AWS is responsible for security *of* the cloud (physical infrastructure, underlying software) and the customer is responsible for security *in* the cloud (configuration, data, applications).<br>- Understand how security responsibilities change depending on the service type (infrastructure, combined management, or fully managed).<br><br>**AWS Identity and Access Management (IAM)**<br><br>- Learn about the **Root Account**, the account with absolute full permissions, and best practices to protect it (create an IAM Admin User for regular use, lock away root credentials).<br>- Learn about **IAM User**, a principal used to interact with AWS, which has no permissions by default when created.<br>- Understand the technique for efficient user management by grouping multiple IAM Users into an **IAM Group**.<br>- Learn about **IAM Policy**, a JSON document that defines permissions, including 2 types:<br>+ **Identity-based Policy**: Attached directly to an IAM Principal (User, Group, Role).<br>+ **Resource-based Policy**: Attached directly to a resource (e.g., S3 Bucket Policy).<br>- Understand the IAM permission evaluation technique, where an **explicit deny** always takes precedence, regardless of any other Allow policy.<br>- Learn about the architecture of **IAM Role**, a set of permissions (policy) without permanent credentials (password/access key).<br>- Understand the **Assume Role** technique: An IAM User (or Service) uses the **AWS STS (Security Token Service)** to temporarily "assume" the IAM Role's permissions and receive temporary credentials.<br>- Understand the practical application of IAM Role, e.g., granting an **EC2** service permission to access S3 without storing access keys on the server. 	| 06/10/2025 	| 06/10/2025 	| **Documentation:** https://cloudjourney.awsstudygroup.com/<br>**Youtube:** https://youtube.com/playlist?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&si=W80Cdf_fSc6sjOV<br>**Notes:** https://github.com/DazielNguyen/aws-fcj-report/blob/main/TAKE_NOTES_%26_LABS/Module_05/Take_notes_module_05.md 	|
+| 3 	| <br>**Amazon Cognito**<br><br>- Learn about **Amazon Cognito**, a service for managing authentication (login, sign-up) and authorization for *end-users* of web and mobile applications (different from IAM Users, who are AWS administrators).<br>- Learn about the two main components of Cognito:<br>+ **User Pool**: A user directory that manages users, supporting direct login or login via third-party providers (Facebook, Google).<br>+ **Identity Pool**: Grants application users access (usually temporary) to other AWS services.<br><br>**AWS Organizations**<br><br>- Learn about **AWS Organizations**, a service that helps centrally manage and govern multiple AWS accounts.<br>- Understand the **Consolidated Billing** technique for all accounts.<br>- Understand the technique of grouping accounts into **OUs (Organization Units)** and applying **Service Control Policies (SCP)** to *limit* the maximum permissions that IAM Users/Roles in that account can perform (including deny-based).<br><br>**AWS Identity Center (SSO)**<br><br>- Learn about **AWS Identity Center (SSO)**, a service that helps centrally manage access (single sign-on) to all AWS accounts in an Organization and to external applications.<br>- Understand the technique of using **Permission Sets** (a set of permissions stored in Identity Center) to assign to Users/Groups. When a user accesses an account, the Permission Set is granted as an IAM Role within that account. 	| 07/10/2025 	| 07/10/2025 	| **Documentation:** https://cloudjourney.awsstudygroup.com/<br>**Youtube:** https://youtube.com/playlist?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&si=W80Cdf_fSc6sjOV<br>**Notes:** https://github.com/DazielNguyen/aws-fcj-report/blob/main/TAKE_NOTES_%26_LABS/Module_05/Take_notes_module_05.md 	|
+| 4 	| **AWS Key Management Service (KMS)**<br><br>- Learn about **AWS KMS**, a service to create and manage **encryption keys** to protect data at rest (**Encryption at rest**).<br>- Learn about... **CMK (Customer Managed Key)** (the master key within KMS) and **Data Key** (the key used to encrypt/decrypt actual data, generated by the CMK).<br><br>**AWS Security Hub**<br><br>- Learn about **AWS Security Hub**, a service for continuous security checks, based on AWS best practices and industry standards (like **PCIDSS**).<br>- Understand how Security Hub provides results as a *score* and identifies resources that need attention.<br><br>**Lab: 000002 - Getting Started with IAM and IAM Role**<br>- IAM Group and IAM User<br>- Create IAM Role<br>- Assume Role<br><br>**Lab: 000044 - IAM Role and Condition**<br>- Introduction to IAM<br>- Create EC2 Admin User<br>- Create RDS Admin User<br>- Create Admin Group-Configure IAM Role Condition<br>- Create IAM Role with Admin rights 5.2 Create IAM User 5.3 Configure Switch role 5.4 Restrict IP 5.5 Restrict by time. 	| 08/10/2025 	| 08/10/2025 	| **Documentation:** https://cloudjourney.awsstudygroup.com/<br>**Youtube:** https://youtube.com/playlist?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&si=W80Cdf_fSc6sjOV<br>**Notes:** https://github.com/DazielNguyen/aws-fcj-report/blob/main/TAKE_NOTES_%26_LABS/Module_05/Take_notes_module_05.md 	|
+| 5 	| **Lab: 000048 - IAM Role and Application**<br>- Use access key<br>- IAM Role on EC2<br><br>**Lab: 000030 - IAM Permission Boundary**<br>- Introduction to IAM Permission Boundary<br>- Create limiting Policy<br>- Create IAM User with limited permissions<br>- Test the limited User<br><br>**Lab: 000027 - Tags and Resource Groups**<br>- Use tags<br>- Use tags via Console<br>- Display tags<br>- Add or remove tags<br>- Tag a virtual machine<br>- Filter resources by tag<br>- Use tags via CLI<br>- Resource Group<br><br>**Lab: 000028 - Manage EC2 via Resource Tag**<br>- Create IAM Policy<br>- Create IAM Role<br>- Test IAM Role 	| 09/10/2025 	| 09/10/2025 	| **Documentation:** https://cloudjourney.awsstudygroup.com/<br>**Youtube:** https://youtube.com/playlist?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&si=W80Cdf_fSc6sjOV<br>**Notes:** https://github.com/DazielNguyen/aws-fcj-report/blob/main/TAKE_NOTES_%26_LABS/Module_05/Take_notes_module_05.md 	|
+| 6 	| **Lab: 000018 - Using AWS Security Hub**<br>- Security standards<br>- Activate Security Hub<br>- Score for each standard set<br><br>**Lab: 000012 - Using AWS SSO**<br>- Preparation steps<br>- Create AWS Account in AWS Organizations<br>- Set up Organization Unit<br>- Set up AWS SSO<br>- Verify<br><br>**Lab: 000033 - KMS Workshop**<br>- Set up environment<br>- Getting started with AWS KMS<br>- Encryption with AWS KMS<br>- Key Policy and best practices<br>- Monitoring AWS KMS usage.<br><br>**[Supplemental Research] - AWS Certified Security Specialty All-in-One-Exam Guide (Exam SCS-C01)**<br>- Study material for the Security Specialty certification exam 	| 10/10/2025 	| 10/10/2025 	| **Documentation:** https://cloudjourney.awsstudygroup.com/<br>**Youtube:** https://youtube.com/playlist?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&si=W80Cdf_fSc6sjOV<br>**Notes:** https://github.com/DazielNguyen/aws-fcj-report/blob/main/TAKE_NOTES_%26_LABS/Module_05/Take_notes_module_05.md<br>**Research Link:** [https://www.amazon.com/Certified-Security-Specialty-Guide-SCS-C01/dp/1260461726] 	|
 
 ### Week 5 Achievements:
 
-- Understood what AWS is and mastered the basic service groups:
-
-  - Compute
-  - Storage
-  - Networking
-  - Database
-  - ...
-
-- Successfully created and configured an AWS Free Tier account.
-
-- Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-- Installed and configured AWS CLI on the computer, including:
-
-  - Access Key
-  - Secret Key
-  - Default Region
-  - ...
-
-- Used AWS CLI to perform basic operations such as:
-
-  - Check account & configuration information
-  - Retrieve the list of regions
-  - View EC2 service
-  - Create and manage key pairs
-  - Check information about running services
-  - ...
-
-- Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-- ...
+- **Foundational Lesson:** Master the **Shared Responsibility Model**, clearly understanding AWS's responsibilities versus the customer's.
+- **IAM Service (Core):**
+  + Clearly distinguish between the **Root Account** (full permissions, needs to be locked away) and **IAM User** (used daily, no permissions by default).
+  + Master the 3 main components for granting permissions: **IAM User** (the entity), **IAM Policy** (the permission - written in JSON), and **IAM Group** (a group of entities).
+  + Clearly understand **IAM Role**: a mechanism to grant temporary permissions (no permanent credentials) to both Users and Services (like EC2).
+- **IAM Techniques (Important):**
+  + Know how a User/Service "receives" a Role's permissions through the **Assume Role** technique (using the **STS** service).
+  + Understand the permission evaluation rule: An **Explicit Deny** always overrides any Allow permissions.
+- **Identity Management Services (Identity Services):**
+  + Clearly differentiate between **IAM** (manages AWS administrators) and **Amazon Cognito** (manages end-users of web/mobile apps).
+  + Know that **Cognito User Pool** is the user directory (can log in with Facebook, Google) and **Identity Pool** is what grants those users access to AWS resources.
+- **Multi-Account Management Service (Multi-Account):**
+  + Understand **AWS Organizations** is used for centrally managing multiple accounts, enabling **Consolidated Billing**.
+  + Know how to use **Service Control Policies (SCP)** within an Organization to *limit* the maximum permissions of member accounts.
+  + Understand **AWS Identity Center (SSO)** as the single sign-on solution, using **Permission Sets** to grant access to accounts within the Organization.
+- **Encryption Service (Encryption):**
+  + Know **AWS KMS** is the service for creating and managing encryption keys.
+  + Understand the **Encryption at Rest** mechanism and differentiate between **CMK** (the master key in KMS) and **Data Key** (the key used to encrypt the actual data).
+- **Security Monitoring Service (Monitoring):**
+  + Know **AWS Security Hub** is the service that scans and provides security scores, helping to check compliance against standards (like **PCIDSS**).
+- **Hands-on:**
+  + Practice creating and managing Users, Groups, Policies, and Roles.
+  + Practice implementing SSO and KMS.
+  + Practice using advanced IAM features like **Conditions** and **Permission Boundaries**.
