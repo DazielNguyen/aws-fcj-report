@@ -16,7 +16,7 @@ Typically, and as a standard, a worklog is carried out over about 3 months (thro
 
 **Week 3:** [Compute VM Services on AWS (Amazon EC2, Amazon Lightsail, Amazon EFS/FSx, AWS Application Migration Service (MGN))](1.3-week3/)
 
-**Week 4:** [Doing task C...](1.4-week4/)
+**Week 4:** [Storage Services on AWS (S3, Snow Family, Amazon Storage Gateway, Disaster Recovery on AWS, AWS Backup)](1.4-week4/)
 
 **Week 5:** [Doing task D...](1.5-week5/)
 
