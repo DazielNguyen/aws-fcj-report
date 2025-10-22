@@ -10,11 +10,11 @@ pre: " <b> 1. </b> "
 
 Typically, and as a standard, a worklog is carried out over about 3 months (throughout the internship period) with weekly contents as follows:
 
-**Week 1:** [AWS Foundations, Networking, Security, and Hands-on Labs](1.1-week1/)
+**Week 1:** [Get familiar with AWS platforms and learn about the FCJ 2025 program](1.1-week1/)
 
-**Week 2:** [Hands-on with AWS Compute (EC2, Auto Scaling, Load Balancing), Monitoring (CloudWatch), Backup, and Storage Services (S3, FSx, Storage Gateway)](1.2-week2/)
+**Week 2:** [Networking on AWS (AWS VPC, VPC Peering & Transit Gateway, VPN & Direct Connect, Elastic Load Balancing)](1.2-week2/)
 
-**Week 3:** [AWS Security & Database Services (IAM, Cognito, KMS, RDS, Aurora, Redshift, ElastiCache)](1.3-week3/)
+**Week 3:** [Compute VM Services on AWS (Amazon EC2, Amazon Lightsail, Amazon EFS/FSx, AWS Application Migration Service (MGN))](1.3-week3/)
 
 **Week 4:** [Doing task C...](1.4-week4/)
 
