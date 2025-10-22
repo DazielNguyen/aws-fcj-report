@@ -463,26 +463,26 @@ Ngồi cấu hình từng cái thôi cũng đù người=))))) Vấn đề giả
 _______________________________________________________________
 ## **V. Thực hành và nghiên cứu bổ sung.** 
 
-### **Lab: 000003**
+### **Lab: 000003** - Khởi tạo VPC
  - Khởi tạo VPC.
     + Cấu hình tường lửa VPC 
     + Thực hành tạo 1 VPC
     + Cấu hình Site to Site VPN
 
-### **Lab: 000058**
+### **Lab: 000058** - System Manage - Session Manage
  - System Manager - Session Manager 
     + Tạo kết nối đến máy chủ EC2
     + Quản lí sessioin logs
     + Sử tính năng Port Forwarding
 
-### **Lab: 000019**
+### **Lab: 000019** - Thiết lập VPC Peering
  - Thiết lập VPC Peering
     + Cập nhật Network ACL 
     + Tạo kết nối Peering 
     + Cấu hình Route tables 
     + Kích hoạt Cross-Peer DNS. 
 
-### **Lab: 000020**
+### **Lab: 000020** - Thiết lập Transit Gateway
  - Thiết lập Transit Gateway
     + Thiết lập hạ tầng
     + Tạo Transit Gateway -> Nối nhiều VPC lại với nhau
@@ -490,7 +490,7 @@ _______________________________________________________________
     + Tạo Route Table cho TGW
     + Thêm Gateway vào Route Tables & Kiểm tra kết quả
 
-### **Lab: 000010**
+### **Lab: 000010** - Hybrid DNS
  - Hybrid DNS
     + Thiết lập Hybrid DNS
     + Tạo Outbound Endpoint
