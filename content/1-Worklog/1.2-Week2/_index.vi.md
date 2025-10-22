@@ -8,10 +8,15 @@ pre: " <b> 1.2. </b> "
 
 ### Mục tiêu tuần 2:
 
-- Học và thực hành dịch vụ Compute của AWS (EC2, AMI, EBS, Auto Scaling, ELB).
-- Nắm vững kỹ năng giám sát và sao lưu với CloudWatch và AWS Backup.
-- Tìm hiểu dịch vụ lưu trữ: S3, Storage Gateway, FSx.
-- Thực hành triển khai, mở rộng và host website tĩnh.
+- **Hiểu rõ AWS VPC:** Nắm vững khái niệm cơ bản về VPC (Virtual Private Cloud) như một môi trường mạng logic cô lập, bao gồm các thành phần chính như Subnets (Public và Private), Route Tables, và ENI.
+
+- **Kiểm soát lưu lượng và bảo mật:** Học cách cấu hình các lớp bảo mật (Security Groups và NACLs) và kiểm soát đường đi của lưu lượng mạng ra/vào Internet (Internet Gateway và NAT Gateway).
+
+- **Kết nối mạng phức tạp:** Phân biệt và biết cách sử dụng các phương thức kết nối giữa các VPC (VPC Peering) và mô hình kết nối trung tâm (Transit Gateway).
+
+- **Xây dựng môi trường Hybrid Cloud:** Tìm hiểu các giải pháp kết nối mạng tại chỗ (on-premises) với AWS, bao gồm VPN (Site-to-Site) và kết nối riêng tư (AWS Direct Connect).
+
+- **Phân phối tải ứng dụng:** Hiểu chức năng của Elastic Load Balancing (ELB) và phân biệt được các loại bộ cân bằng tải khác nhau (ALB, NLB, CLB, GLB) để đảm bảo tính sẵn sàng cao và khả năng mở rộng cho ứng dụng.
 
 ### Các công việc cần triển khai trong tuần này:
 
@@ -25,35 +30,14 @@ pre: " <b> 1.2. </b> "
 
 ### Kết quả đạt được tuần 2:
 
-1. **Tính toán & Triển khai**
-
-   - Hiểu rõ kiến thức về **Amazon EC2**, kiến trúc và các thành phần liên quan (AMI, Snapshot, Key Pair, EBS).
-   - Triển khai và quản lý thành công EC2 cho cả Linux và Windows.
-   - Thực hành triển khai ứng dụng thực tế **Node.js CRUD** trên EC2.
-   - Nắm được các kỹ thuật tự động hóa với **User Data, Meta Data, AWS Systems Manager**.
-
-2. **Khả năng mở rộng & Tính sẵn sàng cao**
-
-   - Triển khai **EC2 Auto Scaling Group** để tự động điều chỉnh năng lực theo nhu cầu.
-   - Cấu hình **Elastic Load Balancer (ELB)** để phân phối lưu lượng.
-   - Tích hợp Auto Scaling với Load Balancer nhằm đảm bảo **high availability** và tối ưu chi phí.
-
-3. **Giám sát & Quan sát hệ thống**
-
-   - Sử dụng **Amazon CloudWatch** để giám sát hạ tầng và ứng dụng.
-   - Tạo **metrics, dashboards, alarms** để theo dõi tình trạng hệ thống theo thời gian thực.
-   - Quản lý log tập trung với **CloudWatch Logs**, thiết lập chính sách lưu trữ và phát hiện bất thường.
-   - Thực hành thiết lập giám sát tự động qua **CloudFormation**.
-
-4. **Bảo vệ & Sao lưu dữ liệu**
-
-   - Thiết kế **AWS Backup Plans** cho nhiều dịch vụ (EBS, RDS, DynamoDB, EFS).
-   - Áp dụng các mục tiêu **RTO/RPO** trong chiến lược khôi phục dữ liệu.
-   - Cấu hình **SNS notifications** để nhận thông báo trạng thái sao lưu và phục hồi.
-
-5. **Lưu trữ & Quản lý dữ liệu**
-   - Hiểu rõ **Amazon S3** là dịch vụ lưu trữ đối tượng với lifecycle policies và storage classes.
-   - Thực hành các tính năng: **versioning, ACL, Bucket Policy, CORS**.
-   - Cấu hình **S3 Static Website Hosting** và kiểm tra truy cập công khai.
-   - Tích hợp với **CloudFront** để tăng tốc độ phân phối nội dung và bảo mật bằng OAI.
-   - Tìm hiểu **Amazon FSx for Windows File Server**: kiến trúc, tích hợp Windows, và dịch vụ lưu trữ file được quản lý hoàn toàn.
+- **Giải thích** được VPC là gì, vai trò của nó trong AWS, và các thành phần cốt lõi của nó (Subnet, Route Table, ENI).
+- **Phân biệt** rõ ràng giữa Public Subnet (có Internet Gateway) và Private Subnet (sử dụng NAT Gateway để truy cập Internet).
+- **So sánh và đối chiếu** hai cơ chế tường lửa chính: Security Group (stateful, áp dụng cho ENI) và NACL (stateless, áp dụng cho Subnet).
+- **Trình bày** được cách thức kết nối riêng tư từ VPC đến các dịch vụ AWS (như S3) mà không cần qua Internet bằng VPC Endpoint.
+- **Đánh giá** được ưu nhược điểm giữa hai giải pháp kết nối VPC: VPC Peering (kết nối 1:1, không hỗ trợ bắc cầu) và Transit Gateway (mô hình hub-and-spoke, đơn giản hóa quản lý).
+- **Mô tả** được các phương thức thiết lập kết nối hybrid cloud, bao gồm VPN Site-to-Site (qua Internet) và AWS Direct Connect (kết nối vật lý riêng).
+- **Phân loại** và **lựa chọn** được loại Elastic Load Balancer phù hợp cho từng kịch bản cụ thể:
+   + **Application Load Balancer (ALB):** Cho lưu lượng HTTP/HTTPS (Layer 7), hỗ trợ path-based routing.
+   + **Network Load Balancer (NLB):** Cho lưu lượng TCP/TLS (Layer 4), cần hiệu suất cực cao và IP tĩnh.
+   + **Gateway Load Balancer (GLB):** Dùng để tích hợp các thiết bị mạng ảo (virtual appliances).
+- **Xác định** được các bài thực hành (Lab) cần thiết để củng cố kiến thức đã học về VPC, Peering, Transit Gateway và các dịch vụ liên quan.

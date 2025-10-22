@@ -10,9 +10,9 @@ pre: " <b> 1. </b> "
 
 Thông thường và cũng là tiêu chuẩn, một worklog được thực hiện trong khoảng 3 tháng (trong suốt thời gian thực tập) với nội dung các tuần như sau:
 
-**Tuần 1:** [Làm quen với các nền tảng AWS, Mạng VPC, Bảo mật và Thực hành Labs](1.1-week1/)
+**Tuần 1:** [Làm quen với các nền tảng AWS](1.1-week1/)
 
-**Tuần 2:** [Thực hành AWS EC2, Auto Scaling, CloudWatch, Backup, S3, FSx, Storage Gateway](1.2-week2/)
+**Tuần 2:** [Cách thiết kế, xây dựng, bảo mật và kết nối các môi trường mạng ảo trên AWS(VPC, VPC Peering & Transit Gateway, VPN & Direct Connect, Elastic Load Balancing)](1.2-week2/)
 
 **Tuần 3:** [Dịch vụ Bảo mật & Cơ sở dữ liệu trên AWS (IAM, Cognito, KMS, RDS, Aurora, Redshift, ElastiCache)](1.3-week3/)
 
