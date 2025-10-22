@@ -16,7 +16,7 @@
 
 > Đây là loại CSDL tổ chức dữ liệu dưới dạng bảng (gồm hàng và cột).
 
-![01_RDBMS]()
+![01_RDBMS](https://github.com/DazielNguyen/aws-fcj-report/blob/main/TAKE_NOTES_%26_LABS/Module_06/Image_module_06/01_RDBMS.png)
 
 - **Primary Key (Khóa chính):** Là một cột (hoặc nhóm cột) dùng để **xác định duy nhất** một hàng (bản ghi) trong bảng. Giá trị của khóa chính không được trùng lặp.
 - **Foreign Key (Khóa ngoại):** Là một cột trong một bảng, dùng để **tạo liên kết** với khóa chính của một bảng khác. Nó hoạt động như một tham chiếu chéo giữa các bảng vì nó tham chiếu đến khóa chính của một bảng khác, do đó thiết lập liên kết giữa chúng. 
@@ -26,7 +26,7 @@
 
 > Kỹ thuật Index
 
-![02_Index]()
+![02_Index](https://github.com/DazielNguyen/aws-fcj-report/blob/main/TAKE_NOTES_%26_LABS/Module_06/Image_module_06/02_Index.png)
 
 - **Index (Chỉ mục):**
     + **Công dụng:** Là một cấu trúc dữ liệu giúp **tăng tốc độ truy xuất dữ liệu** (đọc). Nó hoạt động giống như mục lục của một cuốn sách, giúp tìm dữ liệu nhanh chóng mà không cần "dò quét" (scan) toàn bộ bảng. Các **chỉ mục được sử dụng để định vị dữ liệu một cách nhanh chóng mà không cần phải tìm kiếm mọi hàng trong bảng cơ sở dữ liệu mỗi khi truy cập bảng cơ sở dữ liệu.** Chỉ mục có thể được tạo bằng cách sử dụng một hoặc nhiều cột của bảng cơ sở dữ liệu.
@@ -35,7 +35,7 @@
 
 > Kỹ thuật Parition
 
-![03_Partition]()
+![03_Partition](https://github.com/DazielNguyen/aws-fcj-report/blob/main/TAKE_NOTES_%26_LABS/Module_06/Image_module_06/03_Partition.png)
 
 - **Partition (Phân vùng):**
     + **Công dụng:** Là kỹ thuật **chia một bảng lớn thành nhiều phần nhỏ hơn** (gọi là các phân vùng). Khi truy vấn, hệ thống chỉ cần tìm kiếm trên các phân vùng liên quan thay vì toàn bộ bảng, giúp tăng tốc độ.
@@ -49,7 +49,7 @@
 
 > Kỹ thuật Database Log
 
-![04_Database_Log]()
+![04_Database_Log](https://github.com/DazielNguyen/aws-fcj-report/blob/main/TAKE_NOTES_%26_LABS/Module_06/Image_module_06/04_Database_Log.png)
 
 - **Database Log (Nhật ký CSDL):**
     + **Khái niệm:** Là một tệp ghi lại **tất cả các thay đổi** xảy ra với CSDL.
@@ -105,7 +105,7 @@
     2. Multi-AZ (Đa Vùng Sẵn sàng) - Cho Tính Sẵn sàng Cao (HA)
     > Cơ chế tự động fail over, Primary / Standby, hay còn gọi là cơ chế **Multi-AZ**
 
-    ![05_Multi_AZ]()
+    ![05_Multi_AZ](https://github.com/DazielNguyen/aws-fcj-report/blob/main/TAKE_NOTES_%26_LABS/Module_06/Image_module_06/05_Multi_AZ.png)
 
     + **Vấn đề:** Nếu máy chủ CSDL chính bị hỏng, ứng dụng sẽ ngừng hoạt động.
     + **Giải pháp Multi-AZ:** Khi được kích hoạt, RDS tự động tạo ra một bản sao (standby) đồng bộ hoàn toàn của CSDL chính và đặt ở một Vùng Sẵn sàng (Availability Zone - AZ) khác.
@@ -128,7 +128,7 @@
     9. Tự động tăng dung lượng lưu trữ ( Storage Auto scaling ).
 > Kiến trúc RDS
 
-![06_AWS_RDS]()
+![06_AWS_RDS](https://github.com/DazielNguyen/aws-fcj-report/blob/main/TAKE_NOTES_%26_LABS/Module_06/Image_module_06/06_AWS_RDS.png)
 
 ## **III. Amazon Aurora**
 
@@ -145,7 +145,7 @@
 #### Kiến trúc và Tính năng Vượt trội của Aurora
 > Kiến trúc của Aurora
 
-![07_Aurora]()
+![07_Aurora](https://github.com/DazielNguyen/aws-fcj-report/blob/main/TAKE_NOTES_%26_LABS/Module_06/Image_module_06/07_Aurora.png)
 
 1.  **Mô hình Cluster và Lưu trữ Chia sẻ:**
     + Một CSDL Aurora là một "Cluster" bao gồm một phiên bản ghi (Writer) và có thể có nhiều phiên bản đọc (Reader - lên đến 15).
@@ -161,13 +161,13 @@
 4.  **Các tính năng Doanh nghiệp (Enterprise):**
 > Aurora Back Track
 
-![08_Aurora_Back_track]()
+![08_Aurora_Back_track](https://github.com/DazielNguyen/aws-fcj-report/blob/main/TAKE_NOTES_%26_LABS/Module_06/Image_module_06/08_Aurora_Back_track.png)
 
     + **Backtrack:** Cho phép "tua ngược" CSDL về một thời điểm trong quá khứ mà không cần khôi phục từ backup.
 
 > Aurora Global Database
 
-![09_Aurora_Global_Database]()
+![09_Aurora_Global_Database](https://github.com/DazielNguyen/aws-fcj-report/blob/main/TAKE_NOTES_%26_LABS/Module_06/Image_module_06/09_Aurora_Global_Database.png)
 
     + **Global Database:** Cho phép tạo các bản sao chỉ đọc ở các **Region (khu vực địa lý) khác nhau** trên toàn thế giới, phục vụ cho các ứng dụng toàn cầu.
 
