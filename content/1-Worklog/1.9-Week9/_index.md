@@ -1,14 +1,14 @@
 ---
 title: "Week 9 Worklog"
-date: "2025-09-09"
-weight: 1
+date: "2025-10-28"
+weight: 9
 chapter: false
 pre: " <b> 1.9. </b> "
 ---
 
 ### Week 9 Objectives:
 
-- Connect and get acquainted with members of First Cloud Journey.
+- Connect and get acquainted with members of First Cloud Journey. fhfhg
 - Understand basic AWS services, how to use the console & CLI.
 
 ### Tasks to be carried out this week:
