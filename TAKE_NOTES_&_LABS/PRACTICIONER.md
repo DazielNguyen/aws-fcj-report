@@ -22,98 +22,126 @@ Trong các dịch vụ được liệt kê, **Amazon EC2** là ví dụ điển 
 
 ---
 
-### 1. Quản lý Chi phí & Gói Hỗ trợ (Cost Management & Support)
+## 1. Quản lý Chi phí & Gói Hỗ trợ (Cost Management & Support)
 
-Lĩnh vực này tập trung vào cách AWS tính phí, các công cụ để theo dõi/tối ưu hóa chi phí và các gói hỗ trợ khác nhau.
 
-* **Keyword:** "truy cập vào **toàn bộ** các kiểm tra của AWS Trusted Advisor" (access to the **full set** of... AWS Trusted Advisor) 2] với chi phí hiệu quả nhất  tối thiểu.
+* **Keyword:** "truy cập vào **toàn bộ** các kiểm tra của AWS Trusted Advisor" (access to the **full set** of... AWS Trusted Advisor) với chi phí hiệu quả nhất  tối thiểu.
     * **Đáp án:** Gói **Business**.
+---
 * **Keyword:** "theo dõi chi phí... bằng **hình ảnh hóa đồ họa**" (track the costs... with a **graphical visualization**)
     * **Đáp án:** **AWS Cost Explorer**
+---    
 * **Keyword:** "dự báo" (forecasting) chi phí trong tương lai.
     * **Đáp án:** **AWS Cost Explorer**.
+---
 * **Keyword:** "phát hiện các khoản chi tiêu **bất thường**" (detect **unusual** cloud expenditures).
     * **Đáp án:** **AWS Cost Anomaly Detection**
+---
 * **Keyword:** "ước tính chi phí" (estimate their costs) khi lập kế hoạch.
     * **Đáp án:** **AWS Pricing Calculator**
+---
 * **Keyword:** "lợi ích của... **Thanh toán hợp nhất** (Consolidated Billing)".
     * **Đáp án:** **Nhận một hóa đơn duy nhất** (You get one bill for multiple accounts) và **Chia sẻ giảm giá theo khối lượng/phiên bản Reserved** (Share the volume pricing and Reserved Instance discounts).
+---
 * **Keyword:** "dữ liệu **chi tiết nhất** (most granular) về chi phí"
     * **Đáp án:** **AWS Cost and Usage Reports**.
+---    
 * **Keyword:** Gói hỗ trợ "rẻ nhất" (MOST affordable / minimum) cung cấp quyền truy cập **API Hỗ trợ AWS** (AWS Support API).
     * **Đáp án:** **Business**.
+---
 * **Keyword:** Gói hỗ trợ **Developer**
     * **Đáp án:** **Không có quyền truy cập API** (No access to the AWS Support API) và **Giới hạn 7 kiểm tra cốt lõi** của Trusted Advisor (Limited access to the 7 Core Trusted Advisor checks).
+----
 * **Keyword:** Gói hỗ trợ nào bao gồm **Concierge Support Team** (hỗ trợ về thanh toán/tài khoản).
     * **Đáp án:** **Enterprise**.
 
 ---
 
-### 2. Nhận dạng & Truy cập (IAM - Identity and Access Management)
+## 2. Nhận dạng & Truy cập (IAM - Identity and Access Management)
 
 IAM là cốt lõi của bảo mật AWS, quản lý "ai" (danh tính) có thể làm "gì" (quyền).
 
 * **Keyword:** "truy cập **lâu dài qua lập trình**" (long-term programmatic access).
     * **Đáp án:** **IAM User** (Vì IAM User được liên kết với Access Keys).
-* **Keyword:** "truy cập... thông qua **AWS CLI**"851].
-    * **Đáp án:** **Access Keys**854].
-* **Keyword:** "cải thiện bảo mật cho... IAM users"685].
-    * **Đáp án:** **Bật MFA** (Enable Multi-Factor Authentication) 687] và **Cấu hình chính sách mật khẩu mạnh** (Configure a strong password policy)688].
+---
+* **Keyword:** "truy cập... thông qua **AWS CLI**".
+    * **Đáp án:** **Access Keys**.
+---
+* **Keyword:** "cải thiện bảo mật cho... IAM users".
+    * **Đáp án:** **Bật MFA** (Enable Multi-Factor Authentication) và **Cấu hình chính sách mật khẩu mạnh** (Configure a strong password policy).
+---
 * **Keyword:** "cung cấp quyền truy cập **tạm thời**... cho **ứng dụng**" (provide **temporary** access... for **applications**).
-    * **Đáp án:** **Tạo IAM role** và để ứng dụng "assume" (đảm nhận) role đó 1356].
+    * **Đáp án:** **Tạo IAM role** và để ứng dụng "assume" (đảm nhận) role đó.
+---
 * **Keyword:** "quản lý quyền chung cho... **số lượng lớn người dùng**" (manage... permissions to a **large number of... users**).
-    * **Đáp án:** Gắn policy vào một **IAM Group** và thêm người dùng vào Group đó 1128].
-* **Keyword:** "Thực hành tốt nhất (best practices) để bảo mật IAM" 1186, 1187].
-    * **Đáp án:** **Khóa access key của người dùng root** (Lock away... root user access keys)  1193, 1194] và **Cấp đặc quyền tối thiểu** (Grant least privilege) 1195].
-* "thực thi các đặc quyền và kiểm soát truy cập" (enforcing privileges and access controls) 1891, 1892].
+    * **Đáp án:** Gắn policy vào một **IAM Group** và thêm người dùng vào Group đó.
+---
+* **Keyword:** "Thực hành tốt nhất (best practices) để bảo mật IAM".
+    * **Đáp án:** **Khóa access key của người dùng root** (Lock away... root user access keys) và **Cấp đặc quyền tối thiểu** (Grant least privilege).
+---
+* "thực thi các đặc quyền và kiểm soát truy cập" (enforcing privileges and access controls).
     * **Đáp án:** **IAM Policy**.
 
 ---
 
-### 3. Điện toán (Compute - EC2, Auto Scaling, ELB, Lambda)
+## 3. Điện toán (Compute - EC2, Auto Scaling, ELB, Lambda)
 
-Đây là các dịch vụ chạy mã và ứng dụng của bạn.
 
-* **Keyword:** "công suất tính toán... **tự động co giãn** (automatically scale) dựa trên lưu lượng"1001].
-    * **Đáp án:** **AWS Auto Scaling**1007].
-* **Keyword:** "dịch vụ **theo vùng**" (zonal service)230].
-    * **Đáp án:** **Amazon EC2** và **Amazon EBS**236].
-* **Keyword:** "chạy... 3 tháng... **không thể bị gián đoạn**" (run... for 3 months... **uninterruptible**)379, 380, 1454, 1455].
-    * **Đáp án:** **On-Demand Instance**1458]. (Reserved Instance yêu cầu cam kết 1 hoặc 3 năm).
-* **Keyword:** "**phân phối lưu lượng** truy cập ứng dụng đến" (distributes incoming application traffic)733].
+* **Keyword:** "công suất tính toán... **tự động co giãn** (automatically scale) dựa trên lưu lượng".
+    * **Đáp án:** **AWS Auto Scaling**.
+---
+* **Keyword:** "dịch vụ **theo vùng**" (zonal service).
+    * **Đáp án:** **Amazon EC2** và **Amazon EBS**.
+---
+* **Keyword:** "chạy... 3 tháng... **không thể bị gián đoạn**" (run... for 3 months... **uninterruptible**).
+    * **Đáp án:** **On-Demand Instance**. (Reserved Instance yêu cầu cam kết 1 hoặc 3 năm).
+---
+* **Keyword:** "**phân phối lưu lượng** truy cập ứng dụng đến" (distributes incoming application traffic).
     * **Đáp án:** **Elastic Load Balancing (ELB)**
-* **Keyword:** "định tuyến dựa trên **đường dẫn** (path-based)" hoặc "định tuyến dựa trên **máy chủ** (host-based)"457, 925, 926].
-    * **Đáp án:** **Application Load Balancer**932].
-* **Keyword:** "chuyển tiếp yêu cầu đến... **Lambda function làm mục tiêu**" (forward the incoming request to... **Lambda function as a target**) 1831, 1832].
+---
+* **Keyword:** "định tuyến dựa trên **đường dẫn** (path-based)" hoặc "định tuyến dựa trên **máy chủ** (host-based)".
     * **Đáp án:** **Application Load Balancer**.
-* "cân bằng tải lưu lượng **TCP, UDP, và TLS**... **độ trễ cực thấp**" (load balancing **TCP, UDP, and TLS**... **ultra-low latencies**) 1590, 1591].
+---
+* **Keyword:** "chuyển tiếp yêu cầu đến... **Lambda function làm mục tiêu**" (forward the incoming request to... **Lambda function as a target**).
+    * **Đáp án:** **Application Load Balancer**.
+---
+* "cân bằng tải lưu lượng **TCP, UDP, và TLS**... **độ trễ cực thấp**" (load balancing **TCP, UDP, and TLS**... **ultra-low latencies**).
     * **Đáp án:** **Network Load Balancer**.
-* **Keyword:** "tận dụng công suất EC2 chưa sử dụng... **giảm giá đến 90%**" (take advantage of **unused EC2 capacity**... **90% discount**) 1060, 1061].
+---
+* **Keyword:** "tận dụng công suất EC2 chưa sử dụng... **giảm giá đến 90%**" (take advantage of **unused EC2 capacity**... **90% discount**).
     * **Đáp án:** **Spot Instance**.
+---
 * **Keyword:** "dịch vụ tính toán **không máy chủ** (serverless)".
     * **Đáp án:** **AWS Lambda**.
+---
 * **Keyword:** "lợi ích chính... chuyển sang **serverless**" (main benefit... moving to **serverless**).
-    * **Đáp án:** **Loại bỏ chi phí quản lý** (Serverless removes management overhead) 1951, 1954].
+    * **Đáp án:** **Loại bỏ chi phí quản lý** (Serverless removes management overhead).
 
 ---
 
-### 4. Lưu trữ (Storage - S3, EBS, EFS)
+## 4. Lưu trữ (Storage - S3, EBS, EFS)
 
 Các dịch vụ này xử lý việc lưu trữ dữ liệu, từ tệp đối tượng, ổ đĩa cho máy chủ, đến hệ thống tệp.
 
-* **Keyword:** "đặc điểm... Amazon S3"1010].
-    * **Đáp án:** **Không gian lưu trữ gần như không giới hạn** (virtually unlimited space) 482, 1011, 1016] và **Cơ sở hạ tầng lưu trữ đối tượng có độ bền cao** (highly durable object storage infrastructure)486, 1013, 1016].
-* **Keyword:** "cung cấp cho người dùng cụ thể quyền truy cập vào bucket"488, 1084, 1085].
-    * **Đáp án:** **Bucket Policy**493, 1086, 1089].
-* **Keyword:** "ngăn chặn việc **xóa trái phép**... đối tượng S3" (prevent **unauthorized deletion**... S3 objects)426, 1388, 1390, 1391].
-    * **Đáp án:** **Cấu hình MFA delete** (Configure MFA delete)432, 1394, 1401].
-* **Keyword:** "tự động chuyển dữ liệu **ít truy cập**... sang lớp lưu trữ **tiết kiệm chi phí** hơn" (automatically transfer **infrequently accessed** data... **cost-effective** storage class) 1140, 1141].
+* **Keyword:** "đặc điểm... Amazon S3".
+    * **Đáp án:** **Không gian lưu trữ gần như không giới hạn** (virtually unlimited space)  và **Cơ sở hạ tầng lưu trữ đối tượng có độ bền cao** (highly durable object storage infrastructure).
+---
+* **Keyword:** "cung cấp cho người dùng cụ thể quyền truy cập vào bucket".
+    * **Đáp án:** **Bucket Policy**.
+---
+* **Keyword:** "ngăn chặn việc **xóa trái phép**... đối tượng S3" (prevent **unauthorized deletion**... S3 objects)
+    * **Đáp án:** **Cấu hình MFA delete** (Configure MFA delete).
+---
+* **Keyword:** "tự động chuyển dữ liệu **ít truy cập**... sang lớp lưu trữ **tiết kiệm chi phí** hơn" (automatically transfer **infrequently accessed** data... **cost-effective** storage class).
     * **Đáp án:** **S3 Lifecycle Policy**.
-* **Keyword:** "khôi phục... nếu... vô tình **ghi đè hoặc xóa**" (accidentally **overwritten or deleted**... recoverable) 1677].
+---
+* **Keyword:** "khôi phục... nếu... vô tình **ghi đè hoặc xóa**" (accidentally **overwritten or deleted**... recoverable).
     * **Đáp án:** **S3 Versioning**.
-* **Keyword:** "lưu trữ... **lâu dài**... thời gian truy xuất **12 giờ hoặc ít hơn**" (archived... **long time**... retrieval time of **12 hours or less**) 2006].
-    * **Đáp án:** **Amazon S3 Glacier Deep Archive** 2013].
-* "lưu trữ tệp **có thể mở rộng**, tập trung... hỗ trợ **truy cập song song lớn**" (centralized **scalable**... **file storage**... support **massive parallel access**) 1857, 1858].
+---
+* **Keyword:** "lưu trữ... **lâu dài**... thời gian truy xuất **12 giờ hoặc ít hơn**" (archived... **long time**... retrieval time of **12 hours or less**) 
+    * **Đáp án:** **Amazon S3 Glacier Deep Archive**
+---
+* "lưu trữ tệp **có thể mở rộng**, tập trung... hỗ trợ **truy cập song song lớn**" (centralized **scalable**... **file storage**... support **massive parallel access**)
     * **Đáp án:** **Amazon Elastic File System (EFS)**.
 
 ---
@@ -122,63 +150,89 @@ Các dịch vụ này xử lý việc lưu trữ dữ liệu, từ tệp đối 
 
 Cách bạn cách ly tài nguyên, kết nối mạng và tăng tốc độ phân phối nội dung.
 
-* **Keyword:** "bảo mật một mạng VPC" (secure a VPC network)    * **Đáp án:** **Network ACL** 0] và **Security group**0].
+* **Keyword:** "bảo mật một mạng VPC" (secure a VPC network)    
+    + **Đáp án:** **Network ACL**  và **Security group**.
+---    
 * **Keyword:** "áp dụng các quy tắc bảo mật cho **subnet**" (apply security rules to **subnets**)
     * **Đáp án:** **Network Access Control Lists (NACLs)** (Security Group áp dụng cho EC2 instance).
+---
 * **Keyword:** "hoạt động như một **tường lửa** (firewall) cho... EC2".
     * **Đáp án:** **Security Group**.
+---
 * **Keyword:** "chuyển hướng lưu lượng... sang **khu vực khác** khi có **thảm họa**" (reroute traffic... to **another region** during **disaster recovery**)
-    * **Đáp án:** **Amazon Route 53**05].
-* "dịch vụ **DNS** (Domain Name System) trên đám mây"879].
     * **Đáp án:** **Amazon Route 53**
-* **Keyword:** "cung cấp một **phần logic bị cô lập**" (provision a **logically isolated section**)473, 1178, 1180].
-    * **Đáp án:** **Amazon VPC**481, 1184].
-* **Keyword:** "kết nối **chuyên dụng** (dedicated connection)... trải nghiệm mạng **nhất quán** (consistent)" 1161, 1162].
+---
+* "dịch vụ **DNS** (Domain Name System) trên đám mây"
+    * **Đáp án:** **Amazon Route 53**
+---
+* **Keyword:** "cung cấp một **phần logic bị cô lập**" (provision a **logically isolated section**)
+    * **Đáp án:** **Amazon VPC**
+---
+* **Keyword:** "kết nối **chuyên dụng** (dedicated connection)... trải nghiệm mạng **nhất quán** (consistent)" 
     * **Đáp án:** **AWS Direct Connect**.
-* **Keyword:** "thiết lập kết nối an toàn... **ít thời gian nhất** (least time)"621, 627].
+---
+* **Keyword:** "thiết lập kết nối an toàn... **ít thời gian nhất** (least time)"
     * **Đáp án:** **AWS Site-to-Site VPN** (Direct Connect mất vài tuần đến vài tháng).
-* **Keyword:** "**tăng tốc độ phân phối nội dung**" (speed up content delivery) 1912].
-    * **Đáp án:** **Amazon CloudFront** 1521].
-* **Keyword:** "lợi ích của... **Edge locations**"640].
-    * **Đáp án:** **Cải thiện hiệu suất** (Improves application performance) 644, 645] và **Cung cấp bộ đệm (caching)** (Provides caching)646].
+---
+* **Keyword:** "**tăng tốc độ phân phối nội dung**" (speed up content delivery) 
+    * **Đáp án:** **Amazon CloudFront** 
+---
+* **Keyword:** "lợi ích của... **Edge locations**".
+    * **Đáp án:** **Cải thiện hiệu suất** (Improves application performance) và **Cung cấp bộ đệm (caching)** (Provides caching)
 
 ---
 
 ### 6. Cơ sở dữ liệu (Database - RDS, DynamoDB, Redshift)
 
-* **Keyword:** "di chuyển (migrate)... cơ sở dữ liệu MySQL... sang Amazon RDS"    * **Đáp án:** **AWS Database Migration Service (AWS DMS)**6].
-* **Keyword:** "lưu trữ kết quả của các truy vấn SQL **chuyên sâu I/O** (I/O-intensive)" (để cải thiện hiệu suất)215, 1101, 1102, 1103].
-    * **Đáp án:** **Amazon ElastiCache**1105]. (Đây là dịch vụ caching).
+* **Keyword:** "di chuyển (migrate)... cơ sở dữ liệu MySQL... sang Amazon RDS"    
+    * **Đáp án:** **AWS Database Migration Service (AWS DMS)**.
+---
+* **Keyword:** "lưu trữ kết quả của các truy vấn SQL **chuyên sâu I/O** (I/O-intensive)" (để cải thiện hiệu suất)
+    * **Đáp án:** **Amazon ElastiCache**. (Đây là dịch vụ caching).
+---
 * **Keyword:** "cơ sở dữ liệu OLTP MySQL **có khả năng mở rộng cao**" (highly scalable MySQL OLTP database)
     * **Đáp án:** **Amazon Aurora**
-* **Keyword:** "cơ sở dữ liệu **phi quan hệ** (non-relational) linh hoạt, nhanh, có thể mở rộng"967, 968].
+---
+* **Keyword:** "cơ sở dữ liệu **phi quan hệ** (non-relational) linh hoạt, nhanh, có thể mở rộng"
     * **Đáp án:** **Amazon DynamoDB**
-* **Keyword:** "tạo một **kho dữ liệu** (data warehouse)" 1324].
-    * **Đáp án:** **Amazon Redshift** 1329].
+---
+* **Keyword:** "tạo một **kho dữ liệu** (data warehouse)" 
+    * **Đáp án:** **Amazon Redshift**
+---
 * "đặc điểm... Amazon RDS".
-    * **Đáp án:** **Đơn giản hóa các tác vụ quản trị** (Simplifies... administration tasks)  1073, 1076] và **Dễ dàng thiết lập, vận hành và mở rộng** (Makes it easy to set up, operate, and scale) 1074, 1076].
+    * **Đáp án:** **Đơn giản hóa các tác vụ quản trị** (Simplifies... administration tasks) và **Dễ dàng thiết lập, vận hành và mở rộng** (Makes it easy to set up, operate, and scale)
 
 ---
 
 ### 7. Giám sát, Bảo mật & Quản trị (Monitoring, Security & Governance)
 
-* **Keyword:** "phân tích, điều tra... **nguyên nhân gốc rễ** (root cause) của các vấn đề bảo mật"4, 15, 16].
-    * **Đáp án:** **Amazon Detective*** "tài liệu tuân thủ (compliance documents) như... **SOC 1, SOC 2**"149, 1037, 1546, 1547, 1548].
-    * **Đáp án:** **AWS Artifact**1041, 1042, 1552].
-* **Keyword:** "thiết lập một **landing zone**... môi trường **đa tài khoản** (multi-account)"251, 252, 811, 812, 814].
-    * **Đáp án:** **AWS Control Tower**816].
-* **Keyword:** "kiểm tra... tài nguyên... tuân thủ các **thực hành tốt nhất** (best practices)"341, 743, 744, 745, 750].
-    * **Đáp án:** **AWS Trusted Advisor**346, 751].
-* "**kho lưu trữ (repository) cho các chỉ số (metrics) và log**"876].
+* **Keyword:** "phân tích, điều tra... **nguyên nhân gốc rễ** (root cause) của các vấn đề bảo mật"
+    * **Đáp án:** **Amazon Detective**
+---
+* **Keyword:** "tài liệu tuân thủ (compliance documents) như... **SOC 1, SOC 2**"
+    * **Đáp án:** **AWS Artifact**
+---
+* **Keyword:** "thiết lập một **landing zone**... môi trường **đa tài khoản** (multi-account)"
+    * **Đáp án:** **AWS Control Tower**
+---
+* **Keyword:** "kiểm tra... tài nguyên... tuân thủ các **thực hành tốt nhất** (best practices)"
+    * **Đáp án:** **AWS Trusted Advisor**
+---
+* "**kho lưu trữ (repository) cho các chỉ số (metrics) và log**"
     * **Đáp án:** **Amazon CloudWatch**
-* "**lịch sử sự kiện** (event history) của... hoạt động tài khoản" / "xác định người dùng nào đã **chấm dứt** (terminated) EC2" 1898].
-    * **Đáp án:** **AWS CloudTrail**1905].
+---
+* "**lịch sử sự kiện** (event history) của... hoạt động tài khoản" / "xác định người dùng nào đã **chấm dứt** (terminated) EC2" 
+    * **Đáp án:** **AWS CloudTrail**
+---
 * "khám phá, phân loại và bảo vệ **dữ liệu nhạy cảm (PII)**".
     * **Đáp án:** **Amazon Macie**.
-* "phân tích **lỗ hổng** (vulnerability analysis) trên... máy chủ" 1446, 1447, 1448].
+---
+* "phân tích **lỗ hổng** (vulnerability analysis) trên... máy chủ" 
     * **Đáp án:** **Amazon Inspector**.
-* "dịch vụ phát hiện **mối đe dọa** (threat detection)... giám sát **hoạt động độc hại**" 1535].
-    * **Đáp án:** **Amazon GuardDuty** 1540].
+---
+* "dịch vụ phát hiện **mối đe dọa** (threat detection)... giám sát **hoạt động độc hại**" 
+    * **Đáp án:** **Amazon GuardDuty** 
+---
 * "bảo vệ... khỏi các cuộc tấn công **DDoS**".
     * **Đáp án:** **AWS Shield**.
 
@@ -190,34 +244,42 @@ Cách bạn cách ly tài nguyên, kết nối mạng và tăng tốc độ phâ
 
 * **Keyword:** "Auto-Scaling dựa trên nhu cầu" là một ví dụ của
     * **Đáp án:** **Thực thi tính đàn hồi** (Implement elasticity)
-* **Keyword:** "Trách nhiệm... **vá lỗi hệ điều hành máy chủ** (patch the host operating system) của... EC2"299, 1396, 1397].
-    * **Đáp án:** **AWS**1402]. (Lưu ý: AWS chịu trách nhiệm cho HĐH *host*, khách hàng chịu trách nhiệm cho HĐH *khách* (guest OS)).
-* **Keyword:** "lợi ích của việc di chuyển" (benefits of migrating)1247].
-    * **Đáp án:** **Cho phép khách hàng tập trung vào hoạt động kinh doanh** (Enables the customer to focus on business activities)331, 1249, 1251].
-* **Keyword:** "triển khai... ở **nhiều khu vực** (multiple AWS regions) chỉ với vài cú nhấp chuột"396].
+---
+* **Keyword:** "Trách nhiệm... **vá lỗi hệ điều hành máy chủ** (patch the host operating system) của... EC2"
+    * **Đáp án:** **AWS**. (Lưu ý: AWS chịu trách nhiệm cho HĐH *host*, khách hàng chịu trách nhiệm cho HĐH *khách* (guest OS)).
+---
+* **Keyword:** "lợi ích của việc di chuyển" (benefits of migrating)
+    * **Đáp án:** **Cho phép khách hàng tập trung vào hoạt động kinh doanh** (Enables the customer to focus on business activities)
+---
+* **Keyword:** "triển khai... ở **nhiều khu vực** (multiple AWS regions) chỉ với vài cú nhấp chuột"
     * **Đáp án:** **Vươn ra toàn cầu trong vài phút** (Go global in minutes)
-* **Keyword:** "lưu lượng truy cập **thay đổi** (varying levels)... không tiêu thụ hết công suất"450, 1426, 1427, 1428].
-    * **Đáp án:** **Tính đàn hồi** (Elasticity)455, 1430].
+---
+* **Keyword:** "lưu lượng truy cập **thay đổi** (varying levels)... không tiêu thụ hết công suất"
+    * **Đáp án:** **Tính đàn hồi** (Elasticity)
+---
 * **Keyword:** "nguyên tắc thiết kế **thực hiện hoạt động dưới dạng mã** (performing operations as code)"
-    * **Đáp án:** (Trụ cột) **Operational Excellence** (Vận hành xuất sắc)527].
-* **Keyword:** "phát biểu đúng... về Cấu trúc hạ tầng toàn cầu"633].
-    * **Đáp án:** **Một AWS Region chứa nhiều Availability Zones** (An AWS Region contains multiple Availability Zones)638].
-* **Keyword:** "quyền kiểm soát **chia sẻ** (shared control) giữa AWS và khách hàng"722].
+    * **Đáp án:** (Trụ cột) **Operational Excellence** (Vận hành xuất sắc)
+---
+* **Keyword:** "phát biểu đúng... về Cấu trúc hạ tầng toàn cầu"
+    * **Đáp án:** **Một AWS Region chứa nhiều Availability Zones** (An AWS Region contains multiple Availability Zones)
+---
+* **Keyword:** "quyền kiểm soát **chia sẻ** (shared control) giữa AWS và khách hàng"
     * **Đáp án:** **Nhận thức và Đào tạo** (Awareness and training)
-* **Keyword:** "trách nhiệm **duy nhất** của **khách hàng**" (solely the responsibility of the **customer**)917].
-    * **Đáp án:** **Bảo vệ Dịch vụ và Truyền thông** (Service and Communications Protection) 919, 924] (ví dụ: cấu hình Security Group, mã hóa dữ liệu).
-* **Keyword:** "trách nhiệm **duy nhất** của **AWS**" (sole responsibility of **AWS**) 1224, 1225].
+---
+* **Keyword:** "trách nhiệm **duy nhất** của **khách hàng**" (solely the responsibility of the **customer**)
+    * **Đáp án:** **Bảo vệ Dịch vụ và Truyền thông** (Service and Communications Protection)  (ví dụ: cấu hình Security Group, mã hóa dữ liệu).
+---
+* **Keyword:** "trách nhiệm **duy nhất** của **AWS**" (sole responsibility of **AWS**) 
     * **Đáp án:** **Kiểm soát vật lý và môi trường** (Physical and environmental controls).
+---
 * **Keyword:** "lợi ích tài chính chính" (key financial benefit).
-    * **Đáp án:** **Thay thế chi phí vốn ban đầu (CAPEX) bằng chi phí biến đổi thấp (variable costs)** 1027, 1028].
-* **Keyword:** "mô tả Mô hình Trách nhiệm Chung" (describes the AWS Shared Responsibility model) 1337].
-    * **Đáp án:** **AWS chịu trách nhiệm bảo mật cơ sở hạ tầng vật lý... khách hàng chịu trách nhiệm bảo mật ứng dụng và dữ liệu của họ** (AWS is responsible for securing the physical infrastructure... customers are responsible for securing their applications and data) 1340, 1348, 1355].
+    * **Đáp án:** **Thay thế chi phí vốn ban đầu (CAPEX) bằng chi phí biến đổi thấp (variable costs)**
+---
+* **Keyword:** "mô tả Mô hình Trách nhiệm Chung" (describes the AWS Shared Responsibility model) 
+    * **Đáp án:** **AWS chịu trách nhiệm bảo mật cơ sở hạ tầng vật lý... khách hàng chịu trách nhiệm bảo mật ứng dụng và dữ liệu của họ** (AWS is responsible for securing the physical infrastructure... customers are responsible for securing their applications and data) 
 
 ---
 
-Chào bạn, đây là tổng hợp kiến thức từ các câu hỏi ôn tập bạn đã cung cấp, được cấu trúc theo các lĩnh vực thiết kế kiến trúc bạn đã yêu cầu.
-
-Các nguyên tắc này đều là một phần của **AWS Well-Architected Framework**, vốn được đề cập trong tài liệu là nền tảng để đánh giá kiến trúc (ví dụ: Q68, Q70, Q179).
 
 ---
 
