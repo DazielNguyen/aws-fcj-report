@@ -6,118 +6,173 @@ chapter: false
 pre: " <b> 2. </b> "
 ---
 
-Tại phần này, bạn cần tóm tắt các nội dung trong workshop mà bạn **dự tính** sẽ làm.
-
-# IoT Weather Platform for Lab Research
-
-## Giải pháp AWS Serverless hợp nhất cho giám sát thời tiết thời gian thực
+# Ứng dụng quản lý tài chính cá nhân
 
 ### 1. Tóm tắt điều hành
 
-IoT Weather Platform được thiết kế dành cho nhóm _ITea Lab_ tại TP. Hồ Chí Minh nhằm nâng cao khả năng thu thập và phân tích dữ liệu thời tiết. Nền tảng hỗ trợ tối đa 5 trạm thời tiết, có khả năng mở rộng lên 10–15 trạm, sử dụng thiết bị biên Raspberry Pi kết hợp cảm biến ESP32 để truyền dữ liệu qua MQTT. Nền tảng tận dụng các dịch vụ AWS Serverless để cung cấp giám sát thời gian thực, phân tích dự đoán và tiết kiệm chi phí, với quyền truy cập giới hạn cho 5 thành viên phòng lab thông qua Amazon Cognito.
+Dự án Personal Finance Management App hướng đến việc cung cấp một nền tảng quản lý tài chính cá nhân thông minh, hiện đại và mang tính tự động hóa cao. Ứng dụng cho phép người dùng ghi nhận thu chi, tạo và quản lý nhiều hũ tiền (money jars) theo mục đích khác nhau, lập kế hoạch chi tiêu, nhận cảnh báo thông minh và tạo báo cáo phân tích trực quan.
+
+Ứng dụng được xây dựng với kiến trúc microservices trên nền tảng .NET và FastAPI, triển khai trên AWS Cloud, đảm bảo tính linh hoạt, khả năng mở rộng và an toàn dữ liệu. Quy trình phát triển tuân theo mô hình Agile/Scrum (2 tuần/sprint), với thời gian hoàn thành MVP trong 2 tháng.
 
 ### 2. Tuyên bố vấn đề
 
-_Vấn đề hiện tại_  
-Các trạm thời tiết hiện tại yêu cầu thu thập dữ liệu thủ công, khó quản lý khi có nhiều trạm. Không có hệ thống tập trung cho dữ liệu hoặc phân tích thời gian thực, và các nền tảng bên thứ ba thường tốn kém và quá phức tạp.
+#### Vấn đề hiện tại
 
-_Giải pháp_  
-Nền tảng sử dụng AWS IoT Core để tiếp nhận dữ liệu MQTT, AWS Lambda và API Gateway để xử lý, Amazon S3 để lưu trữ (bao gồm data lake), và AWS Glue Crawlers cùng các tác vụ ETL để trích xuất, chuyển đổi, tải dữ liệu từ S3 data lake sang một S3 bucket khác để phân tích. AWS Amplify với Next.js cung cấp giao diện web, và Amazon Cognito đảm bảo quyền truy cập an toàn. Tương tự như Thingsboard và CoreIoT, người dùng có thể đăng ký thiết bị mới và quản lý kết nối, nhưng nền tảng này hoạt động ở quy mô nhỏ hơn và phục vụ mục đích sử dụng nội bộ. Các tính năng chính bao gồm bảng điều khiển thời gian thực, phân tích xu hướng và chi phí vận hành thấp.
+Trên thị trường đã có rất nhiều ứng dụng quản lý tài chính, tuy nhiên phần lớn vẫn yêu cầu người dùng nhập liệu thủ công — một công việc tốn thời gian, dễ sai sót và khiến người dùng nhanh chóng bỏ cuộc. Các ứng dụng hiện có chỉ tập trung vào thống kê chi tiêu mà chưa thực sự giúp người dùng tự động hóa quy trình quản lý tài chính cá nhân.
 
-_Lợi ích và hoàn vốn đầu tư (ROI)_  
-Giải pháp tạo nền tảng cơ bản để các thành viên phòng lab phát triển một nền tảng IoT lớn hơn, đồng thời cung cấp nguồn dữ liệu cho những người nghiên cứu AI phục vụ huấn luyện mô hình hoặc phân tích. Nền tảng giảm bớt báo cáo thủ công cho từng trạm thông qua hệ thống tập trung, đơn giản hóa quản lý và bảo trì, đồng thời cải thiện độ tin cậy dữ liệu. Chi phí hàng tháng ước tính 0,66 USD (theo AWS Pricing Calculator), tổng cộng 7,92 USD cho 12 tháng. Tất cả thiết bị IoT đã được trang bị từ hệ thống trạm thời tiết hiện tại, không phát sinh chi phí phát triển thêm. Thời gian hoàn vốn 6–12 tháng nhờ tiết kiệm đáng kể thời gian thao tác thủ công.
+#### Giải pháp
+
+Giải pháp sử dụng AWS Cloud kết hợp kiến trúc microservices để xây dựng một nền tảng quản lý tài chính cá nhân tự động hóa, tích hợp AI trong xử lý giọng nói và nhận diện hóa đơn. Hệ thống được triển khai trên AWS ECS Fargate cho các service backend (.NET), FastAPI cho xử lý AI, và Next.js cho frontend. So với các nền tảng tài chính phổ biến như Money Lover hay Misa Money Keeper, ứng dụng này tập trung vào tự động hóa hoàn toàn nhập liệu tài chính thông qua AI voice-to-text và bill scanning chi tiết tiếng Việt, giúp giảm thao tác thủ công và sai sót. Hệ thống phù hợp cho người dùng cá nhân và nhóm nhỏ, đồng thời có thể mở rộng khi cần cho quy mô doanh nghiệp hoặc ứng dụng ngân hàng số.
+
+#### Lợi ích và hoàn vốn đầu tư (ROI)
+
+Giải pháp mang lại nhiều lợi ích thiết thực cả về mặt kỹ thuật và giá trị kinh doanh:
+
+- Tự động hóa nhập liệu: Giảm hơn 70% thao tác thủ công nhờ AI nhận diện giọng nói và hóa đơn.
+- Tăng độ chính xác: Hạn chế sai sót nhập liệu, đảm bảo tính toàn vẹn của dữ liệu tài chính (>90% chính xác).
+- Cải thiện hiệu suất người dùng: Ghi nhận và phân loại giao dịch chỉ trong vài giây, tối ưu trải nghiệm sử dụng.
+- Tiết kiệm chi phí: Chi phí hạ tầng thấp nhờ tận dụng AWS Free Tier đến năm 2026; chỉ ước tính ~60 USD/tháng cho AWS và ~30 USD cho compute AI.
+- Hoàn vốn nhanh: Dự kiến hoàn vốn trong 6–12 tháng, nhờ tiết kiệm thời gian nhập liệu và tăng hiệu suất vận hành.
+- Khả năng mở rộng & tích hợp: Kiến trúc microservices trên AWS cho phép dễ dàng bổ sung tính năng (mobile app, phân tích nâng cao, tích hợp ngân hàng).
 
 ### 3. Kiến trúc giải pháp
 
-Nền tảng áp dụng kiến trúc AWS Serverless để quản lý dữ liệu từ 5 trạm dựa trên Raspberry Pi, có thể mở rộng lên 15 trạm. Dữ liệu được tiếp nhận qua AWS IoT Core, lưu trữ trong S3 data lake và xử lý bởi AWS Glue Crawlers và ETL jobs để chuyển đổi và tải vào một S3 bucket khác cho mục đích phân tích. Lambda và API Gateway xử lý bổ sung, trong khi Amplify với Next.js cung cấp bảng điều khiển được bảo mật bởi Cognito.
+Hệ thống được triển khai theo mô hình **microservices** trên nền tảng **AWS Cloud**, kết hợp các dịch vụ serverless, container, và cơ sở dữ liệu quản lý để đảm bảo hiệu năng và khả năng mở rộng.
 
-![IoT Weather Station Architecture](/images/2-Proposal/edge_architecture.jpeg)
+![Ứng dụng quản lý tài chính cá nhân Sofware Architecture](/images/2-Proposal/development_architecture.drawio.png)
 
-![IoT Weather Platform Architecture](/images/2-Proposal/platform_architecture.jpeg)
+Người dùng truy cập ứng dụng web **Next.js** thông qua **Amazon CloudFront**, nội dung tĩnh được lưu trữ trong **Amazon S3** và phân phối qua **Amazon Route 53**.
+Lớp bảo mật đầu tiên được cung cấp bởi **AWS WAF** nhằm ngăn chặn các tấn công phổ biến như SQL Injection hoặc XSS.
+
+Khi người dùng đăng nhập, quá trình xác thực được xử lý bởi **Amazon Cognito**, cấp token truy cập để frontend gửi các yêu cầu API qua **Amazon API Gateway**.
+API Gateway định tuyến yêu cầu đến **Application Load Balancer (ALB)** thông qua **AWS PrivateLink**, sau đó chuyển tiếp đến **Amazon ECS (Fargate)** — nơi triển khai các container backend bao gồm:
+
+- **Backend Service (.NET)**: Xử lý nghiệp vụ chính của hệ thống.
+
+- **AI Service (FastAPI)**: Xử lý hóa đơn, nhận dạng giọng nói và các tác vụ AI.
+
+Khi người dùng tải hóa đơn hoặc ghi âm, file tạm thời được lưu trong **Amazon S3**.  
+**AI Service** có thể truy cập tệp từ **Amazon S3** để thực hiện các xử lý dữ liệu, sau đó trả kết quả lại cho **Backend Service** thông qua message broker.
+
+Hình ảnh container được lưu trữ trong **Amazon ECR**, và quá trình triển khai được tự động hóa qua **GitLab CI/CD Pipeline** — bao gồm các bước build image, push lên ECR, và cập nhật Task Definition trên ECS.
+
+Tất cả logs, metrics và cảnh báo từ ECS, API Gateway, và ALB được gửi về **Amazon CloudWatch** để giám sát tập trung, đồng thời **Amazon SNS** được cấu hình để gửi cảnh báo tự động khi có sự cố.
+
+![Ứng dụng quản lý tài chính cá nhân Cloud Architecture](/images/2-Proposal/cloud_architecture.drawio.png)
 
 _Dịch vụ AWS sử dụng_
 
-- _AWS IoT Core_: Tiếp nhận dữ liệu MQTT từ 5 trạm, mở rộng lên 15.
-- _AWS Lambda_: Xử lý dữ liệu và kích hoạt Glue jobs (2 hàm).
-- _Amazon API Gateway_: Giao tiếp với ứng dụng web.
-- _Amazon S3_: Lưu trữ dữ liệu thô (data lake) và dữ liệu đã xử lý (2 bucket).
-- _AWS Glue_: Crawlers lập chỉ mục dữ liệu, ETL jobs chuyển đổi và tải dữ liệu.
-- _AWS Amplify_: Lưu trữ giao diện web Next.js.
-- _Amazon Cognito_: Quản lý quyền truy cập cho người dùng phòng lab.
+- _Amazon Route 53_: Quản lý DNS và tên miền truy cập.
+- _AWS WAF_: Bảo vệ hệ thống khỏi các tấn công web phổ biến.
+- _Amazon CloudFront_: Phân phối nội dung tĩnh toàn cầu và tăng tốc truy cập frontend.
+- _Amazon S3_: Lưu trữ website tĩnh và file người dùng (hóa đơn, ghi âm).
+- _Amazon Cognito_: Xác thực và quản lý người dùng.
+- _Amazon API Gateway_: Cổng vào của hệ thống, định tuyến request từ frontend đến backend.
+- _AWS PrivateLink_: Tạo kết nối riêng giữa API Gateway và ALB trong VPC để tăng cường bảo mật.
+- _Application Load Balancer (ALB)_: Cân bằng tải giữa các container backend trên ECS.
+- _Amazon ECS (Fargate)_: Chạy các microservices Backend và FastAPI (AI).
+- _Amazon ECR_: Kho lưu trữ image container cho ECS.
+- _Amazon CloudWatch_: Giám sát logs, hiệu năng và cảnh báo hệ thống.
+- _Amazon SNS_: Gửi thông báo hoặc cảnh báo khi có sự cố.
+- _GitLab CI/CD_: Tự động hóa pipeline build, push và deploy container lên ECS.
 
-_Thiết kế thành phần_
-
-- _Thiết bị biên_: Raspberry Pi thu thập và lọc dữ liệu cảm biến, gửi tới IoT Core.
-- _Tiếp nhận dữ liệu_: AWS IoT Core nhận tin nhắn MQTT từ thiết bị biên.
-- _Lưu trữ dữ liệu_: Dữ liệu thô lưu trong S3 data lake; dữ liệu đã xử lý lưu ở một S3 bucket khác.
-- _Xử lý dữ liệu_: AWS Glue Crawlers lập chỉ mục dữ liệu; ETL jobs chuyển đổi để phân tích.
-- _Giao diện web_: AWS Amplify lưu trữ ứng dụng Next.js cho bảng điều khiển và phân tích thời gian thực.
-- _Quản lý người dùng_: Amazon Cognito giới hạn 5 tài khoản hoạt động.
+---
 
 ### 4. Triển khai kỹ thuật
 
-_Các giai đoạn triển khai_  
-Dự án gồm 2 phần — thiết lập trạm thời tiết biên và xây dựng nền tảng thời tiết — mỗi phần trải qua 4 giai đoạn:
+#### Các giai đoạn triển khai
 
-1. _Nghiên cứu và vẽ kiến trúc_: Nghiên cứu Raspberry Pi với cảm biến ESP32 và thiết kế kiến trúc AWS Serverless (1 tháng trước kỳ thực tập).
-2. _Tính toán chi phí và kiểm tra tính khả thi_: Sử dụng AWS Pricing Calculator để ước tính và điều chỉnh (Tháng 1).
-3. _Điều chỉnh kiến trúc để tối ưu chi phí/giải pháp_: Tinh chỉnh (ví dụ tối ưu Lambda với Next.js) để đảm bảo hiệu quả (Tháng 2).
-4. _Phát triển, kiểm thử, triển khai_: Lập trình Raspberry Pi, AWS services với CDK/SDK và ứng dụng Next.js, sau đó kiểm thử và đưa vào vận hành (Tháng 2–3).
+1. _Nghiên cứu và vẽ kiến trúc_: Nghiên cứu các mô hình microservices và thiết kế kiến trúc tổng thể trên AWS (bao gồm CloudFront, ECS Fargate, RDS, S3, API Gateway, Cognito) — (Tháng 1).
+2. _Tính toán chi phí và điều chỉnh giải pháp_: Sử dụng AWS Pricing Calculator để ước tính chi phí, tối ưu lựa chọn dịch vụ nhằm đảm bảo chi phí thấp và dễ triển khai cho người mới học — (Tháng 1–2).
+3. _Phát triển, kiểm thử, triển khai_: Xây dựng frontend (Next.js), backend (.NET), và AI service (FastAPI); kiểm thử tích hợp microservices, sau đó triển khai toàn bộ hệ thống lên AWS bằng ECS Fargate và thiết lập giám sát qua CloudWatch — (Tháng 2–3).
 
-_Yêu cầu kỹ thuật_
+#### Yêu cầu kỹ thuật
 
-- _Trạm thời tiết biên_: Cảm biến (nhiệt độ, độ ẩm, lượng mưa, tốc độ gió), vi điều khiển ESP32, Raspberry Pi làm thiết bị biên. Raspberry Pi chạy Raspbian, sử dụng Docker để lọc dữ liệu và gửi 1 MB/ngày/trạm qua MQTT qua Wi-Fi.
-- _Nền tảng thời tiết_: Kiến thức thực tế về AWS Amplify (lưu trữ Next.js), Lambda (giảm thiểu do Next.js xử lý), AWS Glue (ETL), S3 (2 bucket), IoT Core (gateway và rules), và Cognito (5 người dùng). Sử dụng AWS CDK/SDK để lập trình (ví dụ IoT Core rules tới S3). Next.js giúp giảm tải Lambda cho ứng dụng web fullstack.
+- _Frontend_:
+  Ứng dụng web **Next.js** được lưu trữ trong **Amazon S3** và phân phối qua **CloudFront**, giao tiếp với backend thông qua **API Gateway**.
+  Người dùng đăng nhập qua **Amazon Cognito**, nhận token để gọi API bảo mật.
+- _Backend_:
+  Viết bằng **.NET** hoặc framework tương tự, triển khai trên **ECS Fargate**.
+  Các service xử lý nghiệp vụ người dùng, giao dịch và các yêu cầu từ frontend.
+  Container image được lưu trong **ECR**, được cập nhật qua pipeline CI/CD từ **GitLab**.
+  **ALB** được dùng để cân bằng tải giữa các container backend.
+- _AI Service_:
+  Viết bằng **FastAPI**, xử lý hình ảnh hóa đơn và giọng nói, kết nối đến **S3** để đọc dữ liệu.
+  Kết quả được trả về **Backend Service** thông qua API nội bộ.
+- _Hạ tầng Cloud_:
+  Sử dụng **Amazon VPC** (multi-AZ), **Application Load Balancer**, và **CloudWatch** để giám sát.
+  Hình ảnh container được lưu trữ trên **ECR** và triển khai qua **ECS Fargate**.
+  CI/CD được thực hiện qua **GitLab CI/CD** để tự động hóa build và deploy.
+- _Bảo mật_:
+  Quản lý quyền truy cập người dùng bằng **Amazon Cognito**.
+  Sử dụng **IAM Roles** cho ECS, S3, CloudWatch, và API Gateway để giới hạn quyền truy cập.
+  **Security Group** được cấu hình chặt chẽ giữa ECS, ALB và các dịch vụ khác để đảm bảo an toàn mạng.
+  **AWS WAF** được cấu hình để bảo vệ tầng frontend khỏi các tấn công web phổ biến.
 
 ### 5. Lộ trình & Mốc triển khai
 
-- _Trước thực tập (Tháng 0)_: 1 tháng lên kế hoạch và đánh giá trạm cũ.
+- _Trước thực tập (Tháng 0)_: 1 tháng lên kế hoạch.
 - _Thực tập (Tháng 1–3)_:
-  - Tháng 1: Học AWS và nâng cấp phần cứng.
+  - Tháng 1: Học AWS và nâng cấp kỹ năng lập trình.
   - Tháng 2: Thiết kế và điều chỉnh kiến trúc.
   - Tháng 3: Triển khai, kiểm thử, đưa vào sử dụng.
-- _Sau triển khai_: Nghiên cứu thêm trong vòng 1 năm.
+- _Sau triển khai_: Nghiên cứu thêm về mobile và triển khai sau tháng thứ 4.
 
 ### 6. Ước tính ngân sách
 
-Có thể xem chi phí trên [AWS Pricing Calculator](https://calculator.aws/#/estimate?id=621f38b12a1ef026842ba2ddfe46ff936ed4ab01)  
-Hoặc tải [tệp ước tính ngân sách](../attachments/budget_estimation.pdf).
+_Có thể xem chi phí trên [AWS Pricing Calculator](https://calculator.aws/#/estimate?id=2f4e6708ef12a3310b2d3955aaf1d4563932d165)_
 
-_Chi phí hạ tầng_
-
-- AWS Lambda: 0,00 USD/tháng (1.000 request, 512 MB lưu trữ).
-- S3 Standard: 0,15 USD/tháng (6 GB, 2.100 request, 1 GB quét).
-- Truyền dữ liệu: 0,02 USD/tháng (1 GB vào, 1 GB ra).
-- AWS Amplify: 0,35 USD/tháng (256 MB, request 500 ms).
-- Amazon API Gateway: 0,01 USD/tháng (2.000 request).
-- AWS Glue ETL Jobs: 0,02 USD/tháng (2 DPU).
-- AWS Glue Crawlers: 0,07 USD/tháng (1 crawler).
-- MQTT (IoT Core): 0,08 USD/tháng (5 thiết bị, 45.000 tin nhắn).
-
-_Tổng_: 0,7 USD/tháng, 8,40 USD/12 tháng
-
-- _Phần cứng_: 265 USD một lần (Raspberry Pi 5 và cảm biến).
+| Dịch vụ              |                            Trong Free Tier |                        Sau khi hết Free Tier |
+| -------------------- | -----------------------------------------: | -------------------------------------------: |
+| Amazon ECS (Fargate) |                           0,00 USD / tháng |                             8,00 USD / tháng |
+| Amazon API Gateway   |                           0,00 USD / tháng |                             2,00 USD / tháng |
+| Amazon S3            |                           0,00 USD / tháng |                             1,00 USD / tháng |
+| Amazon CloudWatch    |                           0,00 USD / tháng |                             2,00 USD / tháng |
+| Amazon Cognito       |                           0,00 USD / tháng |                             0,00 USD / tháng |
+| Amazon ECR           |                           0,00 USD / tháng |                             0,20 USD / tháng |
+| Amazon Route 53      |                           1,00 USD / tháng |                             1,00 USD / tháng |
+| AWS WAF              |                           0,00 USD / tháng |                             1,00 USD / tháng |
+| Amazon SNS           |                           0,00 USD / tháng |                             0,50 USD / tháng |
+| GitLab CI/CD         |                           0,00 USD / tháng |                             2,00 USD / tháng |
+| **Tổng ước tính**    | **≈ 1,00 USD / tháng** (≈ 12,00 USD / năm) | **≈ 17,70 USD / tháng** (≈ 212,40 USD / năm) |
 
 ### 7. Đánh giá rủi ro
 
 _Ma trận rủi ro_
 
-- Mất mạng: Ảnh hưởng trung bình, xác suất trung bình.
-- Hỏng cảm biến: Ảnh hưởng cao, xác suất thấp.
-- Vượt ngân sách: Ảnh hưởng trung bình, xác suất thấp.
+- Mô hình AI nhận dạng sai (voice/bill): Ảnh hưởng trung bình, xác suất trung bình.
+- Mất kết nối AWS hoặc lỗi dịch vụ vùng (region): Ảnh hưởng cao, xác suất thấp.
+- Vượt ngân sách sử dụng AWS: Ảnh hưởng trung bình, xác suất thấp.
+- Lỗi đồng bộ dữ liệu giữa các microservices: Ảnh hưởng trung bình, xác suất trung bình.
+- Lộ thông tin người dùng (Cognito/Database): Ảnh hưởng cao, xác suất thấp.
 
 _Chiến lược giảm thiểu_
 
-- Mạng: Lưu trữ cục bộ trên Raspberry Pi với Docker.
-- Cảm biến: Kiểm tra định kỳ, dự phòng linh kiện.
-- Chi phí: Cảnh báo ngân sách AWS, tối ưu dịch vụ.
+- AI: Cải thiện mô hình OCR và voice-to-text qua huấn luyện thêm, kiểm thử định kỳ với dữ liệu thực tế.
+- AWS Region: Thiết lập triển khai đa vùng (multi-AZ) và backup định kỳ cơ sở dữ liệu RDS.
+- Chi phí: Cấu hình **AWS Budget Alert** và tối ưu ECS, S3 theo mức sử dụng thực tế.
+- Microservices: Dùng **SQS/RabbitMQ** để đảm bảo xử lý bất đồng bộ và retry khi lỗi.
+- Bảo mật: Mã hóa dữ liệu (AES-256, HTTPS), kiểm soát IAM theo nguyên tắc “Least Privilege”.
 
 _Kế hoạch dự phòng_
 
-- Quay lại thu thập thủ công nếu AWS gặp sự cố.
-- Sử dụng CloudFormation để khôi phục cấu hình liên quan đến chi phí.
+- Nếu AWS gặp sự cố: Tạm thời chuyển sang lưu trữ dữ liệu giao dịch cục bộ và đồng bộ lại sau khi khôi phục.
+- Khôi phục hạ tầng bằng **AWS CloudFormation** hoặc **IaC (Infrastructure as Code)** đã lưu sẵn.
+- Giữ bản sao cơ sở dữ liệu định kỳ (RDS snapshot) để phục hồi trong tình huống mất dữ liệu.
 
-### 8. Kết quả kỳ vọng
+### 8. Kết quả kỳ vọng của dự án
 
-_Cải tiến kỹ thuật_: Dữ liệu và phân tích thời gian thực thay thế quy trình thủ công. Có thể mở rộng tới 10–15 trạm.  
-_Giá trị dài hạn_: Nền tảng dữ liệu 1 năm cho nghiên cứu AI, có thể tái sử dụng cho các dự án tương lai.
+- **Tự động hóa nhập liệu tài chính:** Ứng dụng giúp người dùng không cần nhập thủ công, chỉ cần chụp hóa đơn hoặc ghi âm giọng nói để hệ thống tự phân loại chi tiêu.
+- **Quản lý tài chính trực quan:** Người dùng có thể xem biểu đồ chi tiêu, báo cáo tháng, và nhận gợi ý tiết kiệm dựa trên hành vi tiêu dùng.
+- **Trải nghiệm người dùng tối giản:** Giao diện web thân thiện, thiết kế hiện đại, tối ưu cho thiết bị di động và phù hợp với người mới quản lý tài chính.
+- **Hệ thống ổn định, dễ mở rộng:** Kiến trúc microservices giúp dễ dàng bổ sung tính năng mới như nhắc nhở chi tiêu, phân tích dự báo AI, hoặc mở rộng sang mobile app.
+- **Chi phí vận hành thấp:** Tận dụng Free Tier AWS và mô hình serverless để duy trì hệ thống với chi phí trung bình < 50 USD/tháng.
+- **Nâng cao kỹ năng nhóm phát triển:** Thành viên dự án tiếp cận thực tế với quy trình DevOps, triển khai CI/CD, và tối ưu ứng dụng trên nền tảng cloud.
+
+### 9. Hạn chế của dự án
+
+- **Mô hình AI tiếng Việt còn hạn chế:** Khả năng nhận dạng giọng nói vùng miền hoặc hóa đơn viết tay chưa đạt độ chính xác cao.
+- **Chưa có ứng dụng di động riêng:** Phiên bản MVP chỉ hỗ trợ nền web, chưa có mobile app native.
+- **Giới hạn người dùng:** Kiến trúc hiện tại chỉ tối ưu cho 50–100 người dùng hoạt động; khi mở rộng quy mô cần tái cấu trúc hạ tầng.
+- **Phụ thuộc kết nối Internet:** Mọi thao tác xử lý và lưu trữ đều qua cloud, không thể hoạt động offline.
+- **Chưa triển khai hệ thống bảo mật nâng cao:** Mới dừng ở xác thực Cognito và mã hóa cơ bản, chưa có MFA (Multi-Factor Authentication) hay log bảo mật chuyên sâu.
