@@ -76,9 +76,9 @@ _AWS Services Used_
 
 _Implementation Phases_
 
-1. _Research and Architecture Design_: Study microservices models and design the overall architecture on AWS (including CloudFront, ECS Fargate, RDS, S3, API Gateway, Cognito) — (January).
-2. _Cost Estimation and Optimization_: Use AWS Pricing Calculator to estimate cost and optimize service selection for affordability and ease of deployment — (January–February).
-3. _Development, Testing, and Deployment_: Build frontend (Next.js), backend (.NET), and AI service (FastAPI); perform microservice integration testing; deploy the system to AWS via ECS Fargate; and set up monitoring with CloudWatch — (February–March).
+1. _Research and Architecture Design_: Study microservices models and design the overall architecture on AWS (including CloudFront, ECS Fargate, RDS, S3, API Gateway, Cognito) — (Month 1 - 2).
+2. _Cost Estimation and Optimization_: Use AWS Pricing Calculator to estimate cost and optimize service selection for affordability and ease of deployment — (Month 2 - 3).
+3. _Development, Testing, and Deployment_: Build frontend (Next.js), backend (.NET), and AI service (FastAPI); perform microservice integration testing; deploy the system to AWS via ECS Fargate; and set up monitoring with CloudWatch — (Month 3 - 4).
 
 _Technical Requirements_
 
@@ -106,29 +106,33 @@ _Technical Requirements_
 ### 5. Timeline & Milestones
 
 - **Pre-internship (Month 0)**: 1 month for planning.
-- **Internship (Month 1–3)**:
+- **Internship (Month 1–4)**:
   - Month 1: Learn AWS and upgrade programming skills.
   - Month 2: Design and adjust architecture.
-  - Month 3: Implement, test, and deploy.
-- **Post-deployment**: Research mobile development and deploy after month 4.
+  - Month 3-4: Implement, test, and deploy.
+- **Post-deployment**: Research mobile development and deploy after month 5.
 
 ### 6. Budget Estimation
 
-You can view costs on [AWS Pricing Calculator](https://calculator.aws/#/estimate?id=2f4e6708ef12a3310b2d3955aaf1d4563932d165).
+You can review the detailed cost estimation by downloading the following files:
+_📊 <a href="/files/2-Proposal/pricing.csv" download>CSV Pricing File</a>_
+_💾 <a href="/files/2-Proposal/pricing.json" download>JSON Pricing File</a>_
 
-| Service              |                          In Free Tier |                         After Free Tier |
-| -------------------- | ------------------------------------: | --------------------------------------: |
-| Amazon ECS (Fargate) |                         $0.00 / month |                           $8.00 / month |
-| Amazon API Gateway   |                         $0.00 / month |                           $2.00 / month |
-| Amazon S3            |                         $0.00 / month |                           $1.00 / month |
-| Amazon CloudWatch    |                         $0.00 / month |                           $2.00 / month |
-| Amazon Cognito       |                         $0.00 / month |                           $0.00 / month |
-| Amazon ECR           |                         $0.00 / month |                           $0.20 / month |
-| Amazon Route 53      |                         $1.00 / month |                           $1.00 / month |
-| AWS WAF              |                         $0.00 / month |                           $1.00 / month |
-| Amazon SNS           |                         $0.00 / month |                           $0.50 / month |
-| GitLab CI/CD         |                         $0.00 / month |                           $2.00 / month |
-| **Estimated Total**  | **≈ $1.00 / month** (≈ $12.00 / year) | **≈ $17.70 / month** (≈ $212.40 / year) |
+| Service                   |                            Monthly Cost |
+| ------------------------- | --------------------------------------: |
+| AWS Fargate (ECS)         |                          $17.30 / month |
+| Application Load Balancer |                          $18.98 / month |
+| Amazon API Gateway        |                           $2.50 / month |
+| Amazon Cognito            |                           $0.00 / month |
+| Amazon ECR                |                           $1.00 / month |
+| Amazon Route 53           |                           $0.54 / month |
+| AWS WAF                   |                           $7.20 / month |
+| Amazon CloudFront         |                           $2.00 / month |
+| AWS PrivateLink           |                          $10.49 / month |
+| Amazon S3                 |                           $0.34 / month |
+| **Estimated Total**       | **≈ $60.35 / month** (≈ $724.21 / year) |
+
+**Note:** The costs above are calculated based on AWS Pricing Calculator for the Asia Pacific (Singapore) region with assumptions for 100 monthly active users and basic resource requirements.
 
 ### 7. Risk Assessment
 
@@ -160,7 +164,6 @@ You can view costs on [AWS Pricing Calculator](https://calculator.aws/#/estimate
 - **Intuitive financial management:** Users can view spending charts, monthly reports, and receive savings suggestions based on consumer behavior.
 - **Minimal user experience:** Friendly web interface, modern design, optimized for mobile devices and suitable for people new to financial management.
 - **Stable, scalable system:** Microservices architecture makes it easy to add new features such as spending reminders, AI predictive analysis, or expand to a mobile app.
-- **Low operating costs:** Take advantage of Free Tier AWS and the serverless model to maintain the system at an average cost of < 50 USD/month.
 - **Improving development team skills:** Project members have practical access to DevOps processes, CI/CD implementation, and cloud-based application optimization.
 
 ### 9. Project limitations
