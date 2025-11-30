@@ -16,9 +16,9 @@ Theo chính sách mới của AWS, các mô hình nền tảng (Foundation Model
 
 Chúng ta sẽ thực hiện một bài kiểm tra nhanh (Test Run) để đảm bảo tài khoản của bạn đã sẵn sàng.
 
-Đầu tiên ở thanh tìm kiếm, truy cập vào Amazon Bedrock.
+Đầu tiên ở thanh tìm kiếm, truy cập vào [Amazon Bedrock](https://us-east-1.console.aws.amazon.com/bedrock/home?region=us-east-1#/overview).
 
-> ![Truy cập vào Amazon Bedrock](/images/5-Workshop/5.2-Prerequisite/Amazon_Bedrock.jpg)
+> ![Truy cập vào Amazon Bedrock](/images/5-Workshop/5.2-Prerequisite/00_Amazon_Bedrock.jpg)
 
 
 **Bước 1. Truy cập Chat Playground**
@@ -26,7 +26,7 @@ Chúng ta sẽ thực hiện một bài kiểm tra nhanh (Test Run) để đảm
 - Tại menu bên trái Bedrock Console, tìm mục **Playgrounds**.
 - Click **Chat**.
 
-> ![Ảnh minh họa menu Playgrounds bên trái](/images/5-Workshop/5.2-Prerequisite/Play_ground.jpg)
+> ![Ảnh minh họa menu Playgrounds bên trái](/images/5-Workshop/5.2-Prerequisite/01_Play_ground.jpg)
 
 **Bước 2. Chọn Model kiểm thử**
 

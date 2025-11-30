@@ -8,7 +8,7 @@ pre: " <b> 5.2.2 </b> "
 
 #### Tổng quan
 
-Khởi tạo một kho lưu trữ đối tượng (S3 Bucket) để chứa các tài liệu gốc (PDF, Word, Text). Đây đóng vai trò là "nguồn sự thật" (Source of Truth) mà Knowledge Base sẽ truy cập để đọc hiểu, phân tích và đồng bộ hóa kiến thức cho AI.
+Khởi tạo một kho lưu trữ đối tượng (S3 Bucket) để chứa các tài liệu gốc (PDF, Word, Text). Đây đóng vai trò là "nguồn sự thật" (Source of Truth) mà Knowledge Base sẽ truy cập để đọc hiểu, phân tích và đồng bộ hóa kiến thức cho AI. Bạn có thể lưu trữ kiến thức liên quan đến lĩnh vực của bạn sử dụng trong việc tạo trợ lý cá nhân hoặc Chatbot cho riêng bạn. 
 
 #### Chuẩn bị dữ liệu
 
@@ -16,16 +16,31 @@ Chúng ta sẽ tạo một S3 Bucket để lưu trữ tài liệu gốc, đóng 
 
 **Bước 1. Tạo S3 Bucket**
 
-- Truy cập dịch vụ **S3** từ thanh tìm kiếm.
+- Truy cập dịch vụ [S3](https://us-east-1.console.aws.amazon.com/s3/get-started?region=us-east-1) từ thanh tìm kiếm.
+- **AWS Region:** Chọn `United States (N. Virginia us-east-1)`.
+
+> ![Truy cập S3](/images/5-Workshop/5.2-Prerequisite/04_S3.jpg)
+
 - Click **Create bucket**.
+
+> ![Create S3 Bucket](/images/5-Workshop/5.2-Prerequisite/05_S3_Create_Bucket.jpg)
+
+
 - Cấu hình thông tin Bucket:
-  - **Bucket name:** Nhập `rag-workshop-<tên-bạn>` (Lưu ý: Viết thường, không dấu, không khoảng trắng. Ví dụ: `rag-workshop-nam-2024`).
-  - **AWS Region:** Chọn `N. Virginia us-east-1`.
-  - **Object Ownership:** Giữ mặc định `ACLs disabled`.
-  - **Block Public Access settings:** Giữ mặc định (Đã chọn `Block all public access`).
+    - **Bucket Type:** Chọn `General purpose`
+    - **Bucket name:** Nhập `rag-workshop-demo`
+    - **Object Ownership:** Giữ mặc định `ACLs disabled`.
+    - **Block Public Access settings:** Giữ mặc định (Đã chọn `Block all public access`).
+
+> ![Configure S3 Bucket](/images/5-Workshop/5.2-Prerequisite/06_Configure_S3_Bucket.jpg)
+
 - Kéo xuống cuối trang, Click **Create bucket**.
 
-> ![Ảnh minh họa giao diện tạo S3 Bucket và chọn Region](link_anh_create_bucket_o_day)
+> ![Ảnh minh họa giao diện tạo S3 Bucket và chọn Region](/images/5-Workshop/5.2-Prerequisite/07_Finished_Create_bucket.jpg)
+
+- Kiểm tra tạo S3 Bucket thành công.
+
+> ![Create S3 Bucket Successful](/images/5-Workshop/5.2-Prerequisite/08_Create_S3_Successful.jpg)
 
 **Bước 2. Tải lên tài liệu mẫu**
 

@@ -16,16 +16,16 @@ Ensure your AWS account has permission to access and use the **Anthropic Claude 
 
 We will perform a quick test (Test Run) to ensure your account is ready.
 
-In the search bar, access **Amazon Bedrock**
+In the search bar, access the [Amazon Bedrock](https://us-east-1.console.aws.amazon.com/bedrock/home?region=us-east-1#/overview).
 
-> ![Access Amazon Bedrock](/images/5-Workshop/5.2-Prerequisite/Amazon_Bedrock.jpg)
+> ![Access Amazon Bedrock](/images/5-Workshop/5.2-Prerequisite/00_Amazon_Bedrock.jpg)
 
 **Step 1. Access Chat Playground**
 
 - In the left menu of the Bedrock Console, find **Playgrounds**.
 - Click **Chat**.
 
-> ![Image illustrating Playgrounds menu on the left](/images/5-Workshop/5.2-Prerequisite/Play_ground.jpg)
+> ![Image illustrating Playgrounds menu on the left](/images/5-Workshop/5.2-Prerequisite/01_Play_ground.jpg)
 
 **Step 2. Select Test Model**
 
