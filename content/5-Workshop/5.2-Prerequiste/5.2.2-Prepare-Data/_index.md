@@ -44,12 +44,23 @@ We will create an S3 Bucket to store original documents, acting as the knowledge
 
 **Step 2. Upload sample documents**
 
+- This is a sample document, relevant to overview of AWS cloud computing knowledge. You can use it to run demos or upload your data.
+
+<a href="/files/2-Workshop/aws-overview.pdf" download>PDF format file</a>
+
 - In the Buckets list, Click on the **bucket name** you just created.
+![Click_S3_Bucket](/images/5-Workshop/5.2-Prerequisite/09_Click_S3_Bucket.jpg)
+
 - Click **Upload**.
+![Upload_file_to_Bucket](/images/5-Workshop/5.2-Prerequisite/10_Upload_file_to_Bucket.jpg)
+
 - In the Upload interface:
-  - Click **Add files**.
-  - Select sample document files from your computer (PDF or Word files with text-heavy content are recommended).
+    - Click **Add files**.
+    - Select the sample document file attached above or a file from your computer (PDF or Word file with a lot of text is recommended).
 - Scroll to the bottom of the page, Click **Upload**.
+
+![Upload_file_to_Bucket_02](/images/5-Workshop/5.2-Prerequisite/11_Click_to_Uploadfile.jpg)
+
 - When you see the green "Upload succeeded" notification, Click **Close**.
 
-> ![Image illustrating successful file upload interface](link_anh_upload_file_o_day)
+![Upload file successfully](/images/5-Workshop/5.2-Prerequisite/12_Successfully.jpg)

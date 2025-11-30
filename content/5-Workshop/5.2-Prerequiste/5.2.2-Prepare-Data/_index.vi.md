@@ -43,16 +43,25 @@ Chúng ta sẽ tạo một S3 Bucket để lưu trữ tài liệu gốc, đóng 
 > ![Create S3 Bucket Successful](/images/5-Workshop/5.2-Prerequisite/08_Create_S3_Successful.jpg)
 
 **Bước 2. Tải lên tài liệu mẫu**
-- Tài liệu mẫu, liên quan để tổng quan về kiến thức điện toán đám mây của AWS. 
+- Đây tài liệu mẫu, liên quan để tổng quan về kiến thức điện toán đám mây của AWS. Bạn có thể sử dụng để chạy demo hoặc upload dữ liệu của bạn.
 
-_📊 <a href="/files/2-Proposal/pricing.csv" download>Tệp định dạng CSV</a>_
+<a href="/files/2-Workshop/aws-overview.pdf" download>Tệp định dạng PDF</a>
 
 - Tại danh sách Buckets, Click vào **tên bucket** bạn vừa tạo.
+
+![Click_S3_Bucket](/images/5-Workshop/5.2-Prerequisite/09_Click_S3_Bucket.jpg)
+
 - Click **Upload**.
+
+![Upload_file_to_Bucket](/images/5-Workshop/5.2-Prerequisite/10_Upload_file_to_Bucket.jpg)
+
 - Tại giao diện Upload:
   - Click **Add files**.
-  - Chọn file tài liệu mẫu từ máy tính của bạn (Khuyên dùng file PDF hoặc Word có nhiều nội dung văn bản).
-- Kéo xuống cuối trang, Click **Upload**.
+  - Chọn file tài liệu mẫu đính kèm ở phần trên hoặc file từ máy tính của bạn (Khuyên dùng file PDF hoặc Word có nhiều nội dung văn bản).
+- Khi upload file xong, chọn file vừa upload, kéo xuống cuối trang, Click **Upload**.
+
+![Upload_file_to_Bucket_02](/images/5-Workshop/5.2-Prerequisite/11_Click_to_Uploadfile.jpg)
+
 - Khi thấy thông báo màu xanh "Upload succeeded", Click **Close**.
 
-> ![Ảnh minh họa giao diện upload file thành công](link_anh_upload_file_o_day)
+![Upload file successfully](/images/5-Workshop/5.2-Prerequisite/12_Successfully.jpg)
