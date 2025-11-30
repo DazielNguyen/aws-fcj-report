@@ -22,9 +22,11 @@ We will focus on 2 factors:
 To start chatting, we need to select a Foundation Model that will act as the "responder".
 
 1.  In your Knowledge Base details interface, look at the right panel titled **Test knowledge base**.
+![Open KB](/images/5-Workshop/5.4-Test-Chatbox/01_Test_KB.jpg)
+
 2.  Click the **Select model** button.
 
-> ![Image illustrating Select Model button on the right Test panel](link_anh_test_select_model_btn)
+![Select Model](/images/5-Workshop/5.4-Test-Chatbox/02_Select_Model.jpg)
 
 3.  In the selection panel that appears:
     - **Category:** Select `Anthropic`.
@@ -32,20 +34,20 @@ To start chatting, we need to select a Foundation Model that will act as the "re
     - **Throughput:** Keep `On-demand`.
 4.  Click **Apply**.
 
-> ![Image illustrating Claude 3 Model selection configuration panel](link_anh_test_config_model)
+![Image illustrating Claude 3 Model selection configuration panel](/images/5-Workshop/5.4-Test-Chatbox/03_Test_KB.jpg)
 
 **Step 2: Conduct conversation (Chat)**
 
 Now, try asking a question related to the document content you uploaded.
 
 1.  In the input box (Message input), type your question.
-    - _Example:_ If you uploaded the "Leave Procedure" document, ask: _"What do I need to do to request 3 days of leave?"_.
+    - _Example:_ If you uploaded the "AWS Overview" document, ask: _"Can you explain to me what EC2 is?"_.
 2.  Click **Run**.
 3.  **Observe the result:**
     - The AI will think for a few seconds (querying the Vector Store).
     - Then, it will answer in natural language, summarizing the found information.
 
-> ![Image illustrating AI question and answer in chat interface](link_anh_test_chat_response)
+![Image illustrating AI question and answer in chat interface](/images/5-Workshop/5.4-Test-Chatbox/04_Promt_test_01.jpg)
 
 **Step 3: Verify data source**
 
@@ -58,7 +60,7 @@ This is the most important feature of RAG that distinguishes it from standard Ch
     - **Score:** Similarity score (relevance).
     - **S3 Location:** Path to the original file.
 
-> ![Image illustrating Source Details window showing original text segment](link_anh_test_citations)
+> ![Image illustrating Source Details window showing original text segment](/images/5-Workshop/5.4-Test-Chatbox/05_Promt_test_01.jpg)
 
 _Seeing this original text segment proves that the AI is not "hallucinating" but is actually reading your documents._
 
@@ -67,9 +69,9 @@ _Seeing this original text segment proves that the AI is not "hallucinating" but
 To see how the system reacts when information is not found.
 
 1.  Ask a question completely unrelated to the documents.
-    - _Example:_ _"Who was the first person to set foot on the moon?"_ (While your documents are about Finance).
+    - _Example:_ _"Can you explain some knowledge about personal finance?"_ (While your documents are about Cloud Computing).
 2.  **Expected Result:**
     - The AI might answer based on its general knowledge (if not restricted).
     - OR the AI will answer _"Sorry, I am unable to answer your question based on the retrieved data"_ - This is the ideal behavior for an enterprise RAG application.
 
-> ![Image illustrating response when asking off-topic questions](link_anh_test_negative_case)
+> ![Image illustrating response when asking off-topic questions](/images/5-Workshop/5.4-Test-Chatbox/06_Promt_test_01.jpg)
