@@ -16,12 +16,16 @@ Ensure your AWS account has permission to access and use the **Anthropic Claude 
 
 We will perform a quick test (Test Run) to ensure your account is ready.
 
+In the search bar, access **Amazon Bedrock**
+
+> ![Access Amazon Bedrock](/images/5-Workshop/5.2-Prerequisite/Amazon_Bedrock.jpg)
+
 **Step 1. Access Chat Playground**
 
 - In the left menu of the Bedrock Console, find **Playgrounds**.
 - Click **Chat**.
 
-> ![Image illustrating Playgrounds menu on the left](link_anh_menu_playgrounds_o_day)
+> ![Image illustrating Playgrounds menu on the left](/images/5-Workshop/5.2-Prerequisite/Play_ground.jpg)
 
 **Step 2. Select Test Model**
 
@@ -31,17 +35,17 @@ We will perform a quick test (Test Run) to ensure your account is ready.
 - Throughput: Select **On-demand**.
 - Click **Apply**.
 
-> ![Image illustrating Claude 3 Model selection panel](link_anh_chon_model_o_day)
+> ![Image illustrating Claude 3 Model selection panel](/images/5-Workshop/5.2-Prerequisite/02_Select_Test_Model.jpg)
 
 **Step 3. Send Activation Message**
 
 - In the chat box: Enter `Hello`.
 - Click **Run**.
 - **Observe result:**
-  - If AI answers: **Success** (Proceed immediately to section 2.3).
+  - If AI answers: **Success** (Proceed immediately to section 5.2.2).
   - If a red error or "Submit use case details" popup appears: **Information declaration required** (Continue to step 4 below).
 
-> ![Image illustrating chat interface and error message if any](link_anh_chat_test_o_day)
+> ![Image illustrating chat interface and error message if any](/images/5-Workshop/5.2-Prerequisite/03_Send_Activation_Message.jpg)
 
 **Step 4. Submit Use Case (Only perform if error occurred in step 3)**
 
@@ -53,4 +57,4 @@ We will perform a quick test (Test Run) to ensure your account is ready.
 - Click **Submit**.
 - Wait 1 minute, return to the chat box, Click **Run** on the `Hello` message again to confirm success.
 
-> ![Image illustrating Use Case information form](link_anh_form_use_case_o_day)
+> ![Image illustrating Use Case information form](/images/5-Workshop/5.2-Prerequisite/)

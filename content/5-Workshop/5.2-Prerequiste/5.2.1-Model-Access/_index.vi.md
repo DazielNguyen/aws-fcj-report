@@ -16,12 +16,17 @@ Theo chính sách mới của AWS, các mô hình nền tảng (Foundation Model
 
 Chúng ta sẽ thực hiện một bài kiểm tra nhanh (Test Run) để đảm bảo tài khoản của bạn đã sẵn sàng.
 
+Đầu tiên ở thanh tìm kiếm, truy cập vào Amazon Bedrock.
+
+> ![Truy cập vào Amazon Bedrock](/images/5-Workshop/5.2-Prerequisite/Amazon_Bedrock.jpg)
+
+
 **Bước 1. Truy cập Chat Playground**
 
 - Tại menu bên trái Bedrock Console, tìm mục **Playgrounds**.
 - Click **Chat**.
 
-> ![Ảnh minh họa menu Playgrounds bên trái](link_anh_menu_playgrounds_o_day)
+> ![Ảnh minh họa menu Playgrounds bên trái](/images/5-Workshop/5.2-Prerequisite/Play_ground.jpg)
 
 **Bước 2. Chọn Model kiểm thử**
 
@@ -31,17 +36,18 @@ Chúng ta sẽ thực hiện một bài kiểm tra nhanh (Test Run) để đảm
 - Throughput: Chọn **On-demand**.
 - Click **Apply**.
 
-> ![Ảnh minh họa bảng chọn Model Claude 3](link_anh_chon_model_o_day)
+> ![Ảnh minh họa bảng chọn Model Claude 3](/images/5-Workshop/5.2-Prerequisite/02_Select_Test_Model.jpg)
 
 **Bước 3. Gửi tin nhắn kích hoạt**
 
 - Trong khung chat: Nhập `Hello`.
 - Click **Run**.
 - **Quan sát kết quả:**
-  - Nếu AI trả lời: **Thành công** (Chuyển ngay sang phần 2.3).
+  - Nếu AI trả lời: **Thành công** (Chuyển ngay sang phần 5.2.2).
+> ![Ảnh minh họa giao diện chat và thông báo lỗi nếu có](/images/5-Workshop/5.2-Prerequisite/03_Send_Activation_Message.jpg)
+
   - Nếu hiện lỗi màu đỏ hoặc popup "Submit use case details": **Cần khai báo thông tin** (Làm tiếp bước 4 bên dưới).
 
-> ![Ảnh minh họa giao diện chat và thông báo lỗi nếu có](link_anh_chat_test_o_day)
 
 **Bước 4. Khai báo Use Case (Chỉ thực hiện nếu gặp lỗi ở bước 3)**
 
