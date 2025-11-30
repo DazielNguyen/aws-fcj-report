@@ -19,11 +19,11 @@ We will create an S3 Bucket to store original documents, acting as the knowledge
 - Access the [S3](https://us-east-1.console.aws.amazon.com/s3/get-started?region=us-east-1) service from the search bar.
 - **AWS Region:** Select `United States (N. Virginia us-east-1)`.
 
-> ![Access S3](/images/5-Workshop/5.2-Prerequisite/04_S3.jpg)
+![Access S3](/images/5-Workshop/5.2-Prerequisite/04_S3.jpg)
 
 - Click **Create bucket**.
 
-> ![Create S3 Bucket](/images/5-Workshop/5.2-Prerequisite/05_S3_Create_Bucket.jpg)
+![Create S3 Bucket](/images/5-Workshop/5.2-Prerequisite/05_S3_Create_Bucket.jpg)
 
 - Configure Bucket information:
     - **Bucket Type:** Click `General purpose`
@@ -31,15 +31,15 @@ We will create an S3 Bucket to store original documents, acting as the knowledge
     - **Object Ownership:** Keep default `ACLs disabled`.
     - **Block Public Access settings:** Keep default (Selected `Block all public access`).
 
-> ![Configure S3 Bucket](/images/5-Workshop/5.2-Prerequisite/06_Configure_S3_Bucket.jpg)
+![Configure S3 Bucket](/images/5-Workshop/5.2-Prerequisite/06_Configure_S3_Bucket.jpg)
 
 - Scroll to the bottom of the page, Click **Create bucket**.
 
-> ![Image illustrating S3 Bucket creation interface and Region selection](/images/5-Workshop/5.2-Prerequisite/07_Finished_Create_bucket.jpg)
+![Image illustrating S3 Bucket creation interface and Region selection](/images/5-Workshop/5.2-Prerequisite/07_Finished_Create_bucket.jpg)
 
 - Check that the S3 Bucket has been created successfully.
 
-> ![Create S3 Bucket Successful](/images/5-Workshop/5.2-Prerequisite/08_Create_S3_Successful.jpg)
+![Create S3 Bucket Successful](/images/5-Workshop/5.2-Prerequisite/08_Create_S3_Successful.jpg)
 
 
 **Step 2. Upload sample documents**

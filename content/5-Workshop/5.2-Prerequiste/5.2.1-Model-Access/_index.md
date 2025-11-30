@@ -18,14 +18,14 @@ We will perform a quick test (Test Run) to ensure your account is ready.
 
 In the search bar, access the [Amazon Bedrock](https://us-east-1.console.aws.amazon.com/bedrock/home?region=us-east-1#/overview).
 
-> ![Access Amazon Bedrock](/images/5-Workshop/5.2-Prerequisite/00_Amazon_Bedrock.jpg)
+![Access Amazon Bedrock](/images/5-Workshop/5.2-Prerequisite/00_Amazon_Bedrock.jpg)
 
 **Step 1. Access Chat Playground**
 
 - In the left menu of the Bedrock Console, find **Playgrounds**.
 - Click **Chat**.
 
-> ![Image illustrating Playgrounds menu on the left](/images/5-Workshop/5.2-Prerequisite/01_Play_ground.jpg)
+![Image illustrating Playgrounds menu on the left](/images/5-Workshop/5.2-Prerequisite/01_Play_ground.jpg)
 
 **Step 2. Select Test Model**
 
@@ -35,7 +35,7 @@ In the search bar, access the [Amazon Bedrock](https://us-east-1.console.aws.ama
 - Throughput: Select **On-demand**.
 - Click **Apply**.
 
-> ![Image illustrating Claude 3 Model selection panel](/images/5-Workshop/5.2-Prerequisite/02_Select_Test_Model.jpg)
+![Image illustrating Claude 3 Model selection panel](/images/5-Workshop/5.2-Prerequisite/02_Select_Test_Model.jpg)
 
 **Step 3. Send Activation Message**
 
@@ -45,7 +45,7 @@ In the search bar, access the [Amazon Bedrock](https://us-east-1.console.aws.ama
   - If AI answers: **Success** (Proceed immediately to section 5.2.2).
   - If a red error or "Submit use case details" popup appears: **Information declaration required** (Continue to step 4 below).
 
-> ![Image illustrating chat interface and error message if any](/images/5-Workshop/5.2-Prerequisite/03_Send_Activation_Message.jpg)
+![Image illustrating chat interface and error message if any](/images/5-Workshop/5.2-Prerequisite/03_Send_Activation_Message.jpg)
 
 **Step 4. Submit Use Case (Only perform if error occurred in step 3)**
 
@@ -57,4 +57,4 @@ In the search bar, access the [Amazon Bedrock](https://us-east-1.console.aws.ama
 - Click **Submit**.
 - Wait 1 minute, return to the chat box, Click **Run** on the `Hello` message again to confirm success.
 
-> ![Image illustrating Use Case information form](/images/5-Workshop/5.2-Prerequisite/)
+![Image illustrating Use Case information form](/images/5-Workshop/5.2-Prerequisite/)

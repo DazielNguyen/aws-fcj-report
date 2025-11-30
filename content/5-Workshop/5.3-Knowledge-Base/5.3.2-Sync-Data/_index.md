@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 5.3.2 </b> "
 ---
 
-#### Goal
+#### Target
 
 Before the AI can answer, data must be ingested into the vector storage (Vector Store). We will perform a "Before and After" check to clearly see how Bedrock automatically encodes and stores data into OpenSearch.
 

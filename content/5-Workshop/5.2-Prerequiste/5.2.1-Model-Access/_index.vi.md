@@ -18,7 +18,7 @@ Chúng ta sẽ thực hiện một bài kiểm tra nhanh (Test Run) để đảm
 
 Đầu tiên ở thanh tìm kiếm, truy cập vào [Amazon Bedrock](https://us-east-1.console.aws.amazon.com/bedrock/home?region=us-east-1#/overview).
 
-> ![Truy cập vào Amazon Bedrock](/images/5-Workshop/5.2-Prerequisite/00_Amazon_Bedrock.jpg)
+![Truy cập vào Amazon Bedrock](/images/5-Workshop/5.2-Prerequisite/00_Amazon_Bedrock.jpg)
 
 
 **Bước 1. Truy cập Chat Playground**
@@ -26,7 +26,7 @@ Chúng ta sẽ thực hiện một bài kiểm tra nhanh (Test Run) để đảm
 - Tại menu bên trái Bedrock Console, tìm mục **Playgrounds**.
 - Click **Chat**.
 
-> ![Ảnh minh họa menu Playgrounds bên trái](/images/5-Workshop/5.2-Prerequisite/01_Play_ground.jpg)
+![Ảnh minh họa menu Playgrounds bên trái](/images/5-Workshop/5.2-Prerequisite/01_Play_ground.jpg)
 
 **Bước 2. Chọn Model kiểm thử**
 
@@ -36,7 +36,7 @@ Chúng ta sẽ thực hiện một bài kiểm tra nhanh (Test Run) để đảm
 - Throughput: Chọn **On-demand**.
 - Click **Apply**.
 
-> ![Ảnh minh họa bảng chọn Model Claude 3](/images/5-Workshop/5.2-Prerequisite/02_Select_Test_Model.jpg)
+![Ảnh minh họa bảng chọn Model Claude 3](/images/5-Workshop/5.2-Prerequisite/02_Select_Test_Model.jpg)
 
 **Bước 3. Gửi tin nhắn kích hoạt**
 
@@ -44,7 +44,7 @@ Chúng ta sẽ thực hiện một bài kiểm tra nhanh (Test Run) để đảm
 - Click **Run**.
 - **Quan sát kết quả:**
   - Nếu AI trả lời: **Thành công** (Chuyển ngay sang phần 5.2.2).
-> ![Ảnh minh họa giao diện chat và thông báo lỗi nếu có](/images/5-Workshop/5.2-Prerequisite/03_Send_Activation_Message.jpg)
+  ![Ảnh minh họa giao diện chat và thông báo lỗi nếu có](/images/5-Workshop/5.2-Prerequisite/03_Send_Activation_Message.jpg)
 
   - Nếu hiện lỗi màu đỏ hoặc popup "Submit use case details": **Cần khai báo thông tin** (Làm tiếp bước 4 bên dưới).
 
@@ -59,4 +59,4 @@ Chúng ta sẽ thực hiện một bài kiểm tra nhanh (Test Run) để đảm
 - Click **Submit**.
 - Đợi 1 phút, quay lại khung chat, Click **Run** lại tin nhắn `Hello` để xác nhận thành công.
 
-> ![Ảnh minh họa form điền thông tin Use Case](link_anh_form_use_case_o_day)
+![Ảnh minh họa form điền thông tin Use Case](link_anh_form_use_case_o_day)

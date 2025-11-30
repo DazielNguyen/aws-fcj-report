@@ -19,11 +19,11 @@ Chúng ta sẽ tạo một S3 Bucket để lưu trữ tài liệu gốc, đóng 
 - Truy cập dịch vụ [S3](https://us-east-1.console.aws.amazon.com/s3/get-started?region=us-east-1) từ thanh tìm kiếm.
 - **AWS Region:** Chọn `United States (N. Virginia us-east-1)`.
 
-> ![Truy cập S3](/images/5-Workshop/5.2-Prerequisite/04_S3.jpg)
+![Truy cập S3](/images/5-Workshop/5.2-Prerequisite/04_S3.jpg)
 
 - Click **Create bucket**.
 
-> ![Create S3 Bucket](/images/5-Workshop/5.2-Prerequisite/05_S3_Create_Bucket.jpg)
+![Create S3 Bucket](/images/5-Workshop/5.2-Prerequisite/05_S3_Create_Bucket.jpg)
 
 
 - Cấu hình thông tin Bucket:
@@ -32,15 +32,15 @@ Chúng ta sẽ tạo một S3 Bucket để lưu trữ tài liệu gốc, đóng 
     - **Object Ownership:** Giữ mặc định `ACLs disabled`.
     - **Block Public Access settings:** Giữ mặc định (Đã chọn `Block all public access`).
 
-> ![Configure S3 Bucket](/images/5-Workshop/5.2-Prerequisite/06_Configure_S3_Bucket.jpg)
+![Configure S3 Bucket](/images/5-Workshop/5.2-Prerequisite/06_Configure_S3_Bucket.jpg)
 
 - Kéo xuống cuối trang, Click **Create bucket**.
 
-> ![Ảnh minh họa giao diện tạo S3 Bucket và chọn Region](/images/5-Workshop/5.2-Prerequisite/07_Finished_Create_bucket.jpg)
+![Ảnh minh họa giao diện tạo S3 Bucket và chọn Region](/images/5-Workshop/5.2-Prerequisite/07_Finished_Create_bucket.jpg)
 
 - Kiểm tra tạo S3 Bucket thành công.
 
-> ![Create S3 Bucket Successful](/images/5-Workshop/5.2-Prerequisite/08_Create_S3_Successful.jpg)
+![Create S3 Bucket Successful](/images/5-Workshop/5.2-Prerequisite/08_Create_S3_Successful.jpg)
 
 **Bước 2. Tải lên tài liệu mẫu**
 - Đây tài liệu mẫu, liên quan để tổng quan về kiến thức điện toán đám mây của AWS. Bạn có thể sử dụng để chạy demo hoặc upload dữ liệu của bạn.
