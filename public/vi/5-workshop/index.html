@@ -15,21 +15,21 @@
     <title>Workshop :: Báo cáo thực tập</title>
 
     
-    <link href="../../css/nucleus.css?1764495043" rel="stylesheet">
-    <link href="../../css/fontawesome-all.min.css?1764495043" rel="stylesheet">
-    <link href="../../css/hybrid.css?1764495043" rel="stylesheet">
-    <link href="../../css/featherlight.min.css?1764495043" rel="stylesheet">
-    <link href="../../css/perfect-scrollbar.min.css?1764495043" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1764495043" rel="stylesheet">
-    <link href="../../css/atom-one-dark-reasonable.css?1764495043" rel="stylesheet">
-    <link href="../../css/theme.css?1764495043" rel="stylesheet">
-    <link href="../../css/hugo-theme.css?1764495043" rel="stylesheet">
+    <link href="../../css/nucleus.css?1764497634" rel="stylesheet">
+    <link href="../../css/fontawesome-all.min.css?1764497634" rel="stylesheet">
+    <link href="../../css/hybrid.css?1764497634" rel="stylesheet">
+    <link href="../../css/featherlight.min.css?1764497634" rel="stylesheet">
+    <link href="../../css/perfect-scrollbar.min.css?1764497634" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1764497634" rel="stylesheet">
+    <link href="../../css/atom-one-dark-reasonable.css?1764497634" rel="stylesheet">
+    <link href="../../css/theme.css?1764497634" rel="stylesheet">
+    <link href="../../css/hugo-theme.css?1764497634" rel="stylesheet">
     
-    <link href="../../css/theme-workshop.css?1764495043" rel="stylesheet">
+    <link href="../../css/theme-workshop.css?1764497634" rel="stylesheet">
     
     
 
-    <script src="../../js/jquery-3.3.1.min.js?1764495043"></script>
+    <script src="../../js/jquery-3.3.1.min.js?1764497634"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -88,14 +88,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../js/lunr.min.js?1764495043"></script>
-<script type="text/javascript" src="../../js/auto-complete.js?1764495043"></script>
+<script type="text/javascript" src="../../js/lunr.min.js?1764497634"></script>
+<script type="text/javascript" src="../../js/auto-complete.js?1764497634"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/aws-fcj-report\/\/vi";
     
 </script>
-<script type="text/javascript" src="../../js/search.js?1764495043"></script>
+<script type="text/javascript" src="../../js/search.js?1764497634"></script>
  
   </div>
 
@@ -575,6 +575,46 @@
     
   </a>
    
+  <ul>
+          
+            
+<li
+  data-nav-id="/vi/5-workshop/5.1-workshop-overview/5.1.1-whatisrag/"
+  title="Giải thích RAG"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="../../vi/5-workshop/5.1-workshop-overview/5.1.1-whatisrag/">
+     <b> 5.1.1 </b> Giải thích RAG 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/vi/5-workshop/5.1-workshop-overview/5.1.2-services/"
+  title="Giới thiệu các dịch vụ"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="../../vi/5-workshop/5.1-workshop-overview/5.1.2-services/">
+     <b> 5.1.2 </b> Giới thiệu các dịch vụ 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+     
+  </ul>
+  
 </li>
     
             
@@ -1009,23 +1049,35 @@
 
 
 
-	<h1 id="đảm-bảo-truy-cập-hybrid-an-toàn-đến-s3-bằng-cách-sử-dụng-vpc-endpoint">Đảm bảo truy cập Hybrid an toàn đến S3 bằng cách sử dụng VPC endpoint</h1>
+	<h1 id="xây-dựng-ứng-dụng-rag-sử-dụng-knowledge-bases-cho-amazon-bedrock">Xây dựng ứng dụng RAG sử dụng Knowledge Bases cho Amazon Bedrock</h1>
 <h4 id="tổng-quan">Tổng quan</h4>
-<p><strong>AWS PrivateLink</strong> cung cấp kết nối riêng tư đến các dịch vụ aws từ VPCs hoặc trung tâm dữ liệu (on-premise) mà không làm lộ lưu lượng truy cập ra ngoài public internet.</p>
-<p>Trong bài lab này, chúng ta sẽ học cách tạo, cấu hình, và kiểm tra VPC endpoints để cho phép workload của bạn tiếp cận các dịch vụ AWS mà không cần đi qua Internet công cộng.</p>
-<p>Chúng ta sẽ tạo hai loại endpoints để truy cập đến Amazon S3: gateway vpc endpoint và interface vpc endpoint. Hai loại vpc endpoints này mang đến nhiều lợi ích tùy thuộc vào việc bạn truy cập đến S3 từ môi trường cloud hay từ trung tâm dữ liệu (on-premise).</p>
+<p><strong>Knowledge Bases for Amazon Bedrock</strong> là một tính năng được quản lý hoàn toàn giúp bạn triển khai kỹ thuật RAG (Retrieval-Augmented Generation) bằng cách kết nối các Foundation Models với nguồn dữ liệu nội bộ của bạn để cung cấp các phản hồi chính xác, có trích dẫn và phù hợp với ngữ cảnh.</p>
+<blockquote>
+<p>RAG là một kỹ thuật để tối ưu hóa đầu ra của Large Language Model (LLM) bằng cách truy xuất thông tin từ cơ sở dữ liệu bên ngoài đáng tin cậy (Retrieval) và thêm nó vào ngữ cảnh (Augmentation) trước khi tạo ra câu trả lời (Generation). Phương pháp này giúp khắc phục những hạn chế về dữ liệu huấn luyện lỗi thời và đảm bảo AI trả lời dựa trên thông tin thực tế được cung cấp.</p></blockquote>
+<p>Trong bài lab này, chúng ta sẽ học cách xây dựng một trợ lý AI có khả năng &ldquo;đọc và hiểu&rdquo; các tài liệu doanh nghiệp độc quyền. Bạn sẽ thực hiện quy trình từ việc nhập dữ liệu và tạo chỉ mục vector đến cấu hình mô hình để trả lời câu hỏi dựa trên những tài liệu đó mà không cần quản lý bất kỳ máy chủ nào.</p>
+<p>Chúng ta sẽ sử dụng ba thành phần chính để thiết lập quy trình xử lý RAG hoàn chỉnh:</p>
 <ul>
-<li><strong>Gateway</strong> - Tạo gateway endpoint để gửi lưu lượng đến Amazon S3 hoặc DynamoDB using private IP addresses. Bạn điều hướng lưu lượng từ VPC của bạn đến gateway endpoint bằng các bảng định tuyến (route tables)</li>
-<li><strong>Interface</strong> - Tạo interface endpoint để gửi lưu lượng đến các dịch vụ điểm cuối (endpoints) sử dụng Network Load Balancer để phân phối lưu lượng. Lưu lượng dành cho dịch vụ điểm cuối được resolved bằng DNS.</li>
+<li><strong>Nguồn dữ liệu (Amazon S3)</strong> - Đóng vai trò là kho lưu trữ &ldquo;sự thật&rdquo;. Bạn sẽ tải các tài liệu (PDF, Word, Text) lên một S3 bucket. Knowledge Base sẽ sử dụng nguồn này để đồng bộ hóa dữ liệu.</li>
+<li><strong>Vector Store (OpenSearch Serverless)</strong> - Nơi lưu trữ các embeddings vector (dữ liệu được mã hóa bằng số). Khi người dùng đặt câu hỏi, hệ thống sẽ thực hiện tìm kiếm ngữ nghĩa tại đây để trích xuất các đoạn văn bản liên quan nhất thay vì tìm kiếm từ khóa tiêu chuẩn.</li>
+<li><strong>Foundation Model (Claude 3)</strong> - Large Language Model đóng vai trò là bộ não xử lý. Nó nhận câu hỏi của người dùng cùng với thông tin tìm thấy từ Vector Store, sau đó tổng hợp và tạo ra câu trả lời tự nhiên, chính xác kèm theo trích dẫn nguồn.</li>
+</ul>
+<h4 id="kết-quả-đạt-được">Kết quả đạt được</h4>
+<p>Khi kết thúc workshop, bạn sẽ có một hệ thống Chatbot thực tế, hoạt động với các tính năng sau:</p>
+<ul>
+<li>Trò chuyện hỏi đáp về nội dung tài liệu độc quyền.</li>
+<li>Câu trả lời chính xác, không có ảo giác (hallucinations).</li>
+<li>Trích dẫn nguồn (biết chính xác câu trả lời đến từ trang nào).</li>
+<li>Triển khai nhanh chóng mà không cần viết mã xử lý dữ liệu phức tạp.</li>
 </ul>
 <h4 id="nội-dung">Nội dung</h4>
 <ol>
-<li><a href="../../vi/5-workshop/5.1-workshop-overview/">Tổng quan về workshop</a></li>
-<li><a href="../../vi/5-workshop/5.2-prerequiste/">Chuẩn bị</a></li>
-<li><a href="../../vi/5-workshop/5.3-s3-vpc/">Truy cập đến S3 từ VPC</a></li>
-<li><a href="../../vi/5-workshop/5.4-s3-onprem/">Truy cập đến S3 từ TTDL On-premises</a></li>
-<li><a href="../../vi/5-workshop/5.5-policy/">VPC Endpoint Policies (làm thêm)</a></li>
-<li><a href="../../vi/5-workshop/5.6-cleanup/">Dọn dẹp tài nguyên</a></li>
+<li><a href="../../vi/5-workshop/5.1-workshop-overview/">Tổng quan về Workshop</a></li>
+<li><a href="../../vi/5-workshop/5.2-prerequiste/">Chuẩn bị môi trường</a></li>
+<li><a href="5.3-Knowledge-Base/">Tạo và cấu hình Knowledge Base</a></li>
+<li><a href="5.4-Test-Chatbot/">Kiểm tra Chatbot (RAG)</a></li>
+<li><a href="5.5-Client-Integration/">Tích hợp ứng dụng Client (Tùy chọn)</a></li>
+<li><a href="../../vi/5-workshop/5.6-cleanup/">Cập nhật dữ liệu</a></li>
+<li><a href="5.7-Cleanup/">Dọn dẹp tài nguyên</a></li>
 </ol>
 
 
@@ -1484,8 +1536,42 @@
 
                     
                     
+                        
+                    
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
             
         
@@ -1727,19 +1813,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../js/clipboard.min.js?1764495043"></script>
-    <script src="../../js/perfect-scrollbar.min.js?1764495043"></script>
-    <script src="../../js/perfect-scrollbar.jquery.min.js?1764495043"></script>
-    <script src="../../js/jquery.sticky.js?1764495043"></script>
-    <script src="../../js/featherlight.min.js?1764495043"></script>
-    <script src="../../js/highlight.pack.js?1764495043"></script>
+    <script src="../../js/clipboard.min.js?1764497634"></script>
+    <script src="../../js/perfect-scrollbar.min.js?1764497634"></script>
+    <script src="../../js/perfect-scrollbar.jquery.min.js?1764497634"></script>
+    <script src="../../js/jquery.sticky.js?1764497634"></script>
+    <script src="../../js/featherlight.min.js?1764497634"></script>
+    <script src="../../js/highlight.pack.js?1764497634"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../js/modernizr.custom-3.6.0.js?1764495043"></script>
-    <script src="../../js/learn.js?1764495043"></script>
-    <script src="../../js/hugo-learn.js?1764495043"></script>
+    <script src="../../js/modernizr.custom-3.6.0.js?1764497634"></script>
+    <script src="../../js/learn.js?1764497634"></script>
+    <script src="../../js/hugo-learn.js?1764497634"></script>
 
-    <link href="../../mermaid/mermaid.css?1764495043" rel="stylesheet" />
-    <script src="../../mermaid/mermaid.js?1764495043"></script>
+    <link href="../../mermaid/mermaid.css?1764497634" rel="stylesheet" />
+    <script src="../../mermaid/mermaid.js?1764497634"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
