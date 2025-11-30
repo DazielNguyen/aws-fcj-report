@@ -16,20 +16,27 @@ Trước khi AI có thể trả lời, dữ liệu phải được nhập vào k
 
 Chúng ta sẽ truy cập trực tiếp vào Amazon OpenSearch Serverless để xác nhận rằng chưa có dữ liệu nào tồn tại.
 
-1.  Trong thanh tìm kiếm AWS Console, gõ `OpenSearch` và chọn **Amazon OpenSearch Service**.
-2.  Trong menu bên trái, ở phần **Serverless**, chọn **Collections**.
-3.  Nhấp vào tên Collection mới được tạo bởi Bedrock (thường có tên dạng `bedrock-knowledge-base-...`).
+1.  Trong thanh tìm kiếm AWS Console, gõ `Amazon OpenSearch Service` và chọn **Amazon OpenSearch Service**.
+![13_Open_AOS](/images/5-Workshop/5.3-Knowledge-Base/13_Open_AOS.jpg)
 
-> ![Hình minh họa danh sách Collections trong OpenSearch](link_anh_opensearch_collections)
+2.  Trong menu bên trái, ở phần **Serverless**, chọn **Collections**.
+![14_collection](/images/5-Workshop/5.3-Knowledge-Base/14_collection.jpg)
+
+3.  Nhấp vào tên Collection mới được tạo bởi Bedrock (thường có tên dạng `bedrock-knowledge-data...`).
+![15_collection](/images/5-Workshop/5.3-Knowledge-Base/15_collection.jpg)
+
 
 4.  Trên trang chi tiết Collection, nhấp vào nút **Open Dashboard** (nằm ở góc trên bên phải màn hình).
-    - _Lưu ý:_ Nếu được yêu cầu đăng nhập, hãy sử dụng thông tin đăng nhập AWS hiện tại của bạn.
+   - _Lưu ý:_ Nếu được yêu cầu đăng nhập, hãy sử dụng thông tin đăng nhập AWS hiện tại của bạn.
 
-> ![Hình minh họa nút Open Dashboard trên trang chi tiết Collection](link_anh_open_dashboard_btn)
+![16_collection](/images/5-Workshop/5.3-Knowledge-Base/16_collection.jpg)
 
 5.  Trong giao diện OpenSearch Dashboard:
-    - Nhấp vào biểu tượng **Menu (3 đường ngang)** ở góc trên bên trái.
-    - Chọn **Dev Tools** (thường nằm ở cuối danh sách menu).
+   - Nhấp vào biểu tượng **Menu (3 đường ngang)** ở góc trên bên trái.
+   ![17](/images/5-Workshop/5.3-Knowledge-Base/17.jpg)
+
+   - Chọn **Dev Tools** (thường nằm ở cuối danh sách menu).
+   ![18](/images/5-Workshop/5.3-Knowledge-Base/18.jpg)
 
 > ![Hình minh họa menu chọn Dev Tools trong Dashboard](link_anh_menu_devtools)
 
@@ -42,10 +49,12 @@ Chúng ta sẽ truy cập trực tiếp vào Amazon OpenSearch Serverless để 
       }
     }
     ```
+![19](/images/5-Workshop/5.3-Knowledge-Base/19.jpg)
+
 7.  Nhấp vào nút **Play (Run)** (tam giác nhỏ bên cạnh dòng lệnh).
 8.  **Kết quả:** Quan sát ngăn bên phải, `hits` -> `total` -> `value` là **0**.
 
-> ![Hình minh họa kết quả Dev Tools trả về giá trị 0](link_anh_devtools_empty)
+![20](/images/5-Workshop/5.3-Knowledge-Base/20.jpg)
 
 **Bước 2: Đồng bộ Dữ liệu**
 
@@ -56,13 +65,13 @@ Bây giờ chúng ta sẽ kích hoạt Bedrock để đọc các file từ S3 v�
 3.  Cuộn xuống phần **Data source**, đánh dấu vào ô (tick) bên cạnh tên nguồn dữ liệu (`s3-datasource`).
 4.  Nhấp vào nút **Sync** (Màu cam).
 
-> ![Hình minh họa chọn Data Source và nhấp nút Sync](link_anh_click_sync_btn)
+> ![Hình minh họa chọn Data Source và nhấp nút Sync](/images/5-Workshop/5.3-Knowledge-Base/21.jpg)
 
 5.  **Chờ đợi:**
     - Quá trình này sẽ mất **5 - 10 phút** tùy thuộc vào kích thước tài liệu mẫu.
     - Chờ cho đến khi cột **Sync status** chuyển từ `Syncing` sang `Available`.
 
-> ![Hình minh họa trạng thái Sync thành công Available](link_anh_sync_status_available)
+> ![Hình minh họa trạng thái Sync thành công Available](/images/5-Workshop/5.3-Knowledge-Base/22.jpg)
 
 **Bước 3: Kiểm tra lại Vector Store (Đã có Dữ liệu)**
 
@@ -82,6 +91,6 @@ Sau khi Bedrock báo hoàn tất Sync, chúng ta quay lại kho lưu trữ để
     - Phần `hits` -> `total` -> `value` sẽ lớn hơn **0** (ví dụ: 10, 20... tùy thuộc vào số lượng đoạn văn bản).
     - Bạn sẽ thấy chi tiết các vector (mảng số) và nội dung văn bản được lưu trữ trong trường `_source`.
 
-> ![Hình minh họa kết quả Dev Tools hiển thị dữ liệu đã đồng bộ](link_anh_devtools_populated)
+> ![Hình minh họa kết quả Dev Tools hiển thị dữ liệu đã đồng bộ](/images/5-Workshop/5.3-Knowledge-Base/23.jpg)
 
 **Chúc mừng!** Bạn đã hoàn thành việc xây dựng "bộ não" cho AI. Dữ liệu đã được mã hóa và nằm an toàn trong Vector Database, sẵn sàng cho việc truy xuất.

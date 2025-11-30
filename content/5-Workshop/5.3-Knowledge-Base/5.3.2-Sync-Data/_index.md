@@ -16,36 +16,43 @@ Before the AI can answer, data must be ingested into the vector storage (Vector 
 
 We will directly access Amazon OpenSearch Serverless to confirm that no data exists yet.
 
-1.  In the AWS Console search bar, type `OpenSearch` and select **Amazon OpenSearch Service**.
-2.  In the left menu, under **Serverless**, select **Collections**.
-3.  Click on the Collection name newly created by Bedrock (usually named like `bedrock-knowledge-base-...`).
+1.  In the AWS Console search bar, type `Amazon OpenSearch Service` and select **Amazon OpenSearch Service**.
+    ![13_Open_AOS](/images/5-Workshop/5.3-Knowledge-Base/13_Open_AOS.jpg)
 
-> ![Image illustrating Collections list in OpenSearch](link_anh_opensearch_collections)
+2.  In the left menu, under **Serverless**, select **Collections**.
+    ![14_collection](/images/5-Workshop/5.3-Knowledge-Base/14_collection.jpg)
+
+3.  Click on the Collection name newly created by Bedrock (usually named like `bedrock-knowledge-data...`).
+    ![15_collection](/images/5-Workshop/5.3-Knowledge-Base/15_collection.jpg)
 
 4.  On the Collection details page, click the **Open Dashboard** button (located at the top right of the screen).
-    - _Note:_ If asked to log in, use your current AWS credentials.
 
-> ![Image illustrating Open Dashboard button on Collection details page](link_anh_open_dashboard_btn)
+- _Note:_ If asked to log in, use your current AWS credentials.
+
+![16_collection](/images/5-Workshop/5.3-Knowledge-Base/16_collection.jpg)
 
 5.  In the OpenSearch Dashboard interface:
-    - Click the **Menu (3 horizontal lines)** icon in the top left corner.
-    - Select **Dev Tools** (usually located at the bottom of the menu list).
 
-> ![Image illustrating Dev Tools selection menu in Dashboard](link_anh_menu_devtools)
+- Click the **Menu (3 horizontal lines)** icon in the top left corner.
+  ![17](/images/5-Workshop/5.3-Knowledge-Base/17.jpg)
+
+- Select **Dev Tools** (usually located at the bottom of the menu list).
+  ![18](/images/5-Workshop/5.3-Knowledge-Base/18.jpg)
 
 6.  In the **Console** pane (on the left), enter the following command to check data:
-    ```
-    GET _search
+    `    GET _search
     {
       "query": {
         "match_all": {}
       }
     }
-    ```
+   `
+    ![19](/images/5-Workshop/5.3-Knowledge-Base/19.jpg)
+
 7.  Click the **Play (Run)** button (small triangle next to the command line).
 8.  **Result:** Observe the right pane, `hits` -> `total` -> `value` is **0**.
 
-> ![Image illustrating Dev Tools result returning 0 value](link_anh_devtools_empty)
+![20](/images/5-Workshop/5.3-Knowledge-Base/20.jpg)
 
 **Step 2: Sync Data**
 
@@ -56,13 +63,13 @@ Now we will trigger Bedrock to read files from S3 and load them into OpenSearch.
 3.  Scroll down to the **Data source** section, check the box (tick) next to the data source name (`s3-datasource`).
 4.  Click the **Sync** button (Orange).
 
-> ![Image illustrating selecting Data Source and clicking Sync button](link_anh_click_sync_btn)
+> ![Image illustrating selecting Data Source and clicking Sync button](/images/5-Workshop/5.3-Knowledge-Base/21.jpg)
 
 5.  **Wait:**
     - This process will take **5 - 10 minutes** depending on the sample document size.
     - Wait until the **Sync status** column changes from `Syncing` to `Available`.
 
-> ![Image illustrating successful Sync status Available](link_anh_sync_status_available)
+> ![Image illustrating successful Sync status Available](/images/5-Workshop/5.3-Knowledge-Base/22.jpg)
 
 **Step 3: Re-check Vector Store (Populated)**
 
@@ -82,6 +89,6 @@ After Bedrock reports Sync completion, we return to the repository to verify the
     - The `hits` -> `total` -> `value` section will be greater than **0** (e.g., 10, 20... depending on the number of text chunks).
     - You will see details of the vectors (number arrays) and text content stored in the `_source` field.
 
-> ![Image illustrating Dev Tools result showing synced data](link_anh_devtools_populated)
+> ![Image illustrating Dev Tools result showing synced data](/images/5-Workshop/5.3-Knowledge-Base/23.jpg)
 
 **Congratulations!** You have completed building the "brain" for the AI. The data has been encoded and sits safely in the Vector Database, ready for retrieval.
