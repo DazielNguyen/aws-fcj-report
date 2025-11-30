@@ -23,7 +23,7 @@ Chúng ta sử dụng:
 1.  Tại thanh menu trên cùng của AWS Console, click vào biểu tượng **CloudShell** `>_`.
 2.  Đợi terminal khởi động.
 
-> ![Ảnh minh họa vị trí nút CloudShell trên thanh menu](link_anh_cloudshell_icon)
+> ![Ảnh minh họa vị trí nút CloudShell trên thanh menu](/images/5-Workshop/5.5-Client-Integration/01_CloudShell.jpg)
 
 **Bước 2: Cài đặt thư viện và chuẩn bị code**
 
@@ -44,7 +44,7 @@ MODEL_ARN = "arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-3-5-so
 client = boto3.client(service_name='bedrock-agent-runtime', region_name='ap-southeast-1')
 
 st.set_page_config(page_title="Trợ lý AI Doanh Nghiệp")
-st.title("🤖 Chat với Tài Liệu Riêng")
+st.title("Chat với Tài Liệu Riêng")
 
 # Khởi tạo lịch sử chat
 if "messages" not in st.session_state:
@@ -87,7 +87,7 @@ if prompt := st.chat_input("Hỏi gì đó về tài liệu của bạn..."):
             if citations:
                 doc_uri = citations[0]['location']['s3Location']['uri']
                 doc_name = doc_uri.split('/')[-1]
-                answer += f"\n\n---\n📚 *Nguồn tham khảo: {doc_name}*"
+                answer += f"\n\n---\n *Nguồn tham khảo: {doc_name}*"
 
             message_placeholder.markdown(answer)
             st.session_state.messages.append({"role": "assistant", "content": answer})
