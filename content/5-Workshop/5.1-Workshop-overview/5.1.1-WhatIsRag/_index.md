@@ -35,4 +35,4 @@ The process of handling a question in RAG proceeds as follows:
 | **2** | **Augmentation** (Tăng cường) | Combine the user's question + The data just found into a complete "prompt".                                                   |
 | **3** | **Generation** (Tạo sinh)     | Send that prompt to the AI (LLM) for it to synthesize and write out the final answer for the user.                            |
 
-![RAG](/images/5-Workshop/5.1-Workshop-overview/rag.png)
+![RAG](/images/5-Workshop/5.1-Workshop-overview/rag-initial-01.jpg)

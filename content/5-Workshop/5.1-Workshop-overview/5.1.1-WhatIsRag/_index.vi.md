@@ -35,4 +35,4 @@ Quy trình xử lý một câu hỏi của RAG diễn ra như sau:
 | **2** | **Augmentation** (Tăng cường) | Ghép câu hỏi của người dùng + Dữ liệu vừa tìm được thành một "lời nhắc" (prompt) hoàn chỉnh.                   |
 | **3** | **Generation** (Tạo sinh)     | Gửi prompt đó cho AI (LLM) để nó tổng hợp và viết ra câu trả lời cuối cùng cho người dùng.                     |
 
-![RAG](/images/5-Workshop/5.1-Workshop-overview/rag.png)
+![RAG](/images/5-Workshop/5.1-Workshop-overview/rag-initial-01.jpg)
