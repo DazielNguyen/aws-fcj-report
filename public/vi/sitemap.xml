@@ -132,6 +132,19 @@
                 href="http://localhost:1313/aws-fcj-report/vi/4-eventparticipated/4.1-event1/"
                 />
   </url><url>
+    <loc>http://localhost:1313/aws-fcj-report/vi/5-workshop/5.1-workshop-overview/5.1.1-whatisrag/</loc>
+    <lastmod>2025-09-09T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/aws-fcj-report/5-workshop/5.1-workshop-overview/5.1.1-whatisrag/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="http://localhost:1313/aws-fcj-report/vi/5-workshop/5.1-workshop-overview/5.1.1-whatisrag/"
+                />
+  </url><url>
     <loc>http://localhost:1313/aws-fcj-report/vi/5-workshop/5.1-workshop-overview/</loc>
     <lastmod>2025-09-09T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -145,6 +158,45 @@
                 href="http://localhost:1313/aws-fcj-report/vi/5-workshop/5.1-workshop-overview/"
                 />
   </url><url>
+    <loc>http://localhost:1313/aws-fcj-report/vi/5-workshop/5.1-workshop-overview/5.1.2-services/</loc>
+    <lastmod>2025-09-09T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/aws-fcj-report/5-workshop/5.1-workshop-overview/5.1.2-services/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="http://localhost:1313/aws-fcj-report/vi/5-workshop/5.1-workshop-overview/5.1.2-services/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/aws-fcj-report/vi/5-workshop/5.3-knowledge-base/5.3.1-create-kb/</loc>
+    <lastmod>2025-09-09T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/aws-fcj-report/5-workshop/5.3-knowledge-base/5.3.1-create-kb/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="http://localhost:1313/aws-fcj-report/vi/5-workshop/5.3-knowledge-base/5.3.1-create-kb/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/aws-fcj-report/vi/5-workshop/5.2-prerequiste/5.2.1-model-access/</loc>
+    <lastmod>2025-09-09T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/aws-fcj-report/5-workshop/5.2-prerequiste/5.2.1-model-access/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="http://localhost:1313/aws-fcj-report/vi/5-workshop/5.2-prerequiste/5.2.1-model-access/"
+                />
+  </url><url>
     <loc>http://localhost:1313/aws-fcj-report/vi/1-worklog/</loc>
     <lastmod>2025-09-09T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -156,19 +208,6 @@
                 rel="alternate"
                 hreflang="vi"
                 href="http://localhost:1313/aws-fcj-report/vi/1-worklog/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/aws-fcj-report/vi/5-workshop/5.3-s3-vpc/5.3.1-create-gwe/</loc>
-    <lastmod>2025-09-09T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/aws-fcj-report/5-workshop/5.3-s3-vpc/5.3.1-create-gwe/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="http://localhost:1313/aws-fcj-report/vi/5-workshop/5.3-s3-vpc/5.3.1-create-gwe/"
                 />
   </url><url>
     <loc>http://localhost:1313/aws-fcj-report/vi/1-worklog/1.1-week1/</loc>
@@ -210,6 +249,19 @@
                 href="http://localhost:1313/aws-fcj-report/vi/2-proposal/"
                 />
   </url><url>
+    <loc>http://localhost:1313/aws-fcj-report/vi/5-workshop/5.2-prerequiste/5.2.2-prepare-data/</loc>
+    <lastmod>2025-09-09T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/aws-fcj-report/5-workshop/5.2-prerequiste/5.2.2-prepare-data/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="http://localhost:1313/aws-fcj-report/vi/5-workshop/5.2-prerequiste/5.2.2-prepare-data/"
+                />
+  </url><url>
     <loc>http://localhost:1313/aws-fcj-report/vi/5-workshop/5.2-prerequiste/</loc>
     <lastmod>2025-09-09T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -223,17 +275,17 @@
                 href="http://localhost:1313/aws-fcj-report/vi/5-workshop/5.2-prerequiste/"
                 />
   </url><url>
-    <loc>http://localhost:1313/aws-fcj-report/vi/5-workshop/5.3-s3-vpc/5.3.2-test-gwe/</loc>
+    <loc>http://localhost:1313/aws-fcj-report/vi/5-workshop/5.3-knowledge-base/5.3.2-sync-data/</loc>
     <lastmod>2025-09-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/aws-fcj-report/5-workshop/5.3-s3-vpc/5.3.2-test-gwe/"
+                href="http://localhost:1313/aws-fcj-report/5-workshop/5.3-knowledge-base/5.3.2-sync-data/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="http://localhost:1313/aws-fcj-report/vi/5-workshop/5.3-s3-vpc/5.3.2-test-gwe/"
+                href="http://localhost:1313/aws-fcj-report/vi/5-workshop/5.3-knowledge-base/5.3.2-sync-data/"
                 />
   </url><url>
     <loc>http://localhost:1313/aws-fcj-report/vi/5-workshop/5.4-s3-onprem/5.4.2-create-interface-enpoint/</loc>
@@ -288,17 +340,17 @@
                 href="http://localhost:1313/aws-fcj-report/vi/5-workshop/5.4-s3-onprem/5.4.3-test-endpoint/"
                 />
   </url><url>
-    <loc>http://localhost:1313/aws-fcj-report/vi/5-workshop/5.3-s3-vpc/</loc>
+    <loc>http://localhost:1313/aws-fcj-report/vi/5-workshop/5.3-knowledge-base/</loc>
     <lastmod>2025-09-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/aws-fcj-report/5-workshop/5.3-s3-vpc/"
+                href="http://localhost:1313/aws-fcj-report/5-workshop/5.3-knowledge-base/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="http://localhost:1313/aws-fcj-report/vi/5-workshop/5.3-s3-vpc/"
+                href="http://localhost:1313/aws-fcj-report/vi/5-workshop/5.3-knowledge-base/"
                 />
   </url><url>
     <loc>http://localhost:1313/aws-fcj-report/vi/1-worklog/1.4-week4/</loc>

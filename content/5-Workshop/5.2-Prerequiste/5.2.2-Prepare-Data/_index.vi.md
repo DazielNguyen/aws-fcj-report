@@ -43,6 +43,9 @@ Chúng ta sẽ tạo một S3 Bucket để lưu trữ tài liệu gốc, đóng 
 > ![Create S3 Bucket Successful](/images/5-Workshop/5.2-Prerequisite/08_Create_S3_Successful.jpg)
 
 **Bước 2. Tải lên tài liệu mẫu**
+- Tài liệu mẫu, liên quan để tổng quan về kiến thức điện toán đám mây của AWS. 
+
+_📊 <a href="/files/2-Proposal/pricing.csv" download>Tệp định dạng CSV</a>_
 
 - Tại danh sách Buckets, Click vào **tên bucket** bạn vừa tạo.
 - Click **Upload**.
