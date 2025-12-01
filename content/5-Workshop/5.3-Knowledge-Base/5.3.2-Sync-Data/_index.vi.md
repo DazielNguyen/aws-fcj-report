@@ -38,8 +38,6 @@ Chúng ta sẽ truy cập trực tiếp vào Amazon OpenSearch Serverless để 
    - Chọn **Dev Tools** (thường nằm ở cuối danh sách menu).
    ![18](/images/5-Workshop/5.3-Knowledge-Base/18.jpg)
 
-> ![Hình minh họa menu chọn Dev Tools trong Dashboard](link_anh_menu_devtools)
-
 6.  Trong ngăn **Console** (bên trái), nhập lệnh sau để kiểm tra dữ liệu:
     ```
     GET _search
@@ -65,13 +63,13 @@ Bây giờ chúng ta sẽ kích hoạt Bedrock để đọc các file từ S3 v�
 3.  Cuộn xuống phần **Data source**, đánh dấu vào ô (tick) bên cạnh tên nguồn dữ liệu (`s3-datasource`).
 4.  Nhấp vào nút **Sync** (Màu cam).
 
-> ![Hình minh họa chọn Data Source và nhấp nút Sync](/images/5-Workshop/5.3-Knowledge-Base/21.jpg)
+![Hình minh họa chọn Data Source và nhấp nút Sync](/images/5-Workshop/5.3-Knowledge-Base/21.jpg)
 
 5.  **Chờ đợi:**
     - Quá trình này sẽ mất **5 - 10 phút** tùy thuộc vào kích thước tài liệu mẫu.
     - Chờ cho đến khi cột **Sync status** chuyển từ `Syncing` sang `Available`.
 
-> ![Hình minh họa trạng thái Sync thành công Available](/images/5-Workshop/5.3-Knowledge-Base/22.jpg)
+![Hình minh họa trạng thái Sync thành công Available](/images/5-Workshop/5.3-Knowledge-Base/22.jpg)
 
 **Bước 3: Kiểm tra lại Vector Store (Đã có Dữ liệu)**
 
@@ -91,6 +89,6 @@ Sau khi Bedrock báo hoàn tất Sync, chúng ta quay lại kho lưu trữ để
     - Phần `hits` -> `total` -> `value` sẽ lớn hơn **0** (ví dụ: 10, 20... tùy thuộc vào số lượng đoạn văn bản).
     - Bạn sẽ thấy chi tiết các vector (mảng số) và nội dung văn bản được lưu trữ trong trường `_source`.
 
-> ![Hình minh họa kết quả Dev Tools hiển thị dữ liệu đã đồng bộ](/images/5-Workshop/5.3-Knowledge-Base/23.jpg)
+![Hình minh họa kết quả Dev Tools hiển thị dữ liệu đã đồng bộ](/images/5-Workshop/5.3-Knowledge-Base/23.jpg)
 
 **Chúc mừng!** Bạn đã hoàn thành việc xây dựng "bộ não" cho AI. Dữ liệu đã được mã hóa và nằm an toàn trong Vector Database, sẵn sàng cho việc truy xuất.

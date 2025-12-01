@@ -54,7 +54,7 @@ Now, we will feed this new knowledge into the AI's "brain".
 
 2.  Click **Upload** -> **Add files** -> Select the `secret-project.txt` file -> **Upload**.
 
-> ![Image illustrating file successfully uploaded to S3](/images/5-Workshop/5.6-Update-Data/02.png)
+![Image illustrating file successfully uploaded to S3](/images/5-Workshop/5.6-Update-Data/02.png)
 
 3.  Switch to the **Amazon Bedrock Console** -> Select **Knowledge bases** from the left menu.
 4.  Click on your Knowledge Base name.
@@ -62,7 +62,7 @@ Now, we will feed this new knowledge into the AI's "brain".
 6.  Click the **Sync** button (Orange).
 7.  **Wait:** Wait for about 30 seconds to 1 minute until the **Status** column changes from `Syncing` to `Available`.
 
-> ![Image illustrating Sync process completion on Bedrock Console](/images/5-Workshop/5.6-Update-Data/03.png)
+![Image illustrating Sync process completion on Bedrock Console](/images/5-Workshop/5.6-Update-Data/03.png)
 
 **Step 4: Verify again (The "Wow" Moment)**
 
@@ -74,7 +74,7 @@ The system now possesses the new knowledge. Let's challenge the AI once again.
     - The AI answers correctly: _"The activation code is AWS-ROCKS-2025-SINGAPORE"_.
     - The AI cites the source as the `secret-project.txt` file.
 
-> ![Image illustrating AI answering correctly after data update](/images/5-Workshop/5.6-Update-Data/04.png)
+![Image illustrating AI answering correctly after data update](/images/5-Workshop/5.6-Update-Data/04.png)
 
 #### Conclusion
 

@@ -54,7 +54,7 @@ Bây giờ, chúng ta sẽ cung cấp kiến thức mới này vào "bộ não" 
 
 2.  Nhấp **Upload** -> **Add files** -> Chọn file `secret-project.txt` -> **Upload**.
 
-> ![Hình minh họa file tải lên thành công vào S3](/images/5-Workshop/5.6-Update-Data/02.png)
+![Hình minh họa file tải lên thành công vào S3](/images/5-Workshop/5.6-Update-Data/02.png)
 
 3.  Chuyển sang **Amazon Bedrock Console** -> Chọn **Knowledge bases** từ menu bên trái.
 4.  Nhấp vào tên Knowledge Base của bạn.
@@ -62,7 +62,7 @@ Bây giờ, chúng ta sẽ cung cấp kiến thức mới này vào "bộ não" 
 6.  Nhấp vào nút **Sync** (Màu cam).
 7.  **Chờ đợi:** Chờ khoảng 30 giây đến 1 phút cho đến khi cột **Status** chuyển từ `Syncing` sang `Available`.
 
-> ![Hình minh họa quá trình Sync hoàn tất trên Bedrock Console](/images/5-Workshop/5.6-Update-Data/03.png)
+![Hình minh họa quá trình Sync hoàn tất trên Bedrock Console](/images/5-Workshop/5.6-Update-Data/03.png)
 
 **Bước 4: Xác minh lại (Khoảnh khắc "Wow")**
 
@@ -74,7 +74,7 @@ Hệ thống hiện đã có kiến thức mới. Hãy thách thức AI một l�
     - AI trả lời chính xác: _"Mã kích hoạt là AWS-ROCKS-2025-SINGAPORE"_.
     - AI trích dẫn nguồn là file `secret-project.txt`.
 
-> ![Hình minh họa AI trả lời chính xác sau khi cập nhật dữ liệu](/images/5-Workshop/5.6-Update-Data/04.png)
+![Hình minh họa AI trả lời chính xác sau khi cập nhật dữ liệu](/images/5-Workshop/5.6-Update-Data/04.png)
 
 #### Kết luận
 

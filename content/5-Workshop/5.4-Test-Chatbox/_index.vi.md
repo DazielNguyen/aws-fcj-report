@@ -60,7 +60,7 @@ Bây giờ, hãy thử đặt một câu hỏi liên quan đến nội dung tài
     - **Score:** Điểm tương đồng (mức độ liên quan).
     - **S3 Location:** Đường dẫn đến file gốc.
 
-> ![Hình minh họa cửa sổ Source Details hiển thị đoạn văn bản gốc](/images/5-Workshop/5.4-Test-Chatbox/05_Promt_test.jpg)
+![Hình minh họa cửa sổ Source Details hiển thị đoạn văn bản gốc](/images/5-Workshop/5.4-Test-Chatbox/05_Promt_test.jpg)
 
 _Việc nhìn thấy đoạn văn bản gốc này chứng minh rằng AI không "ảo tưởng" mà đang thực sự đọc tài liệu của bạn._
 
@@ -74,4 +74,4 @@ _Việc nhìn thấy đoạn văn bản gốc này chứng minh rằng AI không
     - AI có thể trả lời dựa trên kiến thức tổng quát của nó (nếu không bị hạn chế).
     - HOẶC AI sẽ trả lời _"Xin lỗi, tôi không thể trả lời câu hỏi của bạn dựa trên dữ liệu truy xuất được"_ - Đây là hành vi lý tưởng cho một ứng dụng RAG doanh nghiệp.
 
-> ![Hình minh họa phản hồi khi đặt câu hỏi ngoài chủ đề](/images/5-Workshop/5.4-Test-Chatbox/06_Promt_test.jpg)
+![Hình minh họa phản hồi khi đặt câu hỏi ngoài chủ đề](/images/5-Workshop/5.4-Test-Chatbox/06_Promt_test.jpg)

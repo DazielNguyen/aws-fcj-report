@@ -60,7 +60,7 @@ This is the most important feature of RAG that distinguishes it from standard Ch
     - **Score:** Similarity score (relevance).
     - **S3 Location:** Path to the original file.
 
-> ![Image illustrating Source Details window showing original text segment](/images/5-Workshop/5.4-Test-Chatbox/05_Promt_test_01.jpg)
+![Image illustrating Source Details window showing original text segment](/images/5-Workshop/5.4-Test-Chatbox/05_Promt_test_01.jpg)
 
 _Seeing this original text segment proves that the AI is not "hallucinating" but is actually reading your documents._
 
@@ -74,4 +74,4 @@ To see how the system reacts when information is not found.
     - The AI might answer based on its general knowledge (if not restricted).
     - OR the AI will answer _"Sorry, I am unable to answer your question based on the retrieved data"_ - This is the ideal behavior for an enterprise RAG application.
 
-> ![Image illustrating response when asking off-topic questions](/images/5-Workshop/5.4-Test-Chatbox/06_Promt_test_01.jpg)
+![Image illustrating response when asking off-topic questions](/images/5-Workshop/5.4-Test-Chatbox/06_Promt_test_01.jpg)

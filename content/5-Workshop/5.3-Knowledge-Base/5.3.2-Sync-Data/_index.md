@@ -63,13 +63,13 @@ Now we will trigger Bedrock to read files from S3 and load them into OpenSearch.
 3.  Scroll down to the **Data source** section, check the box (tick) next to the data source name (`s3-datasource`).
 4.  Click the **Sync** button (Orange).
 
-> ![Image illustrating selecting Data Source and clicking Sync button](/images/5-Workshop/5.3-Knowledge-Base/21.jpg)
+![Image illustrating selecting Data Source and clicking Sync button](/images/5-Workshop/5.3-Knowledge-Base/21.jpg)
 
 5.  **Wait:**
     - This process will take **5 - 10 minutes** depending on the sample document size.
     - Wait until the **Sync status** column changes from `Syncing` to `Available`.
 
-> ![Image illustrating successful Sync status Available](/images/5-Workshop/5.3-Knowledge-Base/22.jpg)
+![Image illustrating successful Sync status Available](/images/5-Workshop/5.3-Knowledge-Base/22.jpg)
 
 **Step 3: Re-check Vector Store (Populated)**
 
@@ -89,6 +89,6 @@ After Bedrock reports Sync completion, we return to the repository to verify the
     - The `hits` -> `total` -> `value` section will be greater than **0** (e.g., 10, 20... depending on the number of text chunks).
     - You will see details of the vectors (number arrays) and text content stored in the `_source` field.
 
-> ![Image illustrating Dev Tools result showing synced data](/images/5-Workshop/5.3-Knowledge-Base/23.jpg)
+![Image illustrating Dev Tools result showing synced data](/images/5-Workshop/5.3-Knowledge-Base/23.jpg)
 
 **Congratulations!** You have completed building the "brain" for the AI. The data has been encoded and sits safely in the Vector Database, ready for retrieval.

@@ -24,7 +24,7 @@ pre: " <b> 5.7. </b> "
 4.  Hộp thoại xuất hiện, nhập tên Knowledge Base để xác nhận (hoặc gõ `delete`).
 5.  Nhấp **Delete**. Quá trình này mất 10-15 phút mới xóa thành công. Nên bạn thư giản nhé
 
-> ![Hình minh họa thao tác xóa Knowledge Base](/images/5-Workshop/5.7-Clean-up/01.jpg)
+![Hình minh họa thao tác xóa Knowledge Base](/images/5-Workshop/5.7-Clean-up/01.jpg)
 
 **Bước 2: Xóa Vector Store**
 
@@ -36,7 +36,7 @@ pre: " <b> 5.7. </b> "
 6.  Gõ `confirm` hoặc tên collection để xác nhận xóa.
 7.  Nhấp **Delete**.
 
-> ![Hình minh họa thao tác xóa OpenSearch Collection](/images/5-Workshop/5.7-Clean-up/02.jpg)
+![Hình minh họa thao tác xóa OpenSearch Collection](/images/5-Workshop/5.7-Clean-up/02.jpg)
 
 **Bước 3: Xóa Dữ liệu trên S3**
 
@@ -48,7 +48,7 @@ pre: " <b> 5.7. </b> "
 5.  Chọn lại bucket đó và nhấp vào nút **Delete**.
 6.  Nhập tên bucket để xác nhận.
 
-> ![Hình minh họa thao tác Empty và Delete S3 Bucket](/images/5-Workshop/5.7-Clean-up/03.jpg)
+![Hình minh họa thao tác Empty và Delete S3 Bucket](/images/5-Workshop/5.7-Clean-up/03.jpg)
 
 #### Hoàn thành
 
