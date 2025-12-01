@@ -27,7 +27,7 @@ Chúng ta cần xác nhận rằng AI hiện tại không biết gì về thông
     - _Ví dụ:_ _"Mã kích hoạt cho Dự án Omega là gì?"_
 3.  **Quan sát kết quả:** AI sẽ trả lời rằng không thể tìm thấy thông tin trong các tài liệu được cung cấp hoặc sẽ cố gắng đưa ra câu trả lời chung chung (nếu không bị hạn chế).
 
-> ![Hình minh họa AI không biết về Dự án Omega](link_anh_ai_dont_know)
+![Hình minh họa AI không biết về Dự án Omega](/images/5-Workshop/5.6-Update-Data/01.png)
 
 **Bước 2: Tạo dữ liệu mới**
 
@@ -44,16 +44,17 @@ Chúng ta sẽ tạo một file văn bản chứa "bí mật" này để nhập 
     ```
 3.  Lưu file với tên: `secret-project.txt`.
 
-> ![Hình minh họa nội dung file văn bản bí mật trên máy tính](link_anh_secret_file_content)
-
+Bạn có thể tải file tại đây: <a href="/files/5-Workshop/secret-project.txt" download>Tệp định dạng TXT</a>
+ 
 **Bước 3: Tải lên và Đồng bộ**
 
 Bây giờ, chúng ta sẽ cung cấp kiến thức mới này vào "bộ não" của AI.
 
-1.  Truy cập **S3 Console**, điều hướng đến bucket cũ của bạn (`rag-workshop-<tên-của-bạn>`).
+1.  Truy cập **S3 Console**, điều hướng đến bucket cũ của bạn (`rag-workshop-demo`).
+
 2.  Nhấp **Upload** -> **Add files** -> Chọn file `secret-project.txt` -> **Upload**.
 
-> ![Hình minh họa file tải lên thành công vào S3](link_anh_upload_secret_s3)
+> ![Hình minh họa file tải lên thành công vào S3](/images/5-Workshop/5.6-Update-Data/02.png)
 
 3.  Chuyển sang **Amazon Bedrock Console** -> Chọn **Knowledge bases** từ menu bên trái.
 4.  Nhấp vào tên Knowledge Base của bạn.
@@ -61,7 +62,7 @@ Bây giờ, chúng ta sẽ cung cấp kiến thức mới này vào "bộ não" 
 6.  Nhấp vào nút **Sync** (Màu cam).
 7.  **Chờ đợi:** Chờ khoảng 30 giây đến 1 phút cho đến khi cột **Status** chuyển từ `Syncing` sang `Available`.
 
-> ![Hình minh họa quá trình Sync hoàn tất trên Bedrock Console](link_anh_sync_new_data_success)
+> ![Hình minh họa quá trình Sync hoàn tất trên Bedrock Console](/images/5-Workshop/5.6-Update-Data/03.png)
 
 **Bước 4: Xác minh lại (Khoảnh khắc "Wow")**
 
@@ -73,7 +74,7 @@ Hệ thống hiện đã có kiến thức mới. Hãy thách thức AI một l�
     - AI trả lời chính xác: _"Mã kích hoạt là AWS-ROCKS-2025-SINGAPORE"_.
     - AI trích dẫn nguồn là file `secret-project.txt`.
 
-> ![Hình minh họa AI trả lời chính xác sau khi cập nhật dữ liệu](link_anh_ai_knows_secret)
+> ![Hình minh họa AI trả lời chính xác sau khi cập nhật dữ liệu](/images/5-Workshop/5.6-Update-Data/04.png)
 
 #### Kết luận
 

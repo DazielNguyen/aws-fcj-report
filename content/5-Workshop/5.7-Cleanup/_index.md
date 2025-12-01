@@ -1,12 +1,12 @@
 ---
-title: "Dọn dẹp tài nguyên"
+title: "Clean Resources"
 date: "2025-09-09"
 weight: 7
 chapter: false
 pre: " <b> 5.7. </b> "
 ---
 
-#### Goal
+#### Target
 
 To avoid incurring unwanted costs after finishing the practice lab, we need to delete the created resources.
 
@@ -19,11 +19,12 @@ To avoid incurring unwanted costs after finishing the practice lab, we need to d
 
 1.  Access the **Amazon Bedrock Console** -> **Knowledge bases**.
 2.  Select the radio button next to your Knowledge Base name.
+
 3.  Click the **Delete** button.
 4.  A dialog box appears, enter the Knowledge Base name to confirm (or type `delete`).
-5.  Click **Delete**.
+5.  Click **Delete**. This process takes 10-15 minutes to complete successfully, so please be patient.
 
-> ![Image illustrating Knowledge Base deletion action](link_anh_delete_kb)
+![Image illustrating Knowledge Base deletion action](/images/5-Workshop/5.7-Clean-up/01.jpg)
 
 **Step 2: Delete Vector Store**
 
@@ -35,28 +36,19 @@ To avoid incurring unwanted costs after finishing the practice lab, we need to d
 6.  Type `confirm` or the collection name to confirm deletion.
 7.  Click **Delete**.
 
-> ![Image illustrating OpenSearch Collection deletion action](link_anh_delete_opensearch)
+![Image illustrating OpenSearch Collection deletion action](/images/5-Workshop/5.7-Clean-up/02.jpg)
 
 **Step 3: Delete Data on S3**
 
 1.  Access the **Amazon S3** service.
-2.  Select the bucket `rag-workshop-<your-name>`.
+2.  Select the bucket `rag-workshop-demo`.
 3.  Click the **Empty** button first.
     - Type `permanently delete` to confirm deleting all files inside.
 4.  After the bucket is empty, return to the Buckets list.
 5.  Select that bucket again and click the **Delete** button.
 6.  Enter the bucket name to confirm.
 
-> ![Image illustrating S3 Bucket Empty and Delete actions](link_anh_delete_s3)
-
-**Step 4: Stop Application on CloudShell**
-
-1.  Return to the **CloudShell** tab.
-2.  In the command line window (where Streamlit is running), press `Ctrl + C` to stop the server.
-3.  Close the CloudShell browser tab.
-4.  The CloudShell session will automatically terminate after 20 minutes of inactivity; you do not need to delete anything else here.
-
-> ![Image illustrating CloudShell terminal with stopped application](link_anh_stop_cloudshell)
+![Image illustrating S3 Bucket Empty and Delete actions](/images/5-Workshop/5.7-Clean-up/03.jpg)
 
 #### Completion
 

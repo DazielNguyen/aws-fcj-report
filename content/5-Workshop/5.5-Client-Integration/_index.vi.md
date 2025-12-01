@@ -12,102 +12,137 @@ Bạn sẽ biến dòng code Python thành một **Giao diện Web Chatbot (GUI)
 
 Chúng ta sử dụng:
 
-- **Backend:** AWS CloudShell.
+- **Backend:** Python.
 - **Frontend:** Streamlit.
 - **AI Model:** **Claude 3.5 Sonnet**.
 
-#### Các bước thực hiện
+#### Các Bước Thực hiện
 
-**Bước 1: Khởi động CloudShell**
+**Phần I: Cấu hình AWS Credentials**
 
-1.  Tại thanh menu trên cùng của AWS Console, click vào biểu tượng **CloudShell** `>_`.
-2.  Đợi terminal khởi động.
+**Bước 1: Cài đặt AWS CLI**
 
-> ![Ảnh minh họa vị trí nút CloudShell trên thanh menu](/images/5-Workshop/5.5-Client-Integration/01_CloudShell.jpg)
+Mở Terminal trên máy tính của bạn.
 
-**Bước 2: Cài đặt thư viện và chuẩn bị code**
+```bash
+# macOS
+brew install awscli
 
-1. Cài đặt thư viện `pip install streamlit boto3`
-1. Tạo file: `nano app.py`
-1. Dán đoạn code sau (Nhớ thay `KB_ID` của bạn):
-
-```python
-import streamlit as st
-import boto3
-
-# --- CẤU HÌNH ---
-# TODO: Thay thế ID bên dưới bằng Knowledge Base ID của bạn
-KB_ID = "THAY_ID_CUA_BAN_VAO_DAY"
-MODEL_ARN = "arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-3-5-sonnet-20240620-v1:0"
-
-# Khởi tạo Client kết nối AWS
-client = boto3.client(service_name='bedrock-agent-runtime', region_name='ap-southeast-1')
-
-st.set_page_config(page_title="Trợ lý AI Doanh Nghiệp")
-st.title("Chat với Tài Liệu Riêng")
-
-# Khởi tạo lịch sử chat
-if "messages" not in st.session_state:
-    st.session_state.messages = []
-
-# Hiển thị lịch sử chat lên màn hình
-for message in st.session_state.messages:
-    with st.chat_message(message["role"]):
-        st.markdown(message["content"])
-
-# Xử lý khi người dùng nhập câu hỏi
-if prompt := st.chat_input("Hỏi gì đó về tài liệu của bạn..."):
-    # 1. Hiển thị câu hỏi người dùng
-    st.chat_message("user").markdown(prompt)
-    st.session_state.messages.append({"role": "user", "content": prompt})
-
-    # 2. Gọi AI xử lý
-    with st.chat_message("assistant"):
-        message_placeholder = st.empty()
-        message_placeholder.markdown("⏳ Đang đọc tài liệu...")
-
-        try:
-            # Gọi API RetrieveAndGenerate của Bedrock
-            response = client.retrieve_and_generate(
-                input={'text': prompt},
-                retrieveAndGenerateConfiguration={
-                    'type': 'KNOWLEDGE_BASE',
-                    'knowledgeBaseConfiguration': {
-                        'knowledgeBaseId': KB_ID,
-                        'modelArn': MODEL_ARN
-                    }
-                }
-            )
-
-            # Lấy kết quả trả về
-            answer = response['output']['text']
-
-            # (Optional) Hiển thị nguồn trích dẫn
-            citations = response['citations'][0]['retrievedReferences']
-            if citations:
-                doc_uri = citations[0]['location']['s3Location']['uri']
-                doc_name = doc_uri.split('/')[-1]
-                answer += f"\n\n---\n *Nguồn tham khảo: {doc_name}*"
-
-            message_placeholder.markdown(answer)
-            st.session_state.messages.append({"role": "assistant", "content": answer})
-
-        except Exception as e:
-            st.error(f"Lỗi: {str(e)}")
+# Linux
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
 ```
 
-**Bước 3: Cập nhật Knowledge Base ID**:
+**Bước 2: Cấu hình credentials**
 
-1. Di chuyển con trỏ đến dòng `KB_ID = "..."`.
-2. Xóa nội dung cũ và điền ID của bạn vào (Lấy trong Bedrock Console).
-3. Lưu file (Ctrl+O -> Enter) và Thoát (Ctrl+X).
+```bash
+aws configure
+```
 
-**Bước 4: Mở giao diện Web**
+Nhập thông tin khi được hỏi:
 
-Đây là bước chuyển từ màn hình console sang giao diện web.
+- AWS Access Key ID: `YOUR_ACCESS_KEY`
+- AWS Secret Access Key: `YOUR_SECRET_KEY`
+- Default region name: `us-east-1`
+- Default output format: `json`
 
-1. Tại dòng lệnh, chạy server: `streamlit run app.py --server.port 8080`
-2. Nhìn lên góc phải khung CloudShell, chọn nút Actions (biểu tượng hình vuông).
-3. Chọn Preview Web App.
-4. Nhập port `8080`
-5. Nhấn Preview.
+**Bước 3: Kiểm tra cấu hình**
+
+```bash
+# Kiểm tra credentials
+aws sts get-caller-identity
+
+# Kiểm tra kết nối Bedrock
+aws bedrock-agent-runtime list-knowledge-bases --region ap-southeast-1
+```
+
+**Lưu ý bảo mật:**
+
+- KHÔNG commit credentials vào Git
+- KHÔNG share credentials với người khác
+- Sử dụng IAM roles khi có thể
+- Rotate credentials định kỳ
+
+**Permissions cần thiết:**
+
+IAM User cần có các quyền sau:
+
+- `bedrock:InvokeModel`
+- `bedrock:RetrieveAndGenerate`
+- `bedrock:Retrieve`
+- `s3:GetObject` (cho Knowledge Base)
+
+**Troubleshooting:**
+
+_Lỗi "Unable to locate credentials":_
+
+- Kiểm tra file ~/.aws/credentials tồn tại
+- Kiểm tra format file đúng
+- Thử chạy `aws configure` lại
+
+_Lỗi "AccessDeniedException":_
+
+- Kiểm tra IAM permissions
+- Đảm bảo region đúng (ap-southeast-1)
+- Kiểm tra Knowledge Base ID đúng
+
+_Lỗi "ExpiredToken":_
+
+- Credentials đã hết hạn
+- Cần tạo credentials mới từ AWS Console
+
+**Phần II: Clone Project từ GitHub đã tạo sẵn**
+
+**Bước 1: Truy cập vào link GitHub sau**
+
+Bạn hãy tải về và mở folder trên bằng Visual Studio Code:
+
+`https://github.com/DazielNguyen/chatbot_with_bedrock.git`
+
+**Bước 2: Tải các thư viện và môi trường Python**
+
+1.  Tải môi trường:
+
+    - MacOS: `python3 -m venv .venv`
+    - Win: `python -m venv .venv`
+
+2.  Kích hoạt môi trường:
+
+    - MacOS: `source .venv/bin/activate`
+    - Win: `.venv\Scripts\activate`
+
+3.  Tải thư viện:
+    - MacOS/ Win: `pip install -r requirements.txt`
+
+**Bước 3: Lấy ID của Knowledge Base đã tạo**
+
+1.  Truy cập Amazon Bedrock -> Knowledge Base -> knowledge-base-demo
+
+![Take_ID_KB](/images/5-Workshop/5.5-Client-Integration/01.jpg)
+
+2.  Cập nhật "KB_ID="YOUR_KNOWLEDGE_BASE_ID""
+
+![Take_ID_KB](/images/5-Workshop/5.5-Client-Integration/02.png)
+
+**Bước 4: Chạy Streamlit - UI của Chatbot và Trải nghiệm**
+
+1.  Run Terminal:
+
+```bash
+streamlit run start.py
+```
+
+2.  Khi chạy xong lệnh sẽ xuất hiện trang sau:
+
+![Take_ID_KB](/images/5-Workshop/5.5-Client-Integration/03.png)
+
+3.  Hãy thử hỏi một số câu hỏi bạn đã upload lên Knowledge Base trước đó.
+
+![Take_ID_KB](/images/5-Workshop/5.5-Client-Integration/04.png)
+
+4.  Kết quả Chabot đã trả về kết quả dựa trên file dữ liệu mà bạn đã cung cấp, có trích nguồn của dữ liệu của bạn.
+
+#### Kết luận
+
+Chúc mừng bạn đã xây dựng thành công một Web Chatbot được xây dựng từ Amazon Bedrock

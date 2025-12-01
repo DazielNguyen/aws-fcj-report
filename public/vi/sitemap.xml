@@ -457,6 +457,19 @@
                 href="http://localhost:1313/aws-fcj-report/vi/7-feedback/"
                 />
   </url><url>
+    <loc>http://localhost:1313/aws-fcj-report/vi/5-workshop/5.7-cleanup/</loc>
+    <lastmod>2025-09-09T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/aws-fcj-report/5-workshop/5.7-cleanup/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="http://localhost:1313/aws-fcj-report/vi/5-workshop/5.7-cleanup/"
+                />
+  </url><url>
     <loc>http://localhost:1313/aws-fcj-report/vi/1-worklog/1.8-week8/</loc>
     <lastmod>2025-10-27T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -520,18 +533,6 @@
                 rel="alternate"
                 hreflang="vi"
                 href="http://localhost:1313/aws-fcj-report/vi/1-worklog/1.12-week12/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/aws-fcj-report/vi/5-workshop/5.7-cleanup/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/aws-fcj-report/5-workshop/5.7-cleanup/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="http://localhost:1313/aws-fcj-report/vi/5-workshop/5.7-cleanup/"
                 />
   </url><url>
     <loc>http://localhost:1313/aws-fcj-report/vi/categories/</loc>
