@@ -54,9 +54,11 @@ Chúng ta sẽ thực hiện một bài kiểm tra nhanh (Test Run) để đảm
 - Click **Submit use case details** (trong thông báo lỗi).
 - Điền biểu mẫu:
   - Company Name: Nhập `Personal Learning`.
-  - Industry: Chọn `Technology`.
-  - Intended Use: Chọn `Research & Development`.
+  - Company website URL: Nhập `https://daihoc.fpt.edu.vn/`
+  - Industry: Chọn `Education`.
+  - Chọn `Intended Use` 
+  - Describe... Nhập `Research & Development`.
 - Click **Submit**.
 - Đợi 1 phút, quay lại khung chat, Click **Run** lại tin nhắn `Hello` để xác nhận thành công.
 
-![Ảnh minh họa form điền thông tin Use Case](link_anh_form_use_case_o_day)
+![Ảnh minh họa form điền thông tin Use Case](/images/5-Workshop/5.2-Prerequisite/04_Use_case.jpg)

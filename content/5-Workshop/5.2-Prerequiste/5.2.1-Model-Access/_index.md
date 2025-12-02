@@ -42,19 +42,22 @@ In the search bar, access the [Amazon Bedrock](https://us-east-1.console.aws.ama
 - In the chat box: Enter `Hello`.
 - Click **Run**.
 - **Observe result:**
-  - If AI answers: **Success** (Proceed immediately to section 5.2.2).
-  - If a red error or "Submit use case details" popup appears: **Information declaration required** (Continue to step 4 below).
 
-![Image illustrating chat interface and error message if any](/images/5-Workshop/5.2-Prerequisite/03_Send_Activation_Message.jpg)
+  - If AI answers: **Success** (Proceed immediately to section 5.2.2).
+    ![Image illustrating chat interface and error message if any](/images/5-Workshop/5.2-Prerequisite/03_Send_Activation_Message.jpg)
+
+  - If a red error or "Submit use case details" popup appears: **Information declaration required** (Continue to step 4 below).
 
 **Step 4. Submit Use Case (Only perform if error occurred in step 3)**
 
 - Click **Submit use case details** (in the error message).
 - Fill in the form:
   - Company Name: Enter `Personal Learning`.
-  - Industry: Select `Technology`.
-  - Intended Use: Select `Research & Development`.
+  - Company website URL: Enter `https://daihoc.fpt.edu.vn/`
+  - Industry: Select `Education`.
+  - Select `Intended Use`
+  - Describe... Enter `Research & Development`.
 - Click **Submit**.
 - Wait 1 minute, return to the chat box, Click **Run** on the `Hello` message again to confirm success.
 
-![Image illustrating Use Case information form](/images/5-Workshop/5.2-Prerequisite/)
+![Image illustrating Use Case information form](/images/5-Workshop/5.2-Prerequisite/04_Use_case.jpg)
