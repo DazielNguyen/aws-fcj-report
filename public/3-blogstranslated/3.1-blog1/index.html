@@ -15,21 +15,21 @@
     <title>Blog 1 :: Internship Report</title>
 
     
-    <link href="../../css/nucleus.css?1764657388" rel="stylesheet">
-    <link href="../../css/fontawesome-all.min.css?1764657388" rel="stylesheet">
-    <link href="../../css/hybrid.css?1764657388" rel="stylesheet">
-    <link href="../../css/featherlight.min.css?1764657388" rel="stylesheet">
-    <link href="../../css/perfect-scrollbar.min.css?1764657388" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1764657388" rel="stylesheet">
-    <link href="../../css/atom-one-dark-reasonable.css?1764657388" rel="stylesheet">
-    <link href="../../css/theme.css?1764657388" rel="stylesheet">
-    <link href="../../css/hugo-theme.css?1764657388" rel="stylesheet">
+    <link href="../../css/nucleus.css?1764660683" rel="stylesheet">
+    <link href="../../css/fontawesome-all.min.css?1764660683" rel="stylesheet">
+    <link href="../../css/hybrid.css?1764660683" rel="stylesheet">
+    <link href="../../css/featherlight.min.css?1764660683" rel="stylesheet">
+    <link href="../../css/perfect-scrollbar.min.css?1764660683" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1764660683" rel="stylesheet">
+    <link href="../../css/atom-one-dark-reasonable.css?1764660683" rel="stylesheet">
+    <link href="../../css/theme.css?1764660683" rel="stylesheet">
+    <link href="../../css/hugo-theme.css?1764660683" rel="stylesheet">
     
-    <link href="../../css/theme-workshop.css?1764657388" rel="stylesheet">
+    <link href="../../css/theme-workshop.css?1764660683" rel="stylesheet">
     
     
 
-    <script src="../../js/jquery-3.3.1.min.js?1764657388"></script>
+    <script src="../../js/jquery-3.3.1.min.js?1764660683"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -88,14 +88,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../js/lunr.min.js?1764657388"></script>
-<script type="text/javascript" src="../../js/auto-complete.js?1764657388"></script>
+<script type="text/javascript" src="../../js/lunr.min.js?1764660683"></script>
+<script type="text/javascript" src="../../js/auto-complete.js?1764660683"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/aws-fcj-report\/";
     
 </script>
-<script type="text/javascript" src="../../js/search.js?1764657388"></script>
+<script type="text/javascript" src="../../js/search.js?1764660683"></script>
  
   </div>
 
@@ -1008,17 +1008,15 @@
                     <div class="progress">
   <div class="wrapper"><nav id="TableOfContents">
   <ul>
-    <li><a href="#architecture-guidance">Architecture Guidance</a></li>
-    <li><a href="#technology-choices-and-communication-scope">Technology Choices and Communication Scope</a></li>
-    <li><a href="#the-pubsub-hub">The Pub/Sub Hub</a></li>
-    <li><a href="#core-microservice">Core Microservice</a></li>
-    <li><a href="#front-door-microservice">Front Door Microservice</a></li>
-    <li><a href="#staging-er7-microservice">Staging ER7 Microservice</a></li>
-    <li><a href="#new-features-in-the-solution">New Features in the Solution</a>
-      <ul>
-        <li><a href="#1-aws-cloudformation-cross-stack-references">1. AWS CloudFormation Cross-Stack References</a></li>
-      </ul>
-    </li>
+    <li><a href="#real-world-use-cases"><strong>Real-world use cases</strong></a></li>
+    <li><a href="#prerequisites"><strong>Prerequisites</strong></a></li>
+    <li><a href="#architecture-overview"><strong>Architecture overview</strong></a></li>
+    <li><a href="#key-components"><strong>Key components</strong></a></li>
+    <li><a href="#connectivity"><strong>Connectivity</strong></a></li>
+    <li><a href="#routing-refer-to-figure-1"><strong>Routing (refer to Figure 1)</strong></a></li>
+    <li><a href="#wccp-redirection"><strong>WCCP redirection</strong></a></li>
+    <li><a href="#packet-walk-through"><strong>Packet walk-through</strong></a></li>
+    <li><a href="#considerations"><strong>Considerations</strong></a></li>
   </ul>
 </nav></div>
 </div>
@@ -1043,127 +1041,244 @@
 
 
 
-	<h1 id="getting-started-with-healthcare-data-lakes-using-microservices">Getting Started with Healthcare Data Lakes: Using Microservices</h1>
-<p>Data lakes can help hospitals and healthcare facilities turn data into business insights, maintain business continuity, and protect patient privacy. A <strong>data lake</strong> is a centralized, managed, and secure repository to store all your data, both in its raw and processed forms for analysis. Data lakes allow you to break down data silos and combine different types of analytics to gain insights and make better business decisions.</p>
-<p>This blog post is part of a larger series on getting started with setting up a healthcare data lake. In my final post of the series, <em>“Getting Started with Healthcare Data Lakes: Diving into Amazon Cognito”</em>, I focused on the specifics of using Amazon Cognito and Attribute Based Access Control (ABAC) to authenticate and authorize users in the healthcare data lake solution. In this blog, I detail how the solution evolved at a foundational level, including the design decisions I made and the additional features used. You can access the code samples for the solution in this Git repo for reference.</p>
-<hr>
-<h2 id="architecture-guidance">Architecture Guidance</h2>
-<p>The main change since the last presentation of the overall architecture is the decomposition of a single service into a set of smaller services to improve maintainability and flexibility. Integrating a large volume of diverse healthcare data often requires specialized connectors for each format; by keeping them encapsulated separately as microservices, we can add, remove, and modify each connector without affecting the others. The microservices are loosely coupled via publish/subscribe messaging centered in what I call the “pub/sub hub.”</p>
-<p>This solution represents what I would consider another reasonable sprint iteration from my last post. The scope is still limited to the ingestion and basic parsing of <strong>HL7v2 messages</strong> formatted in <strong>Encoding Rules 7 (ER7)</strong> through a REST interface.</p>
-<p><strong>The solution architecture is now as follows:</strong></p>
-<blockquote>
-<p><em>Figure 1. Overall architecture; colored boxes represent distinct services.</em></p></blockquote>
-<hr>
-<p>While the term <em>microservices</em> has some inherent ambiguity, certain traits are common:</p>
-<ul>
-<li>Small, autonomous, loosely coupled</li>
-<li>Reusable, communicating through well-defined interfaces</li>
-<li>Specialized to do one thing well</li>
-<li>Often implemented in an <strong>event-driven architecture</strong></li>
-</ul>
-<p>When determining where to draw boundaries between microservices, consider:</p>
-<ul>
-<li><strong>Intrinsic</strong>: technology used, performance, reliability, scalability</li>
-<li><strong>Extrinsic</strong>: dependent functionality, rate of change, reusability</li>
-<li><strong>Human</strong>: team ownership, managing <em>cognitive load</em></li>
-</ul>
-<hr>
-<h2 id="technology-choices-and-communication-scope">Technology Choices and Communication Scope</h2>
-<table>
-  <thead>
-      <tr>
-          <th>Communication scope</th>
-          <th>Technologies / patterns to consider</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Within a single microservice</td>
-          <td>Amazon Simple Queue Service (Amazon SQS), AWS Step Functions</td>
-      </tr>
-      <tr>
-          <td>Between microservices in a single service</td>
-          <td>AWS CloudFormation cross-stack references, Amazon Simple Notification Service (Amazon SNS)</td>
-      </tr>
-      <tr>
-          <td>Between services</td>
-          <td>Amazon EventBridge, AWS Cloud Map, Amazon API Gateway</td>
-      </tr>
-  </tbody>
-</table>
-<hr>
-<h2 id="the-pubsub-hub">The Pub/Sub Hub</h2>
-<p>Using a <strong>hub-and-spoke</strong> architecture (or message broker) works well with a small number of tightly related microservices.</p>
-<ul>
-<li>Each microservice depends only on the <em>hub</em></li>
-<li>Inter-microservice connections are limited to the contents of the published message</li>
-<li>Reduces the number of synchronous calls since pub/sub is a one-way asynchronous <em>push</em></li>
-</ul>
-<p>Drawback: <strong>coordination and monitoring</strong> are needed to avoid microservices processing the wrong message.</p>
-<hr>
-<h2 id="core-microservice">Core Microservice</h2>
-<p>Provides foundational data and communication layer, including:</p>
-<ul>
-<li><strong>Amazon S3</strong> bucket for data</li>
-<li><strong>Amazon DynamoDB</strong> for data catalog</li>
-<li><strong>AWS Lambda</strong> to write messages into the data lake and catalog</li>
-<li><strong>Amazon SNS</strong> topic as the <em>hub</em></li>
-<li><strong>Amazon S3</strong> bucket for artifacts such as Lambda code</li>
-</ul>
-<blockquote>
-<p>Only allow indirect write access to the data lake through a Lambda function → ensures consistency.</p></blockquote>
-<hr>
-<h2 id="front-door-microservice">Front Door Microservice</h2>
-<ul>
-<li>Provides an API Gateway for external REST interaction</li>
-<li>Authentication &amp; authorization based on <strong>OIDC</strong> via <strong>Amazon Cognito</strong></li>
-<li>Self-managed <em>deduplication</em> mechanism using DynamoDB instead of SNS FIFO because:
+	<h1 id="redirecting-internet-bound-traffic-through-a-transparent-forward-proxy"><strong>Redirecting Internet-bound traffic through a transparent forward proxy</strong></h1>
+<p>by Vijay Menon | on 08 SEP 2025 | in <a href="https://aws.amazon.com/blogs/networking-and-content-delivery/category/compute/amazon-vpc/">Amazon VPC</a>, <a href="https://aws.amazon.com/blogs/networking-and-content-delivery/category/networking-content-delivery/aws-transit-gateway/">AWS Transit Gateway</a>, <a href="https://aws.amazon.com/blogs/networking-and-content-delivery/category/networking-content-delivery/aws-transit-gateway/aws-transit-gateway-network-manager/">AWS Transit Gateway network manager</a>, <a href="https://aws.amazon.com/blogs/networking-and-content-delivery/category/networking-content-delivery/">Networking &amp; Content Delivery</a> | <a href="https://aws.amazon.com/blogs/networking-and-content-delivery/redirecting-internet-bound-traffic-through-a-transparent-forward-proxy/">Permalink</a> | Share</p>
+<p>Centralized egress is the principle of using a single, common inspection point for all network traffic going out to the Internet. This approach benefits security by limiting exposure to malicious resources accessible from outside, such as malware <a href="https://en.wikipedia.org/wiki/Botnet#Command_and_control">command and control</a> (C&amp;C) infrastructure. This inspection operation is typically performed by firewalls like <a href="https://aws.amazon.com/network-firewall/">AWS Network Firewall</a>, and customers often want to insert a forward proxy in the path with or without a firewall. Proxies can operate in two modes: <a href="https://en.wikipedia.org/wiki/Proxy_server">explicit proxy</a> mode, where every client needing Internet access is configured to use an explicit proxy and sends supported outbound traffic through explicit proxy configuration. Such an implementation is described in <a href="https://aws.amazon.com/blogs/security/how-to-set-up-an-outbound-vpc-proxy-with-domain-whitelisting-and-content-filtering/">How to set up an outbound VPC proxy with domain whitelisting and content filtering</a>. However, there are systems that cannot be configured with explicit proxy, and customers often look for ways to transparently redirect traffic from such systems to the Internet through a proxy.</p>
+<p>In this post, I explain an architecture that can be used to deploy a proxy on the egress path to the Internet and transparently redirect traffic to it using <a href="https://en.wikipedia.org/wiki/Web_Cache_Communication_Protocol">Web Cache Communication Protocol (WCCP)</a>. I will present a conceptual overview of implementing transparent proxy with WCCP in an <a href="https://aws.amazon.com/transit-gateway/">AWS Transit Gateway</a>-based architecture. Specific implementation details may vary depending on your organization&rsquo;s requirements and chosen technology.</p>
+<h2 id="real-world-use-cases"><strong>Real-world use cases</strong></h2>
+<p>Here are three real-world use cases.</p>
 <ol>
-<li>SNS deduplication TTL is only 5 minutes</li>
-<li>SNS FIFO requires SQS FIFO</li>
-<li>Ability to proactively notify the sender that the message is a duplicate</li>
+<li>
+<p><strong>Secure internet access:</strong> Organizations can use this architecture to ensure all outbound Internet traffic goes through security controls without requiring explicit proxy configuration on each client device.</p>
+</li>
+<li>
+<p><strong>Data loss prevention:</strong> Transparent traffic inspection allows businesses to detect and block sensitive data from leaving the network, even when endpoints don&rsquo;t support explicit proxy configuration.</p>
+</li>
+<li>
+<p><strong>Regulatory compliance:</strong> Industries with strict compliance requirements can perform continuous inspection and logging of all network traffic to meet regulatory standards.</p>
+</li>
 </ol>
+<h2 id="prerequisites"><strong>Prerequisites</strong></h2>
+<p>Before starting, you should be familiar with the following AWS networking concepts and services:</p>
+<ul>
+<li><a href="https://aws.amazon.com/vpc/">Amazon Virtual Private Clouds (Amazon VPCs)</a></li>
+<li><a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route tables</a></li>
+<li><a href="https://docs.aws.amazon.com/vpc/latest/tgw/what-is-transit-gateway.html">AWS Transit Gateway</a></li>
+<li><a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-connect.html">Transit Gateway Connect attachments</a></li>
+<li><a href="https://aws.amazon.com/network-firewall/">AWS Network Firewall</a></li>
+<li><a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">NAT Gateway</a></li>
+<li>Third-party virtual appliances (WCCP-compliant routers and proxy servers) with WCCP functionality.</li>
+</ul>
+<h2 id="architecture-overview"><strong>Architecture overview</strong></h2>
+<p>The architecture focuses on an Egress VPC containing WCCP-compliant virtual routers and proxy servers running on <a href="https://aws.amazon.com/ec2/">Amazon Elastic Compute Cloud (Amazon EC2)</a>. These virtual routers redirect traffic to the proxy using WCCP. This setup allows transparent inspection and filtering of traffic without requiring client-side configuration changes. Figure 1 shows the diagram, followed by architectural details.</p>
+<p><img src="../../images/3-BlogsTranslated/3.1-Blog1/WCCPBlogArchitecture-v1-Page-1.jpg" alt="Figure 1: Overall architecture diagram"></p>
+<p style="text-align: center;">Figure 1: Overall architecture diagram</p>
+<h2 id="key-components"><strong>Key components</strong></h2>
+<p><strong>Transit Gateway:</strong> Transit Gateway serves as the central hub for network connectivity, enabling simplified management of connections between VPCs and on-premises networks. In our architecture, Transit Gateway routes traffic between multiple Spoke VPCs, as well as between Spoke VPCs and the Internet through the Egress VPC for inspection.</p>
+<p><strong>Transit Gateway Connect attachments:</strong> Connect attachments provide the ability to integrate third-party virtual appliances with Transit Gateway. In our design, the attachments:</p>
+<ul>
+<li>Connect Transit Gateway with WCCP-compliant routers through <a href="https://en.wikipedia.org/wiki/Generic_routing_encapsulation">Generic routing encapsulation (GRE)</a> running on Connect attachment</li>
+<li>Enable traffic redirection without modifying route tables in each VPC</li>
+<li>Provide flexibility for scaling and high availability</li>
+</ul>
+<p>You can refer to <a href="https://aws.amazon.com/blogs/networking-and-content-delivery/simplify-sd-wan-connectivity-with-aws-transit-gateway-connect/">Simplify SD-WAN connectivity with AWS Transit Gateway Connect</a> as a foundation for implementing Transit Gateway with Connect attachments. You can then modify the implementation to suit the requirements outlined in this post.</p>
+<p><strong>Egress VPC:</strong> The Egress VPC is a specialized environment:</p>
+<ul>
+<li>Contains WCCP-compliant routers and proxy servers running on Amazon EC2 in private subnets</li>
+<li>Contains firewalls in separate private subnets</li>
+<li>Enforces centralized security policies using proxies and firewalls</li>
+<li>Uses NAT Gateway in public subnets for Internet connectivity through Internet Gateway (IGW)</li>
+</ul>
+<p><strong>WCCP-compliant routers running on Amazon EC2:</strong> These are core components of the transparent proxy implementation:</p>
+<ul>
+<li>Located <strong>inline</strong> in the traffic path from Spoke VPCs to the Internet</li>
+<li>Intercept traffic based on configured policies</li>
+<li>Redirect specific traffic types to proxy servers</li>
+<li>Return processed traffic to the original path</li>
+</ul>
+<p><strong>Proxy servers running on Amazon EC2:</strong> These are Amazon EC2-based virtual appliances operating as forward proxies (e.g., <a href="https://en.wikipedia.org/wiki/Squid_%28software%29">Squid</a>) that interact with and receive redirected traffic from the previously mentioned WCCP routing devices. Using WCCP, they apply configured policies to all egress traffic and forward to the next security function in the path. In this example, we use AWS Network Firewall. However, these proxies can be daisy-chained with other security/inspection systems, such as <a href="https://en.wikipedia.org/wiki/Data_loss_prevention_software">Data Loss Protection</a> (DLP) systems, in the path before traffic is routed to the Internet.</p>
+<h2 id="connectivity"><strong>Connectivity</strong></h2>
+<p>As shown in Figure 1, Spoke VPCs connect to Transit Gateway via VPC attachments. These attachments are associated with the Spoke VPC Route Table (routing will be explained in a later section). The Egress VPC connects to the same Transit Gateway via VPC attachment, and a Connect attachment is provisioned between Transit Gateway and Egress VPC through this VPC attachment. This Connect attachment is used to establish GRE tunnels between Transit Gateway and virtual appliances in the Egress VPC, acting as WCCP routers. This Egress VPC has Internet connectivity through an attached IGW.</p>
+<h2 id="routing-refer-to-figure-1"><strong>Routing (refer to Figure 1)</strong></h2>
+<ul>
+<li>
+<p>Spoke VPCs: Each Spoke VPC needing Internet access has subnets attached to route tables containing a default route pointing to the Transit Gateway attached to that VPC. This configuration routes all Internet-bound traffic to the Transit Gateway, where the Spoke VPC&rsquo;s VPC attachment is associated with the Transit Gateway Spoke Route Table.</p>
+</li>
+<li>
+<p>Transit Gateway Configuration:</p>
+<ul>
+<li>
+<p>The Transit Gateway Spoke Route Table contains propagated routes for all Spoke VPCs and a default route propagated from the Connect attachment. This default route is created by the WCCP virtual appliance in the Egress VPC and advertised to Transit Gateway through BGP peering over the GRE tunnel.</p>
+</li>
+<li>
+<p>On Transit Gateway, the Egress VPC attachment is associated with the Egress Route Table. This table contains routes propagated to the Egress VPC CIDR from the Egress VPC attachment, as well as routes propagated to all Spoke VPC CIDRs from their respective attachments.</p>
+</li>
+<li>
+<p>The Connect attachment is associated with its own route table. This route table contains propagated Spoke VPC routes as well as the default route advertised by the WCCP router over the BGP session through the GRE tunnel.</p>
 </li>
 </ul>
-<hr>
-<h2 id="staging-er7-microservice">Staging ER7 Microservice</h2>
-<ul>
-<li>Lambda “trigger” subscribed to the pub/sub hub, filtering messages by attribute</li>
-<li>Step Functions Express Workflow to convert ER7 → JSON</li>
-<li>Two Lambdas:
-<ol>
-<li>Fix ER7 formatting (newline, carriage return)</li>
-<li>Parsing logic</li>
-</ol>
 </li>
-<li>Result or error is pushed back into the pub/sub hub</li>
+<li>
+<p>Egress VPC Configuration: The Egress VPC requires additional routing configuration to enable transparent proxy functionality.</p>
+<ul>
+<li>
+<p>WCCP router devices in private subnets establish GRE tunnels with Transit Gateway and create BGP peering sessions.</p>
+</li>
+<li>
+<p>Through these BGP sessions, WCCP routers advertise the default route to Transit Gateway and receive all Spoke VPC prefixes.</p>
+</li>
+<li>
+<p>WCCP routers redirect Internet-bound traffic to forward proxies in the same subnet using WCCP (detailed discussion will be provided later in this post).</p>
+</li>
 </ul>
-<hr>
-<h2 id="new-features-in-the-solution">New Features in the Solution</h2>
-<h3 id="1-aws-cloudformation-cross-stack-references">1. AWS CloudFormation Cross-Stack References</h3>
-<p>Example <em>outputs</em> in the core microservice:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">Outputs</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">Bucket</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">Value</span>: !<span style="color:#ae81ff">Ref Bucket</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">Export</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">Name</span>: !<span style="color:#ae81ff">Sub ${AWS::StackName}-Bucket</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">ArtifactBucket</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">Value</span>: !<span style="color:#ae81ff">Ref ArtifactBucket</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">Export</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">Name</span>: !<span style="color:#ae81ff">Sub ${AWS::StackName}-ArtifactBucket</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">Topic</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">Value</span>: !<span style="color:#ae81ff">Ref Topic</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">Export</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">Name</span>: !<span style="color:#ae81ff">Sub ${AWS::StackName}-Topic</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">Catalog</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">Value</span>: !<span style="color:#ae81ff">Ref Catalog</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">Export</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">Name</span>: !<span style="color:#ae81ff">Sub ${AWS::StackName}-Catalog</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">CatalogArn</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">Value</span>: !<span style="color:#ae81ff">GetAtt Catalog.Arn</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">Export</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">Name</span>: !<span style="color:#ae81ff">Sub ${AWS::StackName}-CatalogArn</span>
-</span></span></code></pre></div>
+</li>
+<li>
+<p>Subnet-specific Routing: private subnets (WCCP Router and Proxy servers).</p>
+<ul>
+<li>
+<p>Route tables have entries for Transit Gateway CIDR connect attachment peers pointing back to Transit Gateway.</p>
+</li>
+<li>
+<p>Default route points to the firewall in a separate private subnet.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Private subnets (firewalls):</p>
+<ul>
+<li>
+<p>Default route points to NAT Gateway in the public subnet of the corresponding <a href="https://aws.amazon.com/about-aws/global-infrastructure/regions_az/">AWS Availability Zone (AZ)</a>.</p>
+</li>
+<li>
+<p>Routes to WCCP router ENI in the same AZ for return traffic not matching WCCP redirect rules.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Public Subnets (NAT Gateways):</p>
+<ul>
+<li>
+<p>Default route points to IGW.</p>
+</li>
+<li>
+<p>Routes to firewall endpoint in the same AZ for return traffic not matching WCCP redirect rules.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="wccp-redirection"><strong>WCCP redirection</strong></h2>
+<p>All Internet-bound traffic to WCCP routers is evaluated against configured WCCP redirect rules and forwarded to proxies in the same subnet. For redundancy, these WCCP routers configure <strong>WCCP</strong> redirection to connect with proxies in other AZs. WCCP redirection can be configured to handle all supported traffic or selected traffic types. Configuration mechanisms vary by WCCP virtual appliance vendor. Traffic to the proxy is evaluated and processed according to configuration, then forwarded to the firewall on the Internet egress path. As mentioned, if needed, proxies can be chained with other functions like DLP.</p>
+<h2 id="packet-walk-through"><strong>Packet walk-through</strong></h2>
+<p>The following figure outlines the packet journey.</p>
+<p><img src="../../images/3-BlogsTranslated/3.1-Blog1/WCCPBlogArchitecture-v1-Page-2.jpg" alt="Figure 2: Architecture diagram with packet flow"></p>
+<p style="text-align: center;">Figure 2: Architecture diagram with packet flow</p>
+<p><strong>Forward path:</strong> This section explains how packets travel from resources in Spoke VPCs to destinations on the Internet through proxies and firewalls in the Egress VPC.</p>
+<ul>
+<li>
+<p>(A) Traffic from sources in Spoke VPCs destined for the Internet follows the default route in the subnet route table and enters Transit Gateway.</p>
+</li>
+<li>
+<p>(B) Once in Transit Gateway, it follows the route in the Spoke Route Table on Transit Gateway, which forwards traffic to the Transit Gateway Connect attachment. Multiple GRE tunnels run over the Connect attachment, all advertising default routes to Transit Gateway, so Transit Gateway uses Equal Cost Multi-Pathing (ECMP) to send traffic to WCCP virtual appliances in the Egress VPC.</p>
+</li>
+<li>
+<p>(C) The WCCP-virtual appliance intercepts traffic and determines if inspection is needed. Traffic requiring inspection is redirected to proxy servers, where security policies, content filtering, or other controls are applied before forwarding to Network Firewall.</p>
+</li>
+<li>
+<p>(CD) Traffic not matching WCCP redirect rules exits the WCCP virtual appliance and goes directly to Network Firewall according to the subnet route table.</p>
+</li>
+<li>
+<p>(D) Proxied traffic is Source NATed to the proxy&rsquo;s IP address and leaves the proxy for Network Firewall according to the subnet route table. This table has a default route pointing to the Network Firewall endpoint in the same AZ of the Egress VPC.</p>
+</li>
+<li>
+<p>(E) Network Firewall inspects the traffic and, if allowed, sends it to NAT Gateway in the same AZ of the Egress VPC according to the default route configured in its subnet route table.</p>
+</li>
+<li>
+<p>(F) NAT Gateway performs Source NAT on the traffic and sends it to the destination on the Internet.</p>
+</li>
+</ul>
+<p><strong>Reverse path:</strong> This section explains how return packets travel from the Internet to resources in Spoke VPCs through proxies and firewalls in the Egress VPC.</p>
+<ul>
+<li>
+<p>(G) Return traffic from the Internet enters the same NAT Gateway due to Source NAT.</p>
+</li>
+<li>
+<p>(H) According to the subnet route table, NAT Gateway forwards traffic to Network Firewall in the same AZ.</p>
+</li>
+<li>
+<p>(I) Network Firewall sends traffic to the proxy server in the same AZ if this flow in the forward direction matched WCCP redirect rules and was Source NATed by the proxy server.</p>
+</li>
+<li>
+<p>(J) The proxy server sends return traffic of the proxied flow to the WCCP router using WCCP configuration on the proxy server.</p>
+</li>
+<li>
+<p>(IJ) Return traffic of flows not matching redirect rules is sent by Network Firewall to the WCCP router according to the subnet route table.</p>
+</li>
+<li>
+<p>(K) Multiple GRE tunnels exist from WCCP routers to Transit Gateway via Connect attachment. Spoke VPC CIDRs are advertised to WCCP routers through these tunnels. WCCP routers use ECMP to send traffic to Transit Gateway through GRE tunnels.</p>
+</li>
+<li>
+<p>(L) Transit Gateway uses the Connect attachment route table to forward traffic to the corresponding Spoke VPC attachment.</p>
+</li>
+<li>
+<p>(M) In the Spoke VPC, traffic follows local routes to reach the destination from the Transit Gateway ENI.</p>
+</li>
+</ul>
+<h2 id="considerations"><strong>Considerations</strong></h2>
+<p>Consider the following four points when implementing this solution.</p>
+<ol>
+<li><strong>WCCP virtual appliance sizing</strong></li>
+</ol>
+<ul>
+<li>Ensure proper sizing of WCCP virtual appliances to handle expected traffic volumes. You can refer to <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-network-bandwidth.html">Amazon EC2 instance network bandwidth</a> documentation to select EC2 instances supporting your traffic requirements.</li>
+<li>Plan for redundancy by deploying across multiple AZs.</li>
+<li>Component-level redundancy (for WCCP routers or Proxy servers) can be implemented using <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-recover.html">automatic instance recovery.</a></li>
+</ul>
+<ol start="2">
+<li><strong>WCCP configuration</strong></li>
+</ol>
+<ul>
+<li>Define service groups to classify traffic for different inspection policies as needed. Different service groups can be used for primary and secondary proxy servers.</li>
+<li>Configure redirection according to your requirements. You can use multiple attributes like port, protocol, source/destination addresses.</li>
+<li>Implement authentication between WCCP routers and proxy servers (outside the scope of this post).</li>
+</ul>
+<ol start="3">
+<li><strong>Proxy selection</strong></li>
+</ol>
+<ul>
+<li>Choose proxy solutions supporting WCCP integration.</li>
+<li>Consider performance requirements based on expected traffic volumes. Refer to <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-network-bandwidth.html">Amazon EC2 instance network bandwidth</a> documentation to select EC2 instances supporting your traffic requirements.</li>
+</ul>
+<ol start="4">
+<li><strong>Monitoring and logging</strong></li>
+</ol>
+<ul>
+<li>Implement comprehensive logging for both WCCP routers and proxy servers. Below are some examples of logs to collect. Since WCCP and proxy implementation depends on vendor/solution, these logs may be called by different names. Please refer to vendor documentation for details:</li>
+</ul>
+<p><strong>On WCCP router:</strong></p>
+<ol>
+<li>WCCP service status, packet redirection, and router-to-proxy communication logs</li>
+<li>Interface traffic statistics</li>
+<li>ACL match counts for WCCP-related rules</li>
+<li>NetFlow/sFlow data for traffic analysis<br>
+<strong>On proxy server:</strong></li>
+<li>Access logs and Error logs (client IP, URL, status code, bytes transferred, timing, connection failures, timeouts)</li>
+<li>WCCP service logs (service registration, group membership)</li>
+<li>Cache performance logs (hit/miss ratio)</li>
+<li>Connection handling logs (TCP connections, handshakes)</li>
+<li>Authentication logs (if applicable)</li>
+<li>SSL/TLS inspection logs (for HTTPS traffic)</li>
+<li>System resource usage (CPU, memory, disk I/O)</li>
+</ol>
+<ul>
+<li>Set up alerts for traffic anomalies or proxy health issues, and create dashboards to visualize traffic patterns and security events. You can export the previously mentioned logs to <a href="https://aws.amazon.com/cloudwatch/">Amazon CloudWatch</a> to set up alerts and create dashboards.</li>
+</ul>
+<p><strong>Conclusion</strong></p>
+<p>Implementing transparent proxies using WCCP with AWS Transit Gateway provides a powerful solution for organizations looking to enhance their security posture without disrupting user experience. Centralizing security controls in an egress VPC and using WCCP-compatible routers allows organizations to achieve comprehensive traffic inspection while maintaining network performance and scalability.</p>
+<p>This architecture provides flexibility to adapt to changing security requirements and increasing network demands, making it an excellent choice for enterprises looking to strengthen their cloud security infrastructure. For more information and architectural options for centralized egress, visit the AWS Whitepaper, <a href="https://docs.aws.amazon.com/whitepapers/latest/building-scalable-secure-multi-vpc-network-infrastructure/centralized-egress-to-internet.html">Centralized egress to internet</a>.</p>
+<img src="../../images/3-BlogsTranslated/3.1-Blog1/vijaymenon.jpeg" alt="Vijay_Menon" width="150" style="float: left; margin-right: 15px;"/>
+<p><strong>Vijay Menon</strong></p>
+<p>Vijay Menon is a Principal Solutions Architect working in Singapore, with a background in large-scale networking and telecommunications infrastructure. He enjoys learning new technologies and helping customers solve complex technical problems by providing solutions using AWS products and services. When not supporting customers, he enjoys long-distance running and spending time with family and friends.</p>
+
 
 
 
@@ -1882,19 +1997,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../js/clipboard.min.js?1764657388"></script>
-    <script src="../../js/perfect-scrollbar.min.js?1764657388"></script>
-    <script src="../../js/perfect-scrollbar.jquery.min.js?1764657388"></script>
-    <script src="../../js/jquery.sticky.js?1764657388"></script>
-    <script src="../../js/featherlight.min.js?1764657388"></script>
-    <script src="../../js/highlight.pack.js?1764657388"></script>
+    <script src="../../js/clipboard.min.js?1764660683"></script>
+    <script src="../../js/perfect-scrollbar.min.js?1764660683"></script>
+    <script src="../../js/perfect-scrollbar.jquery.min.js?1764660683"></script>
+    <script src="../../js/jquery.sticky.js?1764660683"></script>
+    <script src="../../js/featherlight.min.js?1764660683"></script>
+    <script src="../../js/highlight.pack.js?1764660683"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../js/modernizr.custom-3.6.0.js?1764657388"></script>
-    <script src="../../js/learn.js?1764657388"></script>
-    <script src="../../js/hugo-learn.js?1764657388"></script>
+    <script src="../../js/modernizr.custom-3.6.0.js?1764660683"></script>
+    <script src="../../js/learn.js?1764660683"></script>
+    <script src="../../js/hugo-learn.js?1764660683"></script>
 
-    <link href="../../mermaid/mermaid.css?1764657388" rel="stylesheet" />
-    <script src="../../mermaid/mermaid.js?1764657388"></script>
+    <link href="../../mermaid/mermaid.css?1764660683" rel="stylesheet" />
+    <script src="../../mermaid/mermaid.js?1764660683"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
