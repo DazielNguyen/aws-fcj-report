@@ -27,7 +27,7 @@ chapter: false
 
 &emsp; **Thời gian thực tập:** Từ ngày 12/08/2025 đến ngày 12/11/2025
 
-<img src="/images/duyavatar_01.png" alt="Ảnh cá nhân" width="450"/>
+<img src="/images/duyavatar_02.jpg" alt="Ảnh cá nhân" width="450"/>
 
 ### Nội dung báo cáo
 
