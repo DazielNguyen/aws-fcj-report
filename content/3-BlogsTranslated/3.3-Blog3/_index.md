@@ -6,125 +6,51 @@ chapter: false
 pre: " <b> 3.3. </b> "
 ---
 
-# Getting Started with Healthcare Data Lakes: Using Microservices
+# **AWS Weekly Roundup: AWS Transform, Amazon Neptune, and more (September 8, 2025)**
 
-Data lakes can help hospitals and healthcare facilities turn data into business insights, maintain business continuity, and protect patient privacy. A **data lake** is a centralized, managed, and secure repository to store all your data, both in its raw and processed forms for analysis. Data lakes allow you to break down data silos and combine different types of analytics to gain insights and make better business decisions.
+by Esra Kayabali | on September 8, 2025 | in [Amazon Bedrock](https://aws.amazon.com/blogs/aws/category/artificial-intelligence/amazon-machine-learning/amazon-bedrock/), [Amazon Elastic Container Service](https://aws.amazon.com/blogs/aws/category/compute/amazon-elastic-container-service/), [Amazon Neptune](https://aws.amazon.com/blogs/aws/category/database/amazon-neptune/), [Announcements](https://aws.amazon.com/blogs/aws/category/post-types/announcements/), [AWS Transform](https://aws.amazon.com/blogs/aws/category/artificial-intelligence/generative-ai/aws-transform/), [AWS User Notifications](https://aws.amazon.com/blogs/aws/category/management-and-governance/aws-user-notifications/), [Launch](https://aws.amazon.com/blogs/aws/category/news/launch/), [News](https://aws.amazon.com/blogs/aws/category/news/) | [Permalink](https://aws.amazon.com/blogs/aws/aws-weekly-roundup-aws-transform-amazon-neptune-and-more-september-8-2025/) | Comments | Share
 
-This blog post is part of a larger series on getting started with setting up a healthcare data lake. In my final post of the series, _“Getting Started with Healthcare Data Lakes: Diving into Amazon Cognito”_, I focused on the specifics of using Amazon Cognito and Attribute Based Access Control (ABAC) to authenticate and authorize users in the healthcare data lake solution. In this blog, I detail how the solution evolved at a foundational level, including the design decisions I made and the additional features used. You can access the code samples for the solution in this Git repo for reference.
+Summer has come to an end in Utrecht, where I live in the Netherlands. In two weeks, I will attend [AWS Community Day 2025](https://awscommunityday.nl/2025/), hosted at Kinepolis Jaarbeurs Utrecht on September 24. This one-day event will bring together over 500 cloud professionals from across the Netherlands, with 25 breakout sessions spanning 5 technical tracks. The day will kick off with virtual keynotes at 9:00 AM, followed by parallel sessions focusing on practical implementations of serverless architectures and container optimization strategies, delivering value for all experience levels.
 
----
+Last year's AWS Community Day Netherlands 2024 brought together a diverse community of practitioners, speakers and AWS enthusiasts, creating a community-led conference with high knowledge-sharing value. If you plan to attend, feel free to find me to discuss **AWS** services or share your cloud deployment experiences!
 
-## Architecture Guidance
+![0-AWSNEWS-2266](/images/3-BlogsTranslated/3.1-Blog3/0-AWSNEWS-2266.png)
 
-The main change since the last presentation of the overall architecture is the decomposition of a single service into a set of smaller services to improve maintainability and flexibility. Integrating a large volume of diverse healthcare data often requires specialized connectors for each format; by keeping them encapsulated separately as microservices, we can add, remove, and modify each connector without affecting the others. The microservices are loosely coupled via publish/subscribe messaging centered in what I call the “pub/sub hub.”
+## **Last week's launches**
 
-This solution represents what I would consider another reasonable sprint iteration from my last post. The scope is still limited to the ingestion and basic parsing of **HL7v2 messages** formatted in **Encoding Rules 7 (ER7)** through a REST interface.
+Let's review last week's new announcements.
 
-**The solution architecture is now as follows:**
+[AWS Transform assessments now include detached storage](https://aws.amazon.com/about-aws/whats-new/2025/09/aws-transform-assessments-detached-storage/) – AWS Transform has expanded its assessment capabilities to analyze on-premises detached storage infrastructure, helping customers identify migration total cost of ownership (TCO). Assessments now evaluate Storage Area Network (SAN), Network Attached Storage (NAS), file servers, object storage, and virtual environments, while recommending appropriate target AWS services like Amazon S3, Amazon EBS, and Amazon FSx. The tool provides comprehensive TCO comparison between current environments and AWS, with performance and cost optimization recommendations. Since storage can represent up to 45% of total migration opportunities, this upgrade helps customers visualize migration options on AWS. AWS Transform assessment is now available in US East (N. Virginia) and Europe (Frankfurt).
 
-> _Figure 1. Overall architecture; colored boxes represent distinct services._
+[Amazon Bedrock now supports global cross-region inference for Anthropic Claude Sonnet 4](https://aws.amazon.com/about-aws/whats-new/2025/09/amazon-bedrock-global-cross-region-inference-anthropic-claude-sonnet-4/) – The Anthropic Claude Sonnet 4 model in Amazon Bedrock now supports Global cross-Region inference, allowing inference requests to be routed to any supported commercial AWS Region for processing. This upgrade optimizes available resources and increases model throughput by distributing traffic across multiple Regions. Previously, you could select cross-Region inference profiles tied to each region (US, EU, APAC). The new Global cross-Region inference profile provides additional flexibility for generative AI without geographic constraints, helping handle unplanned traffic bursts and increase throughput. Detailed implementation guidance is available in [Amazon Bedrock documentation](https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html).
 
----
+[Amazon Neptune Database now supports Public Endpoints, simplifying development access](https://aws.amazon.com/about-aws/whats-new/2025/09/aws-neptune-database-public-endpoints/) – Amazon Neptune now supports Public Endpoints, allowing direct connections to Neptune databases from outside VPC without complex network configuration. This feature enables developers to securely access graph databases from personal development machines without VPN or bastion hosts, while still ensuring security through IAM authentication, VPC security groups, and encryption in transit. You can enable Public Endpoints for Neptune clusters running engine version 1.4.6 or later through AWS Management Console, AWS CLI, or AWS SDK. This feature has no additional charges beyond standard Neptune pricing, and is available in all AWS Regions where Neptune Database is offered. Implementation details are in [Amazon Neptune documentation](https://docs.aws.amazon.com/neptune/latest/userguide/intro.html).
 
-While the term _microservices_ has some inherent ambiguity, certain traits are common:
+[ECS Exec now supported on AWS Management Console](https://aws.amazon.com/about-aws/whats-new/2025/09/ecs-exec-aws-management-console/) – Amazon ECS now supports ECS Exec directly in AWS Management Console, enabling secure, interactive shell access to running containers without opening inbound ports or managing SSH keys. Previously only available via API/CLI/SDK, this feature makes troubleshooting convenient by accessing containers directly in the console. You can enable ECS Exec when creating/updating services and standalone tasks, then connect to containers by selecting "Connect" on the task details page, opening an interactive session via CloudShell. The console also displays corresponding AWS CLI commands for use on local machines. The feature is available in all AWS commercial Regions and documented in the [ECS developer guide](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-exec.html).
 
-- Small, autonomous, loosely coupled
-- Reusable, communicating through well-defined interfaces
-- Specialized to do one thing well
-- Often implemented in an **event-driven architecture**
+[General availability of organizational notification configurations for AWS User Notifications](https://aws.amazon.com/about-aws/whats-new/2025/09/general-availability-organizational-notification-configurations-aws-user-notifications/) – AWS User Notifications now supports Organizational Notification Configurations, enabling AWS Organizations users to configure and observe notifications centrally across the organization. Management accounts or delegated administrators can configure notifications for specific organizational units or for all accounts in the organization. The service supports configuring notifications for any supported Amazon EventBridge event, such as console sign-ins without MFA, with notifications appearing in administrators' Console Notifications Center and AWS Console Mobile Application. User Notifications supports up to 5 delegated administrators and is available in all AWS Regions where the service is offered. Implementation details are in [AWS User Notifications user guide](https://docs.aws.amazon.com/notifications/latest/userguide/managing-org-notifications.html).
 
-When determining where to draw boundaries between microservices, consider:
+[For a full list of AWS announcements, follow the What's New at AWS page.](https://aws.amazon.com/new/)
 
-- **Intrinsic**: technology used, performance, reliability, scalability
-- **Extrinsic**: dependent functionality, rate of change, reusability
-- **Human**: team ownership, managing _cognitive load_
+## **Upcoming AWS events**
 
----
+Mark your calendar and register for upcoming AWS events.
 
-## Technology Choices and Communication Scope
+[AWS Summits](https://aws.amazon.com/events/summits/) – Free online and in-person events that bring the cloud computing community together to connect, collaborate and learn about AWS. Register in a city near you: [Zurich](https://aws.amazon.com/events/summits/zurich/) (September 11), [Los Angeles](https://aws.amazon.com/events/summits/los-angeles/) (September 17), and [Bogotá](https://aws.amazon.com/es/events/summits/bogota/) (October 9).
 
-| Communication scope                       | Technologies / patterns to consider                                                        |
-| ----------------------------------------- | ------------------------------------------------------------------------------------------ |
-| Within a single microservice              | Amazon Simple Queue Service (Amazon SQS), AWS Step Functions                               |
-| Between microservices in a single service | AWS CloudFormation cross-stack references, Amazon Simple Notification Service (Amazon SNS) |
-| Between services                          | Amazon EventBridge, AWS Cloud Map, Amazon API Gateway                                      |
+[AWS re:Invent 2025](https://reinvent.awsevents.com/?trk=ba8b32c9-8088-419f-9258-82e9375ad130&sc_channel=ell) – See you in Las Vegas from December 1–5, where cloud pioneers from around the world gather to get AWS innovation updates, learn from peers, expert-led in-depth discussions and expand connections. Don't forget to explore the [event catalog](https://registration.awsevents.com/flow/awsevents/reinvent2025/eventcatalog/page/eventcatalog?trk=ba8b32c9-8088-419f-9258-82e9375ad130).
 
----
+[AWS Community Days](https://aws.amazon.com/events/community-day/?trk=e61dee65-4ce8-4738-84db-75305c9cd4fe&sc_channel=el&?trk=ba8b32c9-8088-419f-9258-82e9375ad130&sc_channel=el) – A series of community-led conferences featuring technical discussions, workshops, and hands-on labs led by expert AWS users and industry leaders sharing: [Baltic](https://awsbaltic.eu/) (September 10), [Aotearoa](https://aws-community-day.nz/inperson.html) (September 18), [South Africa](https://www.awscommunityday.co.za/) (September 20), [Bolivia](https://www.facebook.com/awscommunitydaybolivia/) (September 20), [Portugal](https://awscommunityday.pt/) (September 27).
 
-## The Pub/Sub Hub
+Browse all [in-person and virtual events organized by AWS here.](https://aws.amazon.com/events/explore-aws-events/)
 
-Using a **hub-and-spoke** architecture (or message broker) works well with a small number of tightly related microservices.
+That's all for this week. See you next Monday in the Weekly Roundup!
 
-- Each microservice depends only on the _hub_
-- Inter-microservice connections are limited to the contents of the published message
-- Reduces the number of synchronous calls since pub/sub is a one-way asynchronous _push_
+[— Esra](https://www.linkedin.com/in/esrakayabali/)
 
-Drawback: **coordination and monitoring** are needed to avoid microservices processing the wrong message.
+_This post is part of the [Weekly Roundup](https://aws.amazon.com/blogs/aws/tag/week-in-review/) series. Come back every week for a quick overview of interesting news and announcements from AWS!_
 
----
+TAGS: [Week in Review](https://aws.amazon.com/blogs/aws/tag/week-in-review/)
 
-## Core Microservice
-
-Provides foundational data and communication layer, including:
-
-- **Amazon S3** bucket for data
-- **Amazon DynamoDB** for data catalog
-- **AWS Lambda** to write messages into the data lake and catalog
-- **Amazon SNS** topic as the _hub_
-- **Amazon S3** bucket for artifacts such as Lambda code
-
-> Only allow indirect write access to the data lake through a Lambda function → ensures consistency.
-
----
-
-## Front Door Microservice
-
-- Provides an API Gateway for external REST interaction
-- Authentication & authorization based on **OIDC** via **Amazon Cognito**
-- Self-managed _deduplication_ mechanism using DynamoDB instead of SNS FIFO because:
-  1. SNS deduplication TTL is only 5 minutes
-  2. SNS FIFO requires SQS FIFO
-  3. Ability to proactively notify the sender that the message is a duplicate
-
----
-
-## Staging ER7 Microservice
-
-- Lambda “trigger” subscribed to the pub/sub hub, filtering messages by attribute
-- Step Functions Express Workflow to convert ER7 → JSON
-- Two Lambdas:
-  1. Fix ER7 formatting (newline, carriage return)
-  2. Parsing logic
-- Result or error is pushed back into the pub/sub hub
-
----
-
-## New Features in the Solution
-
-### 1. AWS CloudFormation Cross-Stack References
-
-Example _outputs_ in the core microservice:
-
-```yaml
-Outputs:
-  Bucket:
-    Value: !Ref Bucket
-    Export:
-      Name: !Sub ${AWS::StackName}-Bucket
-  ArtifactBucket:
-    Value: !Ref ArtifactBucket
-    Export:
-      Name: !Sub ${AWS::StackName}-ArtifactBucket
-  Topic:
-    Value: !Ref Topic
-    Export:
-      Name: !Sub ${AWS::StackName}-Topic
-  Catalog:
-    Value: !Ref Catalog
-    Export:
-      Name: !Sub ${AWS::StackName}-Catalog
-  CatalogArn:
-    Value: !GetAtt Catalog.Arn
-    Export:
-      Name: !Sub ${AWS::StackName}-CatalogArn
-```
+| <img src="/images/3-BlogsTranslated/3.1-Blog3/esrakayabali11-400x400-1.jpg" alt="Esra_Kayabali" width="350" style="float: left; margin-right: 15px;"/> | **Esra Kayabali** <br/> Esra Kayabali is a Senior Solutions Architect at AWS, specializing in analytics including data warehousing, data lakes, big data analytics, batch and real-time data streaming, and data integration. She has over ten years of experience in software development and solution architecture. She is passionate about learning collaboratively, sharing knowledge and leading the community on their cloud technology journey. |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |

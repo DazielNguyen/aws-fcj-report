@@ -15,21 +15,21 @@
     <title>Blog 2 :: Internship Report</title>
 
     
-    <link href="../../css/nucleus.css?1764657388" rel="stylesheet">
-    <link href="../../css/fontawesome-all.min.css?1764657388" rel="stylesheet">
-    <link href="../../css/hybrid.css?1764657388" rel="stylesheet">
-    <link href="../../css/featherlight.min.css?1764657388" rel="stylesheet">
-    <link href="../../css/perfect-scrollbar.min.css?1764657388" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1764657388" rel="stylesheet">
-    <link href="../../css/atom-one-dark-reasonable.css?1764657388" rel="stylesheet">
-    <link href="../../css/theme.css?1764657388" rel="stylesheet">
-    <link href="../../css/hugo-theme.css?1764657388" rel="stylesheet">
+    <link href="../../css/nucleus.css?1764664046" rel="stylesheet">
+    <link href="../../css/fontawesome-all.min.css?1764664046" rel="stylesheet">
+    <link href="../../css/hybrid.css?1764664046" rel="stylesheet">
+    <link href="../../css/featherlight.min.css?1764664046" rel="stylesheet">
+    <link href="../../css/perfect-scrollbar.min.css?1764664046" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1764664046" rel="stylesheet">
+    <link href="../../css/atom-one-dark-reasonable.css?1764664046" rel="stylesheet">
+    <link href="../../css/theme.css?1764664046" rel="stylesheet">
+    <link href="../../css/hugo-theme.css?1764664046" rel="stylesheet">
     
-    <link href="../../css/theme-workshop.css?1764657388" rel="stylesheet">
+    <link href="../../css/theme-workshop.css?1764664046" rel="stylesheet">
     
     
 
-    <script src="../../js/jquery-3.3.1.min.js?1764657388"></script>
+    <script src="../../js/jquery-3.3.1.min.js?1764664046"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -88,14 +88,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../js/lunr.min.js?1764657388"></script>
-<script type="text/javascript" src="../../js/auto-complete.js?1764657388"></script>
+<script type="text/javascript" src="../../js/lunr.min.js?1764664046"></script>
+<script type="text/javascript" src="../../js/auto-complete.js?1764664046"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/aws-fcj-report\/";
     
 </script>
-<script type="text/javascript" src="../../js/search.js?1764657388"></script>
+<script type="text/javascript" src="../../js/search.js?1764664046"></script>
  
   </div>
 
@@ -1008,17 +1008,18 @@
                     <div class="progress">
   <div class="wrapper"><nav id="TableOfContents">
   <ul>
-    <li><a href="#architecture-guidance">Architecture Guidance</a></li>
-    <li><a href="#technology-choices-and-communication-scope">Technology Choices and Communication Scope</a></li>
-    <li><a href="#the-pubsub-hub">The Pub/Sub Hub</a></li>
-    <li><a href="#core-microservice">Core Microservice</a></li>
-    <li><a href="#front-door-microservice">Front Door Microservice</a></li>
-    <li><a href="#staging-er7-microservice">Staging ER7 Microservice</a></li>
-    <li><a href="#new-features-in-the-solution">New Features in the Solution</a>
+    <li><a href="#overview"><strong>Overview</strong></a></li>
+    <li><a href="#regional-decisions"><strong>Regional decisions</strong></a></li>
+    <li><a href="#multi-region-deployment-patterns"><strong>Multi-Region deployment patterns</strong></a>
       <ul>
-        <li><a href="#1-aws-cloudformation-cross-stack-references">1. AWS CloudFormation Cross-Stack References</a></li>
+        <li><a href="#active-passive"><strong>Active-Passive</strong></a></li>
+        <li><a href="#active-active"><strong>Active-Active</strong></a></li>
       </ul>
     </li>
+    <li><a href="#multi-region-serverless-authorizer"><strong>Multi-Region serverless authorizer</strong></a></li>
+    <li><a href="#demo-overview"><strong>Demo overview</strong></a></li>
+    <li><a href="#observability-in-multi-region-deployment"><strong>Observability in multi-Region deployment</strong></a></li>
+    <li><a href="#conclusion"><strong>Conclusion</strong></a></li>
   </ul>
 </nav></div>
 </div>
@@ -1043,127 +1044,108 @@
 
 
 
-	<h1 id="getting-started-with-healthcare-data-lakes-using-microservices">Getting Started with Healthcare Data Lakes: Using Microservices</h1>
-<p>Data lakes can help hospitals and healthcare facilities turn data into business insights, maintain business continuity, and protect patient privacy. A <strong>data lake</strong> is a centralized, managed, and secure repository to store all your data, both in its raw and processed forms for analysis. Data lakes allow you to break down data silos and combine different types of analytics to gain insights and make better business decisions.</p>
-<p>This blog post is part of a larger series on getting started with setting up a healthcare data lake. In my final post of the series, <em>“Getting Started with Healthcare Data Lakes: Diving into Amazon Cognito”</em>, I focused on the specifics of using Amazon Cognito and Attribute Based Access Control (ABAC) to authenticate and authorize users in the healthcare data lake solution. In this blog, I detail how the solution evolved at a foundational level, including the design decisions I made and the additional features used. You can access the code samples for the solution in this Git repo for reference.</p>
-<hr>
-<h2 id="architecture-guidance">Architecture Guidance</h2>
-<p>The main change since the last presentation of the overall architecture is the decomposition of a single service into a set of smaller services to improve maintainability and flexibility. Integrating a large volume of diverse healthcare data often requires specialized connectors for each format; by keeping them encapsulated separately as microservices, we can add, remove, and modify each connector without affecting the others. The microservices are loosely coupled via publish/subscribe messaging centered in what I call the “pub/sub hub.”</p>
-<p>This solution represents what I would consider another reasonable sprint iteration from my last post. The scope is still limited to the ingestion and basic parsing of <strong>HL7v2 messages</strong> formatted in <strong>Encoding Rules 7 (ER7)</strong> through a REST interface.</p>
-<p><strong>The solution architecture is now as follows:</strong></p>
-<blockquote>
-<p><em>Figure 1. Overall architecture; colored boxes represent distinct services.</em></p></blockquote>
-<hr>
-<p>While the term <em>microservices</em> has some inherent ambiguity, certain traits are common:</p>
-<ul>
-<li>Small, autonomous, loosely coupled</li>
-<li>Reusable, communicating through well-defined interfaces</li>
-<li>Specialized to do one thing well</li>
-<li>Often implemented in an <strong>event-driven architecture</strong></li>
-</ul>
-<p>When determining where to draw boundaries between microservices, consider:</p>
-<ul>
-<li><strong>Intrinsic</strong>: technology used, performance, reliability, scalability</li>
-<li><strong>Extrinsic</strong>: dependent functionality, rate of change, reusability</li>
-<li><strong>Human</strong>: team ownership, managing <em>cognitive load</em></li>
-</ul>
-<hr>
-<h2 id="technology-choices-and-communication-scope">Technology Choices and Communication Scope</h2>
-<table>
-  <thead>
-      <tr>
-          <th>Communication scope</th>
-          <th>Technologies / patterns to consider</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Within a single microservice</td>
-          <td>Amazon Simple Queue Service (Amazon SQS), AWS Step Functions</td>
-      </tr>
-      <tr>
-          <td>Between microservices in a single service</td>
-          <td>AWS CloudFormation cross-stack references, Amazon Simple Notification Service (Amazon SNS)</td>
-      </tr>
-      <tr>
-          <td>Between services</td>
-          <td>Amazon EventBridge, AWS Cloud Map, Amazon API Gateway</td>
-      </tr>
-  </tbody>
-</table>
-<hr>
-<h2 id="the-pubsub-hub">The Pub/Sub Hub</h2>
-<p>Using a <strong>hub-and-spoke</strong> architecture (or message broker) works well with a small number of tightly related microservices.</p>
-<ul>
-<li>Each microservice depends only on the <em>hub</em></li>
-<li>Inter-microservice connections are limited to the contents of the published message</li>
-<li>Reduces the number of synchronous calls since pub/sub is a one-way asynchronous <em>push</em></li>
-</ul>
-<p>Drawback: <strong>coordination and monitoring</strong> are needed to avoid microservices processing the wrong message.</p>
-<hr>
-<h2 id="core-microservice">Core Microservice</h2>
-<p>Provides foundational data and communication layer, including:</p>
-<ul>
-<li><strong>Amazon S3</strong> bucket for data</li>
-<li><strong>Amazon DynamoDB</strong> for data catalog</li>
-<li><strong>AWS Lambda</strong> to write messages into the data lake and catalog</li>
-<li><strong>Amazon SNS</strong> topic as the <em>hub</em></li>
-<li><strong>Amazon S3</strong> bucket for artifacts such as Lambda code</li>
-</ul>
-<blockquote>
-<p>Only allow indirect write access to the data lake through a Lambda function → ensures consistency.</p></blockquote>
-<hr>
-<h2 id="front-door-microservice">Front Door Microservice</h2>
-<ul>
-<li>Provides an API Gateway for external REST interaction</li>
-<li>Authentication &amp; authorization based on <strong>OIDC</strong> via <strong>Amazon Cognito</strong></li>
-<li>Self-managed <em>deduplication</em> mechanism using DynamoDB instead of SNS FIFO because:
+	<h1 id="building-resilient-multi-region-serverless-applications-on-aws"><strong>Building resilient multi-Region Serverless applications on AWS</strong></h1>
+<p>by Vamsi Vikash Ankam | on 08 SEP 2025 | in <a href="https://aws.amazon.com/blogs/compute/category/learning-levels/advanced-300/">Advanced (300)</a>, <a href="https://aws.amazon.com/blogs/compute/category/resilience/">Resilience</a>, <a href="https://aws.amazon.com/blogs/compute/category/serverless/">Serverless</a>, <a href="https://aws.amazon.com/blogs/compute/category/post-types/technical-how-to/">Technical How-to</a> | <a href="https://aws.amazon.com/blogs/compute/building-resilient-multi-region-serverless-applications-on-aws/">Permalink</a> | Share</p>
+<p>Mission-critical applications demand high availability and resilience against potential disruptions. In online gaming, millions of players connect simultaneously, making availability challenges particularly apparent. When gaming platforms fail, players lose progress, tournaments are disrupted, and brand reputation suffers. Traditional environments often over-provision compute resources to address these challenges, leading to complex setups along with high infrastructure and operational costs. Modern Amazon Web Services <a href="https://aws.amazon.com/serverless/">(AWS) serverless</a> infrastructure offers a more efficient approach. This post presents architectural best practices for building resilient serverless applications, illustrated through implementing a multi-<a href="https://aws.amazon.com/about-aws/global-infrastructure/regions_az/">Region</a> serverless authorization mechanism.</p>
+<h2 id="overview"><strong>Overview</strong></h2>
+<p>Recognizing the importance of availability only after experiencing disaster is too late. Applications can fail for many reasons such as infrastructure failures, source code errors, configuration errors, unexpected traffic surges, or service disruptions at the regional level. Critical business services such as authentication systems, payment processors, and real-time gaming features require high availability. To minimize impact on user experience and business revenue, establish <a href="https://docs.aws.amazon.com/prescriptive-guidance/latest/aws-multi-region-fundamentals/fundamental-1.html">bounded recovery times</a> for critical services during incidents.</p>
+<p>AWS serverless architectures inherently provide high availability through multi-Availability Zone (AZ) deployment and integrated scalability. These services minimize infrastructure management while operating on a pay-for-value pricing model at the Regional level. The AWS serverless pay-for-value model enables cost-effective multi-Region deployment, making it an ideal choice for building resilient architectures.</p>
+<p><img src="../../images/3-BlogsTranslated/3.1-Blog2/image-1-5.png" alt="Figure 1: Diagram showing failure causes, their impact and frequency of occurrence"></p>
+<p style="text-align: center;">Figure 1: Diagram showing failure causes, their impact and frequency of occurrence</p>
+<p>The previous diagram maps failures—from common operational errors to rare catastrophic events. It guides organizations to prioritize multi-Region recovery strategies based on occurrence probability and potential business impact.</p>
+<h2 id="regional-decisions"><strong>Regional decisions</strong></h2>
+<p>To determine the appropriate multi-Region approach, carefully evaluate the following factors:</p>
 <ol>
-<li>SNS deduplication TTL is only 5 minutes</li>
-<li>SNS FIFO requires SQS FIFO</li>
-<li>Ability to proactively notify the sender that the message is a duplicate</li>
+<li>Assess whether your <a href="https://aws.amazon.com/blogs/mt/establishing-rpo-and-rto-targets-for-cloud-applications/">Recovery Time Objective (RTO) and Recovery Point Objective (RPO)</a> requirements can be met within a single Region, or if a multi-Region architecture is necessary to achieve your recovery objectives.</li>
+<li>Whether the business benefits of multi-Region redundancy outweigh the operational costs of data replication, synchronization, and increased deployment costs and complexity.</li>
+<li>Evaluate whether data sovereignty laws, compliance requirements, or geographic restrictions prevent data replication between specific AWS Regions.</li>
+<li>Ensure that Regions selected in a &ldquo;multi-Region&rdquo; solution have compatible service capabilities, quota limits, and pricing appropriate to your needs.</li>
+</ol>
+<p>After evaluating these requirements, if the organization determines the need for multi-Region workloads, they must choose between two architectural patterns: Active-Passive or Active-Active deployment. Each pattern offers distinct benefits and trade-offs regarding resilience, cost, and operational complexity.</p>
+<h2 id="multi-region-deployment-patterns"><strong>Multi-Region deployment patterns</strong></h2>
+<p>The following sections outline different multi-Region deployment patterns: Active-Passive, and Active-Active.</p>
+<h3 id="active-passive"><strong>Active-Passive</strong></h3>
+<p>In this pattern, one AWS Region serves as the &ldquo;Active&rdquo; Region, handling all production traffic, while other Region(s) remain in &ldquo;Passive&rdquo; state, as shown in the following figure. Passive Region(s) replicate data and configuration from the Active Region without serving requests, and are ready to handle when disruptions occur in the &ldquo;Active&rdquo; Region. Depending on application criticality, passive Regions deploy different levels of infrastructure readiness: fully deployed infrastructure (Hot Standby), partial deployment (Warm Standby), or minimal core infrastructure (Pilot Light).</p>
+<p>Traditional Active-Passive architectures require significant investment in idle infrastructure: load balancers, auto-scaling groups, running compute resources, and monitoring systems. Organizations can use AWS serverless applications with pay-for-value pricing model to primarily pay for data replication costs, not idle compute resources. AWS manages the underlying infrastructure, eliminating most operational costs.</p>
+<p>Service quotas, API limits, and concurrency settings must correspond across AWS Regions to provide seamless failover capability. <a href="https://aws.amazon.com/lambda/">AWS Lambda</a> provides <a href="https://docs.aws.amazon.com/lambda/latest/dg/provisioned-concurrency.html">provisioned concurrency</a> to keep functions warm and responsive, particularly useful for secondary Regions during failover. It helps reduce cold starts by maintaining warm execution environments, so the system can handle traffic surges with fewer cold starts. Note that provisioned concurrency incurs compute <a href="https://aws.amazon.com/lambda/pricing/">costs</a> regardless of usage level. Consider implementing auto-scaling for provisioned concurrency based on traffic patterns to optimize costs during idle periods.</p>
+<p>This pattern suits organizations seeking cost-effective disaster recovery (DR) solutions, because AWS serverless costs only apply when resources are actively used in the secondary Region. Managed services like <a href="https://aws.amazon.com/dynamodb/">Amazon DynamoDB Global Tables</a> and <a href="https://aws.amazon.com/rds/aurora/">Amazon Aurora Global Database</a> handle data replication, simplifying deployment. The serverless authorization mechanism presented in the following section illustrates this pattern in practice.</p>
+<p><img src="../../images/3-BlogsTranslated/3.1-Blog2/image-2-4.png" alt="Figure 2:"></p>
+<p style="text-align: center;">Figure 2: Active-Passive pattern with dotted lines indicating standby Regions, while Active-Active pattern serves traffic simultaneously</p>
+<h3 id="active-active"><strong>Active-Active</strong></h3>
+<p>In this pattern, multiple Regions serve traffic simultaneously, distributing load and providing rapid failover capability. Active-Active architecture is <a href="https://aws.amazon.com/blogs/architecture/understand-resiliency-patterns-and-trade-offs-to-architect-efficiently-in-the-cloud/">expensive</a> and designed for the highest availability level. However, they don&rsquo;t by default provide DR for all potential failure types. This approach suits applications requiring geographic routing, or demanding the highest availability.</p>
+<p>Active-Active deployment requires rigorous engineering to handle data synchronization and resolve conflicts. Each Region must be sized to carry the full application load if another Region experiences service degradation. Active users are distributed across AWS Regions, so disruption in one Region will redirect all traffic to remaining Regions, requiring them to handle the combined load. To improve application resilience, implement <a href="https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/">retry mechanisms</a>, <a href="https://docs.aws.amazon.com/prescriptive-guidance/latest/cloud-design-patterns/circuit-breaker.html">circuit breaker</a>, and fallback strategies. Plan for <a href="https://docs.aws.amazon.com/whitepapers/latest/aws-fault-isolation-boundaries/static-stability.html">static stability</a> by pre-provisioning capacity and applying client-side caching. Services like <a href="https://aws.amazon.com/route53/">Amazon Route 53</a> with latency-based routing and <a href="https://aws.amazon.com/dynamodb/">Amazon DynamoDB</a> Global Tables with <a href="https://aws.amazon.com/blogs/aws/build-the-highest-resilience-apps-with-multi-region-strong-consistency-in-amazon-dynamodb-global-tables/">strong consistency</a> provide foundation but require thorough testing under various failure scenarios. This post does not cover Active-Active deployment.</p>
+<h2 id="multi-region-serverless-authorizer"><strong>Multi-Region serverless authorizer</strong></h2>
+<p>To illustrate the Active-Passive scenario, we build a sample application showing how to build a multi-Region serverless authorizer using <a href="https://aws.amazon.com/api-gateway/">Amazon API Gateway</a>, <a href="https://aws.amazon.com/pm/lambda/?refid=1992d44e-5bf5-47d8-8711-4ea10542b61b">Lambda</a> functions and Amazon Route53. Modern gaming and entertainment platforms host critical services like player matchmaking, live streaming, and real-time sports analytics. These services depend on robust authorization systems—when authorization fails, players cannot join matches, viewers lose stream access, and live events become unavailable. This post presents how to build a fault-tolerant, multi-Region serverless authorizer while maintaining lower costs compared to traditional approaches.</p>
+<p>Serverless multi-Region architecture typically includes Routing, Compute, and Data layers. When implementing multi-Region deployments, data replication between AWS Regions is essential, regardless of compute services used. The compute layer must prioritize idempotency to ensure safe event processing across AWS Regions.</p>
+<p>Use <a href="https://docs.aws.amazon.com/powertools/python/latest/utilities/idempotency/">Powertools for Lambda</a> to handle idempotency efficiently, or implement custom solutions using unique event IDs with DynamoDB as an idempotent store. While the post focuses on authorizer service deployment, this pattern can be applied to build multi-Region microservices for various critical functions, such as game session management, content distribution orchestration, user preference management, and profile services.</p>
+<h2 id="demo-overview"><strong>Demo overview</strong></h2>
+<p>To illustrate multi-Region serverless authorizer operation, we can examine the workflow:</p>
+<ol>
+<li>
+<p>Frontend application authenticates with Identity Provider to obtain authentication token.</p>
+</li>
+<li>
+<p>Authentication token is sent to a resilient multi-Region DNS endpoint, hosted on Route 53 in this demo.</p>
+</li>
+<li>
+<p>Route 53 routes requests with token to API Gateway in primary Region.</p>
+</li>
+<li>
+<p>Route 53 monitors application health using a Lambda function simulated in this demo. In production environments, implement deep health checks to monitor the entire service stack.</p>
+</li>
+<li>
+<p>When authorization succeeds, application receives response. If Route 53 detects degradation in primary Region, it triggers <a href="https://aws.amazon.com/cloudwatch/">Amazon CloudWatch</a> alarm, which application owners can use to evaluate and approve traffic redirection to secondary Region.</p>
+</li>
+<li>
+<p>New traffic will be routed to API Gateway in secondary Region after manual failover approval.</p>
+</li>
+<li>
+<p>Route 53 health checks continue monitoring primary Region health and restore traffic routing when this Region recovers.</p>
+</li>
+</ol>
+<p><img src="../../images/3-BlogsTranslated/3.1-Blog2/image-3-4.png" alt="Figure 3"></p>
+<p style="text-align: center;">Figure 3: Multi-Region serverless authorizer workflow with Route53 failover between primary and secondary Regions</p>
+<p>The previous figure shows architecture illustrating both failover and fallback capabilities through CloudWatch alarms and manual approval process. This approach aligns with best practices for critical applications, where automatic failover is not recommended despite being technically feasible. Teams can use this to assess technical readiness, business impact, and make informed decisions about timing and potential revenue impact.</p>
+<p>The <a href="https://github.com/aws-samples/AWS_Serverless_Resiliency_Samples/tree/main/multi-region-authorizer">demo</a> implements multi-Region serverless authorizer serving as reference architecture. Real-world implementations need careful evaluation of failover strategies based on business criticality and operational requirements.</p>
+<p><strong>Testing multi-Region scenarios</strong></p>
+<p>The demo application hosts frontend on <a href="https://aws.amazon.com/ecs/">Amazon Elastic Container Service (Amazon ECS)</a>. Route 53 health check configuration in this <a href="https://github.com/aws-samples/AWS_Serverless_Resiliency_Samples/blob/main/multi-region-authorizer/deployment/domain-deployments.yaml">GitHub</a> defines key failover parameters:</p>
+<ol>
+<li>FailureThreshold: Specifies the number of consecutive failed health checks before Route 53 marks endpoint as unhealthy.</li>
+<li>RequestInterval:
+<ol>
+<li>Standard: 30-second cycle ($0.50 per health check/month)</li>
+<li>Fast: 10-second cycle ($1.00 per health check/month)</li>
 </ol>
 </li>
-</ul>
-<hr>
-<h2 id="staging-er7-microservice">Staging ER7 Microservice</h2>
-<ul>
-<li>Lambda “trigger” subscribed to the pub/sub hub, filtering messages by attribute</li>
-<li>Step Functions Express Workflow to convert ER7 → JSON</li>
-<li>Two Lambdas:
-<ol>
-<li>Fix ER7 formatting (newline, carriage return)</li>
-<li>Parsing logic</li>
 </ol>
-</li>
-<li>Result or error is pushed back into the pub/sub hub</li>
-</ul>
-<hr>
-<h2 id="new-features-in-the-solution">New Features in the Solution</h2>
-<h3 id="1-aws-cloudformation-cross-stack-references">1. AWS CloudFormation Cross-Stack References</h3>
-<p>Example <em>outputs</em> in the core microservice:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">Outputs</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">Bucket</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">Value</span>: !<span style="color:#ae81ff">Ref Bucket</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">Export</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">Name</span>: !<span style="color:#ae81ff">Sub ${AWS::StackName}-Bucket</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">ArtifactBucket</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">Value</span>: !<span style="color:#ae81ff">Ref ArtifactBucket</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">Export</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">Name</span>: !<span style="color:#ae81ff">Sub ${AWS::StackName}-ArtifactBucket</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">Topic</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">Value</span>: !<span style="color:#ae81ff">Ref Topic</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">Export</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">Name</span>: !<span style="color:#ae81ff">Sub ${AWS::StackName}-Topic</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">Catalog</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">Value</span>: !<span style="color:#ae81ff">Ref Catalog</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">Export</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">Name</span>: !<span style="color:#ae81ff">Sub ${AWS::StackName}-Catalog</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">CatalogArn</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">Value</span>: !<span style="color:#ae81ff">GetAtt Catalog.Arn</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">Export</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">Name</span>: !<span style="color:#ae81ff">Sub ${AWS::StackName}-CatalogArn</span>
-</span></span></code></pre></div>
+<pre tabindex="0"><code>Route53HealthCheck:
+    Type: AWS::Route53::HealthCheck
+    Properties:
+      HealthCheckConfig:
+        FailureThreshold: 2
+        FullyQualifiedDomainName: !Ref DomainName
+        Port: 443
+        RequestInterval: 10
+        ResourcePath: /failure
+        Type: HTTPS
+      HealthCheckTags:
+        - Key: Environment
+          Value: Production
+        - Key: Name
+          Value: multi-authorizer-health-check
+</code></pre><p>Fast cycle enables faster failure detection. However, it increases health check costs through more logging operations, request processing, and backend compute resources. Temporary issues like network glitches, transient errors, or third-party latency may self-resolve within minutes. Implementing effective retry handling would introduce unnecessary complexity and potential data inconsistencies. Choose appropriate cycle based on business SLAs and cost considerations.</p>
+<p>To test failover scenarios, the architecture uses a mock Lambda function as health check endpoint. We trigger CloudWatch alarm by simulating 500 response status code from this function, which will drive the manual failover decision process, as illustrated in the following figure.</p>
+<p><img src="../../images/3-BlogsTranslated/3.1-Blog2/image-4-3.png" alt="Figure 4"></p>
+<p style="text-align: center;">Figure 4: Console screenshot showing multi-authorizer-health-check with "Unhealthy" status</p>
+<p>DNS caching occurs at multiple layers (browser, operating system, ISP, and VPN). To observe immediate failover behavior, clear DNS resolver cache at each layer.</p>
+<p>For more comprehensive resilience testing, consider applying chaos engineering practices. You can use <a href="https://github.com/aws-cli-tools/chaos-lambda-extension">chaos-lambda-extension</a> to introduce latency or modify function responses in a controlled manner. <a href="https://aws.amazon.com/fis/">AWS Fault Injection Service</a> (AWS FIS), a fully managed service, enables executing fault injection experiments to improve resilience, performance and observability. Combining these tools helps validate multi-Region architecture under various controlled failure conditions.</p>
+<h2 id="observability-in-multi-region-deployment"><strong>Observability in multi-Region deployment</strong></h2>
+<p>Implementing multi-Region architecture is only the first step. Cross-Region observability requires monitoring Region A resources from Region B and vice versa. CloudWatch enables this through <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Cross-Account-Cross-Region.html">cross-account and cross-Region</a> monitoring, providing unified logs and metrics in a single dashboard. Implement deep operational health checks to verify critical application functionality across AWS Regions.</p>
+<p>Although AWS serverless services are distributed, identifying exact failures requires combining multiple data points. CloudWatch <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Create_Composite_Alarm.html">composite</a> alarms help aggregate these signals, facilitating informed decisions. Consider implementing custom monitoring solutions to trace end-to-end requests across AWS Regions. This comprehensive view helps manage multi-Region complexity and respond quickly to potential issues.</p>
+<h2 id="conclusion"><strong>Conclusion</strong></h2>
+<p>Building resilient multi-Region applications requires careful consideration of architectural patterns, costs, and operational complexity. AWS Serverless services, with their pay-for-value model, significantly reduce challenges when implementing multi-Region architecture. The authorizer pattern presented in this post shows how organizations can achieve high availability without bearing idle infrastructure costs like traditional approaches. Teams can follow these architectural patterns and best practices to build robust, cost-effective solutions that maintain service availability during disruptions.</p>
+<p>To learn about resilience concepts, visit <a href="https://builder.aws.com/learn/topics">AWS Developer Center</a>. Full source code of the demo used in this post is available in our <a href="https://github.com/aws-samples/AWS_Serverless_Resiliency_Samples/tree/main/multi-region-authorizer">GitHub repository</a>. To expand serverless knowledge, visit <a href="https://serverlessland.com/">Serverless Land</a>.</p>
+
 
 
 
@@ -1885,19 +1867,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../js/clipboard.min.js?1764657388"></script>
-    <script src="../../js/perfect-scrollbar.min.js?1764657388"></script>
-    <script src="../../js/perfect-scrollbar.jquery.min.js?1764657388"></script>
-    <script src="../../js/jquery.sticky.js?1764657388"></script>
-    <script src="../../js/featherlight.min.js?1764657388"></script>
-    <script src="../../js/highlight.pack.js?1764657388"></script>
+    <script src="../../js/clipboard.min.js?1764664046"></script>
+    <script src="../../js/perfect-scrollbar.min.js?1764664046"></script>
+    <script src="../../js/perfect-scrollbar.jquery.min.js?1764664046"></script>
+    <script src="../../js/jquery.sticky.js?1764664046"></script>
+    <script src="../../js/featherlight.min.js?1764664046"></script>
+    <script src="../../js/highlight.pack.js?1764664046"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../js/modernizr.custom-3.6.0.js?1764657388"></script>
-    <script src="../../js/learn.js?1764657388"></script>
-    <script src="../../js/hugo-learn.js?1764657388"></script>
+    <script src="../../js/modernizr.custom-3.6.0.js?1764664046"></script>
+    <script src="../../js/learn.js?1764664046"></script>
+    <script src="../../js/hugo-learn.js?1764664046"></script>
 
-    <link href="../../mermaid/mermaid.css?1764657388" rel="stylesheet" />
-    <script src="../../mermaid/mermaid.js?1764657388"></script>
+    <link href="../../mermaid/mermaid.css?1764664046" rel="stylesheet" />
+    <script src="../../mermaid/mermaid.js?1764664046"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -210,8 +210,5 @@ Kiến trúc này mang lại tính linh hoạt để thích ứng với các yê
 
 
 
-<img src="/images/3-BlogsTranslated/3.1-Blog1/vijaymenon.jpeg" alt="Vijay_Menon" width="150" style="float: left; margin-right: 15px;"/>
-
-**Vijay Menon**
-
-Vijay Menon là một Principal Solutions Architect làm việc tại Singapore, có nền tảng về mạng quy mô lớn và hạ tầng truyền thông. Anh ấy thích học các công nghệ mới và giúp khách hàng giải quyết những vấn đề kỹ thuật phức tạp bằng cách cung cấp các giải pháp sử dụng các sản phẩm và dịch vụ AWS. Khi không hỗ trợ khách hàng, anh ấy thích chạy đường dài và dành thời gian cho gia đình và bạn bè.
+|<img src="/images/3-BlogsTranslated/3.1-Blog1/vijaymenon.jpeg" alt="Vijay_Menon" width="350" style="float: left; margin-right: 15px;"/> |  **Vijay Menon** <br/> Vijay Menon là một Principal Solutions Architect làm việc tại Singapore, có nền tảng về mạng quy mô lớn và hạ tầng truyền thông. Anh ấy thích học các công nghệ mới và giúp khách hàng giải quyết những vấn đề kỹ thuật phức tạp bằng cách cung cấp các giải pháp sử dụng các sản phẩm và dịch vụ AWS. Khi không hỗ trợ khách hàng, anh ấy thích chạy đường dài và dành thời gian cho gia đình và bạn bè.                  |
+| ---------------------------------------- | ------------------------------------------------------------------------------------------ |
