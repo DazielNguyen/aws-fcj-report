@@ -1,6 +1,6 @@
 ---
 title: "Event 1"
-date: "2025-09-09"
+date: "2025-09-18"
 weight: 1
 chapter: false
 pre: " <b> 4.1. </b> "
@@ -241,7 +241,7 @@ Nâng cấp Ngôn ngữ Tự động (Java, .NET)
 
 **Lập bản đồ công nghệ gốc từ VMware sang AWS**
 
-<img src="/images/4-EventParticipated/VMware to AWS native technology mapping.jpg" alt="VMware to AWS native technology mapping" width="1000"/>
+<img src="/images/4-EventParticipated/4.1-Event1/VMware to AWS native technology mapping.jpg" alt="VMware to AWS native technology mapping" width="1000"/>
 
 **Một cách tiếp cận dựa trên AI của agentic để hiện đại hóa VMware**
 
@@ -361,7 +361,7 @@ Giảm thiểu gián đoạn, bảo toàn tính toàn vẹn của ứng dụng v
 
 #### Một số hình ảnh khi tham gia sự kiện
 
-<img src="/images/4-EventParticipated/event aws.jpg" alt="VietNam Cloud Day 2025" width="2000"/>
+<img src="/images/4-EventParticipated/4.1-Event1/event aws.jpg" alt="VietNam Cloud Day 2025" width="2000"/>
   
   > Hơn 400 nhà phát triển công nghệ đầy nhiệt huyết tại Thành phố Hồ Chí Minh, văn phòng AWS (Tầng 36) đã tụ họp để theo dõi phiên họp toàn thể trực tiếp từ Hà Nội, cùng chia sẻ sự phấn khích và kiến ​​thức về AWS Cloud Day Vietnam 2025
 

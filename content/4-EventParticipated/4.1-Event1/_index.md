@@ -1,6 +1,6 @@
 ---
 title: "Event 1"
-date: "2025-09-09"
+date: "2025-09-18"
 weight: 1
 chapter: false
 pre: " <b> 4.1. </b> "
@@ -261,7 +261,7 @@ REFACTOR: Modern Application
 
 **Mapping VMware native technologies to AWS**
 
-<img src="/images/4-EventParticipated/VMware to AWS native technology mapping.jpg" alt="VMware to AWS native technology mapping" width="1000"/>
+<img src="/images/4-EventParticipated/4.1-Event1/VMware to AWS native technology mapping.jpg" alt="VMware to AWS native technology mapping" width="1000"/>
 
 **An agentic AI-based approach to VMware modernization**
 
@@ -390,7 +390,7 @@ REFACTOR: Modern Application
 
 #### Some photos from the event
 
-<img src="/images/4-EventParticipated/event aws.jpg" alt="VietNam Cloud Day 2025" width="2000"/>
+<img src="/images/4-EventParticipated/4.1-Event1/event aws.jpg" alt="VietNam Cloud Day 2025" width="2000"/>
 
 > Over 400 passionate technology developers in Thành phố Hồ Chí Minh gathered at the AWS office (36th Floor) to watch the live plenary session from Hà Nội, sharing the excitement and knowledge about AWS Cloud Day Vietnam 2025
 
