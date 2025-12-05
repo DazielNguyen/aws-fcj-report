@@ -2,6 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/aws-fcj-report/4-eventparticipated/4.1-event1/</loc>
+    <lastmod>2025-09-18T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="http://localhost:1313/aws-fcj-report/vi/4-eventparticipated/4.1-event1/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/aws-fcj-report/4-eventparticipated/4.1-event1/"
+                />
+  </url><url>
     <loc>http://localhost:1313/aws-fcj-report/3-blogstranslated/3.1-blog1/</loc>
     <lastmod>2025-09-09T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -39,71 +52,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="http://localhost:1313/aws-fcj-report/3-blogstranslated/3.3-blog3/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/aws-fcj-report/3-blogstranslated/3.4-blog4/</loc>
-    <lastmod>2025-09-09T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="http://localhost:1313/aws-fcj-report/vi/3-blogstranslated/3.4-blog4/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/aws-fcj-report/3-blogstranslated/3.4-blog4/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/aws-fcj-report/3-blogstranslated/3.5-blog5/</loc>
-    <lastmod>2025-09-09T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="http://localhost:1313/aws-fcj-report/vi/3-blogstranslated/3.5-blog5/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/aws-fcj-report/3-blogstranslated/3.5-blog5/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/aws-fcj-report/3-blogstranslated/3.6-blog6/</loc>
-    <lastmod>2025-09-09T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="http://localhost:1313/aws-fcj-report/vi/3-blogstranslated/3.6-blog6/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/aws-fcj-report/3-blogstranslated/3.6-blog6/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/aws-fcj-report/4-eventparticipated/4.1-event1/</loc>
-    <lastmod>2025-09-09T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="http://localhost:1313/aws-fcj-report/vi/4-eventparticipated/4.1-event1/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/aws-fcj-report/4-eventparticipated/4.1-event1/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/aws-fcj-report/4-eventparticipated/4.2-event2/</loc>
-    <lastmod>2025-09-09T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="http://localhost:1313/aws-fcj-report/vi/4-eventparticipated/4.2-event2/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/aws-fcj-report/4-eventparticipated/4.2-event2/"
                 />
   </url><url>
     <loc>http://localhost:1313/aws-fcj-report/5-workshop/5.3-knowledge-base/5.3.1-create-kb/</loc>
@@ -197,6 +145,19 @@
                 href="http://localhost:1313/aws-fcj-report/1-worklog/"
                 />
   </url><url>
+    <loc>http://localhost:1313/aws-fcj-report/4-eventparticipated/4.2-event2/</loc>
+    <lastmod>2025-10-03T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="http://localhost:1313/aws-fcj-report/vi/4-eventparticipated/4.2-event2/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/aws-fcj-report/4-eventparticipated/4.2-event2/"
+                />
+  </url><url>
     <loc>http://localhost:1313/aws-fcj-report/1-worklog/1.2-week2/</loc>
     <lastmod>2025-09-15T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -275,6 +236,19 @@
                 href="http://localhost:1313/aws-fcj-report/5-workshop/5.1-workshop-overview/5.1.2-services/"
                 />
   </url><url>
+    <loc>http://localhost:1313/aws-fcj-report/4-eventparticipated/4.3-event3/</loc>
+    <lastmod>2025-10-16T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="http://localhost:1313/aws-fcj-report/vi/4-eventparticipated/4.3-event3/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/aws-fcj-report/4-eventparticipated/4.3-event3/"
+                />
+  </url><url>
     <loc>http://localhost:1313/aws-fcj-report/1-worklog/1.3-week3/</loc>
     <lastmod>2025-09-22T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -312,6 +286,19 @@
                 rel="alternate"
                 hreflang="en"
                 href="http://localhost:1313/aws-fcj-report/3-blogstranslated/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/aws-fcj-report/4-eventparticipated/4.4-event4/</loc>
+    <lastmod>2025-11-15T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="http://localhost:1313/aws-fcj-report/vi/4-eventparticipated/4.4-event4/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/aws-fcj-report/4-eventparticipated/4.4-event4/"
                 />
   </url><url>
     <loc>http://localhost:1313/aws-fcj-report/1-worklog/1.4-week4/</loc>
@@ -353,6 +340,19 @@
                 href="http://localhost:1313/aws-fcj-report/5-workshop/5.4-test-chatbox/"
                 />
   </url><url>
+    <loc>http://localhost:1313/aws-fcj-report/4-eventparticipated/4.5-event5/</loc>
+    <lastmod>2025-11-17T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="http://localhost:1313/aws-fcj-report/vi/4-eventparticipated/4.5-event5/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/aws-fcj-report/4-eventparticipated/4.5-event5/"
+                />
+  </url><url>
     <loc>http://localhost:1313/aws-fcj-report/1-worklog/1.5-week5/</loc>
     <lastmod>2025-10-06T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -390,6 +390,19 @@
                 rel="alternate"
                 hreflang="en"
                 href="http://localhost:1313/aws-fcj-report/5-workshop/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/aws-fcj-report/4-eventparticipated/4.6-event6/</loc>
+    <lastmod>2025-11-29T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="http://localhost:1313/aws-fcj-report/vi/4-eventparticipated/4.6-event6/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/aws-fcj-report/4-eventparticipated/4.6-event6/"
                 />
   </url><url>
     <loc>http://localhost:1313/aws-fcj-report/1-worklog/1.6-week6/</loc>
