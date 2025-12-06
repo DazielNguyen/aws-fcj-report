@@ -15,21 +15,21 @@
     <title>Week 11 Worklog :: Internship Report</title>
 
     
-    <link href="../../css/nucleus.css?1764965760" rel="stylesheet">
-    <link href="../../css/fontawesome-all.min.css?1764965760" rel="stylesheet">
-    <link href="../../css/hybrid.css?1764965760" rel="stylesheet">
-    <link href="../../css/featherlight.min.css?1764965760" rel="stylesheet">
-    <link href="../../css/perfect-scrollbar.min.css?1764965760" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1764965760" rel="stylesheet">
-    <link href="../../css/atom-one-dark-reasonable.css?1764965760" rel="stylesheet">
-    <link href="../../css/theme.css?1764965760" rel="stylesheet">
-    <link href="../../css/hugo-theme.css?1764965760" rel="stylesheet">
+    <link href="../../css/nucleus.css?1765011019" rel="stylesheet">
+    <link href="../../css/fontawesome-all.min.css?1765011019" rel="stylesheet">
+    <link href="../../css/hybrid.css?1765011019" rel="stylesheet">
+    <link href="../../css/featherlight.min.css?1765011019" rel="stylesheet">
+    <link href="../../css/perfect-scrollbar.min.css?1765011019" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1765011019" rel="stylesheet">
+    <link href="../../css/atom-one-dark-reasonable.css?1765011019" rel="stylesheet">
+    <link href="../../css/theme.css?1765011019" rel="stylesheet">
+    <link href="../../css/hugo-theme.css?1765011019" rel="stylesheet">
     
-    <link href="../../css/theme-workshop.css?1764965760" rel="stylesheet">
+    <link href="../../css/theme-workshop.css?1765011019" rel="stylesheet">
     
     
 
-    <script src="../../js/jquery-3.3.1.min.js?1764965760"></script>
+    <script src="../../js/jquery-3.3.1.min.js?1765011019"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -88,14 +88,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../js/lunr.min.js?1764965760"></script>
-<script type="text/javascript" src="../../js/auto-complete.js?1764965760"></script>
+<script type="text/javascript" src="../../js/lunr.min.js?1765011019"></script>
+<script type="text/javascript" src="../../js/auto-complete.js?1765011019"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/aws-fcj-report\/";
     
 </script>
-<script type="text/javascript" src="../../js/search.js?1764965760"></script>
+<script type="text/javascript" src="../../js/search.js?1765011019"></script>
  
   </div>
 
@@ -1059,8 +1059,13 @@
 
 	<h3 id="week-11-objectives">Week 11 Objectives:</h3>
 <ul>
-<li>Connect and get acquainted with members of First Cloud Journey.</li>
-<li>Understand basic AWS services, how to use the console &amp; CLI.</li>
+<li>Detect and handle multiple complex transactions</li>
+<li>Integrate PDF file support for Bill OCR</li>
+<li>Implement feedback system and model fine-tuning</li>
+<li>Enhance image and audio processing quality</li>
+<li>Integrate Backend and MongoDB storage</li>
+<li>Automated testing and Docker deployment</li>
+<li>Get acquainted with AWS and management tools</li>
 </ul>
 <h3 id="tasks-to-be-carried-out-this-week">Tasks to be carried out this week:</h3>
 <table>
@@ -1070,92 +1075,128 @@
           <th>Task</th>
           <th>Start Date</th>
           <th>Completion Date</th>
-          <th>Reference Material</th>
+          <th>Reference Material and Learning Notes</th>
       </tr>
   </thead>
   <tbody>
       <tr>
           <td>2</td>
-          <td>- Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations</td>
-          <td>08/11/2025</td>
-          <td>08/11/2025</td>
-          <td></td>
+          <td>Multiple transaction detection and PDF support<br>- Complex multi-transaction parsing<br>- Refine multi-transaction detection algorithm:<br>- Detect jar allocation in phrases<br>- Handle mixed transaction types:<br><br>Test complex phrases<br>- Test 1 transaction with 1 jar<br>- Test multiple transactions<br>- Test switching between jars<br>- Test mixed contexts<br><br>Improve PDF file support for Bill section<br>- Install libraries<br>- Test transactions with PDF files</td>
+          <td>17/11/2025</td>
+          <td>17/11/2025</td>
+          <td><a href="https://gitlab.com/vicobi/vicobi-docs/-/blob/main/dev-plans/ai/sprint-3/day-11.md">Sprint 03 - Day 11</a></td>
       </tr>
       <tr>
           <td>3</td>
-          <td>- Learn about AWS and its types of services <br>  + Compute <br>  + Storage <br>  + Networking <br>  + Database <br>  + &hellip; <br></td>
-          <td>08/12/2025</td>
-          <td>08/12/2025</td>
-          <td><a href="https://cloudjourney.awsstudygroup.com/">https://cloudjourney.awsstudygroup.com/</a></td>
+          <td>User feedback and learning system<br>- Handle user feedback system for Voice section<br>- Handle user feedback system for Bill section<br>- Fine-tune models based on feedback<br>- Improve syntax handling for incorrect inputs<br>Test improvements of Voice and Bill models</td>
+          <td>18/11/2025</td>
+          <td>18/11/2025</td>
+          <td><a href="https://gitlab.com/vicobi/vicobi-docs/-/blob/main/dev-plans/ai/sprint-3/day-12.md">Sprint 03 - Day 12</a></td>
       </tr>
       <tr>
           <td>4</td>
-          <td>- Create AWS Free Tier account <br> - Learn about AWS Console &amp; AWS CLI <br> - <strong>Practice:</strong> <br>  + Create AWS account <br>  + Install &amp; configure AWS CLI <br>   + How to use AWS CLI</td>
-          <td>08/13/2025</td>
-          <td>08/13/2025</td>
-          <td><a href="https://cloudjourney.awsstudygroup.com/">https://cloudjourney.awsstudygroup.com/</a></td>
+          <td>Advanced image/audio processing<br>- Detect and enhance Bill quality<br>- Detect image quality<br>- Auto-rotate and deskew images<br>- Detect ROI (Region of Interest)<br>- Integrate with OCR Pipeline<br>- Testing<br><br>Voice background noise handling<br>- Implement noise reduction<br>- Voice activity detection<br>- Silence trimming<br>- Reduce processing time<br>- Integrate with Voice Pipeline<br>- Testing</td>
+          <td>19/11/2025</td>
+          <td>19/11/2025</td>
+          <td><a href="https://gitlab.com/vicobi/vicobi-docs/-/blob/main/dev-plans/ai/sprint-3/day-13.md">Sprint 03 - Day 13</a></td>
       </tr>
       <tr>
           <td>5</td>
-          <td>- Learn basic EC2: <br>  + Instance types <br>  + AMI <br>  + EBS <br>  + &hellip; <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP <br></td>
-          <td>08/14/2025</td>
-          <td>08/15/2025</td>
-          <td><a href="https://cloudjourney.awsstudygroup.com/">https://cloudjourney.awsstudygroup.com/</a></td>
+          <td>Backend Integration &amp; File Storage<br>Backend service transaction integration<br>- Review Backend API<br>- Test AI and Backend flow<br>- Verify event consumption<br>- Check automatic transaction creation<br>- Troubleshoot integration<br><br>MongoDB storage integration<br>- Setup Database for Voice and Bill<br>- Prepare for Amazon S3 integration</td>
+          <td>20/11/2025</td>
+          <td>20/11/2025</td>
+          <td><a href="https://gitlab.com/vicobi/vicobi-docs/-/blob/main/dev-plans/ai/sprint-3/day-14.md">Sprint 03 - Day 14</a></td>
       </tr>
       <tr>
           <td>6</td>
-          <td>- <strong>Practice:</strong> <br>  + Launch an EC2 instance <br>  + Connect via SSH <br>  + Attach an EBS volume</td>
-          <td>08/15/2025</td>
-          <td>08/15/2025</td>
-          <td><a href="https://cloudjourney.awsstudygroup.com/">https://cloudjourney.awsstudygroup.com/</a></td>
+          <td>Create automated tests<br>- Create tests for Voice and Bill<br>- Acceptance and verification of all tests<br>- Bug fixes<br>- Full regression testing<br><br>Setup and Deploy to Docker</td>
+          <td>21/11/2025</td>
+          <td>21/11/2025</td>
+          <td><a href="https://gitlab.com/vicobi/vicobi-docs/-/blob/main/dev-plans/ai/sprint-3/day-15.md">Sprint 03 - Day 15</a></td>
       </tr>
   </tbody>
 </table>
 <h3 id="week-11-achievements">Week 11 Achievements:</h3>
+<h4 id="1-multiple-transaction-detection-and-pdf-support">1. Multiple Transaction Detection and PDF Support</h4>
 <ul>
-<li>
-<p>Understood what AWS is and mastered the basic service groups:</p>
+<li>Complex multi-transaction parsing</li>
+<li>Refined multi-transaction detection algorithm</li>
+<li>Detected jar allocation in phrases</li>
+<li>Handled mixed transaction types</li>
+</ul>
+<p><strong>Complex Phrase Testing:</strong></p>
 <ul>
-<li>Compute</li>
-<li>Storage</li>
-<li>Networking</li>
-<li>Database</li>
-<li>&hellip;</li>
+<li>Tested 1 transaction with 1 jar</li>
+<li>Tested multiple transactions</li>
+<li>Tested switching between jars</li>
+<li>Tested mixed contexts</li>
 </ul>
-</li>
-<li>
-<p>Successfully created and configured an AWS Free Tier account.</p>
-</li>
-<li>
-<p>Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.</p>
-</li>
-<li>
-<p>Installed and configured AWS CLI on the computer, including:</p>
+<p><strong>PDF Support:</strong></p>
 <ul>
-<li>Access Key</li>
-<li>Secret Key</li>
-<li>Default Region</li>
-<li>&hellip;</li>
+<li>Installed PDF processing libraries</li>
+<li>Tested transactions with PDF files</li>
+<li>Integrated PDF into OCR Pipeline</li>
 </ul>
-</li>
-<li>
-<p>Used AWS CLI to perform basic operations such as:</p>
+<h4 id="2-feedback-and-learning-system">2. Feedback and Learning System</h4>
 <ul>
-<li>Check account &amp; configuration information</li>
-<li>Retrieve the list of regions</li>
-<li>View EC2 service</li>
-<li>Create and manage key pairs</li>
-<li>Check information about running services</li>
-<li>&hellip;</li>
+<li>Handled user feedback system for Voice section</li>
+<li>Handled user feedback system for Bill section</li>
+<li>Fine-tuned models based on feedback</li>
+<li>Improved handling of incorrect input syntax</li>
+<li>Tested improvements of Voice and Bill models</li>
 </ul>
-</li>
-<li>
-<p>Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.</p>
-</li>
-<li>
-<p>&hellip;</p>
-</li>
+<h4 id="3-advanced-imageaudio-processing">3. Advanced Image/Audio Processing</h4>
+<p><strong>Bill Quality Enhancement:</strong></p>
+<ul>
+<li>Detected and assessed image quality</li>
+<li>Auto-rotated and deskewed images</li>
+<li>Detected ROI (Region of Interest)</li>
+<li>Integrated with OCR Pipeline</li>
+<li>Tested with various image conditions</li>
 </ul>
+<p><strong>Voice Background Noise Handling:</strong></p>
+<ul>
+<li>Implemented noise reduction</li>
+<li>Voice Activity Detection</li>
+<li>Silence trimming</li>
+<li>Reduced processing time</li>
+<li>Integrated with Voice Pipeline</li>
+<li>Tested with various audio environments</li>
+</ul>
+<h4 id="4-backend--storage-integration">4. Backend &amp; Storage Integration</h4>
+<p><strong>Backend Integration:</strong></p>
+<ul>
+<li>Reviewed Backend API endpoints</li>
+<li>Tested AI and Backend workflow</li>
+<li>Verified event consumption</li>
+<li>Checked automatic transaction creation</li>
+<li>Troubleshot integration issues</li>
+</ul>
+<p><strong>MongoDB Integration:</strong></p>
+<ul>
+<li>Setup Database for Voice and Bill</li>
+<li>Prepared schema for Amazon S3 integration</li>
+<li>Implemented storage strategy</li>
+</ul>
+<h4 id="5-automated-testing-and-deployment">5. Automated Testing and Deployment</h4>
+<ul>
+<li>Created automated tests for Voice and Bill</li>
+<li>Acceptance and verification of all test cases</li>
+<li>Fixed bugs discovered from testing</li>
+<li>Performed full regression testing</li>
+<li>Setup Docker environment</li>
+<li>Deployed to Docker container</li>
+</ul>
+<h4 id="6-aws-learning">6. AWS Learning</h4>
+<ul>
+<li>Understood AWS and basic service groups (Compute, Storage, Networking, Database)</li>
+<li>Created and configured AWS Free Tier account</li>
+<li>Became familiar with AWS Management Console</li>
+<li>Installed and configured AWS CLI (Access Key, Secret Key, Region)</li>
+<li>Performed basic operations with AWS CLI</li>
+<li>Connected and became familiar with First Cloud Journey community</li>
+</ul>
+<p><strong>Summary:</strong> Week 11 completed the enhancement of multi-transaction processing capabilities, integrated PDF support, implemented feedback system and model fine-tuning. Significantly improved image/audio processing quality with advanced techniques (ROI detection, noise reduction, VAD), successfully integrated with Backend and MongoDB, while completing automated testing and Docker deployment. Additionally, became familiar with AWS ecosystem and basic management tools, preparing for cloud infrastructure deployment.</p>
 
 
 
@@ -1891,19 +1932,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../js/clipboard.min.js?1764965760"></script>
-    <script src="../../js/perfect-scrollbar.min.js?1764965760"></script>
-    <script src="../../js/perfect-scrollbar.jquery.min.js?1764965760"></script>
-    <script src="../../js/jquery.sticky.js?1764965760"></script>
-    <script src="../../js/featherlight.min.js?1764965760"></script>
-    <script src="../../js/highlight.pack.js?1764965760"></script>
+    <script src="../../js/clipboard.min.js?1765011019"></script>
+    <script src="../../js/perfect-scrollbar.min.js?1765011019"></script>
+    <script src="../../js/perfect-scrollbar.jquery.min.js?1765011019"></script>
+    <script src="../../js/jquery.sticky.js?1765011019"></script>
+    <script src="../../js/featherlight.min.js?1765011019"></script>
+    <script src="../../js/highlight.pack.js?1765011019"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../js/modernizr.custom-3.6.0.js?1764965760"></script>
-    <script src="../../js/learn.js?1764965760"></script>
-    <script src="../../js/hugo-learn.js?1764965760"></script>
+    <script src="../../js/modernizr.custom-3.6.0.js?1765011019"></script>
+    <script src="../../js/learn.js?1765011019"></script>
+    <script src="../../js/hugo-learn.js?1765011019"></script>
 
-    <link href="../../mermaid/mermaid.css?1764965760" rel="stylesheet" />
-    <script src="../../mermaid/mermaid.js?1764965760"></script>
+    <link href="../../mermaid/mermaid.css?1765011019" rel="stylesheet" />
+    <script src="../../mermaid/mermaid.js?1765011019"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

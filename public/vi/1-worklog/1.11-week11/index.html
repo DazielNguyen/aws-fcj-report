@@ -15,21 +15,21 @@
     <title>Worklog Tuần 11 :: Báo cáo thực tập</title>
 
     
-    <link href="../../../css/nucleus.css?1764965760" rel="stylesheet">
-    <link href="../../../css/fontawesome-all.min.css?1764965760" rel="stylesheet">
-    <link href="../../../css/hybrid.css?1764965760" rel="stylesheet">
-    <link href="../../../css/featherlight.min.css?1764965760" rel="stylesheet">
-    <link href="../../../css/perfect-scrollbar.min.css?1764965760" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1764965760" rel="stylesheet">
-    <link href="../../../css/atom-one-dark-reasonable.css?1764965760" rel="stylesheet">
-    <link href="../../../css/theme.css?1764965760" rel="stylesheet">
-    <link href="../../../css/hugo-theme.css?1764965760" rel="stylesheet">
+    <link href="../../../css/nucleus.css?1765011020" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1765011020" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1765011020" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1765011020" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1765011020" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1765011020" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1765011020" rel="stylesheet">
+    <link href="../../../css/theme.css?1765011020" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1765011020" rel="stylesheet">
     
-    <link href="../../../css/theme-workshop.css?1764965760" rel="stylesheet">
+    <link href="../../../css/theme-workshop.css?1765011020" rel="stylesheet">
     
     
 
-    <script src="../../../js/jquery-3.3.1.min.js?1764965760"></script>
+    <script src="../../../js/jquery-3.3.1.min.js?1765011020"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -88,14 +88,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../js/lunr.min.js?1764965760"></script>
-<script type="text/javascript" src="../../../js/auto-complete.js?1764965760"></script>
+<script type="text/javascript" src="../../../js/lunr.min.js?1765011020"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1765011020"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/aws-fcj-report\/\/vi";
     
 </script>
-<script type="text/javascript" src="../../../js/search.js?1764965760"></script>
+<script type="text/javascript" src="../../../js/search.js?1765011020"></script>
  
   </div>
 
@@ -1059,8 +1059,13 @@
 
 	<h3 id="mục-tiêu-tuần-11">Mục tiêu tuần 11:</h3>
 <ul>
-<li>Kết nối, làm quen với các thành viên trong First Cloud Journey.</li>
-<li>Hiểu dịch vụ AWS cơ bản, cách dùng console &amp; CLI.</li>
+<li>Phát hiện và xử lý nhiều giao dịch phức tạp</li>
+<li>Tích hợp hỗ trợ file PDF cho Bill OCR</li>
+<li>Triển khai hệ thống feedback và fine-tuning models</li>
+<li>Nâng cao chất lượng xử lý hình ảnh và âm thanh</li>
+<li>Tích hợp Backend và lưu trữ MongoDB</li>
+<li>Automated testing và deployment Docker</li>
+<li>Làm quen với AWS và các công cụ quản lý</li>
 </ul>
 <h3 id="các-công-việc-cần-triển-khai-trong-tuần-này">Các công việc cần triển khai trong tuần này:</h3>
 <table>
@@ -1069,93 +1074,129 @@
           <th>Thứ</th>
           <th>Công việc</th>
           <th>Ngày bắt đầu</th>
-          <th>Ngày hoàn thành</th>
-          <th>Nguồn tài liệu</th>
+          <th>Ngày kết thúc</th>
+          <th>Nguồn tài liệu và ghi chú học tập</th>
       </tr>
   </thead>
   <tbody>
       <tr>
           <td>2</td>
-          <td>- Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập</td>
-          <td>11/08/2025</td>
-          <td>11/08/2025</td>
-          <td></td>
+          <td>Phát hiện nhiều giao dịch và hỗ trợ PDF<br>- Phân tích cú pháp đa giao dịch phức tạp<br>- Tinh chỉnh thuật toán phát hiện đa giao dịch:<br>- Phát hiện phân công jar trong cụm từ<br>- Xử lý các loại giao dịch hỗn hợp:<br><br>Kiểm tra các cụm từ phức tạp<br>- Kiểm tra 1 giao dịch với 1 hủ<br>- Kiểm tra nhiều giao dịch<br>- Kiểm thử chuyển đổi giữa các hủ<br>- Kiểm thử các ngữ cảnh hỗn hợp<br><br>Cải thiện thêm hỗ trợ file PDF cho phần Bill<br>- Cài đặt các thư viện<br>- Kiểm thử giao dịch với file PDF</td>
+          <td>17/11/2025</td>
+          <td>17/11/2025</td>
+          <td><a href="https://gitlab.com/vicobi/vicobi-docs/-/blob/main/dev-plans/ai/sprint-3/day-11.md">Sprint 03 - Day 11</a></td>
       </tr>
       <tr>
           <td>3</td>
-          <td>- Tìm hiểu AWS và các loại dịch vụ <br>  + Compute <br>  + Storage <br>  + Networking <br>  + Database <br>  + &hellip; <br></td>
-          <td>12/08/2025</td>
-          <td>12/08/2025</td>
-          <td><a href="https://cloudjourney.awsstudygroup.com/">https://cloudjourney.awsstudygroup.com/</a></td>
+          <td>Hệ thống phản hồi và học tập của người dùng<br>- Xử lý hệ thống feedback từ user của phần Voice<br>- Xử lý hệ thống feedback từ user của phần Bill<br>- Fine-tuning các model dựa trên các feedback<br>- Cải thiện các cú pháp khi nhập vào sai<br>Kiểm tra độ cải thiện của 2 mô hình Voice và Test</td>
+          <td>18/11/2025</td>
+          <td>18/11/2025</td>
+          <td><a href="https://gitlab.com/vicobi/vicobi-docs/-/blob/main/dev-plans/ai/sprint-3/day-12.md">Sprint 03 - Day 12</a></td>
       </tr>
       <tr>
           <td>4</td>
-          <td>- Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console &amp; AWS CLI <br> - <strong>Thực hành:</strong> <br>  + Tạo AWS account <br>  + Cài AWS CLI &amp; cấu hình <br>   + Cách sử dụng AWS CLI</td>
-          <td>13/08/2025</td>
-          <td>13/08/2025</td>
-          <td><a href="https://cloudjourney.awsstudygroup.com/">https://cloudjourney.awsstudygroup.com/</a></td>
+          <td>Xử lý hình ảnh/âm thanh nâng cao <br>- Phát hiện và nâng cao chất lượng Bill<br>- Detect chất lượng ảnh<br>- Tự động xoay và nghiên ảnh<br>- Phát hiện ROI (Vùng quan tâm)<br>- Tích hợp với OCR Pipeline<br>- Kiểm thử<br><br>Xử lý tiếng ồn nền của Voice<br>- Triển khai giảm noise<br>- Phát hiện hoạt động giọng nói<br>- Cắt phần im lặng<br>- Giảm thời gian xử lý<br>- Tích hợp với Voice Pipeline<br>- Kiểm thử</td>
+          <td>19/11/2025</td>
+          <td>19/11/2025</td>
+          <td><a href="https://gitlab.com/vicobi/vicobi-docs/-/blob/main/dev-plans/ai/sprint-3/day-13.md">Sprint 03 - Day 13</a></td>
       </tr>
       <tr>
           <td>5</td>
-          <td>- Tìm hiểu EC2 cơ bản: <br>  + Instance types <br>  + AMI <br>  + EBS <br>  + &hellip; <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP <br></td>
-          <td>14/08/2025</td>
-          <td>15/08/2025</td>
-          <td><a href="https://cloudjourney.awsstudygroup.com/">https://cloudjourney.awsstudygroup.com/</a></td>
+          <td>Tích hợp Backend &amp; Lưu trữ Tệp<br>Tích hợp dịch vụ giao dịch phụ trợ<br>- Review về Backend API<br>- Test AI và Backend flow<br>- Xác minh mức tiêu thụ sự kiện<br>- Kiểm tra việc tạo giao dịch tự động<br>- Khắc phục sự cố tích hợp<br><br>Tích hợp lưu trữ trên MongoDB<br>- Thiết lập Database cho Voice và Bill<br>- Chuẩn bị cho việc tích hợp cùng với S3 của Amazon<br><br></td>
+          <td>20/11/2025</td>
+          <td>20/11/2025</td>
+          <td><a href="https://gitlab.com/vicobi/vicobi-docs/-/blob/main/dev-plans/ai/sprint-3/day-14.md">Sprint 03 - Day 14</a></td>
       </tr>
       <tr>
           <td>6</td>
-          <td>- <strong>Thực hành:</strong> <br>  + Tạo EC2 instance <br>  + Kết nối SSH <br>  + Gắn EBS volume</td>
-          <td>15/08/2025</td>
-          <td>15/08/2025</td>
-          <td><a href="https://cloudjourney.awsstudygroup.com/">https://cloudjourney.awsstudygroup.com/</a></td>
+          <td>Tạo thử nghiệm tự động<br>- Tạo test cho Voice và Bill<br>- Nghiệm thu và kiểm tra tất các cá kiểm tra<br>- Sửa lỗi<br>- Kiểm tra hồi quy đầy đủ<br><br>Setup và Deploy lên Docker</td>
+          <td>21/11/2025</td>
+          <td>21/11/2025</td>
+          <td><a href="https://gitlab.com/vicobi/vicobi-docs/-/blob/main/dev-plans/ai/sprint-3/day-15.md">Sprint 03 - Day 15</a></td>
       </tr>
   </tbody>
 </table>
 <h3 id="kết-quả-đạt-được-tuần-11">Kết quả đạt được tuần 11:</h3>
+<h4 id="1-phát-hiện-nhiều-giao-dịch-và-hỗ-trợ-pdf">1. Phát Hiện Nhiều Giao Dịch và Hỗ Trợ PDF</h4>
 <ul>
-<li>
-<p>Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản:</p>
+<li>Phân tích cú pháp đa giao dịch phức tạp</li>
+<li>Tinh chỉnh thuật toán phát hiện đa giao dịch</li>
+<li>Phát hiện phân công jar trong cụm từ</li>
+<li>Xử lý các loại giao dịch hỗn hợp</li>
+</ul>
+<p><strong>Kiểm Tra Cụm Từ Phức Tạp:</strong></p>
 <ul>
-<li>Compute</li>
-<li>Storage</li>
-<li>Networking</li>
-<li>Database</li>
-<li>&hellip;</li>
+<li>Kiểm tra 1 giao dịch với 1 hủ</li>
+<li>Kiểm tra nhiều giao dịch</li>
+<li>Kiểm thử chuyển đổi giữa các hủ</li>
+<li>Kiểm thử các ngữ cảnh hỗn hợp</li>
 </ul>
-</li>
-<li>
-<p>Đã tạo và cấu hình AWS Free Tier account thành công.</p>
-</li>
-<li>
-<p>Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.</p>
-</li>
-<li>
-<p>Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:</p>
+<p><strong>Hỗ Trợ PDF:</strong></p>
 <ul>
-<li>Access Key</li>
-<li>Secret Key</li>
-<li>Region mặc định</li>
-<li>&hellip;</li>
+<li>Cài đặt các thư viện xử lý PDF</li>
+<li>Kiểm thử giao dịch với file PDF</li>
+<li>Tích hợp PDF vào OCR Pipeline</li>
 </ul>
-</li>
-<li>
-<p>Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:</p>
+<h4 id="2-hệ-thống-phản-hồi-và-học-tập">2. Hệ Thống Phản Hồi và Học Tập</h4>
 <ul>
-<li>Kiểm tra thông tin tài khoản &amp; cấu hình</li>
-<li>Lấy danh sách region</li>
-<li>Xem dịch vụ EC2</li>
-<li>Tạo và quản lý key pair</li>
-<li>Kiểm tra thông tin dịch vụ đang chạy</li>
-<li>&hellip;</li>
+<li>Xử lý hệ thống feedback từ user của phần Voice</li>
+<li>Xử lý hệ thống feedback từ user của phần Bill</li>
+<li>Fine-tuning các model dựa trên feedback</li>
+<li>Cải thiện xử lý các cú pháp nhập vào sai</li>
+<li>Kiểm tra độ cải thiện của 2 mô hình Voice và Bill</li>
 </ul>
-</li>
-<li>
-<p>Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.</p>
-</li>
-<li>
-<p>&hellip;</p>
-</li>
+<h4 id="3-xử-lý-hình-ảnhâm-thanh-nâng-cao">3. Xử Lý Hình Ảnh/Âm Thanh Nâng Cao</h4>
+<p><strong>Nâng Cao Chất Lượng Bill:</strong></p>
+<ul>
+<li>Phát hiện và đánh giá chất lượng ảnh</li>
+<li>Tự động xoay và nghiêng ảnh</li>
+<li>Phát hiện ROI (Region of Interest/Vùng quan tâm)</li>
+<li>Tích hợp với OCR Pipeline</li>
+<li>Kiểm thử với nhiều điều kiện ảnh khác nhau</li>
 </ul>
+<p><strong>Xử Lý Tiếng Ồn Nền Voice:</strong></p>
+<ul>
+<li>Triển khai giảm noise (Noise Reduction)</li>
+<li>Phát hiện hoạt động giọng nói (Voice Activity Detection)</li>
+<li>Cắt phần im lặng (Silence Trimming)</li>
+<li>Giảm thời gian xử lý</li>
+<li>Tích hợp với Voice Pipeline</li>
+<li>Kiểm thử với nhiều môi trường âm thanh</li>
+</ul>
+<h4 id="4-tích-hợp-backend--lưu-trữ">4. Tích Hợp Backend &amp; Lưu Trữ</h4>
+<p><strong>Tích Hợp Backend:</strong></p>
+<ul>
+<li>Review Backend API endpoints</li>
+<li>Test AI và Backend workflow</li>
+<li>Xác minh mức tiêu thụ sự kiện (Event Consumption)</li>
+<li>Kiểm tra việc tạo giao dịch tự động</li>
+<li>Khắc phục sự cố tích hợp</li>
+</ul>
+<p><strong>Tích Hợp MongoDB:</strong></p>
+<ul>
+<li>Thiết lập Database cho Voice và Bill</li>
+<li>Chuẩn bị schema cho tích hợp với S3 của Amazon</li>
+<li>Triển khai storage strategy</li>
+</ul>
+<h4 id="5-testing-tự-động-và-deployment">5. Testing Tự Động và Deployment</h4>
+<ul>
+<li>Tạo automated tests cho Voice và Bill</li>
+<li>Nghiệm thu và kiểm tra tất cả test cases</li>
+<li>Sửa lỗi phát hiện từ testing</li>
+<li>Kiểm tra hồi quy đầy đủ (Full Regression Testing)</li>
+<li>Setup Docker environment</li>
+<li>Deploy lên Docker container</li>
+</ul>
+<h4 id="6-aws-learning">6. AWS Learning</h4>
+<ul>
+<li>Hiểu AWS và các nhóm dịch vụ cơ bản (Compute, Storage, Networking, Database)</li>
+<li>Tạo và cấu hình AWS Free Tier account</li>
+<li>Làm quen với AWS Management Console</li>
+<li>Cài đặt và cấu hình AWS CLI (Access Key, Secret Key, Region)</li>
+<li>Thực hiện các thao tác cơ bản với AWS CLI</li>
+<li>Kết nối và làm quen với cộng đồng First Cloud Journey</li>
+</ul>
+<p><strong>Tổng kết:</strong> Tuần 11 đã hoàn thành việc nâng cao khả năng xử lý đa giao dịch, tích hợp hỗ trợ PDF, triển khai hệ thống feedback và fine-tuning models. Đã cải thiện đáng kể chất lượng xử lý ảnh/âm thanh với các kỹ thuật nâng cao (ROI detection, noise reduction, VAD), tích hợp thành công với Backend và MongoDB, đồng thời hoàn tất automated testing và deployment lên Docker. Bên cạnh đó, đã làm quen với AWS ecosystem và các công cụ quản lý cơ bản, chuẩn bị cho việc triển khai cloud infrastructure.</p>
 
 
 
@@ -1891,19 +1932,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../js/clipboard.min.js?1764965760"></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1764965760"></script>
-    <script src="../../../js/perfect-scrollbar.jquery.min.js?1764965760"></script>
-    <script src="../../../js/jquery.sticky.js?1764965760"></script>
-    <script src="../../../js/featherlight.min.js?1764965760"></script>
-    <script src="../../../js/highlight.pack.js?1764965760"></script>
+    <script src="../../../js/clipboard.min.js?1765011020"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1765011020"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1765011020"></script>
+    <script src="../../../js/jquery.sticky.js?1765011020"></script>
+    <script src="../../../js/featherlight.min.js?1765011020"></script>
+    <script src="../../../js/highlight.pack.js?1765011020"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../js/modernizr.custom-3.6.0.js?1764965760"></script>
-    <script src="../../../js/learn.js?1764965760"></script>
-    <script src="../../../js/hugo-learn.js?1764965760"></script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1765011020"></script>
+    <script src="../../../js/learn.js?1765011020"></script>
+    <script src="../../../js/hugo-learn.js?1765011020"></script>
 
-    <link href="../../../mermaid/mermaid.css?1764965760" rel="stylesheet" />
-    <script src="../../../mermaid/mermaid.js?1764965760"></script>
+    <link href="../../../mermaid/mermaid.css?1765011020" rel="stylesheet" />
+    <script src="../../../mermaid/mermaid.js?1765011020"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

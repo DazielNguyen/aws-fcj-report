@@ -15,21 +15,21 @@
     <title>Worklog Tuần 12 :: Báo cáo thực tập</title>
 
     
-    <link href="../../../css/nucleus.css?1764965760" rel="stylesheet">
-    <link href="../../../css/fontawesome-all.min.css?1764965760" rel="stylesheet">
-    <link href="../../../css/hybrid.css?1764965760" rel="stylesheet">
-    <link href="../../../css/featherlight.min.css?1764965760" rel="stylesheet">
-    <link href="../../../css/perfect-scrollbar.min.css?1764965760" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1764965760" rel="stylesheet">
-    <link href="../../../css/atom-one-dark-reasonable.css?1764965760" rel="stylesheet">
-    <link href="../../../css/theme.css?1764965760" rel="stylesheet">
-    <link href="../../../css/hugo-theme.css?1764965760" rel="stylesheet">
+    <link href="../../../css/nucleus.css?1765011020" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1765011020" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1765011020" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1765011020" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1765011020" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1765011020" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1765011020" rel="stylesheet">
+    <link href="../../../css/theme.css?1765011020" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1765011020" rel="stylesheet">
     
-    <link href="../../../css/theme-workshop.css?1764965760" rel="stylesheet">
+    <link href="../../../css/theme-workshop.css?1765011020" rel="stylesheet">
     
     
 
-    <script src="../../../js/jquery-3.3.1.min.js?1764965760"></script>
+    <script src="../../../js/jquery-3.3.1.min.js?1765011020"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -88,14 +88,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../js/lunr.min.js?1764965760"></script>
-<script type="text/javascript" src="../../../js/auto-complete.js?1764965760"></script>
+<script type="text/javascript" src="../../../js/lunr.min.js?1765011020"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1765011020"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/aws-fcj-report\/\/vi";
     
 </script>
-<script type="text/javascript" src="../../../js/search.js?1764965760"></script>
+<script type="text/javascript" src="../../../js/search.js?1765011020"></script>
  
   </div>
 
@@ -1059,8 +1059,12 @@
 
 	<h3 id="mục-tiêu-tuần-12">Mục tiêu tuần 12:</h3>
 <ul>
-<li>Kết nối, làm quen với các thành viên trong First Cloud Journey.</li>
-<li>Hiểu dịch vụ AWS cơ bản, cách dùng console &amp; CLI.</li>
+<li>Kiểm tra tải và tối ưu hóa hiệu suất hệ thống</li>
+<li>Cải thiện độ chính xác của Voice và OCR models</li>
+<li>Tăng cường bảo mật và xử lý lỗi toàn diện</li>
+<li>Triển khai logging và metrics collection nâng cao</li>
+<li>Chuẩn bị deployment và kiểm tra cuối cùng</li>
+<li>Nâng cao chất lượng code và documentation</li>
 </ul>
 <h3 id="các-công-việc-cần-triển-khai-trong-tuần-này">Các công việc cần triển khai trong tuần này:</h3>
 <table>
@@ -1069,93 +1073,159 @@
           <th>Thứ</th>
           <th>Công việc</th>
           <th>Ngày bắt đầu</th>
-          <th>Ngày hoàn thành</th>
-          <th>Nguồn tài liệu</th>
+          <th>Ngày kết thúc</th>
+          <th>Nguồn tài liệu và ghi chú học tập</th>
       </tr>
   </thead>
   <tbody>
       <tr>
           <td>2</td>
-          <td>- Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập</td>
-          <td>11/08/2025</td>
-          <td>11/08/2025</td>
-          <td></td>
+          <td>Thiết lập kiểm tra tải<br>- Cài đặt công cụ kiểm tra tải<br>- Tạo các kịch bản kiểm tra tải<br>- Thiết lập giám sát tài nguyên<br>- Chuẩn bị dữ liệu thử nghiệm<br><br>Chạy thử nghiệm tải<br>- Tải chỉ giọng nói (10 files)<br>- Tải hóa đơn (10 files)<br>- Tải đồng thời cả hai<br><br>Tối ưu hóa<br>- Tối ưu hóa Database<br>- Triển khai bộ nhớ đệm<br>- Tối ưu hóa bộ nhớ</td>
+          <td>24/11/2025</td>
+          <td>24/11/2025</td>
+          <td><a href="https://gitlab.com/vicobi/vicobi-docs/-/blob/main/dev-plans/ai/sprint-4/day-16.md">Sprint 04 - Day 16</a></td>
       </tr>
       <tr>
           <td>3</td>
-          <td>- Tìm hiểu AWS và các loại dịch vụ <br>  + Compute <br>  + Storage <br>  + Networking <br>  + Database <br>  + &hellip; <br></td>
-          <td>12/08/2025</td>
-          <td>12/08/2025</td>
-          <td><a href="https://cloudjourney.awsstudygroup.com/">https://cloudjourney.awsstudygroup.com/</a></td>
+          <td>Cải thiện độ chính xác của giọng nói<br>- Phân tích các trường hợp thất bại<br>- Cải thiện quy tắc NLP<br>- Kiểm tra lại và lặp lại<br><br>Cải thiện độ chính xác của OCR<br>- Phân tích các trường hợp thất bại<br>- Cải tiến theo định dạng cụ thể<br>- Cải tiến nhận dạng ký tự<br><br>Các trường hợp ngoại lệ của việc phân tích số lượng<br>- Xử lý các trường hợp mơ hồ<br>- Logic xác thực<br>- Tổng lượng triết xuất<br>- Logic xác thực tổng</td>
+          <td>25/11/2025</td>
+          <td>25/11/2025</td>
+          <td><a href="https://gitlab.com/vicobi/vicobi-docs/-/blob/main/dev-plans/ai/sprint-4/day-17.md">Sprint 04 - Day 17</a></td>
       </tr>
       <tr>
           <td>4</td>
-          <td>- Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console &amp; AWS CLI <br> - <strong>Thực hành:</strong> <br>  + Tạo AWS account <br>  + Cài AWS CLI &amp; cấu hình <br>   + Cách sử dụng AWS CLI</td>
-          <td>13/08/2025</td>
-          <td>13/08/2025</td>
-          <td><a href="https://cloudjourney.awsstudygroup.com/">https://cloudjourney.awsstudygroup.com/</a></td>
+          <td>Tăng cường an ninh<br>- Xác thực tải lên tệp<br>- Giới hạn tỷ lệ<br>- Vệ sinh đầu vào<br>- Xác thực JWT<br>- Bảo mật MongoDB<br>- Danh sách kiểm tra bảo mật<br><br>Xử lý lỗi toàn diện<br>- Try-Catch tất cả các hàm<br>- Mã trạng thái HTTP thích hợp<br>- Thông báo lỗi hữu ích<br>- Ghi nhật ký với ngữ cảnh<br><br>Kiểm tra độ chắc chắn của giọng nói<br>- Kiểm tra các tập tin bị hỏng/không hợp lệ<br><br>Kiểm tra độ bền OCR<br>- Kiểm tra hình ảnh bị hỏng/không hợp lệ</td>
+          <td>26/11/2025</td>
+          <td>26/11/2025</td>
+          <td><a href="https://gitlab.com/vicobi/vicobi-docs/-/blob/main/dev-plans/ai/sprint-4/day-18.md">Sprint 04 - Day 18</a></td>
       </tr>
       <tr>
           <td>5</td>
-          <td>- Tìm hiểu EC2 cơ bản: <br>  + Instance types <br>  + AMI <br>  + EBS <br>  + &hellip; <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP <br></td>
-          <td>14/08/2025</td>
-          <td>15/08/2025</td>
-          <td><a href="https://cloudjourney.awsstudygroup.com/">https://cloudjourney.awsstudygroup.com/</a></td>
+          <td>Cải tiến ghi nhật ký<br>- Ghi nhật ký JSON có cấu trúc<br>- Xử lý yêu cầu đăng nhập<br>- Các bước xử lý nhật ký với thời gian<br>- Ghi lại lỗi bằng Stack Traces<br>- ID tương quan để theo dõi<br><br>Bộ sưu tập số liệu<br>- Theo dõi thời gian xử lý<br>- Độ chính xác và tỷ lệ lỗi<br>- Lưu trữ số liệu trong MongoDB<br>- Tạo API số liệu<br><br>Voice Deployment Prep<br>Chuẩn bị triển khai OCR</td>
+          <td>27/11/2025</td>
+          <td>27/11/2025</td>
+          <td><a href="https://gitlab.com/vicobi/vicobi-docs/-/blob/main/dev-plans/ai/sprint-4/day-19.md">Sprint 04 - Day 19</a></td>
       </tr>
       <tr>
           <td>6</td>
-          <td>- <strong>Thực hành:</strong> <br>  + Tạo EC2 instance <br>  + Kết nối SSH <br>  + Gắn EBS volume</td>
-          <td>15/08/2025</td>
-          <td>15/08/2025</td>
-          <td><a href="https://cloudjourney.awsstudygroup.com/">https://cloudjourney.awsstudygroup.com/</a></td>
+          <td>Kiểm tra toàn diện cuối cùng<br>- Kiểm tra hồi quy đầy đủ<br>- Kiểm tra tất cả các tình huống lỗi<br>- Kiểm tra tích hợp giao diện người dùng<br>- Kiểm tra tích hợp backend<br><br>Chất lượng mã<br>- Thêm Docstrings<br>- Thêm gợi ý nhập<br>- Chạy Linter &amp; Sửa lỗi<br>- Thêm các bài kiểm tra đơn vị cho các chức năng quan trọng</td>
+          <td>28/11/2025</td>
+          <td>28/11/2025</td>
+          <td><a href="https://gitlab.com/vicobi/vicobi-docs/-/blob/main/dev-plans/ai/sprint-4/day-20.md">Sprint 04 - Day 20</a></td>
       </tr>
   </tbody>
 </table>
 <h3 id="kết-quả-đạt-được-tuần-12">Kết quả đạt được tuần 12:</h3>
+<h4 id="1-kiểm-tra-tải-và-tối-ưu-hóa">1. Kiểm Tra Tải và Tối Ưu Hóa</h4>
+<p><strong>Thiết Lập Load Testing:</strong></p>
 <ul>
-<li>
-<p>Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản:</p>
+<li>Cài đặt công cụ kiểm tra tải (JMeter/Locust)</li>
+<li>Tạo các kịch bản kiểm tra tải (Voice, Bill, đồng thời)</li>
+<li>Thiết lập giám sát tài nguyên (CPU, RAM, Disk I/O)</li>
+<li>Chuẩn bị dữ liệu thử nghiệm</li>
+</ul>
+<p><strong>Chạy Thử Nghiệm Tải:</strong></p>
 <ul>
-<li>Compute</li>
-<li>Storage</li>
-<li>Networking</li>
-<li>Database</li>
-<li>&hellip;</li>
+<li>Kiểm tra tải Voice (10 files đồng thời)</li>
+<li>Kiểm tra tải Bill OCR (10 files đồng thời)</li>
+<li>Kiểm tra tải đồng thời cả Voice và Bill</li>
+<li>Phân tích bottlenecks và điểm nghẽn</li>
 </ul>
-</li>
-<li>
-<p>Đã tạo và cấu hình AWS Free Tier account thành công.</p>
-</li>
-<li>
-<p>Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.</p>
-</li>
-<li>
-<p>Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:</p>
+<p><strong>Tối Ưu Hóa:</strong></p>
 <ul>
-<li>Access Key</li>
-<li>Secret Key</li>
-<li>Region mặc định</li>
-<li>&hellip;</li>
+<li>Tối ưu hóa Database queries và indexing</li>
+<li>Triển khai bộ nhớ đệm (caching) cho kết quả</li>
+<li>Tối ưu hóa bộ nhớ và garbage collection</li>
+<li>Cải thiện thời gian phản hồi API</li>
 </ul>
-</li>
-<li>
-<p>Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:</p>
+<h4 id="2-cải-thiện-độ-chính-xác">2. Cải Thiện Độ Chính Xác</h4>
+<p><strong>Voice Accuracy:</strong></p>
 <ul>
-<li>Kiểm tra thông tin tài khoản &amp; cấu hình</li>
-<li>Lấy danh sách region</li>
-<li>Xem dịch vụ EC2</li>
-<li>Tạo và quản lý key pair</li>
-<li>Kiểm tra thông tin dịch vụ đang chạy</li>
-<li>&hellip;</li>
+<li>Phân tích các trường hợp thất bại (failure cases)</li>
+<li>Cải thiện quy tắc NLP cho tiếng Việt</li>
+<li>Kiểm tra lại và lặp lại (testing &amp; iteration)</li>
+<li>Nâng cao độ chính xác nhận dạng số và danh mục</li>
 </ul>
-</li>
-<li>
-<p>Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.</p>
-</li>
-<li>
-<p>&hellip;</p>
-</li>
+<p><strong>OCR Accuracy:</strong></p>
+<ul>
+<li>Phân tích các trường hợp OCR thất bại</li>
+<li>Cải tiến theo định dạng hóa đơn cụ thể</li>
+<li>Cải tiến nhận dạng ký tự đặc biệt</li>
+<li>Xử lý các trường hợp font chữ khó</li>
 </ul>
+<p><strong>Xử Lý Số Lượng:</strong></p>
+<ul>
+<li>Xử lý các trường hợp mơ hồ</li>
+<li>Logic xác thực số lượng</li>
+<li>Trích xuất tổng số lượng</li>
+<li>Logic xác thực tổng tiền</li>
+</ul>
+<h4 id="3-tăng-cường-an-ninh">3. Tăng Cường An Ninh</h4>
+<p><strong>File Security:</strong></p>
+<ul>
+<li>Xác thực tải lên tệp (file type, size validation)</li>
+<li>Giới hạn tỷ lệ (rate limiting) cho API</li>
+<li>Vệ sinh đầu vào (input sanitization)</li>
+<li>Xác thực JWT tokens</li>
+<li>Bảo mật MongoDB (authentication, authorization)</li>
+<li>Hoàn thành danh sách kiểm tra bảo mật</li>
+</ul>
+<p><strong>Error Handling:</strong></p>
+<ul>
+<li>Try-Catch toàn diện cho tất cả các hàm</li>
+<li>Mã trạng thái HTTP thích hợp</li>
+<li>Thông báo lỗi hữu ích và rõ ràng</li>
+<li>Ghi nhật ký với ngữ cảnh đầy đủ</li>
+</ul>
+<p><strong>Robustness Testing:</strong></p>
+<ul>
+<li>Kiểm tra Voice với files bị hỏng/không hợp lệ</li>
+<li>Kiểm tra OCR với hình ảnh bị hỏng/không hợp lệ</li>
+<li>Xử lý graceful degradation</li>
+</ul>
+<h4 id="4-logging-và-metrics">4. Logging và Metrics</h4>
+<p><strong>Enhanced Logging:</strong></p>
+<ul>
+<li>Ghi nhật ký JSON có cấu trúc (structured logging)</li>
+<li>Logging cho mỗi HTTP request</li>
+<li>Các bước xử lý nhật ký với timestamp</li>
+<li>Ghi lại lỗi với stack traces</li>
+<li>Correlation ID để theo dõi request flow</li>
+</ul>
+<p><strong>Metrics Collection:</strong></p>
+<ul>
+<li>Theo dõi thời gian xử lý (processing time)</li>
+<li>Độ chính xác và tỷ lệ lỗi (accuracy &amp; error rates)</li>
+<li>Lưu trữ metrics trong MongoDB</li>
+<li>Tạo API endpoints cho metrics</li>
+<li>Dashboard cho monitoring</li>
+</ul>
+<h4 id="5-deployment-preparation">5. Deployment Preparation</h4>
+<ul>
+<li>Chuẩn bị triển khai Voice service</li>
+<li>Chuẩn bị triển khai OCR service</li>
+<li>Docker configuration và optimization</li>
+<li>Environment variables và secrets management</li>
+<li>Health check endpoints</li>
+</ul>
+<h4 id="6-kiểm-tra-toàn-diện-và-code-quality">6. Kiểm Tra Toàn Diện và Code Quality</h4>
+<p><strong>Comprehensive Testing:</strong></p>
+<ul>
+<li>Kiểm tra hồi quy đầy đủ (full regression testing)</li>
+<li>Kiểm tra tất cả các tình huống lỗi (error scenarios)</li>
+<li>Kiểm tra tích hợp UI (frontend integration)</li>
+<li>Kiểm tra tích hợp Backend (backend integration)</li>
+<li>End-to-end testing</li>
+</ul>
+<p><strong>Code Quality:</strong></p>
+<ul>
+<li>Thêm Docstrings cho tất cả functions/classes</li>
+<li>Thêm type hints (Python typing)</li>
+<li>Chạy Linter (Pylint/Flake8) và sửa lỗi</li>
+<li>Thêm unit tests cho các chức năng quan trọng</li>
+<li>Code review và refactoring</li>
+</ul>
+<p><strong>Tổng kết:</strong> Tuần 12 tập trung vào hoàn thiện và production-ready hóa hệ thống AI. Đã thực hiện thành công load testing và tối ưu hóa hiệu suất, cải thiện đáng kể độ chính xác của cả Voice và OCR models. Tăng cường bảo mật toàn diện với file validation, rate limiting, JWT authentication và MongoDB security. Triển khai structured logging và metrics collection để monitoring. Nâng cao chất lượng code với docstrings, type hints, linting và unit tests. Hệ thống đã sẵn sàng cho production deployment với error handling mạnh mẽ và testing toàn diện.</p>
 
 
 
@@ -1891,19 +1961,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../js/clipboard.min.js?1764965760"></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1764965760"></script>
-    <script src="../../../js/perfect-scrollbar.jquery.min.js?1764965760"></script>
-    <script src="../../../js/jquery.sticky.js?1764965760"></script>
-    <script src="../../../js/featherlight.min.js?1764965760"></script>
-    <script src="../../../js/highlight.pack.js?1764965760"></script>
+    <script src="../../../js/clipboard.min.js?1765011020"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1765011020"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1765011020"></script>
+    <script src="../../../js/jquery.sticky.js?1765011020"></script>
+    <script src="../../../js/featherlight.min.js?1765011020"></script>
+    <script src="../../../js/highlight.pack.js?1765011020"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../js/modernizr.custom-3.6.0.js?1764965760"></script>
-    <script src="../../../js/learn.js?1764965760"></script>
-    <script src="../../../js/hugo-learn.js?1764965760"></script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1765011020"></script>
+    <script src="../../../js/learn.js?1765011020"></script>
+    <script src="../../../js/hugo-learn.js?1765011020"></script>
 
-    <link href="../../../mermaid/mermaid.css?1764965760" rel="stylesheet" />
-    <script src="../../../mermaid/mermaid.js?1764965760"></script>
+    <link href="../../../mermaid/mermaid.css?1765011020" rel="stylesheet" />
+    <script src="../../../mermaid/mermaid.js?1765011020"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

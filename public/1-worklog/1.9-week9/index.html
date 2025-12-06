@@ -15,21 +15,21 @@
     <title>Week 9 Worklog :: Internship Report</title>
 
     
-    <link href="../../css/nucleus.css?1764968550" rel="stylesheet">
-    <link href="../../css/fontawesome-all.min.css?1764968550" rel="stylesheet">
-    <link href="../../css/hybrid.css?1764968550" rel="stylesheet">
-    <link href="../../css/featherlight.min.css?1764968550" rel="stylesheet">
-    <link href="../../css/perfect-scrollbar.min.css?1764968550" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1764968550" rel="stylesheet">
-    <link href="../../css/atom-one-dark-reasonable.css?1764968550" rel="stylesheet">
-    <link href="../../css/theme.css?1764968550" rel="stylesheet">
-    <link href="../../css/hugo-theme.css?1764968550" rel="stylesheet">
+    <link href="../../css/nucleus.css?1765017501" rel="stylesheet">
+    <link href="../../css/fontawesome-all.min.css?1765017501" rel="stylesheet">
+    <link href="../../css/hybrid.css?1765017501" rel="stylesheet">
+    <link href="../../css/featherlight.min.css?1765017501" rel="stylesheet">
+    <link href="../../css/perfect-scrollbar.min.css?1765017501" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1765017501" rel="stylesheet">
+    <link href="../../css/atom-one-dark-reasonable.css?1765017501" rel="stylesheet">
+    <link href="../../css/theme.css?1765017501" rel="stylesheet">
+    <link href="../../css/hugo-theme.css?1765017501" rel="stylesheet">
     
-    <link href="../../css/theme-workshop.css?1764968550" rel="stylesheet">
+    <link href="../../css/theme-workshop.css?1765017501" rel="stylesheet">
     
     
 
-    <script src="../../js/jquery-3.3.1.min.js?1764968550"></script>
+    <script src="../../js/jquery-3.3.1.min.js?1765017501"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -88,14 +88,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../js/lunr.min.js?1764968550"></script>
-<script type="text/javascript" src="../../js/auto-complete.js?1764968550"></script>
+<script type="text/javascript" src="../../js/lunr.min.js?1765017501"></script>
+<script type="text/javascript" src="../../js/auto-complete.js?1765017501"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/aws-fcj-report\/";
     
 </script>
-<script type="text/javascript" src="../../js/search.js?1764968550"></script>
+<script type="text/javascript" src="../../js/search.js?1765017501"></script>
  
   </div>
 
@@ -1059,8 +1059,12 @@
 
 	<h3 id="week-9-objectives">Week 9 Objectives:</h3>
 <ul>
-<li>Connect and get acquainted with members of First Cloud Journey. fhfhg</li>
-<li>Understand basic AWS services, how to use the console &amp; CLI.</li>
+<li>FastAPI project with MongoDB</li>
+<li>Vietnamese STT library selected and integrated</li>
+<li>Vietnamese OCR library selected and tested</li>
+<li>NLP extraction: amount, category, date, jar detection (REQ-027)</li>
+<li>Detect multiple transactions (REQ-027)</li>
+<li>Publish events to RabbitMQ</li>
 </ul>
 <h3 id="tasks-to-be-carried-out-this-week">Tasks to be carried out this week:</h3>
 <table>
@@ -1070,92 +1074,99 @@
           <th>Task</th>
           <th>Start Date</th>
           <th>Completion Date</th>
-          <th>Reference Material</th>
+          <th>Reference Material and Learning Notes</th>
       </tr>
   </thead>
   <tbody>
       <tr>
           <td>2</td>
-          <td>- Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations</td>
-          <td>08/11/2025</td>
-          <td>08/11/2025</td>
-          <td></td>
+          <td>Project Setup<br>- Create FastAPI project structure (/app, /models, /services, /utils, /routers, /schemas, /ai-models)<br>- Setup virtual environment (Python 3.11+)<br>- Install FastAPI, Uvicorn, Pydantic<br>- Install local MongoDB (Docker)<br>- Create database: ai_service_db (configured in docker-compose.yml)<br>- Collections: Bills, Voices (using MongoEngine models)<br>- Setup MongoDB connection with MongoEngine<br>- Test connection (lifecycle management in database.py)<br>Technology Research<br>- For Bill: Try various OCR models that best solve Vietnamese extraction<br>- For Voice: Search for Speech-to-Text models in Vietnamese language</td>
+          <td>03/11/2025</td>
+          <td>03/11/2025</td>
+          <td><a href="https://gitlab.com/vicobi/vicobi-docs/-/blob/main/dev-plans/ai/sprint-1/day-1.md">Sprint 01 - Day 01</a></td>
       </tr>
       <tr>
           <td>3</td>
-          <td>- Learn about AWS and its types of services <br>  + Compute <br>  + Storage <br>  + Networking <br>  + Database <br>  + &hellip; <br></td>
-          <td>08/12/2025</td>
-          <td>08/12/2025</td>
-          <td><a href="https://cloudjourney.awsstudygroup.com/">https://cloudjourney.awsstudygroup.com/</a></td>
+          <td>Core API Structure and Endpoints<br>- Shared API infrastructure<br>- Setup Voice and Bill APIs<br>- Create basic API endpoint structure<br>- Setup Pydantic models for request/response<br>- Add CORS middleware<br>- Add error handling middleware<br>- Create health check endpoint (GET /health)<br>- Setup logging (structlog)</td>
+          <td>04/11/2025</td>
+          <td>04/11/2025</td>
+          <td><a href="https://gitlab.com/vicobi/vicobi-docs/-/blob/main/dev-plans/ai/sprint-1/day-2.md">Sprint 01 - Day 02</a></td>
       </tr>
       <tr>
           <td>4</td>
-          <td>- Create AWS Free Tier account <br> - Learn about AWS Console &amp; AWS CLI <br> - <strong>Practice:</strong> <br>  + Create AWS account <br>  + Install &amp; configure AWS CLI <br>   + How to use AWS CLI</td>
-          <td>08/13/2025</td>
-          <td>08/13/2025</td>
-          <td><a href="https://cloudjourney.awsstudygroup.com/">https://cloudjourney.awsstudygroup.com/</a></td>
+          <td>Voice Processing Pipeline<br>- Install Vietnamese STT Library<br>- Audio preprocessing<br>- Voice-to-Text integration<br>- Implement STT functionality<br>- Test Voice Model<br><br>OCR Preparation for Bill Extraction<br>- Install OCR library selected from Day 1<br>- Research image preprocessing techniques<br>- Create sample preprocessing pipeline<br>- Test with bill images</td>
+          <td>05/11/2025</td>
+          <td>05/11/2025</td>
+          <td><a href="https://gitlab.com/vicobi/vicobi-docs/-/blob/main/dev-plans/ai/sprint-1/day-3.md">Sprint 01 - Day 03</a></td>
       </tr>
       <tr>
           <td>5</td>
-          <td>- Learn basic EC2: <br>  + Instance types <br>  + AMI <br>  + EBS <br>  + &hellip; <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP <br></td>
-          <td>08/14/2025</td>
-          <td>08/15/2025</td>
-          <td><a href="https://cloudjourney.awsstudygroup.com/">https://cloudjourney.awsstudygroup.com/</a></td>
+          <td>Text Processing for Vietnamese Language<br>- Test model accuracy and select appropriate model, team uses PhoWhisper from VinAI<br>- Check model detection, whether it receives voice and returns text<br>- Adjust endpoint to return correct categories defined by team<br>- Test processing multiple transactions simultaneously, check if model can handle<br>- Setup detection of transaction time from speech<br>- Create transaction object<br><br>OCR Preprocessing<br>- Process images when user inputs and process that bill. Enhance image to best quality before feeding to OCR model<br>- Collect Vietnamese bills (electricity bills, shopping mall bills, restaurant bills, convenience store bills, coffee shop bills, &hellip;)</td>
+          <td>06/11/2025</td>
+          <td>06/11/2025</td>
+          <td><a href="https://gitlab.com/vicobi/vicobi-docs/-/blob/main/dev-plans/ai/sprint-1/day-4.md">Sprint 01 - Day 04</a></td>
       </tr>
       <tr>
           <td>6</td>
-          <td>- <strong>Practice:</strong> <br>  + Launch an EC2 instance <br>  + Connect via SSH <br>  + Attach an EBS volume</td>
-          <td>08/15/2025</td>
-          <td>08/15/2025</td>
-          <td><a href="https://cloudjourney.awsstudygroup.com/">https://cloudjourney.awsstudygroup.com/</a></td>
+          <td>Integration and Testing<br>- Handle background tasks for Voice and Bill<br>- Setup event publishing<br>Speech to Text<br>- End-to-end testing of Voice<br>- Pipelines running as Recording -&gt; Processing -&gt; Return Endpoint, check and improve Voice processing accuracy<br>Bill Detection<br>- Deploy and test OCR models: Tesseract, EasyOCR,&hellip;</td>
+          <td>07/11/2025</td>
+          <td>07/11/2025</td>
+          <td><a href="https://gitlab.com/vicobi/vicobi-docs/-/blob/main/dev-plans/ai/sprint-1/day-5.md">Sprint 01 - Day 05</a></td>
       </tr>
   </tbody>
 </table>
 <h3 id="week-9-achievements">Week 9 Achievements:</h3>
+<h4 id="1-project-setup-and-infrastructure">1. Project Setup and Infrastructure</h4>
 <ul>
-<li>
-<p>Understood what AWS is and mastered the basic service groups:</p>
+<li>Completed FastAPI project structure with standard directories (/app, /models, /services, /utils, /routers, /schemas, /ai-models)</li>
+<li>Setup Python 3.11+ environment with virtual environment</li>
+<li>Installed and configured local MongoDB using Docker</li>
+<li>Created <code>ai_service_db</code> database and collections for Bills and Voices</li>
+<li>Setup MongoDB connection with MongoEngine and lifecycle management</li>
+</ul>
+<h4 id="2-api-structure-and-middleware">2. API Structure and Middleware</h4>
 <ul>
-<li>Compute</li>
-<li>Storage</li>
-<li>Networking</li>
-<li>Database</li>
-<li>&hellip;</li>
+<li>Setup API endpoints for Voice and Bill processing</li>
+<li>Created Pydantic models for request/response validation</li>
+<li>Configured CORS middleware and error handling middleware</li>
+<li>Implemented health check endpoint (GET /health)</li>
+<li>Integrated structlog for logging system</li>
 </ul>
-</li>
-<li>
-<p>Successfully created and configured an AWS Free Tier account.</p>
-</li>
-<li>
-<p>Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.</p>
-</li>
-<li>
-<p>Installed and configured AWS CLI on the computer, including:</p>
+<h4 id="3-voice-processing-speech-to-text">3. Voice Processing (Speech-to-Text)</h4>
 <ul>
-<li>Access Key</li>
-<li>Secret Key</li>
-<li>Default Region</li>
-<li>&hellip;</li>
+<li>Researched and selected <strong>PhoWhisper from VinAI</strong> for Vietnamese STT</li>
+<li>Implemented audio preprocessing and Voice-to-Text integration</li>
+<li>Tested model accuracy and voice detection capability</li>
+<li>Configured endpoint to return correct defined categories</li>
+<li>Tested processing multiple transactions simultaneously</li>
+<li>Setup time detection for transactions from speech</li>
+<li>Created transaction objects from voice data</li>
 </ul>
-</li>
-<li>
-<p>Used AWS CLI to perform basic operations such as:</p>
+<h4 id="4-bill-processing-ocr">4. Bill Processing (OCR)</h4>
 <ul>
-<li>Check account &amp; configuration information</li>
-<li>Retrieve the list of regions</li>
-<li>View EC2 service</li>
-<li>Create and manage key pairs</li>
-<li>Check information about running services</li>
-<li>&hellip;</li>
+<li>Researched and selected appropriate OCR libraries (Tesseract, EasyOCR)</li>
+<li>Implemented image preprocessing to optimize quality before OCR</li>
+<li>Collected diverse Vietnamese bill dataset (electricity, supermarket, restaurants, convenience stores, coffee shops)</li>
+<li>Tested OCR models with real bill images</li>
 </ul>
-</li>
-<li>
-<p>Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.</p>
-</li>
-<li>
-<p>&hellip;</p>
-</li>
+<h4 id="5-nlp-extraction-and-data-processing">5. NLP Extraction and Data Processing</h4>
+<ul>
+<li>Implemented information extraction: amount, category, date (REQ-027)</li>
+<li>Jar detection</li>
+<li>Multiple transaction detection in a single request</li>
 </ul>
+<h4 id="6-rabbitmq-integration">6. RabbitMQ Integration</h4>
+<ul>
+<li>Setup event publishing to RabbitMQ</li>
+<li>Handled background tasks for Voice and Bill processing</li>
+</ul>
+<h4 id="7-testing-and-quality-assurance">7. Testing and Quality Assurance</h4>
+<ul>
+<li>End-to-end testing for Voice processing pipeline (Recording → Processing → Return Endpoint)</li>
+<li>Evaluated and improved Voice processing accuracy</li>
+<li>Tested OCR models with real dataset</li>
+</ul>
+<p><strong>Summary:</strong> Week 9 successfully completed all objectives, including FastAPI-MongoDB infrastructure setup, PhoWhisper model integration for Vietnamese STT, OCR implementation for bill processing, and event publishing system with RabbitMQ. NLP functions for transaction information extraction were implemented and successfully tested.</p>
 
 
 
@@ -1891,19 +1902,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../js/clipboard.min.js?1764968550"></script>
-    <script src="../../js/perfect-scrollbar.min.js?1764968550"></script>
-    <script src="../../js/perfect-scrollbar.jquery.min.js?1764968550"></script>
-    <script src="../../js/jquery.sticky.js?1764968550"></script>
-    <script src="../../js/featherlight.min.js?1764968550"></script>
-    <script src="../../js/highlight.pack.js?1764968550"></script>
+    <script src="../../js/clipboard.min.js?1765017501"></script>
+    <script src="../../js/perfect-scrollbar.min.js?1765017501"></script>
+    <script src="../../js/perfect-scrollbar.jquery.min.js?1765017501"></script>
+    <script src="../../js/jquery.sticky.js?1765017501"></script>
+    <script src="../../js/featherlight.min.js?1765017501"></script>
+    <script src="../../js/highlight.pack.js?1765017501"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../js/modernizr.custom-3.6.0.js?1764968550"></script>
-    <script src="../../js/learn.js?1764968550"></script>
-    <script src="../../js/hugo-learn.js?1764968550"></script>
+    <script src="../../js/modernizr.custom-3.6.0.js?1765017501"></script>
+    <script src="../../js/learn.js?1765017501"></script>
+    <script src="../../js/hugo-learn.js?1765017501"></script>
 
-    <link href="../../mermaid/mermaid.css?1764968550" rel="stylesheet" />
-    <script src="../../mermaid/mermaid.js?1764968550"></script>
+    <link href="../../mermaid/mermaid.css?1765017501" rel="stylesheet" />
+    <script src="../../mermaid/mermaid.js?1765017501"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

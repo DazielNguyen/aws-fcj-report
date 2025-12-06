@@ -8,48 +8,137 @@ pre: " <b> 1.12 </b> "
 
 ### Mục tiêu tuần 12:
 
-- Kết nối, làm quen với các thành viên trong First Cloud Journey.
-- Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+- Kiểm tra tải và tối ưu hóa hiệu suất hệ thống
+- Cải thiện độ chính xác của Voice và OCR models
+- Tăng cường bảo mật và xử lý lỗi toàn diện
+- Triển khai logging và metrics collection nâng cao
+- Chuẩn bị deployment và kiểm tra cuối cùng
+- Nâng cao chất lượng code và documentation
 
 ### Các công việc cần triển khai trong tuần này:
 
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP <br>                    | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Thứ | Công việc                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | Ngày bắt đầu | Ngày kết thúc | Nguồn tài liệu và ghi chú học tập                                                                       |
+| --- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | ------------- | ------------------------------------------------------------------------------------------------------- |
+| 2   | Thiết lập kiểm tra tải<br>- Cài đặt công cụ kiểm tra tải<br>- Tạo các kịch bản kiểm tra tải<br>- Thiết lập giám sát tài nguyên<br>- Chuẩn bị dữ liệu thử nghiệm<br><br>Chạy thử nghiệm tải<br>- Tải chỉ giọng nói (10 files)<br>- Tải hóa đơn (10 files)<br>- Tải đồng thời cả hai<br><br>Tối ưu hóa<br>- Tối ưu hóa Database<br>- Triển khai bộ nhớ đệm<br>- Tối ưu hóa bộ nhớ                                                                                                   | 24/11/2025   | 24/11/2025    | [Sprint 04 - Day 16](https://gitlab.com/vicobi/vicobi-docs/-/blob/main/dev-plans/ai/sprint-4/day-16.md) |
+| 3   | Cải thiện độ chính xác của giọng nói<br>- Phân tích các trường hợp thất bại<br>- Cải thiện quy tắc NLP<br>- Kiểm tra lại và lặp lại<br><br>Cải thiện độ chính xác của OCR<br>- Phân tích các trường hợp thất bại<br>- Cải tiến theo định dạng cụ thể<br>- Cải tiến nhận dạng ký tự<br><br>Các trường hợp ngoại lệ của việc phân tích số lượng<br>- Xử lý các trường hợp mơ hồ<br>- Logic xác thực<br>- Tổng lượng triết xuất<br>- Logic xác thực tổng                             | 25/11/2025   | 25/11/2025    | [Sprint 04 - Day 17](https://gitlab.com/vicobi/vicobi-docs/-/blob/main/dev-plans/ai/sprint-4/day-17.md) |
+| 4   | Tăng cường an ninh<br>- Xác thực tải lên tệp<br>- Giới hạn tỷ lệ<br>- Vệ sinh đầu vào<br>- Xác thực JWT<br>- Bảo mật MongoDB<br>- Danh sách kiểm tra bảo mật<br><br>Xử lý lỗi toàn diện<br>- Try-Catch tất cả các hàm<br>- Mã trạng thái HTTP thích hợp<br>- Thông báo lỗi hữu ích<br>- Ghi nhật ký với ngữ cảnh<br><br>Kiểm tra độ chắc chắn của giọng nói<br>- Kiểm tra các tập tin bị hỏng/không hợp lệ<br><br>Kiểm tra độ bền OCR<br>- Kiểm tra hình ảnh bị hỏng/không hợp lệ | 26/11/2025   | 26/11/2025    | [Sprint 04 - Day 18](https://gitlab.com/vicobi/vicobi-docs/-/blob/main/dev-plans/ai/sprint-4/day-18.md) |
+| 5   | Cải tiến ghi nhật ký<br>- Ghi nhật ký JSON có cấu trúc<br>- Xử lý yêu cầu đăng nhập<br>- Các bước xử lý nhật ký với thời gian<br>- Ghi lại lỗi bằng Stack Traces<br>- ID tương quan để theo dõi<br><br>Bộ sưu tập số liệu<br>- Theo dõi thời gian xử lý<br>- Độ chính xác và tỷ lệ lỗi<br>- Lưu trữ số liệu trong MongoDB<br>- Tạo API số liệu<br><br>Voice Deployment Prep<br>Chuẩn bị triển khai OCR                                                                            | 27/11/2025   | 27/11/2025    | [Sprint 04 - Day 19](https://gitlab.com/vicobi/vicobi-docs/-/blob/main/dev-plans/ai/sprint-4/day-19.md) |
+| 6   | Kiểm tra toàn diện cuối cùng<br>- Kiểm tra hồi quy đầy đủ<br>- Kiểm tra tất cả các tình huống lỗi<br>- Kiểm tra tích hợp giao diện người dùng<br>- Kiểm tra tích hợp backend<br><br>Chất lượng mã<br>- Thêm Docstrings<br>- Thêm gợi ý nhập<br>- Chạy Linter & Sửa lỗi<br>- Thêm các bài kiểm tra đơn vị cho các chức năng quan trọng                                                                                                                                             | 28/11/2025   | 28/11/2025    | [Sprint 04 - Day 20](https://gitlab.com/vicobi/vicobi-docs/-/blob/main/dev-plans/ai/sprint-4/day-20.md) |
 
 ### Kết quả đạt được tuần 12:
 
-- Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản:
+#### 1. Kiểm Tra Tải và Tối Ưu Hóa
 
-  - Compute
-  - Storage
-  - Networking
-  - Database
-  - ...
+**Thiết Lập Load Testing:**
 
-- Đã tạo và cấu hình AWS Free Tier account thành công.
+- Cài đặt công cụ kiểm tra tải (JMeter/Locust)
+- Tạo các kịch bản kiểm tra tải (Voice, Bill, đồng thời)
+- Thiết lập giám sát tài nguyên (CPU, RAM, Disk I/O)
+- Chuẩn bị dữ liệu thử nghiệm
 
-- Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+**Chạy Thử Nghiệm Tải:**
 
-- Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
+- Kiểm tra tải Voice (10 files đồng thời)
+- Kiểm tra tải Bill OCR (10 files đồng thời)
+- Kiểm tra tải đồng thời cả Voice và Bill
+- Phân tích bottlenecks và điểm nghẽn
 
-  - Access Key
-  - Secret Key
-  - Region mặc định
-  - ...
+**Tối Ưu Hóa:**
 
-- Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+- Tối ưu hóa Database queries và indexing
+- Triển khai bộ nhớ đệm (caching) cho kết quả
+- Tối ưu hóa bộ nhớ và garbage collection
+- Cải thiện thời gian phản hồi API
 
-  - Kiểm tra thông tin tài khoản & cấu hình
-  - Lấy danh sách region
-  - Xem dịch vụ EC2
-  - Tạo và quản lý key pair
-  - Kiểm tra thông tin dịch vụ đang chạy
-  - ...
+#### 2. Cải Thiện Độ Chính Xác
 
-- Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-- ...
+**Voice Accuracy:**
+
+- Phân tích các trường hợp thất bại (failure cases)
+- Cải thiện quy tắc NLP cho tiếng Việt
+- Kiểm tra lại và lặp lại (testing & iteration)
+- Nâng cao độ chính xác nhận dạng số và danh mục
+
+**OCR Accuracy:**
+
+- Phân tích các trường hợp OCR thất bại
+- Cải tiến theo định dạng hóa đơn cụ thể
+- Cải tiến nhận dạng ký tự đặc biệt
+- Xử lý các trường hợp font chữ khó
+
+**Xử Lý Số Lượng:**
+
+- Xử lý các trường hợp mơ hồ
+- Logic xác thực số lượng
+- Trích xuất tổng số lượng
+- Logic xác thực tổng tiền
+
+#### 3. Tăng Cường An Ninh
+
+**File Security:**
+
+- Xác thực tải lên tệp (file type, size validation)
+- Giới hạn tỷ lệ (rate limiting) cho API
+- Vệ sinh đầu vào (input sanitization)
+- Xác thực JWT tokens
+- Bảo mật MongoDB (authentication, authorization)
+- Hoàn thành danh sách kiểm tra bảo mật
+
+**Error Handling:**
+
+- Try-Catch toàn diện cho tất cả các hàm
+- Mã trạng thái HTTP thích hợp
+- Thông báo lỗi hữu ích và rõ ràng
+- Ghi nhật ký với ngữ cảnh đầy đủ
+
+**Robustness Testing:**
+
+- Kiểm tra Voice với files bị hỏng/không hợp lệ
+- Kiểm tra OCR với hình ảnh bị hỏng/không hợp lệ
+- Xử lý graceful degradation
+
+#### 4. Logging và Metrics
+
+**Enhanced Logging:**
+
+- Ghi nhật ký JSON có cấu trúc (structured logging)
+- Logging cho mỗi HTTP request
+- Các bước xử lý nhật ký với timestamp
+- Ghi lại lỗi với stack traces
+- Correlation ID để theo dõi request flow
+
+**Metrics Collection:**
+
+- Theo dõi thời gian xử lý (processing time)
+- Độ chính xác và tỷ lệ lỗi (accuracy & error rates)
+- Lưu trữ metrics trong MongoDB
+- Tạo API endpoints cho metrics
+- Dashboard cho monitoring
+
+#### 5. Deployment Preparation
+
+- Chuẩn bị triển khai Voice service
+- Chuẩn bị triển khai OCR service
+- Docker configuration và optimization
+- Environment variables và secrets management
+- Health check endpoints
+
+#### 6. Kiểm Tra Toàn Diện và Code Quality
+
+**Comprehensive Testing:**
+
+- Kiểm tra hồi quy đầy đủ (full regression testing)
+- Kiểm tra tất cả các tình huống lỗi (error scenarios)
+- Kiểm tra tích hợp UI (frontend integration)
+- Kiểm tra tích hợp Backend (backend integration)
+- End-to-end testing
+
+**Code Quality:**
+
+- Thêm Docstrings cho tất cả functions/classes
+- Thêm type hints (Python typing)
+- Chạy Linter (Pylint/Flake8) và sửa lỗi
+- Thêm unit tests cho các chức năng quan trọng
+- Code review và refactoring
+
+**Tổng kết:** Tuần 12 tập trung vào hoàn thiện và production-ready hóa hệ thống AI. Đã thực hiện thành công load testing và tối ưu hóa hiệu suất, cải thiện đáng kể độ chính xác của cả Voice và OCR models. Tăng cường bảo mật toàn diện với file validation, rate limiting, JWT authentication và MongoDB security. Triển khai structured logging và metrics collection để monitoring. Nâng cao chất lượng code với docstrings, type hints, linting và unit tests. Hệ thống đã sẵn sàng cho production deployment với error handling mạnh mẽ và testing toàn diện.

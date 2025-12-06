@@ -15,21 +15,21 @@
     <title>Week 12 Worklog :: Internship Report</title>
 
     
-    <link href="../../css/nucleus.css?1764965760" rel="stylesheet">
-    <link href="../../css/fontawesome-all.min.css?1764965760" rel="stylesheet">
-    <link href="../../css/hybrid.css?1764965760" rel="stylesheet">
-    <link href="../../css/featherlight.min.css?1764965760" rel="stylesheet">
-    <link href="../../css/perfect-scrollbar.min.css?1764965760" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1764965760" rel="stylesheet">
-    <link href="../../css/atom-one-dark-reasonable.css?1764965760" rel="stylesheet">
-    <link href="../../css/theme.css?1764965760" rel="stylesheet">
-    <link href="../../css/hugo-theme.css?1764965760" rel="stylesheet">
+    <link href="../../css/nucleus.css?1765011019" rel="stylesheet">
+    <link href="../../css/fontawesome-all.min.css?1765011019" rel="stylesheet">
+    <link href="../../css/hybrid.css?1765011019" rel="stylesheet">
+    <link href="../../css/featherlight.min.css?1765011019" rel="stylesheet">
+    <link href="../../css/perfect-scrollbar.min.css?1765011019" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1765011019" rel="stylesheet">
+    <link href="../../css/atom-one-dark-reasonable.css?1765011019" rel="stylesheet">
+    <link href="../../css/theme.css?1765011019" rel="stylesheet">
+    <link href="../../css/hugo-theme.css?1765011019" rel="stylesheet">
     
-    <link href="../../css/theme-workshop.css?1764965760" rel="stylesheet">
+    <link href="../../css/theme-workshop.css?1765011019" rel="stylesheet">
     
     
 
-    <script src="../../js/jquery-3.3.1.min.js?1764965760"></script>
+    <script src="../../js/jquery-3.3.1.min.js?1765011019"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -88,14 +88,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../js/lunr.min.js?1764965760"></script>
-<script type="text/javascript" src="../../js/auto-complete.js?1764965760"></script>
+<script type="text/javascript" src="../../js/lunr.min.js?1765011019"></script>
+<script type="text/javascript" src="../../js/auto-complete.js?1765011019"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/aws-fcj-report\/";
     
 </script>
-<script type="text/javascript" src="../../js/search.js?1764965760"></script>
+<script type="text/javascript" src="../../js/search.js?1765011019"></script>
  
   </div>
 
@@ -1059,8 +1059,12 @@
 
 	<h3 id="week-12-objectives">Week 12 Objectives:</h3>
 <ul>
-<li>Connect and get acquainted with members of First Cloud Journey.</li>
-<li>Understand basic AWS services, how to use the console &amp; CLI.</li>
+<li>Load testing and system performance optimization</li>
+<li>Improve accuracy of Voice and OCR models</li>
+<li>Enhance security and comprehensive error handling</li>
+<li>Implement advanced logging and metrics collection</li>
+<li>Prepare for deployment and final testing</li>
+<li>Improve code quality and documentation</li>
 </ul>
 <h3 id="tasks-to-be-carried-out-this-week">Tasks to be carried out this week:</h3>
 <table>
@@ -1070,92 +1074,158 @@
           <th>Task</th>
           <th>Start Date</th>
           <th>Completion Date</th>
-          <th>Reference Material</th>
+          <th>Reference Material and Learning Notes</th>
       </tr>
   </thead>
   <tbody>
       <tr>
           <td>2</td>
-          <td>- Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations</td>
-          <td>08/11/2025</td>
-          <td>08/11/2025</td>
-          <td></td>
+          <td>Setup load testing<br>- Install load testing tools<br>- Create load testing scenarios<br>- Setup resource monitoring<br>- Prepare test data<br><br>Run load tests<br>- Voice load (10 files)<br>- Bill load (10 files)<br>- Concurrent load for both<br><br>Optimization<br>- Database optimization<br>- Implement caching<br>- Memory optimization</td>
+          <td>24/11/2025</td>
+          <td>24/11/2025</td>
+          <td><a href="https://gitlab.com/vicobi/vicobi-docs/-/blob/main/dev-plans/ai/sprint-4/day-16.md">Sprint 04 - Day 16</a></td>
       </tr>
       <tr>
           <td>3</td>
-          <td>- Learn about AWS and its types of services <br>  + Compute <br>  + Storage <br>  + Networking <br>  + Database <br>  + &hellip; <br></td>
-          <td>08/12/2025</td>
-          <td>08/12/2025</td>
-          <td><a href="https://cloudjourney.awsstudygroup.com/">https://cloudjourney.awsstudygroup.com/</a></td>
+          <td>Improve voice accuracy<br>- Analyze failure cases<br>- Improve NLP rules<br>- Retest and iterate<br><br>Improve OCR accuracy<br>- Analyze failure cases<br>- Format-specific improvements<br>- Character recognition improvements<br><br>Amount parsing edge cases<br>- Handle ambiguous cases<br>- Validation logic<br>- Total amount extraction<br>- Total validation logic</td>
+          <td>25/11/2025</td>
+          <td>25/11/2025</td>
+          <td><a href="https://gitlab.com/vicobi/vicobi-docs/-/blob/main/dev-plans/ai/sprint-4/day-17.md">Sprint 04 - Day 17</a></td>
       </tr>
       <tr>
           <td>4</td>
-          <td>- Create AWS Free Tier account <br> - Learn about AWS Console &amp; AWS CLI <br> - <strong>Practice:</strong> <br>  + Create AWS account <br>  + Install &amp; configure AWS CLI <br>   + How to use AWS CLI</td>
-          <td>08/13/2025</td>
-          <td>08/13/2025</td>
-          <td><a href="https://cloudjourney.awsstudygroup.com/">https://cloudjourney.awsstudygroup.com/</a></td>
+          <td>Security enhancements<br>- File upload validation<br>- Rate limiting<br>- Input sanitization<br>- JWT validation<br>- MongoDB security<br>- Security checklist<br><br>Comprehensive error handling<br>- Try-Catch all functions<br>- Appropriate HTTP status codes<br>- Helpful error messages<br>- Logging with context<br><br>Voice robustness testing<br>- Test corrupted/invalid files<br><br>OCR robustness testing<br>- Test corrupted/invalid images</td>
+          <td>26/11/2025</td>
+          <td>26/11/2025</td>
+          <td><a href="https://gitlab.com/vicobi/vicobi-docs/-/blob/main/dev-plans/ai/sprint-4/day-18.md">Sprint 04 - Day 18</a></td>
       </tr>
       <tr>
           <td>5</td>
-          <td>- Learn basic EC2: <br>  + Instance types <br>  + AMI <br>  + EBS <br>  + &hellip; <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP <br></td>
-          <td>08/14/2025</td>
-          <td>08/15/2025</td>
-          <td><a href="https://cloudjourney.awsstudygroup.com/">https://cloudjourney.awsstudygroup.com/</a></td>
+          <td>Logging improvements<br>- Structured JSON logging<br>- Request logging<br>- Processing step logs with timing<br>- Error logging with stack traces<br>- Correlation IDs for tracking<br><br>Metrics collection<br>- Track processing time<br>- Accuracy and error rates<br>- Store metrics in MongoDB<br>- Create metrics API<br><br>Voice deployment prep<br>OCR deployment prep</td>
+          <td>27/11/2025</td>
+          <td>27/11/2025</td>
+          <td><a href="https://gitlab.com/vicobi/vicobi-docs/-/blob/main/dev-plans/ai/sprint-4/day-19.md">Sprint 04 - Day 19</a></td>
       </tr>
       <tr>
           <td>6</td>
-          <td>- <strong>Practice:</strong> <br>  + Launch an EC2 instance <br>  + Connect via SSH <br>  + Attach an EBS volume</td>
-          <td>08/15/2025</td>
-          <td>08/15/2025</td>
-          <td><a href="https://cloudjourney.awsstudygroup.com/">https://cloudjourney.awsstudygroup.com/</a></td>
+          <td>Final comprehensive testing<br>- Full regression testing<br>- Test all error scenarios<br>- UI integration testing<br>- Backend integration testing<br><br>Code quality<br>- Add docstrings<br>- Add type hints<br>- Run linter &amp; fix issues<br>- Add unit tests for critical functions</td>
+          <td>28/11/2025</td>
+          <td>28/11/2025</td>
+          <td><a href="https://gitlab.com/vicobi/vicobi-docs/-/blob/main/dev-plans/ai/sprint-4/day-20.md">Sprint 04 - Day 20</a></td>
       </tr>
   </tbody>
 </table>
 <h3 id="week-12-achievements">Week 12 Achievements:</h3>
+<h4 id="1-load-testing-and-optimization">1. Load Testing and Optimization</h4>
+<p><strong>Load Testing Setup:</strong></p>
 <ul>
-<li>
-<p>Understood what AWS is and mastered the basic service groups:</p>
+<li>Installed load testing tools (JMeter/Locust)</li>
+<li>Created load testing scenarios (Voice, Bill, concurrent)</li>
+<li>Setup resource monitoring (CPU, RAM, Disk I/O)</li>
+<li>Prepared test data</li>
+</ul>
+<p><strong>Running Load Tests:</strong></p>
 <ul>
-<li>Compute</li>
-<li>Storage</li>
-<li>Networking</li>
-<li>Database</li>
-<li>&hellip;</li>
+<li>Tested Voice load (10 files concurrently)</li>
+<li>Tested Bill OCR load (10 files concurrently)</li>
+<li>Tested concurrent load for both Voice and Bill</li>
+<li>Analyzed bottlenecks and chokepoints</li>
 </ul>
-</li>
-<li>
-<p>Successfully created and configured an AWS Free Tier account.</p>
-</li>
-<li>
-<p>Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.</p>
-</li>
-<li>
-<p>Installed and configured AWS CLI on the computer, including:</p>
+<p><strong>Optimization:</strong></p>
 <ul>
-<li>Access Key</li>
-<li>Secret Key</li>
-<li>Default Region</li>
-<li>&hellip;</li>
+<li>Optimized Database queries and indexing</li>
+<li>Implemented caching for results</li>
+<li>Optimized memory and garbage collection</li>
+<li>Improved API response time</li>
 </ul>
-</li>
-<li>
-<p>Used AWS CLI to perform basic operations such as:</p>
+<h4 id="2-accuracy-improvements">2. Accuracy Improvements</h4>
+<p><strong>Voice Accuracy:</strong></p>
 <ul>
-<li>Check account &amp; configuration information</li>
-<li>Retrieve the list of regions</li>
-<li>View EC2 service</li>
-<li>Create and manage key pairs</li>
-<li>Check information about running services</li>
-<li>&hellip;</li>
+<li>Analyzed failure cases</li>
+<li>Improved NLP rules for Vietnamese</li>
+<li>Tested and iterated</li>
+<li>Enhanced accuracy for number and category recognition</li>
 </ul>
-</li>
-<li>
-<p>Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.</p>
-</li>
-<li>
-<p>&hellip;</p>
-</li>
+<p><strong>OCR Accuracy:</strong></p>
+<ul>
+<li>Analyzed OCR failure cases</li>
+<li>Format-specific improvements for bills</li>
+<li>Improved special character recognition</li>
+<li>Handled difficult font cases</li>
 </ul>
+<p><strong>Amount Parsing:</strong></p>
+<ul>
+<li>Handled ambiguous cases</li>
+<li>Validation logic for amounts</li>
+<li>Total amount extraction</li>
+<li>Total validation logic</li>
+</ul>
+<h4 id="3-security-enhancements">3. Security Enhancements</h4>
+<p><strong>File Security:</strong></p>
+<ul>
+<li>File upload validation (file type, size validation)</li>
+<li>Rate limiting for APIs</li>
+<li>Input sanitization</li>
+<li>JWT token validation</li>
+<li>MongoDB security (authentication, authorization)</li>
+<li>Completed security checklist</li>
+</ul>
+<p><strong>Error Handling:</strong></p>
+<ul>
+<li>Comprehensive Try-Catch for all functions</li>
+<li>Appropriate HTTP status codes</li>
+<li>Clear and helpful error messages</li>
+<li>Logging with full context</li>
+</ul>
+<p><strong>Robustness Testing:</strong></p>
+<ul>
+<li>Tested Voice with corrupted/invalid files</li>
+<li>Tested OCR with corrupted/invalid images</li>
+<li>Handled graceful degradation</li>
+</ul>
+<h4 id="4-logging-and-metrics">4. Logging and Metrics</h4>
+<p><strong>Enhanced Logging:</strong></p>
+<ul>
+<li>Structured JSON logging</li>
+<li>Logging for each HTTP request</li>
+<li>Processing step logs with timestamps</li>
+<li>Error logging with stack traces</li>
+<li>Correlation IDs for tracking request flow</li>
+</ul>
+<p><strong>Metrics Collection:</strong></p>
+<ul>
+<li>Tracked processing time</li>
+<li>Accuracy and error rates</li>
+<li>Stored metrics in MongoDB</li>
+<li>Created API endpoints for metrics</li>
+<li>Dashboard for monitoring</li>
+</ul>
+<h4 id="5-deployment-preparation">5. Deployment Preparation</h4>
+<ul>
+<li>Prepared Voice service deployment</li>
+<li>Prepared OCR service deployment</li>
+<li>Docker configuration and optimization</li>
+<li>Environment variables and secrets management</li>
+<li>Health check endpoints</li>
+</ul>
+<h4 id="6-comprehensive-testing-and-code-quality">6. Comprehensive Testing and Code Quality</h4>
+<p><strong>Comprehensive Testing:</strong></p>
+<ul>
+<li>Full regression testing</li>
+<li>Tested all error scenarios</li>
+<li>UI integration testing (frontend integration)</li>
+<li>Backend integration testing</li>
+<li>End-to-end testing</li>
+</ul>
+<p><strong>Code Quality:</strong></p>
+<ul>
+<li>Added docstrings for all functions/classes</li>
+<li>Added type hints (Python typing)</li>
+<li>Ran Linter (Pylint/Flake8) and fixed issues</li>
+<li>Added unit tests for critical functions</li>
+<li>Code review and refactoring</li>
+</ul>
+<p><strong>Summary:</strong> Week 12 focused on finalizing and making the AI system production-ready. Successfully performed load testing and performance optimization, significantly improved accuracy of both Voice and OCR models. Implemented comprehensive security with file validation, rate limiting, JWT authentication, and MongoDB security. Deployed structured logging and metrics collection for monitoring. Enhanced code quality with docstrings, type hints, linting, and unit tests. The system is now ready for production deployment with robust error handling and comprehensive testing.</p>
 
 
 
@@ -1891,19 +1961,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../js/clipboard.min.js?1764965760"></script>
-    <script src="../../js/perfect-scrollbar.min.js?1764965760"></script>
-    <script src="../../js/perfect-scrollbar.jquery.min.js?1764965760"></script>
-    <script src="../../js/jquery.sticky.js?1764965760"></script>
-    <script src="../../js/featherlight.min.js?1764965760"></script>
-    <script src="../../js/highlight.pack.js?1764965760"></script>
+    <script src="../../js/clipboard.min.js?1765011019"></script>
+    <script src="../../js/perfect-scrollbar.min.js?1765011019"></script>
+    <script src="../../js/perfect-scrollbar.jquery.min.js?1765011019"></script>
+    <script src="../../js/jquery.sticky.js?1765011019"></script>
+    <script src="../../js/featherlight.min.js?1765011019"></script>
+    <script src="../../js/highlight.pack.js?1765011019"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../js/modernizr.custom-3.6.0.js?1764965760"></script>
-    <script src="../../js/learn.js?1764965760"></script>
-    <script src="../../js/hugo-learn.js?1764965760"></script>
+    <script src="../../js/modernizr.custom-3.6.0.js?1765011019"></script>
+    <script src="../../js/learn.js?1765011019"></script>
+    <script src="../../js/hugo-learn.js?1765011019"></script>
 
-    <link href="../../mermaid/mermaid.css?1764965760" rel="stylesheet" />
-    <script src="../../mermaid/mermaid.js?1764965760"></script>
+    <link href="../../mermaid/mermaid.css?1765011019" rel="stylesheet" />
+    <script src="../../mermaid/mermaid.js?1765011019"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
