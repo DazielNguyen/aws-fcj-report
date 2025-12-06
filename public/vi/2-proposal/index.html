@@ -15,21 +15,21 @@
     <title>Bản đề xuất :: Báo cáo thực tập</title>
 
     
-    <link href="../../css/nucleus.css?1765011020" rel="stylesheet">
-    <link href="../../css/fontawesome-all.min.css?1765011020" rel="stylesheet">
-    <link href="../../css/hybrid.css?1765011020" rel="stylesheet">
-    <link href="../../css/featherlight.min.css?1765011020" rel="stylesheet">
-    <link href="../../css/perfect-scrollbar.min.css?1765011020" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1765011020" rel="stylesheet">
-    <link href="../../css/atom-one-dark-reasonable.css?1765011020" rel="stylesheet">
-    <link href="../../css/theme.css?1765011020" rel="stylesheet">
-    <link href="../../css/hugo-theme.css?1765011020" rel="stylesheet">
+    <link href="../../css/nucleus.css?1765017706" rel="stylesheet">
+    <link href="../../css/fontawesome-all.min.css?1765017706" rel="stylesheet">
+    <link href="../../css/hybrid.css?1765017706" rel="stylesheet">
+    <link href="../../css/featherlight.min.css?1765017706" rel="stylesheet">
+    <link href="../../css/perfect-scrollbar.min.css?1765017706" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1765017706" rel="stylesheet">
+    <link href="../../css/atom-one-dark-reasonable.css?1765017706" rel="stylesheet">
+    <link href="../../css/theme.css?1765017706" rel="stylesheet">
+    <link href="../../css/hugo-theme.css?1765017706" rel="stylesheet">
     
-    <link href="../../css/theme-workshop.css?1765011020" rel="stylesheet">
+    <link href="../../css/theme-workshop.css?1765017706" rel="stylesheet">
     
     
 
-    <script src="../../js/jquery-3.3.1.min.js?1765011020"></script>
+    <script src="../../js/jquery-3.3.1.min.js?1765017706"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -88,14 +88,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../js/lunr.min.js?1765011020"></script>
-<script type="text/javascript" src="../../js/auto-complete.js?1765011020"></script>
+<script type="text/javascript" src="../../js/lunr.min.js?1765017706"></script>
+<script type="text/javascript" src="../../js/auto-complete.js?1765017706"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/aws-fcj-report\/\/vi";
     
 </script>
-<script type="text/javascript" src="../../js/search.js?1765011020"></script>
+<script type="text/javascript" src="../../js/search.js?1765017706"></script>
  
   </div>
 
@@ -1022,15 +1022,15 @@
   <ul>
     <li>
       <ul>
+        <li><a href="#bạn-có-thể-đọc-toàn-bộ-proposal-ở-đây-vicobi-proposal">Bạn có thể đọc toàn bộ proposal ở đây: Vicobi Proposal</a></li>
         <li><a href="#1-tóm-tắt-điều-hành">1. Tóm tắt điều hành</a></li>
         <li><a href="#2-tuyên-bố-vấn-đề">2. Tuyên bố vấn đề</a></li>
         <li><a href="#3-kiến-trúc-giải-pháp">3. Kiến trúc giải pháp</a></li>
         <li><a href="#4-triển-khai-kỹ-thuật">4. Triển khai kỹ thuật</a></li>
-        <li><a href="#5-lộ-trình--mốc-triển-khai">5. Lộ trình &amp; Mốc triển khai</a></li>
+        <li><a href="#5-lộ-trình--mốc-triển-khai-sprints">5. Lộ trình &amp; Mốc triển khai (Sprints)</a></li>
         <li><a href="#6-ước-tính-ngân-sách">6. Ước tính ngân sách</a></li>
         <li><a href="#7-đánh-giá-rủi-ro">7. Đánh giá rủi ro</a></li>
-        <li><a href="#8-kết-quả-kỳ-vọng-của-dự-án">8. Kết quả kỳ vọng của dự án</a></li>
-        <li><a href="#9-hạn-chế-của-dự-án">9. Hạn chế của dự án</a></li>
+        <li><a href="#8-kết-quả-kỳ-vọng--đội-ngũ">8. Kết quả kỳ vọng &amp; Đội ngũ</a></li>
       </ul>
     </li>
   </ul>
@@ -1057,201 +1057,303 @@
 
 
 
-	<h1 id="ứng-dụng-quản-lý-tài-chính-cá-nhân">Ứng dụng quản lý tài chính cá nhân</h1>
+	<h1 id="ứng-dụng-quản-lý-tài-chính-cá-nhân-vicobi">Ứng dụng quản lý tài chính cá nhân (Vicobi)</h1>
+<h3 id="bạn-có-thể-đọc-toàn-bộ-proposal-ở-đây-vicobi-proposal">Bạn có thể đọc toàn bộ proposal ở đây: <a href="../../files/2-Proposal/Vicobi_Proposal.pdf" download>Vicobi Proposal</a></h3>
 <h3 id="1-tóm-tắt-điều-hành">1. Tóm tắt điều hành</h3>
-<p>Dự án Personal Finance Management App hướng đến việc cung cấp một nền tảng quản lý tài chính cá nhân thông minh, hiện đại và mang tính tự động hóa cao. Ứng dụng cho phép người dùng ghi nhận thu chi, tạo và quản lý nhiều hũ tiền (money jars) theo mục đích khác nhau, lập kế hoạch chi tiêu, nhận cảnh báo thông minh và tạo báo cáo phân tích trực quan.</p>
-<p>Ứng dụng được xây dựng với kiến trúc microservices trên nền tảng .NET và FastAPI, triển khai trên AWS Cloud, đảm bảo tính linh hoạt, khả năng mở rộng và an toàn dữ liệu. Quy trình phát triển tuân theo mô hình Agile/Scrum (2 tuần/sprint), với thời gian hoàn thành MVP trong 2 tháng.</p>
+<p>Dự án <strong>Vicobi</strong> (Personal Finance Management App) hướng đến việc cung cấp một nền tảng quản lý tài chính cá nhân thông minh, hiện đại và mang tính tự động hóa cao. Vicobi đơn giản hóa việc quản lý tài chính qua 4 trụ cột chính:</p>
+<ol>
+<li><strong>Ghi chép thông minh (Smart Recording):</strong> Nhập liệu bằng giọng nói và quét hóa đơn, loại bỏ rào cản nhập liệu thủ công.</li>
+<li><strong>Lập ngân sách theo mục tiêu (Goal-based Budgeting):</strong> Tự động hóa tạo và quản lý các hũ tiền (money jars) linh hoạt.</li>
+<li><strong>Phân tích &amp; Kiểm soát:</strong> Cung cấp báo cáo trực quan và hệ thống cảnh báo thông minh.</li>
+<li><strong>Trợ lý tài chính (AI Chatbot):</strong> Tích hợp Chatbot AI đóng vai trò tư vấn viên, hỗ trợ giải đáp và nâng cao kiến thức tài chính.</li>
+</ol>
+<p>Về mặt công nghệ, Vicobi được xây dựng trên kiến trúc <strong>Microservices</strong> sử dụng <strong>.NET Aspire</strong> và <strong>FastAPI</strong>, triển khai trên <strong>AWS Cloud</strong>, đảm bảo tính linh hoạt và an toàn dữ liệu. Quy trình phát triển tuân theo mô hình <strong>Agile/Scrum</strong> (2 tuần/sprint trong giai đoạn phát triển chính), với mục tiêu hoàn thành MVP trong 2 tháng thực thi.</p>
 <h3 id="2-tuyên-bố-vấn-đề">2. Tuyên bố vấn đề</h3>
 <h4 id="vấn-đề-hiện-tại">Vấn đề hiện tại</h4>
-<p>Trên thị trường đã có rất nhiều ứng dụng quản lý tài chính, tuy nhiên phần lớn vẫn yêu cầu người dùng nhập liệu thủ công — một công việc tốn thời gian, dễ sai sót và khiến người dùng nhanh chóng bỏ cuộc. Các ứng dụng hiện có chỉ tập trung vào thống kê chi tiêu mà chưa thực sự giúp người dùng tự động hóa quy trình quản lý tài chính cá nhân.</p>
+<p>Trong thị trường năng động hiện nay, người dùng gặp khó khăn trong việc kiểm soát tài chính do &ldquo;sức ỳ hành vi&rdquo; — ngại ghi chép thủ công từng giao dịch. Các ứng dụng hiện có (như Money Lover, Misa Money Keeper) vẫn dựa nhiều vào nhập liệu bằng tay, gây ra tình trạng &ldquo;mệt mỏi khi nhập liệu&rdquo; (input fatigue) và tỷ lệ bỏ cuộc cao.</p>
 <h4 id="giải-pháp">Giải pháp</h4>
-<p>Giải pháp sử dụng AWS Cloud kết hợp kiến trúc microservices để xây dựng một nền tảng quản lý tài chính cá nhân tự động hóa, tích hợp AI trong xử lý giọng nói và nhận diện hóa đơn. Hệ thống được triển khai trên AWS ECS Fargate cho các service backend (.NET), FastAPI cho xử lý AI, và Next.js cho frontend. So với các nền tảng tài chính phổ biến như Money Lover hay Misa Money Keeper, ứng dụng này tập trung vào tự động hóa hoàn toàn nhập liệu tài chính thông qua AI voice-to-text và bill scanning chi tiết tiếng Việt, giúp giảm thao tác thủ công và sai sót. Hệ thống phù hợp cho người dùng cá nhân và nhóm nhỏ, đồng thời có thể mở rộng khi cần cho quy mô doanh nghiệp hoặc ứng dụng ngân hàng số.</p>
-<h4 id="lợi-ích-và-hoàn-vốn-đầu-tư-roi">Lợi ích và hoàn vốn đầu tư (ROI)</h4>
-<p>Giải pháp mang lại nhiều lợi ích thiết thực cả về mặt kỹ thuật và giá trị kinh doanh:</p>
+<p>Vicobi giải quyết vấn đề bằng cách tự động hóa cao độ quy trình nhập liệu thông qua AWS Cloud và Microservices:</p>
 <ul>
-<li>Tự động hóa nhập liệu: Giảm hơn 70% thao tác thủ công nhờ AI nhận diện giọng nói và hóa đơn.</li>
-<li>Tăng độ chính xác: Hạn chế sai sót nhập liệu, đảm bảo tính toàn vẹn của dữ liệu tài chính (&gt;90% chính xác).</li>
-<li>Cải thiện hiệu suất người dùng: Ghi nhận và phân loại giao dịch chỉ trong vài giây, tối ưu trải nghiệm sử dụng.</li>
-<li>Tiết kiệm chi phí: Chi phí hạ tầng thấp nhờ tận dụng AWS Free Tier đến năm 2026; chỉ ước tính ~60 USD/tháng cho AWS và ~30 USD cho compute AI.</li>
-<li>Hoàn vốn nhanh: Dự kiến hoàn vốn trong 6–12 tháng, nhờ tiết kiệm thời gian nhập liệu và tăng hiệu suất vận hành.</li>
-<li>Khả năng mở rộng &amp; tích hợp: Kiến trúc microservices trên AWS cho phép dễ dàng bổ sung tính năng (mobile app, phân tích nâng cao, tích hợp ngân hàng).</li>
+<li><strong>Công nghệ lõi:</strong> Tích hợp AI xử lý giọng nói tiếng Việt (Voice-to-Text) và nhận diện hóa đơn (OCR) chi tiết.</li>
+<li><strong>Kiến trúc tối ưu:</strong> Sử dụng <strong>AWS ECS Fargate</strong> chạy mô hình Multi-container Task (gộp Backend .NET và AI Service) để giảm chi phí hạ tầng nhưng vẫn đảm bảo giao tiếp liền mạch.</li>
+<li><strong>Frontend hiện đại:</strong> Sử dụng <strong>Next.js</strong> được lưu trữ trên <strong>Amazon S3</strong> và phân phối toàn cầu qua <strong>Amazon CloudFront</strong>.</li>
+</ul>
+<h4 id="lợi-ích-và-hoàn-vốn-đầu-tư-roi">Lợi ích và hoàn vốn đầu tư (ROI)</h4>
+<p>Giải pháp mang lại lợi thế cạnh tranh rõ rệt:</p>
+<ul>
+<li><strong>Giá trị người dùng:</strong> Giảm hơn <strong>70%</strong> thao tác thủ công. Độ chính xác nhận diện giọng nói đạt <strong>90%</strong> và trích xuất hóa đơn đạt <strong>80%</strong>.</li>
+<li><strong>Hiệu quả kinh tế:</strong> Tận dụng tối đa AWS Free Tier (S3, CloudFront, Cognito). Ngân sách vận hành tinh gọn khoảng <strong>~$60/tháng</strong> cho hạ tầng và <strong>~$15/tháng</strong> cho AI compute.</li>
+<li><strong>Hoàn vốn:</strong> Dự kiến đạt ROI trong <strong>6–12 tháng</strong> nhờ tiết kiệm thời gian và tăng hiệu suất.</li>
+<li><strong>Khả năng mở rộng:</strong> Kiến trúc Microservices sẵn sàng cho việc tích hợp Mobile App hoặc Open Banking.</li>
 </ul>
 <h3 id="3-kiến-trúc-giải-pháp">3. Kiến trúc giải pháp</h3>
-<p>Hệ thống được triển khai theo mô hình <strong>microservices</strong> trên nền tảng <strong>AWS Cloud</strong>, kết hợp các dịch vụ serverless, container, và cơ sở dữ liệu quản lý để đảm bảo hiệu năng và khả năng mở rộng.</p>
-<p><img src="../../images/2-Proposal/development_architecture.drawio.png" alt="Ứng dụng quản lý tài chính cá nhân Sofware Architecture"></p>
-<p>Người dùng truy cập ứng dụng web <strong>Next.js</strong> thông qua <strong>Amazon CloudFront</strong>, nội dung tĩnh được lưu trữ trong <strong>Amazon S3</strong> và phân phối qua <strong>Amazon Route 53</strong>.
-Lớp bảo mật đầu tiên được cung cấp bởi <strong>AWS WAF</strong> nhằm ngăn chặn các tấn công phổ biến như SQL Injection hoặc XSS.</p>
-<p>Khi người dùng đăng nhập, quá trình xác thực được xử lý bởi <strong>Amazon Cognito</strong>, cấp token truy cập để frontend gửi các yêu cầu API qua <strong>Amazon API Gateway</strong>.
-API Gateway định tuyến yêu cầu đến <strong>Application Load Balancer (ALB)</strong> thông qua <strong>AWS PrivateLink</strong>, sau đó chuyển tiếp đến <strong>Amazon ECS (Fargate)</strong> — nơi triển khai các container backend bao gồm:</p>
-<ul>
-<li>
-<p><strong>Backend Service (.NET)</strong>: Xử lý nghiệp vụ chính của hệ thống.</p>
-</li>
-<li>
-<p><strong>AI Service (FastAPI)</strong>: Xử lý hóa đơn, nhận dạng giọng nói và các tác vụ AI.</p>
-</li>
-</ul>
-<p>Khi người dùng tải hóa đơn hoặc ghi âm, file tạm thời được lưu trong <strong>Amazon S3</strong>.<br>
-<strong>AI Service</strong> có thể truy cập tệp từ <strong>Amazon S3</strong> để thực hiện các xử lý dữ liệu, sau đó trả kết quả lại cho <strong>Backend Service</strong> thông qua message broker.</p>
-<p>Hình ảnh container được lưu trữ trong <strong>Amazon ECR</strong>, và quá trình triển khai được tự động hóa qua <strong>GitLab CI/CD Pipeline</strong> — bao gồm các bước build image, push lên ECR, và cập nhật Task Definition trên ECS.</p>
-<p>Tất cả logs, metrics và cảnh báo từ ECS, API Gateway, và ALB được gửi về <strong>Amazon CloudWatch</strong> để giám sát tập trung, đồng thời <strong>Amazon SNS</strong> được cấu hình để gửi cảnh báo tự động khi có sự cố.</p>
-<p><img src="../../images/2-Proposal/cloud_architecture.drawio.png" alt="Ứng dụng quản lý tài chính cá nhân Cloud Architecture"></p>
-<p><em>Dịch vụ AWS sử dụng</em></p>
-<ul>
-<li><em>Amazon Route 53</em>: Quản lý DNS và tên miền truy cập.</li>
-<li><em>AWS WAF</em>: Bảo vệ hệ thống khỏi các tấn công web phổ biến.</li>
-<li><em>Amazon CloudFront</em>: Phân phối nội dung tĩnh toàn cầu và tăng tốc truy cập frontend.</li>
-<li><em>Amazon S3</em>: Lưu trữ website tĩnh và file người dùng (hóa đơn, ghi âm).</li>
-<li><em>Amazon Cognito</em>: Xác thực và quản lý người dùng.</li>
-<li><em>Amazon API Gateway</em>: Cổng vào của hệ thống, định tuyến request từ frontend đến backend.</li>
-<li><em>AWS PrivateLink</em>: Tạo kết nối riêng giữa API Gateway và ALB trong VPC để tăng cường bảo mật.</li>
-<li><em>Application Load Balancer (ALB)</em>: Cân bằng tải giữa các container backend trên ECS.</li>
-<li><em>Amazon ECS (Fargate)</em>: Chạy các microservices Backend và FastAPI (AI).</li>
-<li><em>Amazon ECR</em>: Kho lưu trữ image container cho ECS.</li>
-<li><em>Amazon CloudWatch</em>: Giám sát logs, hiệu năng và cảnh báo hệ thống.</li>
-<li><em>Amazon SNS</em>: Gửi thông báo hoặc cảnh báo khi có sự cố.</li>
-<li><em>GitLab CI/CD</em>: Tự động hóa pipeline build, push và deploy container lên ECS.</li>
-</ul>
-<hr>
+<p>Hệ thống được thiết kế theo mô hình <strong>Microservices</strong> phân tán, sử dụng API Gateway làm điểm nhập duy nhất.</p>
+<p><img src="../../images/2-Proposal/development_architecture.png" alt="Ứng dụng quản lý tài chính cá nhân Software Architecture"></p>
+<h4 id="chi-tiết-tech-stack">Chi tiết Tech Stack:</h4>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Thành phần</th>
+          <th style="text-align: left">Công nghệ</th>
+          <th style="text-align: left">Chi tiết</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Frontend</strong></td>
+          <td style="text-align: left"><strong>Next.js 16</strong></td>
+          <td style="text-align: left">App Router, TypeScript, Tailwind CSS, Zustand, React Query.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Backend Core</strong></td>
+          <td style="text-align: left"><strong>.NET Aspire</strong></td>
+          <td style="text-align: left">Điều phối Microservices (User, Wallet, Transaction, Report, Notification).</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>AI Service</strong></td>
+          <td style="text-align: left"><strong>FastAPI (Python)</strong></td>
+          <td style="text-align: left">Xử lý Voice (PhoWhisper), OCR (Bedrock), Chatbot (RAG).</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Database</strong></td>
+          <td style="text-align: left"><strong>Polyglot</strong></td>
+          <td style="text-align: left">PostgreSQL, MongoDB, Elasticsearch, Qdrant (Vector DB).</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Messaging</strong></td>
+          <td style="text-align: left"><strong>RabbitMQ</strong></td>
+          <td style="text-align: left">Giao tiếp bất đồng bộ giữa các service.</td>
+      </tr>
+  </tbody>
+</table>
+<p><img src="../../images/2-Proposal/cloud_architecture.png" alt="Ứng dụng quản lý tài chính cá nhân Cloud Architecture"></p>
+<h4 id="luồng-hoạt-động-trên-aws">Luồng hoạt động trên AWS:</h4>
+<ol>
+<li><strong>Truy cập:</strong> Người dùng truy cập qua <strong>Route 53</strong>, được bảo vệ bởi <strong>AWS WAF</strong> và tăng tốc bởi <strong>CloudFront</strong>.</li>
+<li><strong>Xác thực:</strong> <strong>Amazon Cognito</strong> quản lý định danh và cấp phát JWT Token.</li>
+<li><strong>Xử lý API:</strong> Request đi qua <strong>API Gateway</strong>, kết nối an toàn qua <strong>AWS PrivateLink</strong> tới <strong>Application Load Balancer (ALB)</strong>.</li>
+<li><strong>Compute:</strong> ALB phân phối tải tới các container trong <strong>ECS Fargate</strong> (nằm trong Private Subnet).</li>
+<li><strong>DevOps:</strong> Quy trình CI/CD tự động hóa hoàn toàn bằng <strong>GitLab</strong>, build image đẩy lên <strong>Amazon ECR</strong> và update task trên ECS.</li>
+</ol>
 <h3 id="4-triển-khai-kỹ-thuật">4. Triển khai kỹ thuật</h3>
 <h4 id="các-giai-đoạn-triển-khai">Các giai đoạn triển khai</h4>
+<p>Dự án kéo dài 4 tháng (bao gồm thực tập):</p>
 <ol>
-<li><em>Nghiên cứu và vẽ kiến trúc</em>: Nghiên cứu các mô hình microservices và thiết kế kiến trúc tổng thể trên AWS (bao gồm CloudFront, ECS Fargate, RDS, S3, API Gateway, Cognito) — (Tháng 1).</li>
-<li><em>Tính toán chi phí và điều chỉnh giải pháp</em>: Sử dụng AWS Pricing Calculator để ước tính chi phí, tối ưu lựa chọn dịch vụ nhằm đảm bảo chi phí thấp và dễ triển khai cho người mới học — (Tháng 2–3).</li>
-<li><em>Phát triển, kiểm thử, triển khai</em>: Xây dựng frontend (Next.js), backend (.NET), và AI service (FastAPI); kiểm thử tích hợp microservices, sau đó triển khai toàn bộ hệ thống lên AWS bằng ECS Fargate và thiết lập giám sát qua CloudWatch — (Tháng 3–4).</li>
+<li><strong>Tháng 0 (Pre-internship):</strong> Lên ý tưởng và kế hoạch tổng thể.</li>
+<li><strong>Tháng 1 (Foundation):</strong> Học AWS, nâng cấp kỹ năng .NET/Next.js/AI. Thiết lập VPC, IAM.</li>
+<li><strong>Tháng 2 (Design):</strong> Thiết kế kiến trúc High-level &amp; Detailed trên AWS.</li>
+<li><strong>Tháng 3-4 (Realization):</strong> Coding, Integration Testing, Deploy lên AWS Production, thiết lập Monitoring.</li>
+<li><strong>Sau tháng 5:</strong> Nghiên cứu phát triển Mobile App.</li>
 </ol>
-<h4 id="yêu-cầu-kỹ-thuật">Yêu cầu kỹ thuật</h4>
+<h4 id="yêu-cầu-kỹ-thuật-chi-tiết">Yêu cầu kỹ thuật chi tiết:</h4>
 <ul>
-<li><em>Frontend</em>:
-Ứng dụng web <strong>Next.js</strong> được lưu trữ trong <strong>Amazon S3</strong> và phân phối qua <strong>CloudFront</strong>, giao tiếp với backend thông qua <strong>API Gateway</strong>.
-Người dùng đăng nhập qua <strong>Amazon Cognito</strong>, nhận token để gọi API bảo mật.</li>
-<li><em>Backend</em>:
-Viết bằng <strong>.NET</strong> hoặc framework tương tự, triển khai trên <strong>ECS Fargate</strong>.
-Các service xử lý nghiệp vụ người dùng, giao dịch và các yêu cầu từ frontend.
-Container image được lưu trong <strong>ECR</strong>, được cập nhật qua pipeline CI/CD từ <strong>GitLab</strong>.
-<strong>ALB</strong> được dùng để cân bằng tải giữa các container backend.</li>
-<li><em>AI Service</em>:
-Viết bằng <strong>FastAPI</strong>, xử lý hình ảnh hóa đơn và giọng nói, kết nối đến <strong>S3</strong> để đọc dữ liệu.
-Kết quả được trả về <strong>Backend Service</strong> thông qua API nội bộ.</li>
-<li><em>Hạ tầng Cloud</em>:
-Sử dụng <strong>Amazon VPC</strong> (multi-AZ), <strong>Application Load Balancer</strong>, và <strong>CloudWatch</strong> để giám sát.
-Hình ảnh container được lưu trữ trên <strong>ECR</strong> và triển khai qua <strong>ECS Fargate</strong>.
-CI/CD được thực hiện qua <strong>GitLab CI/CD</strong> để tự động hóa build và deploy.</li>
-<li><em>Bảo mật</em>:
-Quản lý quyền truy cập người dùng bằng <strong>Amazon Cognito</strong>.
-Sử dụng <strong>IAM Roles</strong> cho ECS, S3, CloudWatch, và API Gateway để giới hạn quyền truy cập.
-<strong>Security Group</strong> được cấu hình chặt chẽ giữa ECS, ALB và các dịch vụ khác để đảm bảo an toàn mạng.
-<strong>AWS WAF</strong> được cấu hình để bảo vệ tầng frontend khỏi các tấn công web phổ biến.</li>
-</ul>
-<h3 id="5-lộ-trình--mốc-triển-khai">5. Lộ trình &amp; Mốc triển khai</h3>
+<li><strong>Frontend:</strong> Triển khai <strong>Next.js 16</strong> trên S3 + CloudFront. Sử dụng <strong>Origin Access Control (OAC)</strong> để bảo mật bucket.</li>
+<li><strong>Backend:</strong>
 <ul>
-<li><em>Trước thực tập (Tháng 0)</em>: 1 tháng lên kế hoạch.</li>
-<li><em>Thực tập (Tháng 1–4)</em>:
-<ul>
-<li>Tháng 1: Học AWS và nâng cấp kỹ năng lập trình.</li>
-<li>Tháng 2: Thiết kế và điều chỉnh kiến trúc.</li>
-<li>Tháng 3-4: Triển khai, kiểm thử, đưa vào sử dụng.</li>
+<li>Sử dụng <strong>.NET Aspire</strong> để quản lý cấu hình Cloud-native.</li>
+<li>Database-per-service: <strong>PostgreSQL</strong> &amp; <strong>MongoDB</strong>. <strong>Elasticsearch</strong> cho tìm kiếm giao dịch phức tạp.</li>
+<li>Background Jobs: Sử dụng <strong>Hangfire</strong>.</li>
 </ul>
 </li>
-<li><em>Sau triển khai</em>: Nghiên cứu thêm về mobile và triển khai sau tháng thứ 5.</li>
+<li><strong>AI Service Pipelines:</strong>
+<ul>
+<li><em>Voice:</em> Tiền xử lý bằng Pydub, Model <strong>PhoWhisper-small</strong> (VinAI) cho tiếng Việt.</li>
+<li><em>OCR:</em> <strong>Amazon Bedrock</strong> (Claude 3.5 Sonnet Multimodal) để trích xuất thông tin hóa đơn chính xác.</li>
+<li><em>Chatbot (RAG):</em> Knowledge Base lưu trong <strong>Qdrant</strong>, sinh câu trả lời qua <strong>Amazon Bedrock</strong> (Claude 3.5 Sonnet).</li>
+</ul>
+</li>
+<li><strong>Bảo mật:</strong>
+<ul>
+<li>Mã hóa dữ liệu đường truyền (HTTPS/TLS 1.2+) và lưu trữ (AES-256).</li>
+<li>Quản lý bí mật (Secrets) chưa tích hợp sâu (đang ở mức MVP), sẽ nâng cấp lên AWS Secrets Manager trong tương lai.</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-lộ-trình--mốc-triển-khai-sprints">5. Lộ trình &amp; Mốc triển khai (Sprints)</h3>
+<p>Giai đoạn thực thi chính được chia thành 4 Sprint:</p>
+<ul>
+<li><strong>Sprint 1: Core Foundation</strong>
+<ul>
+<li>Xác thực (Cognito), Quản lý Ví (Wallets), Hũ chi tiêu (Spending Jars).</li>
+</ul>
+</li>
+<li><strong>Sprint 2: Core Features</strong>
+<ul>
+<li>Giao dịch (CRUD), Xử lý giọng nói AI (Voice Processing).</li>
+</ul>
+</li>
+<li><strong>Sprint 3: Analytics</strong>
+<ul>
+<li>Báo cáo/Biểu đồ, Hệ thống thông báo (SES), Message Broker.</li>
+</ul>
+</li>
+<li><strong>Sprint 4: Stabilization</strong>
+<ul>
+<li>Kiểm thử tích hợp (Integration Testing), Tinh chỉnh UI, Deploy lên AWS ECS &amp; CloudFront.</li>
+</ul>
+</li>
+<li><strong>Testing &amp; Go-live:</strong>
+<ul>
+<li>Cấu hình Domain, SSL, Monitoring Dashboard, UAT và bảo vệ đồ án.</li>
+</ul>
+</li>
 </ul>
 <h3 id="6-ước-tính-ngân-sách">6. Ước tính ngân sách</h3>
+<p>Dựa trên bảng dự toán chi tiết cho giai đoạn MVP.</p>
 <p>Bạn có thể xem chi tiết bảng dự toán chi phí bằng cách tải về các tệp sau:
 <em>📊 <a href="../../files/2-Proposal/pricing.csv" download>Tệp định dạng CSV</a></em>
 <em>💾 <a href="../../files/2-Proposal/pricing.json" download>Tệp định dạng JSON</a></em></p>
 <table>
   <thead>
       <tr>
-          <th>Dịch vụ</th>
-          <th style="text-align: right">Chi Phí</th>
+          <th style="text-align: left">Dịch vụ AWS</th>
+          <th style="text-align: left">Thành phần / Sử dụng</th>
+          <th style="text-align: left">Chi Phí (USD/tháng)</th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td>AWS Fargate (ECS)</td>
-          <td style="text-align: right">17,30 USD / tháng</td>
+          <td style="text-align: left"><strong>Elastic Load Balancing</strong></td>
+          <td style="text-align: left">Application Load Balancer</td>
+          <td style="text-align: left">$18.98</td>
       </tr>
       <tr>
-          <td>Application Load Balancer</td>
-          <td style="text-align: right">18,98 USD / tháng</td>
+          <td style="text-align: left"><strong>Amazon ECS</strong></td>
+          <td style="text-align: left">Fargate (vCPU &amp; Memory)</td>
+          <td style="text-align: left">$17.30</td>
       </tr>
       <tr>
-          <td>Amazon API Gateway</td>
-          <td style="text-align: right">2,50 USD / tháng</td>
+          <td style="text-align: left"><strong>Amazon VPC</strong></td>
+          <td style="text-align: left">VPC Endpoints &amp; NAT</td>
+          <td style="text-align: left">$10.49</td>
       </tr>
       <tr>
-          <td>Amazon Cognito</td>
-          <td style="text-align: right">0,00 USD / tháng</td>
+          <td style="text-align: left"><strong>AWS WAF</strong></td>
+          <td style="text-align: left">Web ACL &amp; Requests</td>
+          <td style="text-align: left">$7.20</td>
       </tr>
       <tr>
-          <td>Amazon ECR</td>
-          <td style="text-align: right">1,00 USD / tháng</td>
+          <td style="text-align: left"><strong>Amazon API Gateway</strong></td>
+          <td style="text-align: left">API Calls &amp; Data Transfer</td>
+          <td style="text-align: left">$2.50</td>
       </tr>
       <tr>
-          <td>Amazon Route 53</td>
-          <td style="text-align: right">0,54 USD / tháng</td>
+          <td style="text-align: left"><strong>Amazon CloudFront</strong></td>
+          <td style="text-align: left">Data Transfer Out</td>
+          <td style="text-align: left">$2.00</td>
       </tr>
       <tr>
-          <td>AWS WAF</td>
-          <td style="text-align: right">7,20 USD / tháng</td>
+          <td style="text-align: left"><strong>Amazon ECR</strong></td>
+          <td style="text-align: left">Storage</td>
+          <td style="text-align: left">$1.00</td>
       </tr>
       <tr>
-          <td>Amazon CloudFront</td>
-          <td style="text-align: right">2,00 USD / tháng</td>
+          <td style="text-align: left"><strong>Amazon Route 53</strong></td>
+          <td style="text-align: left">Hosted Zones</td>
+          <td style="text-align: left">$0.54</td>
       </tr>
       <tr>
-          <td>AWS PrivateLink</td>
-          <td style="text-align: right">10,49 USD / tháng</td>
+          <td style="text-align: left"><strong>Amazon S3</strong></td>
+          <td style="text-align: left">Standard Storage</td>
+          <td style="text-align: left">$0.34</td>
       </tr>
       <tr>
-          <td>Amazon S3</td>
-          <td style="text-align: right">0,34 USD / tháng</td>
-      </tr>
-      <tr>
-          <td><strong>Tổng ước tính</strong></td>
-          <td style="text-align: right"><strong>≈ 60,35 USD / tháng</strong> (≈ 724,21 USD / năm)</td>
+          <td style="text-align: left"><strong>TỔNG CHI PHÍ AWS</strong></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"><strong>~$60.35</strong></td>
       </tr>
   </tbody>
 </table>
-<p><strong>Ghi chú:</strong> Chi phí trên được tính toán dựa trên AWS Pricing Calculator cho khu vực Asia Pacific (Singapore) với giả định sử dụng cho 100 người dùng hoạt động hàng tháng và các tài nguyên cơ bản.</p>
+<p><strong>Chi phí khác:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Hạng mục</th>
+          <th style="text-align: left">Chi tiết</th>
+          <th style="text-align: left">Chi Phí (USD/tháng)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>AI Compute / Tooling</strong></td>
+          <td style="text-align: left">Gemini API, Amazon Bedrock</td>
+          <td style="text-align: left">~$15.00</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>TỔNG CỘNG DỰ ÁN</strong></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"><strong>~$75.35 / tháng</strong></td>
+      </tr>
+  </tbody>
+</table>
+<p><em>(Dựa trên giá On-Demand khu vực Singapore - ap-southeast-1)</em></p>
 <h3 id="7-đánh-giá-rủi-ro">7. Đánh giá rủi ro</h3>
-<p><em>Ma trận rủi ro</em></p>
 <ul>
-<li>Mô hình AI nhận dạng sai (voice/bill): Ảnh hưởng trung bình, xác suất trung bình.</li>
-<li>Mất kết nối AWS hoặc lỗi dịch vụ vùng (region): Ảnh hưởng cao, xác suất thấp.</li>
-<li>Vượt ngân sách sử dụng AWS: Ảnh hưởng trung bình, xác suất thấp.</li>
-<li>Lỗi đồng bộ dữ liệu giữa các microservices: Ảnh hưởng trung bình, xác suất trung bình.</li>
-<li>Lộ thông tin người dùng (Cognito/Database): Ảnh hưởng cao, xác suất thấp.</li>
+<li><strong>Rủi ro chính:</strong> Lộ thông tin người dùng (Impact: High), Mất kết nối AWS Region (Impact: High), AI nhận diện sai (Impact: Medium).</li>
+<li><strong>Chiến lược giảm thiểu:</strong>
+<ul>
+<li><em>Bảo mật:</em> Mã hóa AES-256, HTTPS, IAM Least Privilege, AWS WAF.</li>
+<li><em>High Availability:</em> Triển khai Multi-AZ cho ECS và ALB.</li>
+<li><em>AI:</em> Cải thiện model liên tục với dữ liệu thực tế.</li>
+<li><em>Resilience:</em> Sử dụng RabbitMQ nội bộ để xử lý bất đồng bộ và retry.</li>
 </ul>
-<p><em>Chiến lược giảm thiểu</em></p>
-<ul>
-<li>AI: Cải thiện mô hình OCR và voice-to-text qua huấn luyện thêm, kiểm thử định kỳ với dữ liệu thực tế.</li>
-<li>AWS Region: Thiết lập triển khai đa vùng (multi-AZ) và backup định kỳ cơ sở dữ liệu RDS.</li>
-<li>Chi phí: Cấu hình <strong>AWS Budget Alert</strong> và tối ưu ECS, S3 theo mức sử dụng thực tế.</li>
-<li>Microservices: Dùng <strong>SQS/RabbitMQ</strong> để đảm bảo xử lý bất đồng bộ và retry khi lỗi.</li>
-<li>Bảo mật: Mã hóa dữ liệu (AES-256, HTTPS), kiểm soát IAM theo nguyên tắc “Least Privilege”.</li>
+</li>
+<li><strong>Kế hoạch dự phòng (Disaster Recovery):</strong> Sử dụng IaC (Infrastructure as Code) để khôi phục nhanh hạ tầng.</li>
 </ul>
-<p><em>Kế hoạch dự phòng</em></p>
+<h3 id="8-kết-quả-kỳ-vọng--đội-ngũ">8. Kết quả kỳ vọng &amp; Đội ngũ</h3>
+<h4 id="kết-quả-mong-đợi-của-dự-án">Kết quả mong đợi của dự án</h4>
 <ul>
-<li>Nếu AWS gặp sự cố: Tạm thời chuyển sang lưu trữ dữ liệu giao dịch cục bộ và đồng bộ lại sau khi khôi phục.</li>
-<li>Khôi phục hạ tầng bằng <strong>AWS CloudFormation</strong> hoặc <strong>IaC (Infrastructure as Code)</strong> đã lưu sẵn.</li>
-<li>Giữ bản sao cơ sở dữ liệu định kỳ (RDS snapshot) để phục hồi trong tình huống mất dữ liệu.</li>
+<li><strong>Nhập liệu tài chính tự động:</strong> Ứng dụng giúp người dùng tránh nhập liệu thủ công, chỉ cần chụp ảnh hóa đơn hoặc ghi âm giọng nói để hệ thống tự động phân loại chi tiêu.</li>
+<li><strong>Quản lý tài chính trực quan:</strong> Người dùng có thể xem biểu đồ chi tiêu, báo cáo hàng tháng và nhận đề xuất tiết kiệm dựa trên hành vi tiêu dùng.</li>
+<li><strong>Trải nghiệm người dùng tối thiểu:</strong> Giao diện web thân thiện, thiết kế hiện đại, được tối ưu hóa cho thiết bị di động và phù hợp với người mới bắt đầu quản lý tài chính.</li>
+<li><strong>Hệ thống ổn định, có khả năng mở rộng:</strong> Kiến trúc microservices giúp dễ dàng thêm các tính năng mới như nhắc nhở chi tiêu, phân tích dự đoán AI hoặc mở rộng sang ứng dụng di động.</li>
+<li><strong>Nâng cao kỹ năng nhóm phát triển:</strong> Các thành viên dự án có quyền truy cập thực tế vào các quy trình DevOps, triển khai CI/CD và tối ưu hóa ứng dụng trên nền tảng đám mây.</li>
 </ul>
-<h3 id="8-kết-quả-kỳ-vọng-của-dự-án">8. Kết quả kỳ vọng của dự án</h3>
+<h4 id="hạn-chế-của-dự-án">Hạn chế của dự án</h4>
 <ul>
-<li><strong>Tự động hóa nhập liệu tài chính:</strong> Ứng dụng giúp người dùng không cần nhập thủ công, chỉ cần chụp hóa đơn hoặc ghi âm giọng nói để hệ thống tự phân loại chi tiêu.</li>
-<li><strong>Quản lý tài chính trực quan:</strong> Người dùng có thể xem biểu đồ chi tiêu, báo cáo tháng, và nhận gợi ý tiết kiệm dựa trên hành vi tiêu dùng.</li>
-<li><strong>Trải nghiệm người dùng tối giản:</strong> Giao diện web thân thiện, thiết kế hiện đại, tối ưu cho thiết bị di động và phù hợp với người mới quản lý tài chính.</li>
-<li><strong>Hệ thống ổn định, dễ mở rộng:</strong> Kiến trúc microservices giúp dễ dàng bổ sung tính năng mới như nhắc nhở chi tiêu, phân tích dự báo AI, hoặc mở rộng sang mobile app.</li>
-<li><strong>Nâng cao kỹ năng nhóm phát triển:</strong> Thành viên dự án tiếp cận thực tế với quy trình DevOps, triển khai CI/CD, và tối ưu ứng dụng trên nền tảng cloud.</li>
+<li>
+<p><strong>Mô hình AI Việt Nam còn hạn chế:</strong> Khả năng nhận dạng giọng nói vùng miền hoặc hóa đơn viết tay vẫn chưa đạt độ chính xác cao.</p>
+</li>
+<li>
+<p><strong>Không có ứng dụng di động riêng biệt:</strong> Phiên bản MVP chỉ hỗ trợ nền tảng web, không có ứng dụng di động gốc.</p>
+</li>
 </ul>
-<h3 id="9-hạn-chế-của-dự-án">9. Hạn chế của dự án</h3>
+<h4 id="đội-ngũ-thực-hiện-team">Đội ngũ thực hiện (Team):</h4>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Họ tên</th>
+          <th style="text-align: left">Vai trò</th>
+          <th style="text-align: left">Email</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Lê Vũ Phương Hòa</strong></td>
+          <td style="text-align: left">Backend Developer (Leader)</td>
+          <td style="text-align: left"><a href="mailto:hoalvpse181951@fpt.edu.vn">hoalvpse181951@fpt.edu.vn</a></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Nguyễn Văn Anh Duy</strong></td>
+          <td style="text-align: left">AI Developer (Member)</td>
+          <td style="text-align: left"><a href="mailto:duynvase181823@fpt.edu.vn">duynvase181823@fpt.edu.vn</a></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Uông Tuấn Vũ</strong></td>
+          <td style="text-align: left">Frontend Developer (Member)</td>
+          <td style="text-align: left"><a href="mailto:vuutse180241@fpt.edu.vn">vuutse180241@fpt.edu.vn</a></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Trần Nguyễn Bảo Minh</strong></td>
+          <td style="text-align: left">AI Developer (Member)</td>
+          <td style="text-align: left"><a href="mailto:baominhbrthcs@gmail.com">baominhbrthcs@gmail.com</a></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Mentor Support:</strong></p>
 <ul>
-<li><strong>Mô hình AI tiếng Việt còn hạn chế:</strong> Khả năng nhận dạng giọng nói vùng miền hoặc hóa đơn viết tay chưa đạt độ chính xác cao.</li>
-<li><strong>Chưa có ứng dụng di động riêng:</strong> Phiên bản MVP chỉ hỗ trợ nền web, chưa có mobile app native.</li>
-<li><strong>Giới hạn người dùng:</strong> Kiến trúc hiện tại chỉ tối ưu cho 50–100 người dùng hoạt động; khi mở rộng quy mô cần tái cấu trúc hạ tầng.</li>
-<li><strong>Phụ thuộc kết nối Internet:</strong> Mọi thao tác xử lý và lưu trữ đều qua cloud, không thể hoạt động offline.</li>
-<li><strong>Chưa triển khai hệ thống bảo mật nâng cao:</strong> Mới dừng ở xác thực Cognito và mã hóa cơ bản, chưa có MFA (Multi-Factor Authentication) hay log bảo mật chuyên sâu.</li>
+<li><strong>Nguyễn Gia Hưng</strong> - Head of Solution Architects</li>
+<li><strong>Văn Hoàng Kha</strong> - Cloud Security Engineer</li>
 </ul>
 
 
@@ -1987,19 +2089,19 @@ Sử dụng <strong>IAM Roles</strong> cho ECS, S3, CloudWatch, và API Gateway 
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../js/clipboard.min.js?1765011020"></script>
-    <script src="../../js/perfect-scrollbar.min.js?1765011020"></script>
-    <script src="../../js/perfect-scrollbar.jquery.min.js?1765011020"></script>
-    <script src="../../js/jquery.sticky.js?1765011020"></script>
-    <script src="../../js/featherlight.min.js?1765011020"></script>
-    <script src="../../js/highlight.pack.js?1765011020"></script>
+    <script src="../../js/clipboard.min.js?1765017706"></script>
+    <script src="../../js/perfect-scrollbar.min.js?1765017706"></script>
+    <script src="../../js/perfect-scrollbar.jquery.min.js?1765017706"></script>
+    <script src="../../js/jquery.sticky.js?1765017706"></script>
+    <script src="../../js/featherlight.min.js?1765017706"></script>
+    <script src="../../js/highlight.pack.js?1765017706"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../js/modernizr.custom-3.6.0.js?1765011020"></script>
-    <script src="../../js/learn.js?1765011020"></script>
-    <script src="../../js/hugo-learn.js?1765011020"></script>
+    <script src="../../js/modernizr.custom-3.6.0.js?1765017706"></script>
+    <script src="../../js/learn.js?1765017706"></script>
+    <script src="../../js/hugo-learn.js?1765017706"></script>
 
-    <link href="../../mermaid/mermaid.css?1765011020" rel="stylesheet" />
-    <script src="../../mermaid/mermaid.js?1765011020"></script>
+    <link href="../../mermaid/mermaid.css?1765017706" rel="stylesheet" />
+    <script src="../../mermaid/mermaid.js?1765017706"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

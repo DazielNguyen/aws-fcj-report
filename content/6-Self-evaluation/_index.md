@@ -6,8 +6,9 @@ chapter: false
 pre: " <b> 6. </b> "
 ---
 
-During my internship at **[Company/Organization Name]** from **[start date]** to **[end date]**, I had the opportunity to learn, practice, and apply the knowledge acquired in school to a real-world working environment.  
-I participated in **[briefly describe the main project or task]**, through which I improved my skills in **[list skills: programming, analysis, reporting, communication, etc.]**.
+During my internship at **AWS/First Cloud AI Journey** from **08/08** to **12/12**, I had the opportunity to learn, practice, and apply the knowledge acquired in school to a real-world working environment.
+
+I participated in learning and researching the platform provided by AWS, as well as applying the knowledge learned to a group project with the FinTech theme, through which I improved my teamwork skills, task allocation for team members, and especially acquired desired skills such as Docker, AI Engineering, and applied AWS support services to programming work and the final project.
 
 In terms of work ethic, I always strived to complete tasks well, complied with workplace regulations, and actively engaged with colleagues to improve work efficiency.
 
@@ -19,9 +20,9 @@ To objectively reflect on my internship period, I would like to evaluate myself 
 | 2   | **Ability to learn**                | Ability to absorb new knowledge and learn quickly                                                | ☐    | ✅   | ☐       |
 | 3   | **Proactiveness**                   | Taking initiative, seeking out tasks without waiting for instructions                            | ✅   | ☐    | ☐       |
 | 4   | **Sense of responsibility**         | Completing tasks on time and ensuring quality                                                    | ✅   | ☐    | ☐       |
-| 5   | **Discipline**                      | Adhering to schedules, rules, and work processes                                                 | ☐    | ☐    | ✅      |
-| 6   | **Progressive mindset**             | Willingness to receive feedback and improve oneself                                              | ☐    | ✅   | ☐       |
-| 7   | **Communication**                   | Presenting ideas and reporting work clearly                                                      | ☐    | ✅   | ☐       |
+| 5   | **Discipline**                      | Adhering to schedules, rules, and work processes                                                 | ✅   | ☐    | ☐       |
+| 6   | **Progressive mindset**             | Willingness to receive feedback and improve oneself                                              | ✅   | ☐    | ☐       |
+| 7   | **Communication**                   | Presenting ideas and reporting work clearly                                                      | ✅   | ☐    | ☐       |
 | 8   | **Teamwork**                        | Working effectively with colleagues and participating in teams                                   | ✅   | ☐    | ☐       |
 | 9   | **Professional conduct**            | Respecting colleagues, partners, and the work environment                                        | ✅   | ☐    | ☐       |
 | 10  | **Problem-solving skills**          | Identifying problems, proposing solutions, and showing creativity                                | ☐    | ✅   | ☐       |
@@ -30,6 +31,7 @@ To objectively reflect on my internship period, I would like to evaluate myself 
 
 ### Needs Improvement
 
-- Strengthen discipline and strictly comply with the rules and regulations of the company or any organization
-- Improve problem-solving thinking
-- Enhance communication skills in both daily interactions and professional contexts, including handling situations effectively
+- Enhance learning ability, need to improve knowledge about Solution Architecture from senior colleagues
+- Improve problem-solving thinking, need to limit getting myself into struggle situations, ask friends and colleagues to improve difficult parts
+- Need to explore and improve knowledge about new technologies to fully supplement knowledge to become an AI Engineer
+- Communicate more with mentor colleagues, thereby enhancing knowledge about Cloud and applying it to future work

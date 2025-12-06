@@ -6,176 +6,177 @@ chapter: false
 pre: " <b> 2. </b> "
 ---
 
-# Ứng dụng quản lý tài chính cá nhân
+# Ứng dụng quản lý tài chính cá nhân (Vicobi)
+
+### Bạn có thể đọc toàn bộ proposal ở đây: <a href="/files/2-Proposal/Vicobi_Proposal.pdf" download>Vicobi Proposal</a>
 
 ### 1. Tóm tắt điều hành
 
-Dự án Personal Finance Management App hướng đến việc cung cấp một nền tảng quản lý tài chính cá nhân thông minh, hiện đại và mang tính tự động hóa cao. Ứng dụng cho phép người dùng ghi nhận thu chi, tạo và quản lý nhiều hũ tiền (money jars) theo mục đích khác nhau, lập kế hoạch chi tiêu, nhận cảnh báo thông minh và tạo báo cáo phân tích trực quan.
+Dự án **Vicobi** (Personal Finance Management App) hướng đến việc cung cấp một nền tảng quản lý tài chính cá nhân thông minh, hiện đại và mang tính tự động hóa cao. Vicobi đơn giản hóa việc quản lý tài chính qua 4 trụ cột chính:
 
-Ứng dụng được xây dựng với kiến trúc microservices trên nền tảng .NET và FastAPI, triển khai trên AWS Cloud, đảm bảo tính linh hoạt, khả năng mở rộng và an toàn dữ liệu. Quy trình phát triển tuân theo mô hình Agile/Scrum (2 tuần/sprint), với thời gian hoàn thành MVP trong 2 tháng.
+1.  **Ghi chép thông minh (Smart Recording):** Nhập liệu bằng giọng nói và quét hóa đơn, loại bỏ rào cản nhập liệu thủ công.
+2.  **Lập ngân sách theo mục tiêu (Goal-based Budgeting):** Tự động hóa tạo và quản lý các hũ tiền (money jars) linh hoạt.
+3.  **Phân tích & Kiểm soát:** Cung cấp báo cáo trực quan và hệ thống cảnh báo thông minh.
+4.  **Trợ lý tài chính (AI Chatbot):** Tích hợp Chatbot AI đóng vai trò tư vấn viên, hỗ trợ giải đáp và nâng cao kiến thức tài chính.
+
+Về mặt công nghệ, Vicobi được xây dựng trên kiến trúc **Microservices** sử dụng **.NET Aspire** và **FastAPI**, triển khai trên **AWS Cloud**, đảm bảo tính linh hoạt và an toàn dữ liệu. Quy trình phát triển tuân theo mô hình **Agile/Scrum** (2 tuần/sprint trong giai đoạn phát triển chính), với mục tiêu hoàn thành MVP trong 2 tháng thực thi.
 
 ### 2. Tuyên bố vấn đề
 
 #### Vấn đề hiện tại
 
-Trên thị trường đã có rất nhiều ứng dụng quản lý tài chính, tuy nhiên phần lớn vẫn yêu cầu người dùng nhập liệu thủ công — một công việc tốn thời gian, dễ sai sót và khiến người dùng nhanh chóng bỏ cuộc. Các ứng dụng hiện có chỉ tập trung vào thống kê chi tiêu mà chưa thực sự giúp người dùng tự động hóa quy trình quản lý tài chính cá nhân.
+Trong thị trường năng động hiện nay, người dùng gặp khó khăn trong việc kiểm soát tài chính do "sức ỳ hành vi" — ngại ghi chép thủ công từng giao dịch. Các ứng dụng hiện có (như Money Lover, Misa Money Keeper) vẫn dựa nhiều vào nhập liệu bằng tay, gây ra tình trạng "mệt mỏi khi nhập liệu" (input fatigue) và tỷ lệ bỏ cuộc cao.
 
 #### Giải pháp
 
-Giải pháp sử dụng AWS Cloud kết hợp kiến trúc microservices để xây dựng một nền tảng quản lý tài chính cá nhân tự động hóa, tích hợp AI trong xử lý giọng nói và nhận diện hóa đơn. Hệ thống được triển khai trên AWS ECS Fargate cho các service backend (.NET), FastAPI cho xử lý AI, và Next.js cho frontend. So với các nền tảng tài chính phổ biến như Money Lover hay Misa Money Keeper, ứng dụng này tập trung vào tự động hóa hoàn toàn nhập liệu tài chính thông qua AI voice-to-text và bill scanning chi tiết tiếng Việt, giúp giảm thao tác thủ công và sai sót. Hệ thống phù hợp cho người dùng cá nhân và nhóm nhỏ, đồng thời có thể mở rộng khi cần cho quy mô doanh nghiệp hoặc ứng dụng ngân hàng số.
+Vicobi giải quyết vấn đề bằng cách tự động hóa cao độ quy trình nhập liệu thông qua AWS Cloud và Microservices:
+
+- **Công nghệ lõi:** Tích hợp AI xử lý giọng nói tiếng Việt (Voice-to-Text) và nhận diện hóa đơn (OCR) chi tiết.
+- **Kiến trúc tối ưu:** Sử dụng **AWS ECS Fargate** chạy mô hình Multi-container Task (gộp Backend .NET và AI Service) để giảm chi phí hạ tầng nhưng vẫn đảm bảo giao tiếp liền mạch.
+- **Frontend hiện đại:** Sử dụng **Next.js** được lưu trữ trên **Amazon S3** và phân phối toàn cầu qua **Amazon CloudFront**.
 
 #### Lợi ích và hoàn vốn đầu tư (ROI)
 
-Giải pháp mang lại nhiều lợi ích thiết thực cả về mặt kỹ thuật và giá trị kinh doanh:
+Giải pháp mang lại lợi thế cạnh tranh rõ rệt:
 
-- Tự động hóa nhập liệu: Giảm hơn 70% thao tác thủ công nhờ AI nhận diện giọng nói và hóa đơn.
-- Tăng độ chính xác: Hạn chế sai sót nhập liệu, đảm bảo tính toàn vẹn của dữ liệu tài chính (>90% chính xác).
-- Cải thiện hiệu suất người dùng: Ghi nhận và phân loại giao dịch chỉ trong vài giây, tối ưu trải nghiệm sử dụng.
-- Tiết kiệm chi phí: Chi phí hạ tầng thấp nhờ tận dụng AWS Free Tier đến năm 2026; chỉ ước tính ~60 USD/tháng cho AWS và ~30 USD cho compute AI.
-- Hoàn vốn nhanh: Dự kiến hoàn vốn trong 6–12 tháng, nhờ tiết kiệm thời gian nhập liệu và tăng hiệu suất vận hành.
-- Khả năng mở rộng & tích hợp: Kiến trúc microservices trên AWS cho phép dễ dàng bổ sung tính năng (mobile app, phân tích nâng cao, tích hợp ngân hàng).
+- **Giá trị người dùng:** Giảm hơn **70%** thao tác thủ công. Độ chính xác nhận diện giọng nói đạt **90%** và trích xuất hóa đơn đạt **80%**.
+- **Hiệu quả kinh tế:** Tận dụng tối đa AWS Free Tier (S3, CloudFront, Cognito). Ngân sách vận hành tinh gọn khoảng **~$60/tháng** cho hạ tầng và **~$15/tháng** cho AI compute.
+- **Hoàn vốn:** Dự kiến đạt ROI trong **6–12 tháng** nhờ tiết kiệm thời gian và tăng hiệu suất.
+- **Khả năng mở rộng:** Kiến trúc Microservices sẵn sàng cho việc tích hợp Mobile App hoặc Open Banking.
 
 ### 3. Kiến trúc giải pháp
 
-Hệ thống được triển khai theo mô hình **microservices** trên nền tảng **AWS Cloud**, kết hợp các dịch vụ serverless, container, và cơ sở dữ liệu quản lý để đảm bảo hiệu năng và khả năng mở rộng.
+Hệ thống được thiết kế theo mô hình **Microservices** phân tán, sử dụng API Gateway làm điểm nhập duy nhất.
 
-![Ứng dụng quản lý tài chính cá nhân Sofware Architecture](/images/2-Proposal/development_architecture.drawio.png)
+![Ứng dụng quản lý tài chính cá nhân Software Architecture](/images/2-Proposal/development_architecture.png)
 
-Người dùng truy cập ứng dụng web **Next.js** thông qua **Amazon CloudFront**, nội dung tĩnh được lưu trữ trong **Amazon S3** và phân phối qua **Amazon Route 53**.
-Lớp bảo mật đầu tiên được cung cấp bởi **AWS WAF** nhằm ngăn chặn các tấn công phổ biến như SQL Injection hoặc XSS.
+#### Chi tiết Tech Stack:
 
-Khi người dùng đăng nhập, quá trình xác thực được xử lý bởi **Amazon Cognito**, cấp token truy cập để frontend gửi các yêu cầu API qua **Amazon API Gateway**.
-API Gateway định tuyến yêu cầu đến **Application Load Balancer (ALB)** thông qua **AWS PrivateLink**, sau đó chuyển tiếp đến **Amazon ECS (Fargate)** — nơi triển khai các container backend bao gồm:
+| Thành phần       | Công nghệ            | Chi tiết                                                                   |
+| :--------------- | :------------------- | :------------------------------------------------------------------------- |
+| **Frontend**     | **Next.js 16**       | App Router, TypeScript, Tailwind CSS, Zustand, React Query.                |
+| **Backend Core** | **.NET Aspire**      | Điều phối Microservices (User, Wallet, Transaction, Report, Notification). |
+| **AI Service**   | **FastAPI (Python)** | Xử lý Voice (PhoWhisper), OCR (Bedrock), Chatbot (RAG).                    |
+| **Database**     | **Polyglot**         | PostgreSQL, MongoDB, Elasticsearch, Qdrant (Vector DB).                    |
+| **Messaging**    | **RabbitMQ**         | Giao tiếp bất đồng bộ giữa các service.                                    |
 
-- **Backend Service (.NET)**: Xử lý nghiệp vụ chính của hệ thống.
+![Ứng dụng quản lý tài chính cá nhân Cloud Architecture](/images/2-Proposal/cloud_architecture.png)
 
-- **AI Service (FastAPI)**: Xử lý hóa đơn, nhận dạng giọng nói và các tác vụ AI.
+#### Luồng hoạt động trên AWS:
 
-Khi người dùng tải hóa đơn hoặc ghi âm, file tạm thời được lưu trong **Amazon S3**.  
-**AI Service** có thể truy cập tệp từ **Amazon S3** để thực hiện các xử lý dữ liệu, sau đó trả kết quả lại cho **Backend Service** thông qua message broker.
-
-Hình ảnh container được lưu trữ trong **Amazon ECR**, và quá trình triển khai được tự động hóa qua **GitLab CI/CD Pipeline** — bao gồm các bước build image, push lên ECR, và cập nhật Task Definition trên ECS.
-
-Tất cả logs, metrics và cảnh báo từ ECS, API Gateway, và ALB được gửi về **Amazon CloudWatch** để giám sát tập trung, đồng thời **Amazon SNS** được cấu hình để gửi cảnh báo tự động khi có sự cố.
-
-![Ứng dụng quản lý tài chính cá nhân Cloud Architecture](/images/2-Proposal/cloud_architecture.drawio.png)
-
-_Dịch vụ AWS sử dụng_
-
-- _Amazon Route 53_: Quản lý DNS và tên miền truy cập.
-- _AWS WAF_: Bảo vệ hệ thống khỏi các tấn công web phổ biến.
-- _Amazon CloudFront_: Phân phối nội dung tĩnh toàn cầu và tăng tốc truy cập frontend.
-- _Amazon S3_: Lưu trữ website tĩnh và file người dùng (hóa đơn, ghi âm).
-- _Amazon Cognito_: Xác thực và quản lý người dùng.
-- _Amazon API Gateway_: Cổng vào của hệ thống, định tuyến request từ frontend đến backend.
-- _AWS PrivateLink_: Tạo kết nối riêng giữa API Gateway và ALB trong VPC để tăng cường bảo mật.
-- _Application Load Balancer (ALB)_: Cân bằng tải giữa các container backend trên ECS.
-- _Amazon ECS (Fargate)_: Chạy các microservices Backend và FastAPI (AI).
-- _Amazon ECR_: Kho lưu trữ image container cho ECS.
-- _Amazon CloudWatch_: Giám sát logs, hiệu năng và cảnh báo hệ thống.
-- _Amazon SNS_: Gửi thông báo hoặc cảnh báo khi có sự cố.
-- _GitLab CI/CD_: Tự động hóa pipeline build, push và deploy container lên ECS.
-
----
+1.  **Truy cập:** Người dùng truy cập qua **Route 53**, được bảo vệ bởi **AWS WAF** và tăng tốc bởi **CloudFront**.
+2.  **Xác thực:** **Amazon Cognito** quản lý định danh và cấp phát JWT Token.
+3.  **Xử lý API:** Request đi qua **API Gateway**, kết nối an toàn qua **AWS PrivateLink** tới **Application Load Balancer (ALB)**.
+4.  **Compute:** ALB phân phối tải tới các container trong **ECS Fargate** (nằm trong Private Subnet).
+5.  **DevOps:** Quy trình CI/CD tự động hóa hoàn toàn bằng **GitLab**, build image đẩy lên **Amazon ECR** và update task trên ECS.
 
 ### 4. Triển khai kỹ thuật
 
 #### Các giai đoạn triển khai
 
-1. _Nghiên cứu và vẽ kiến trúc_: Nghiên cứu các mô hình microservices và thiết kế kiến trúc tổng thể trên AWS (bao gồm CloudFront, ECS Fargate, RDS, S3, API Gateway, Cognito) — (Tháng 1).
-2. _Tính toán chi phí và điều chỉnh giải pháp_: Sử dụng AWS Pricing Calculator để ước tính chi phí, tối ưu lựa chọn dịch vụ nhằm đảm bảo chi phí thấp và dễ triển khai cho người mới học — (Tháng 2–3).
-3. _Phát triển, kiểm thử, triển khai_: Xây dựng frontend (Next.js), backend (.NET), và AI service (FastAPI); kiểm thử tích hợp microservices, sau đó triển khai toàn bộ hệ thống lên AWS bằng ECS Fargate và thiết lập giám sát qua CloudWatch — (Tháng 3–4).
+Dự án kéo dài 4 tháng (bao gồm thực tập):
 
-#### Yêu cầu kỹ thuật
+1.  **Tháng 0 (Pre-internship):** Lên ý tưởng và kế hoạch tổng thể.
+2.  **Tháng 1 (Foundation):** Học AWS, nâng cấp kỹ năng .NET/Next.js/AI. Thiết lập VPC, IAM.
+3.  **Tháng 2 (Design):** Thiết kế kiến trúc High-level & Detailed trên AWS.
+4.  **Tháng 3-4 (Realization):** Coding, Integration Testing, Deploy lên AWS Production, thiết lập Monitoring.
+5.  **Sau tháng 5:** Nghiên cứu phát triển Mobile App.
 
-- _Frontend_:
-  Ứng dụng web **Next.js** được lưu trữ trong **Amazon S3** và phân phối qua **CloudFront**, giao tiếp với backend thông qua **API Gateway**.
-  Người dùng đăng nhập qua **Amazon Cognito**, nhận token để gọi API bảo mật.
-- _Backend_:
-  Viết bằng **.NET** hoặc framework tương tự, triển khai trên **ECS Fargate**.
-  Các service xử lý nghiệp vụ người dùng, giao dịch và các yêu cầu từ frontend.
-  Container image được lưu trong **ECR**, được cập nhật qua pipeline CI/CD từ **GitLab**.
-  **ALB** được dùng để cân bằng tải giữa các container backend.
-- _AI Service_:
-  Viết bằng **FastAPI**, xử lý hình ảnh hóa đơn và giọng nói, kết nối đến **S3** để đọc dữ liệu.
-  Kết quả được trả về **Backend Service** thông qua API nội bộ.
-- _Hạ tầng Cloud_:
-  Sử dụng **Amazon VPC** (multi-AZ), **Application Load Balancer**, và **CloudWatch** để giám sát.
-  Hình ảnh container được lưu trữ trên **ECR** và triển khai qua **ECS Fargate**.
-  CI/CD được thực hiện qua **GitLab CI/CD** để tự động hóa build và deploy.
-- _Bảo mật_:
-  Quản lý quyền truy cập người dùng bằng **Amazon Cognito**.
-  Sử dụng **IAM Roles** cho ECS, S3, CloudWatch, và API Gateway để giới hạn quyền truy cập.
-  **Security Group** được cấu hình chặt chẽ giữa ECS, ALB và các dịch vụ khác để đảm bảo an toàn mạng.
-  **AWS WAF** được cấu hình để bảo vệ tầng frontend khỏi các tấn công web phổ biến.
+#### Yêu cầu kỹ thuật chi tiết:
 
-### 5. Lộ trình & Mốc triển khai
+- **Frontend:** Triển khai **Next.js 16** trên S3 + CloudFront. Sử dụng **Origin Access Control (OAC)** để bảo mật bucket.
+- **Backend:**
+  - Sử dụng **.NET Aspire** để quản lý cấu hình Cloud-native.
+  - Database-per-service: **PostgreSQL** & **MongoDB**. **Elasticsearch** cho tìm kiếm giao dịch phức tạp.
+  - Background Jobs: Sử dụng **Hangfire**.
+- **AI Service Pipelines:**
+  - _Voice:_ Tiền xử lý bằng Pydub, Model **PhoWhisper-small** (VinAI) cho tiếng Việt.
+  - _OCR:_ **Amazon Bedrock** (Claude 3.5 Sonnet Multimodal) để trích xuất thông tin hóa đơn chính xác.
+  - _Chatbot (RAG):_ Knowledge Base lưu trong **Qdrant**, sinh câu trả lời qua **Amazon Bedrock** (Claude 3.5 Sonnet).
+- **Bảo mật:**
+  - Mã hóa dữ liệu đường truyền (HTTPS/TLS 1.2+) và lưu trữ (AES-256).
+  - Quản lý bí mật (Secrets) chưa tích hợp sâu (đang ở mức MVP), sẽ nâng cấp lên AWS Secrets Manager trong tương lai.
 
-- _Trước thực tập (Tháng 0)_: 1 tháng lên kế hoạch.
-- _Thực tập (Tháng 1–4)_:
-  - Tháng 1: Học AWS và nâng cấp kỹ năng lập trình.
-  - Tháng 2: Thiết kế và điều chỉnh kiến trúc.
-  - Tháng 3-4: Triển khai, kiểm thử, đưa vào sử dụng.
-- _Sau triển khai_: Nghiên cứu thêm về mobile và triển khai sau tháng thứ 5.
+### 5. Lộ trình & Mốc triển khai (Sprints)
+
+Giai đoạn thực thi chính được chia thành 4 Sprint:
+
+- **Sprint 1: Core Foundation**
+  - Xác thực (Cognito), Quản lý Ví (Wallets), Hũ chi tiêu (Spending Jars).
+- **Sprint 2: Core Features**
+  - Giao dịch (CRUD), Xử lý giọng nói AI (Voice Processing).
+- **Sprint 3: Analytics**
+  - Báo cáo/Biểu đồ, Hệ thống thông báo (SES), Message Broker.
+- **Sprint 4: Stabilization**
+  - Kiểm thử tích hợp (Integration Testing), Tinh chỉnh UI, Deploy lên AWS ECS & CloudFront.
+- **Testing & Go-live:**
+  - Cấu hình Domain, SSL, Monitoring Dashboard, UAT và bảo vệ đồ án.
 
 ### 6. Ước tính ngân sách
+
+Dựa trên bảng dự toán chi tiết cho giai đoạn MVP.
 
 Bạn có thể xem chi tiết bảng dự toán chi phí bằng cách tải về các tệp sau:
 _📊 <a href="/files/2-Proposal/pricing.csv" download>Tệp định dạng CSV</a>_
 _💾 <a href="/files/2-Proposal/pricing.json" download>Tệp định dạng JSON</a>_
 
-| Dịch vụ                   |                                      Chi Phí |
-| ------------------------- | -------------------------------------------: |
-| AWS Fargate (ECS)         |                            17,30 USD / tháng |
-| Application Load Balancer |                            18,98 USD / tháng |
-| Amazon API Gateway        |                             2,50 USD / tháng |
-| Amazon Cognito            |                             0,00 USD / tháng |
-| Amazon ECR                |                             1,00 USD / tháng |
-| Amazon Route 53           |                             0,54 USD / tháng |
-| AWS WAF                   |                             7,20 USD / tháng |
-| Amazon CloudFront         |                             2,00 USD / tháng |
-| AWS PrivateLink           |                            10,49 USD / tháng |
-| Amazon S3                 |                             0,34 USD / tháng |
-| **Tổng ước tính**         | **≈ 60,35 USD / tháng** (≈ 724,21 USD / năm) |
+| Dịch vụ AWS                | Thành phần / Sử dụng      | Chi Phí (USD/tháng) |
+| :------------------------- | :------------------------ | :------------------ |
+| **Elastic Load Balancing** | Application Load Balancer | $18.98              |
+| **Amazon ECS**             | Fargate (vCPU & Memory)   | $17.30              |
+| **Amazon VPC**             | VPC Endpoints & NAT       | $10.49              |
+| **AWS WAF**                | Web ACL & Requests        | $7.20               |
+| **Amazon API Gateway**     | API Calls & Data Transfer | $2.50               |
+| **Amazon CloudFront**      | Data Transfer Out         | $2.00               |
+| **Amazon ECR**             | Storage                   | $1.00               |
+| **Amazon Route 53**        | Hosted Zones              | $0.54               |
+| **Amazon S3**              | Standard Storage          | $0.34               |
+| **TỔNG CHI PHÍ AWS**       |                           | **~$60.35**         |
 
-**Ghi chú:** Chi phí trên được tính toán dựa trên AWS Pricing Calculator cho khu vực Asia Pacific (Singapore) với giả định sử dụng cho 100 người dùng hoạt động hàng tháng và các tài nguyên cơ bản.
+**Chi phí khác:**
+| Hạng mục | Chi tiết | Chi Phí (USD/tháng) |
+| :--- | :--- | :--- |
+| **AI Compute / Tooling** | Gemini API, Amazon Bedrock | ~$15.00 |
+| **TỔNG CỘNG DỰ ÁN** | | **~$75.35 / tháng** |
+
+_(Dựa trên giá On-Demand khu vực Singapore - ap-southeast-1)_
 
 ### 7. Đánh giá rủi ro
 
-_Ma trận rủi ro_
+- **Rủi ro chính:** Lộ thông tin người dùng (Impact: High), Mất kết nối AWS Region (Impact: High), AI nhận diện sai (Impact: Medium).
+- **Chiến lược giảm thiểu:**
+  - _Bảo mật:_ Mã hóa AES-256, HTTPS, IAM Least Privilege, AWS WAF.
+  - _High Availability:_ Triển khai Multi-AZ cho ECS và ALB.
+  - _AI:_ Cải thiện model liên tục với dữ liệu thực tế.
+  - _Resilience:_ Sử dụng RabbitMQ nội bộ để xử lý bất đồng bộ và retry.
+- **Kế hoạch dự phòng (Disaster Recovery):** Sử dụng IaC (Infrastructure as Code) để khôi phục nhanh hạ tầng.
 
-- Mô hình AI nhận dạng sai (voice/bill): Ảnh hưởng trung bình, xác suất trung bình.
-- Mất kết nối AWS hoặc lỗi dịch vụ vùng (region): Ảnh hưởng cao, xác suất thấp.
-- Vượt ngân sách sử dụng AWS: Ảnh hưởng trung bình, xác suất thấp.
-- Lỗi đồng bộ dữ liệu giữa các microservices: Ảnh hưởng trung bình, xác suất trung bình.
-- Lộ thông tin người dùng (Cognito/Database): Ảnh hưởng cao, xác suất thấp.
+### 8. Kết quả kỳ vọng & Đội ngũ
 
-_Chiến lược giảm thiểu_
+#### Kết quả mong đợi của dự án
 
-- AI: Cải thiện mô hình OCR và voice-to-text qua huấn luyện thêm, kiểm thử định kỳ với dữ liệu thực tế.
-- AWS Region: Thiết lập triển khai đa vùng (multi-AZ) và backup định kỳ cơ sở dữ liệu RDS.
-- Chi phí: Cấu hình **AWS Budget Alert** và tối ưu ECS, S3 theo mức sử dụng thực tế.
-- Microservices: Dùng **SQS/RabbitMQ** để đảm bảo xử lý bất đồng bộ và retry khi lỗi.
-- Bảo mật: Mã hóa dữ liệu (AES-256, HTTPS), kiểm soát IAM theo nguyên tắc “Least Privilege”.
+- **Nhập liệu tài chính tự động:** Ứng dụng giúp người dùng tránh nhập liệu thủ công, chỉ cần chụp ảnh hóa đơn hoặc ghi âm giọng nói để hệ thống tự động phân loại chi tiêu.
+- **Quản lý tài chính trực quan:** Người dùng có thể xem biểu đồ chi tiêu, báo cáo hàng tháng và nhận đề xuất tiết kiệm dựa trên hành vi tiêu dùng.
+- **Trải nghiệm người dùng tối thiểu:** Giao diện web thân thiện, thiết kế hiện đại, được tối ưu hóa cho thiết bị di động và phù hợp với người mới bắt đầu quản lý tài chính.
+- **Hệ thống ổn định, có khả năng mở rộng:** Kiến trúc microservices giúp dễ dàng thêm các tính năng mới như nhắc nhở chi tiêu, phân tích dự đoán AI hoặc mở rộng sang ứng dụng di động.
+- **Nâng cao kỹ năng nhóm phát triển:** Các thành viên dự án có quyền truy cập thực tế vào các quy trình DevOps, triển khai CI/CD và tối ưu hóa ứng dụng trên nền tảng đám mây.
 
-_Kế hoạch dự phòng_
+#### Hạn chế của dự án
 
-- Nếu AWS gặp sự cố: Tạm thời chuyển sang lưu trữ dữ liệu giao dịch cục bộ và đồng bộ lại sau khi khôi phục.
-- Khôi phục hạ tầng bằng **AWS CloudFormation** hoặc **IaC (Infrastructure as Code)** đã lưu sẵn.
-- Giữ bản sao cơ sở dữ liệu định kỳ (RDS snapshot) để phục hồi trong tình huống mất dữ liệu.
+- **Mô hình AI Việt Nam còn hạn chế:** Khả năng nhận dạng giọng nói vùng miền hoặc hóa đơn viết tay vẫn chưa đạt độ chính xác cao.
 
-### 8. Kết quả kỳ vọng của dự án
+- **Không có ứng dụng di động riêng biệt:** Phiên bản MVP chỉ hỗ trợ nền tảng web, không có ứng dụng di động gốc.
 
-- **Tự động hóa nhập liệu tài chính:** Ứng dụng giúp người dùng không cần nhập thủ công, chỉ cần chụp hóa đơn hoặc ghi âm giọng nói để hệ thống tự phân loại chi tiêu.
-- **Quản lý tài chính trực quan:** Người dùng có thể xem biểu đồ chi tiêu, báo cáo tháng, và nhận gợi ý tiết kiệm dựa trên hành vi tiêu dùng.
-- **Trải nghiệm người dùng tối giản:** Giao diện web thân thiện, thiết kế hiện đại, tối ưu cho thiết bị di động và phù hợp với người mới quản lý tài chính.
-- **Hệ thống ổn định, dễ mở rộng:** Kiến trúc microservices giúp dễ dàng bổ sung tính năng mới như nhắc nhở chi tiêu, phân tích dự báo AI, hoặc mở rộng sang mobile app.
-- **Nâng cao kỹ năng nhóm phát triển:** Thành viên dự án tiếp cận thực tế với quy trình DevOps, triển khai CI/CD, và tối ưu ứng dụng trên nền tảng cloud.
+#### Đội ngũ thực hiện (Team):
 
-### 9. Hạn chế của dự án
+| Họ tên                   | Vai trò                     | Email                     |
+| :----------------------- | :-------------------------- | :------------------------ |
+| **Lê Vũ Phương Hòa**     | Backend Developer (Leader)  | hoalvpse181951@fpt.edu.vn |
+| **Nguyễn Văn Anh Duy**   | AI Developer (Member)       | duynvase181823@fpt.edu.vn |
+| **Uông Tuấn Vũ**         | Frontend Developer (Member) | vuutse180241@fpt.edu.vn   |
+| **Trần Nguyễn Bảo Minh** | AI Developer (Member)       | baominhbrthcs@gmail.com   |
 
-- **Mô hình AI tiếng Việt còn hạn chế:** Khả năng nhận dạng giọng nói vùng miền hoặc hóa đơn viết tay chưa đạt độ chính xác cao.
-- **Chưa có ứng dụng di động riêng:** Phiên bản MVP chỉ hỗ trợ nền web, chưa có mobile app native.
-- **Giới hạn người dùng:** Kiến trúc hiện tại chỉ tối ưu cho 50–100 người dùng hoạt động; khi mở rộng quy mô cần tái cấu trúc hạ tầng.
-- **Phụ thuộc kết nối Internet:** Mọi thao tác xử lý và lưu trữ đều qua cloud, không thể hoạt động offline.
-- **Chưa triển khai hệ thống bảo mật nâng cao:** Mới dừng ở xác thực Cognito và mã hóa cơ bản, chưa có MFA (Multi-Factor Authentication) hay log bảo mật chuyên sâu.
+**Mentor Support:**
+
+- **Nguyễn Gia Hưng** - Head of Solution Architects
+- **Văn Hoàng Kha** - Cloud Security Engineer

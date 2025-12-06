@@ -15,21 +15,21 @@
     <title>Proposal :: Internship Report</title>
 
     
-    <link href="../css/nucleus.css?1765011019" rel="stylesheet">
-    <link href="../css/fontawesome-all.min.css?1765011019" rel="stylesheet">
-    <link href="../css/hybrid.css?1765011019" rel="stylesheet">
-    <link href="../css/featherlight.min.css?1765011019" rel="stylesheet">
-    <link href="../css/perfect-scrollbar.min.css?1765011019" rel="stylesheet">
-    <link href="../css/auto-complete.css?1765011019" rel="stylesheet">
-    <link href="../css/atom-one-dark-reasonable.css?1765011019" rel="stylesheet">
-    <link href="../css/theme.css?1765011019" rel="stylesheet">
-    <link href="../css/hugo-theme.css?1765011019" rel="stylesheet">
+    <link href="../css/nucleus.css?1765021312" rel="stylesheet">
+    <link href="../css/fontawesome-all.min.css?1765021312" rel="stylesheet">
+    <link href="../css/hybrid.css?1765021312" rel="stylesheet">
+    <link href="../css/featherlight.min.css?1765021312" rel="stylesheet">
+    <link href="../css/perfect-scrollbar.min.css?1765021312" rel="stylesheet">
+    <link href="../css/auto-complete.css?1765021312" rel="stylesheet">
+    <link href="../css/atom-one-dark-reasonable.css?1765021312" rel="stylesheet">
+    <link href="../css/theme.css?1765021312" rel="stylesheet">
+    <link href="../css/hugo-theme.css?1765021312" rel="stylesheet">
     
-    <link href="../css/theme-workshop.css?1765011019" rel="stylesheet">
+    <link href="../css/theme-workshop.css?1765021312" rel="stylesheet">
     
     
 
-    <script src="../js/jquery-3.3.1.min.js?1765011019"></script>
+    <script src="../js/jquery-3.3.1.min.js?1765021312"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -88,14 +88,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../js/lunr.min.js?1765011019"></script>
-<script type="text/javascript" src="../js/auto-complete.js?1765011019"></script>
+<script type="text/javascript" src="../js/lunr.min.js?1765021312"></script>
+<script type="text/javascript" src="../js/auto-complete.js?1765021312"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/aws-fcj-report\/";
     
 </script>
-<script type="text/javascript" src="../js/search.js?1765011019"></script>
+<script type="text/javascript" src="../js/search.js?1765021312"></script>
  
   </div>
 
@@ -1022,15 +1022,15 @@
   <ul>
     <li>
       <ul>
+        <li><a href="#you-can-read-the-full-proposal-here-vicobi-proposal">You can read the full proposal here: Vicobi Proposal</a></li>
         <li><a href="#1-executive-summary">1. Executive Summary</a></li>
         <li><a href="#2-problem-statement">2. Problem Statement</a></li>
         <li><a href="#3-solution-architecture">3. Solution Architecture</a></li>
         <li><a href="#4-technical-deployment">4. Technical Deployment</a></li>
-        <li><a href="#5-timeline--milestones">5. Timeline &amp; Milestones</a></li>
+        <li><a href="#5-timeline--milestones-sprints">5. Timeline &amp; Milestones (Sprints)</a></li>
         <li><a href="#6-budget-estimation">6. Budget Estimation</a></li>
         <li><a href="#7-risk-assessment">7. Risk Assessment</a></li>
-        <li><a href="#8-expected-results-of-the-project">8. Expected results of the project</a></li>
-        <li><a href="#9-project-limitations">9. Project limitations</a></li>
+        <li><a href="#8-expected-results--team">8. Expected Results &amp; Team</a></li>
       </ul>
     </li>
   </ul>
@@ -1057,181 +1057,251 @@
 
 
 
-	<h1 id="personal-finance-management-app">Personal Finance Management App</h1>
+	<h1 id="personal-finance-management-app-vicobi">Personal Finance Management App (Vicobi)</h1>
+<h3 id="you-can-read-the-full-proposal-here-vicobi-proposal">You can read the full proposal here: <a href="../files/2-Proposal/Vicobi_Proposal.pdf" download>Vicobi Proposal</a></h3>
 <h3 id="1-executive-summary">1. Executive Summary</h3>
-<p>The Personal Finance Management App project aims to provide an intelligent, modern, and highly automated personal financial management platform. The application allows users to record income and expenses, create and manage multiple money jars for different purposes, create spending plans, receive smart alerts, and generate visual analytical reports.</p>
-<p>The application is built with a microservices architecture on .NET and FastAPI platform, deployed on AWS Cloud, ensuring flexibility, scalability, and data security. The development process follows the Agile/Scrum model (2 weeks/sprint), with MVP completion time within 2 months.</p>
+<p>The <strong>Vicobi</strong> (Personal Finance Management App) project aims to provide an intelligent, modern, and highly automated personal financial management platform. Vicobi simplifies financial management through 4 main pillars:</p>
+<ol>
+<li><strong>Smart Recording:</strong> Voice input and invoice scanning, eliminating manual data entry barriers.</li>
+<li><strong>Goal-based Budgeting:</strong> Automated creation and flexible management of money jars.</li>
+<li><strong>Analysis &amp; Control:</strong> Provides visual reports and intelligent alert systems.</li>
+<li><strong>AI Financial Assistant (Chatbot):</strong> Integrates AI Chatbot acting as an advisor, supporting inquiries and enhancing financial knowledge.</li>
+</ol>
+<p>From a technical perspective, Vicobi is built on a <strong>Microservices</strong> architecture using <strong>.NET Aspire</strong> and <strong>FastAPI</strong>, deployed on <strong>AWS Cloud</strong>, ensuring flexibility and data security. The development process follows the <strong>Agile/Scrum</strong> model (2 weeks/sprint during the main development phase), with the goal of completing MVP within 2 months of execution.</p>
 <h3 id="2-problem-statement">2. Problem Statement</h3>
-<h4 id="whats-the-problem">What’s the Problem?</h4>
-<p>Current weather stations require manual data collection, becoming unmanageable with multiple units. There is no centralized system for real-time data or analytics, and third-party platforms are costly and overly complex.</p>
-<p><strong>Solution</strong><br>
-The solution uses AWS Cloud combined with microservices architecture to build an automated personal financial management platform, integrating AI in voice processing and bill recognition. The system is deployed on AWS ECS Fargate for backend services (.NET), FastAPI for AI processing, and Next.js for frontend. Compared to popular financial platforms like Money Lover or Misa Money Keeper, this application focuses on complete automation of financial data entry through detailed Vietnamese AI voice-to-text and bill scanning, helping reduce manual operations and errors. The system is suitable for individual users and small groups, and can be expanded when needed for enterprise scale or digital banking applications.</p>
-<p><strong>Benefits and Return on Investment (ROI)</strong><br>
-The solution brings many practical benefits both technically and in business value:</p>
+<h4 id="current-problem">Current Problem</h4>
+<p>In today&rsquo;s dynamic market, users face difficulties in controlling finances due to &ldquo;behavioral inertia&rdquo; — reluctance to manually record each transaction. Existing applications (like Money Lover, Misa Money Keeper) still rely heavily on manual input, causing &ldquo;input fatigue&rdquo; and high abandonment rates.</p>
+<h4 id="solution">Solution</h4>
+<p>Vicobi solves the problem through high automation of the data entry process using AWS Cloud and Microservices:</p>
 <ul>
-<li>Data Entry Automation: Reduces over 70% manual operations through AI voice and bill recognition.</li>
-<li>Increased Accuracy: Limits input errors, ensures financial data integrity (&gt;90% accuracy).</li>
-<li>Improved User Performance: Record and categorize transactions in just seconds, optimizing user experience.</li>
-<li>Cost Savings: Low infrastructure costs thanks to AWS Free Tier utilization until 2026; only estimated ~$60 USD/month for AWS and ~$30 USD for AI compute.</li>
-<li>Fast ROI: Expected payback in 6–12 months, thanks to time savings in data entry and increased operational efficiency.</li>
-<li>Scalability &amp; Integration: Microservices architecture on AWS allows easy addition of features (mobile app, advanced analytics, banking integration).</li>
+<li><strong>Core Technology:</strong> Integrates AI for Vietnamese voice processing (Voice-to-Text) and detailed invoice recognition (OCR).</li>
+<li><strong>Optimized Architecture:</strong> Uses <strong>AWS ECS Fargate</strong> running Multi-container Task model (combining .NET Backend and AI Service) to reduce infrastructure costs while ensuring seamless communication.</li>
+<li><strong>Modern Frontend:</strong> Uses <strong>Next.js</strong> hosted on <strong>Amazon S3</strong> and distributed globally via <strong>Amazon CloudFront</strong>.</li>
+</ul>
+<h4 id="benefits-and-return-on-investment-roi">Benefits and Return on Investment (ROI)</h4>
+<p>The solution provides clear competitive advantages:</p>
+<ul>
+<li><strong>User Value:</strong> Reduces over <strong>70%</strong> manual operations. Voice recognition accuracy reaches <strong>90%</strong> and invoice extraction reaches <strong>80%</strong>.</li>
+<li><strong>Economic Efficiency:</strong> Maximizes AWS Free Tier usage (S3, CloudFront, Cognito). Lean operating budget around <strong>~$60/month</strong> for infrastructure and <strong>~$15/month</strong> for AI compute.</li>
+<li><strong>ROI:</strong> Expected to achieve ROI within <strong>6–12 months</strong> thanks to time savings and increased efficiency.</li>
+<li><strong>Scalability:</strong> Microservices architecture ready for Mobile App integration or Open Banking.</li>
 </ul>
 <h3 id="3-solution-architecture">3. Solution Architecture</h3>
-<p>The system is built on a <strong>microservices architecture</strong> hosted on <strong>AWS Cloud</strong>, combining serverless components, containerized services, and managed databases for scalability and performance.</p>
-<p><img src="../images/2-Proposal/development_architecture.drawio.png" alt="Personal Finance Management App Sofware Architecture"></p>
-<p>Users access the <strong>Next.js</strong> web application through <strong>Amazon CloudFront</strong>, with static content hosted in <strong>Amazon S3</strong> and routed via <strong>Amazon Route 53</strong>.
-The first layer of security is provided by <strong>AWS WAF</strong>, which protects the system from common web attacks such as SQL injection and XSS.</p>
-<p>When users log in, authentication is handled by <strong>Amazon Cognito</strong>, which issues access tokens used by the frontend to call APIs through <strong>Amazon API Gateway</strong>.
-The API Gateway routes requests to an <strong>Application Load Balancer (ALB)</strong> via <strong>AWS PrivateLink</strong>, and the ALB forwards them to <strong>Amazon ECS (Fargate)</strong> — where the backend containers are deployed, including:</p>
-<ul>
-<li><strong>Backend Service</strong>: Handles the core business logic of the system.</li>
-<li><strong>AI Service (FastAPI)</strong>: Handles invoice processing, voice recognition, and other AI tasks.</li>
-</ul>
-<p>The <strong>AI Service</strong> can access files from <strong>Amazon S3</strong> for data processing, then return the results to the <strong>Backend Service</strong> through internal APIs.</p>
-<p>Container images are stored in <strong>Amazon ECR</strong>, and the deployment process is fully automated using <strong>GitLab CI/CD pipelines</strong> — including build, push to ECR, and ECS task definition updates.</p>
-<p>All logs, metrics, and alerts from ECS, API Gateway, and ALB are collected in <strong>Amazon CloudWatch</strong> for centralized monitoring, while <strong>Amazon SNS</strong> is configured to send automatic notifications when incidents occur.</p>
-<p><img src="../images/2-Proposal/cloud_architecture.drawio.png" alt="Personal Finance Management App Cloud Architecture"></p>
-<p><em>AWS Services Used</em></p>
-<ul>
-<li><em>Amazon Route 53</em>: Domain name and DNS management.</li>
-<li><em>AWS WAF</em>: Protects the system from common web attacks.</li>
-<li><em>Amazon CloudFront</em>: Global content delivery and frontend acceleration.</li>
-<li><em>Amazon S3</em>: Stores static website content and user files (invoices, audio files).</li>
-<li><em>Amazon Cognito</em>: User authentication and access management.</li>
-<li><em>Amazon API Gateway</em>: Entry point for frontend requests, routing traffic to backend services.</li>
-<li><em>AWS PrivateLink</em>: Provides secure, private connectivity between API Gateway and ALB within the VPC.</li>
-<li><em>Application Load Balancer (ALB)</em>: Distributes traffic across backend containers on ECS.</li>
-<li><em>Amazon ECS (Fargate)</em>: Runs containerized backend and FastAPI (AI) services.</li>
-<li><em>Amazon ECR</em>: Container image registry for ECS deployment.</li>
-<li><em>Amazon CloudWatch</em>: Centralized logging, monitoring, and alerting.</li>
-<li><em>Amazon SNS</em>: Sends alerts and notifications during incidents.</li>
-<li><em>GitLab CI/CD</em>: Automates the container build, push, and deploy pipeline to ECS.</li>
-</ul>
-<h3 id="4-technical-deployment">4. Technical Deployment</h3>
-<p><em>Implementation Phases</em></p>
+<p>The system is designed with a distributed <strong>Microservices</strong> model, using API Gateway as the single entry point.</p>
+<p><img src="../images/2-Proposal/development_architecture.png" alt="Personal Finance Management App Software Architecture"></p>
+<h4 id="tech-stack-details">Tech Stack Details:</h4>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Component</th>
+          <th style="text-align: left">Technology</th>
+          <th style="text-align: left">Details</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Frontend</strong></td>
+          <td style="text-align: left"><strong>Next.js 16</strong></td>
+          <td style="text-align: left">App Router, TypeScript, Tailwind CSS, Zustand, React Query.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Backend Core</strong></td>
+          <td style="text-align: left"><strong>.NET Aspire</strong></td>
+          <td style="text-align: left">Orchestrates Microservices (User, Wallet, Transaction, Report, Notification).</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>AI Service</strong></td>
+          <td style="text-align: left"><strong>FastAPI (Python)</strong></td>
+          <td style="text-align: left">Handles Voice (PhoWhisper), OCR (Bedrock), Chatbot (RAG).</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Database</strong></td>
+          <td style="text-align: left"><strong>Polyglot</strong></td>
+          <td style="text-align: left">PostgreSQL, MongoDB, Elasticsearch, Qdrant (Vector DB).</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Messaging</strong></td>
+          <td style="text-align: left"><strong>RabbitMQ</strong></td>
+          <td style="text-align: left">Asynchronous communication between services.</td>
+      </tr>
+  </tbody>
+</table>
+<p><img src="../images/2-Proposal/cloud_architecture.png" alt="Personal Finance Management App Cloud Architecture"></p>
+<h4 id="aws-workflow">AWS Workflow:</h4>
 <ol>
-<li><em>Research and Architecture Design</em>: Study microservices models and design the overall architecture on AWS (including CloudFront, ECS Fargate, RDS, S3, API Gateway, Cognito) — (Month 1 - 2).</li>
-<li><em>Cost Estimation and Optimization</em>: Use AWS Pricing Calculator to estimate cost and optimize service selection for affordability and ease of deployment — (Month 2 - 3).</li>
-<li><em>Development, Testing, and Deployment</em>: Build frontend (Next.js), backend (.NET), and AI service (FastAPI); perform microservice integration testing; deploy the system to AWS via ECS Fargate; and set up monitoring with CloudWatch — (Month 3 - 4).</li>
+<li><strong>Access:</strong> Users access via <strong>Route 53</strong>, protected by <strong>AWS WAF</strong> and accelerated by <strong>CloudFront</strong>.</li>
+<li><strong>Authentication:</strong> <strong>Amazon Cognito</strong> manages identity and issues JWT Tokens.</li>
+<li><strong>API Processing:</strong> Requests go through <strong>API Gateway</strong>, connecting securely via <strong>AWS PrivateLink</strong> to <strong>Application Load Balancer (ALB)</strong>.</li>
+<li><strong>Compute:</strong> ALB distributes load to containers in <strong>ECS Fargate</strong> (located in Private Subnet).</li>
+<li><strong>DevOps:</strong> CI/CD process fully automated by <strong>GitLab</strong>, builds images pushed to <strong>Amazon ECR</strong> and updates tasks on ECS.</li>
 </ol>
-<p><em>Technical Requirements</em></p>
+<h3 id="4-technical-deployment">4. Technical Deployment</h3>
+<h4 id="implementation-phases">Implementation Phases</h4>
+<p>The project spans 4 months (including internship):</p>
+<ol>
+<li><strong>Month 0 (Pre-internship):</strong> Ideation and overall planning.</li>
+<li><strong>Month 1 (Foundation):</strong> Learn AWS, upgrade .NET/Next.js/AI skills. Set up VPC, IAM.</li>
+<li><strong>Month 2 (Design):</strong> Design High-level &amp; Detailed architecture on AWS.</li>
+<li><strong>Month 3-4 (Realization):</strong> Coding, Integration Testing, Deploy to AWS Production, set up Monitoring.</li>
+<li><strong>After Month 5:</strong> Research and develop Mobile App.</li>
+</ol>
+<h4 id="detailed-technical-requirements">Detailed Technical Requirements:</h4>
 <ul>
-<li><em>Frontend</em>:
-The <strong>Next.js</strong> web application is hosted on <strong>Amazon S3</strong> and distributed via <strong>CloudFront</strong>, communicating securely with the backend through <strong>API Gateway</strong>.
-User authentication and session management are handled by <strong>Amazon Cognito</strong>, which provides tokens for secured API calls.</li>
-<li><em>Backend</em>:
-Developed in <strong>.NET</strong> (or a similar framework) and deployed on <strong>ECS Fargate</strong>.
-Handles business operations, user interactions, and service orchestration.
-Container images are stored in <strong>ECR</strong> and automatically deployed via <strong>GitLab CI/CD</strong>.
-Load balancing between backend containers is managed by <strong>ALB</strong>.</li>
-<li><em>AI Service</em>:
-Developed in <strong>FastAPI</strong>, responsible for processing invoice images and voice inputs.
-Accesses raw data from <strong>S3</strong>, performs AI inference, and returns results to the <strong>Backend Service</strong> via internal APIs.</li>
-<li><em>Cloud Infrastructure</em>:
-Runs inside a <strong>multi-AZ Amazon VPC</strong>, using <strong>Application Load Balancer</strong> for traffic distribution and <strong>CloudWatch</strong> for observability.
-Containers are stored in <strong>ECR</strong> and deployed through <strong>ECS Fargate</strong>.
-The deployment pipeline is automated using <strong>GitLab CI/CD</strong>.</li>
-<li><em>Security</em>:
-User authentication managed by <strong>Amazon Cognito</strong>.
-Access permissions defined through <strong>IAM Roles</strong> for ECS, S3, CloudWatch, and API Gateway.
-<strong>Security Groups</strong> are tightly configured between ECS, ALB, and other services.
-<strong>AWS WAF</strong> provides web-layer protection against common exploits.</li>
-</ul>
-<h3 id="5-timeline--milestones">5. Timeline &amp; Milestones</h3>
+<li><strong>Frontend:</strong> Deploy <strong>Next.js 16</strong> on S3 + CloudFront. Use <strong>Origin Access Control (OAC)</strong> to secure bucket.</li>
+<li><strong>Backend:</strong>
 <ul>
-<li><strong>Pre-internship (Month 0)</strong>: 1 month for planning.</li>
-<li><strong>Internship (Month 1–4)</strong>:
-<ul>
-<li>Month 1: Learn AWS and upgrade programming skills.</li>
-<li>Month 2: Design and adjust architecture.</li>
-<li>Month 3-4: Implement, test, and deploy.</li>
+<li>Use <strong>.NET Aspire</strong> to manage Cloud-native configuration.</li>
+<li>Database-per-service: <strong>PostgreSQL</strong> &amp; <strong>MongoDB</strong>. <strong>Elasticsearch</strong> for complex transaction search.</li>
+<li>Background Jobs: Use <strong>Hangfire</strong>.</li>
 </ul>
 </li>
-<li><strong>Post-deployment</strong>: Research mobile development and deploy after month 5.</li>
+<li><strong>AI Service Pipelines:</strong>
+<ul>
+<li><em>Voice:</em> Preprocessing with Pydub, <strong>PhoWhisper-small</strong> Model (VinAI) for Vietnamese.</li>
+<li><em>OCR:</em> <strong>Amazon Bedrock</strong> (Claude 3.5 Sonnet Multimodal) to accurately extract invoice information.</li>
+<li><em>Chatbot (RAG):</em> Knowledge Base stored in <strong>Qdrant</strong>, generates responses via <strong>Amazon Bedrock</strong> (Claude 3.5 Sonnet).</li>
+</ul>
+</li>
+<li><strong>Security:</strong>
+<ul>
+<li>Data encryption in transit (HTTPS/TLS 1.2+) and at rest (AES-256).</li>
+<li>Secrets management not deeply integrated (currently at MVP level), will upgrade to AWS Secrets Manager in the future.</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-timeline--milestones-sprints">5. Timeline &amp; Milestones (Sprints)</h3>
+<p>The main execution phase is divided into 4 Sprints:</p>
+<ul>
+<li><strong>Sprint 1: Core Foundation</strong>
+<ul>
+<li>Authentication (Cognito), Wallet Management, Spending Jars.</li>
+</ul>
+</li>
+<li><strong>Sprint 2: Core Features</strong>
+<ul>
+<li>Transactions (CRUD), AI Voice Processing.</li>
+</ul>
+</li>
+<li><strong>Sprint 3: Analytics</strong>
+<ul>
+<li>Reports/Charts, Notification System (SES), Message Broker.</li>
+</ul>
+</li>
+<li><strong>Sprint 4: Stabilization</strong>
+<ul>
+<li>Integration Testing, UI Refinement, Deploy to AWS ECS &amp; CloudFront.</li>
+</ul>
+</li>
+<li><strong>Testing &amp; Go-live:</strong>
+<ul>
+<li>Domain Configuration, SSL, Monitoring Dashboard, UAT and project defense.</li>
+</ul>
+</li>
 </ul>
 <h3 id="6-budget-estimation">6. Budget Estimation</h3>
+<p>Based on detailed cost estimates for the MVP phase.</p>
 <p>You can review the detailed cost estimation by downloading the following files:
 <em>📊 <a href="../files/2-Proposal/pricing.csv" download>CSV Pricing File</a></em>
 <em>💾 <a href="../files/2-Proposal/pricing.json" download>JSON Pricing File</a></em></p>
 <table>
   <thead>
       <tr>
-          <th>Service</th>
-          <th style="text-align: right">Monthly Cost</th>
+          <th style="text-align: left">AWS Service</th>
+          <th style="text-align: left">Component / Usage</th>
+          <th style="text-align: left">Cost (USD/month)</th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td>AWS Fargate (ECS)</td>
-          <td style="text-align: right">$17.30 / month</td>
+          <td style="text-align: left"><strong>Elastic Load Balancing</strong></td>
+          <td style="text-align: left">Application Load Balancer</td>
+          <td style="text-align: left">$18.98</td>
       </tr>
       <tr>
-          <td>Application Load Balancer</td>
-          <td style="text-align: right">$18.98 / month</td>
+          <td style="text-align: left"><strong>Amazon ECS</strong></td>
+          <td style="text-align: left">Fargate (vCPU &amp; Memory)</td>
+          <td style="text-align: left">$17.30</td>
       </tr>
       <tr>
-          <td>Amazon API Gateway</td>
-          <td style="text-align: right">$2.50 / month</td>
+          <td style="text-align: left"><strong>Amazon VPC</strong></td>
+          <td style="text-align: left">VPC Endpoints &amp; NAT</td>
+          <td style="text-align: left">$10.49</td>
       </tr>
       <tr>
-          <td>Amazon Cognito</td>
-          <td style="text-align: right">$0.00 / month</td>
+          <td style="text-align: left"><strong>AWS WAF</strong></td>
+          <td style="text-align: left">Web ACL &amp; Requests</td>
+          <td style="text-align: left">$7.20</td>
       </tr>
       <tr>
-          <td>Amazon ECR</td>
-          <td style="text-align: right">$1.00 / month</td>
+          <td style="text-align: left"><strong>Amazon API Gateway</strong></td>
+          <td style="text-align: left">API Calls &amp; Data Transfer</td>
+          <td style="text-align: left">$2.50</td>
       </tr>
       <tr>
-          <td>Amazon Route 53</td>
-          <td style="text-align: right">$0.54 / month</td>
+          <td style="text-align: left"><strong>Amazon CloudFront</strong></td>
+          <td style="text-align: left">Data Transfer Out</td>
+          <td style="text-align: left">$2.00</td>
       </tr>
       <tr>
-          <td>AWS WAF</td>
-          <td style="text-align: right">$7.20 / month</td>
+          <td style="text-align: left"><strong>Amazon ECR</strong></td>
+          <td style="text-align: left">Storage</td>
+          <td style="text-align: left">$1.00</td>
       </tr>
       <tr>
-          <td>Amazon CloudFront</td>
-          <td style="text-align: right">$2.00 / month</td>
+          <td style="text-align: left"><strong>Amazon Route 53</strong></td>
+          <td style="text-align: left">Hosted Zones</td>
+          <td style="text-align: left">$0.54</td>
       </tr>
       <tr>
-          <td>AWS PrivateLink</td>
-          <td style="text-align: right">$10.49 / month</td>
+          <td style="text-align: left"><strong>Amazon S3</strong></td>
+          <td style="text-align: left">Standard Storage</td>
+          <td style="text-align: left">$0.34</td>
       </tr>
       <tr>
-          <td>Amazon S3</td>
-          <td style="text-align: right">$0.34 / month</td>
-      </tr>
-      <tr>
-          <td><strong>Estimated Total</strong></td>
-          <td style="text-align: right"><strong>≈ $60.35 / month</strong> (≈ $724.21 / year)</td>
+          <td style="text-align: left"><strong>TOTAL AWS COST</strong></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"><strong>~$60.35</strong></td>
       </tr>
   </tbody>
 </table>
-<p><strong>Note:</strong> The costs above are calculated based on AWS Pricing Calculator for the Asia Pacific (Singapore) region with assumptions for 100 monthly active users and basic resource requirements.</p>
+<p><strong>Other Costs:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Category</th>
+          <th style="text-align: left">Details</th>
+          <th style="text-align: left">Cost (USD/month)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>AI Compute / Tooling</strong></td>
+          <td style="text-align: left">Gemini API, Amazon Bedrock</td>
+          <td style="text-align: left">~$15.00</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>PROJECT TOTAL</strong></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"><strong>~$75.35 / month</strong></td>
+      </tr>
+  </tbody>
+</table>
+<p><em>(Based on On-Demand pricing in Singapore region - ap-southeast-1)</em></p>
 <h3 id="7-risk-assessment">7. Risk Assessment</h3>
-<p><strong>Risk Matrix</strong></p>
 <ul>
-<li>AI model misrecognition (voice/bill): Medium impact, medium probability.</li>
-<li>AWS connection loss or regional service errors: High impact, low probability.</li>
-<li>Exceeding AWS usage budget: Medium impact, low probability.</li>
-<li>Data synchronization errors between microservices: Medium impact, medium probability.</li>
-<li>User information leakage (Cognito/Database): High impact, low probability.</li>
-</ul>
-<p><strong>Mitigation Strategies</strong></p>
+<li><strong>Main Risks:</strong> User information leakage (Impact: High), AWS Region connection loss (Impact: High), AI misrecognition (Impact: Medium).</li>
+<li><strong>Mitigation Strategies:</strong>
 <ul>
-<li><strong>AI</strong>: Improve OCR and voice-to-text models through additional training, regular testing with real data.</li>
-<li><strong>AWS Region</strong>: Set up multi-AZ deployment and regular RDS database backup.</li>
-<li><strong>Cost</strong>: Configure <strong>AWS Budget Alert</strong> and optimize ECS, S3 based on actual usage.</li>
-<li><strong>Microservices</strong>: Use <strong>SQS/RabbitMQ</strong> to ensure asynchronous processing and retry on errors.</li>
-<li><strong>Security</strong>: Data encryption (AES-256, HTTPS), IAM control following &ldquo;Least Privilege&rdquo; principle.</li>
+<li><em>Security:</em> AES-256 encryption, HTTPS, IAM Least Privilege, AWS WAF.</li>
+<li><em>High Availability:</em> Multi-AZ deployment for ECS and ALB.</li>
+<li><em>AI:</em> Continuously improve model with real data.</li>
+<li><em>Resilience:</em> Use internal RabbitMQ for asynchronous processing and retry.</li>
 </ul>
-<p><strong>Contingency Plans</strong></p>
-<ul>
-<li>If AWS encounters issues: Temporarily switch to local transaction data storage and sync after recovery.</li>
-<li>Restore infrastructure using <strong>AWS CloudFormation</strong> or pre-saved <strong>IaC (Infrastructure as Code)</strong>.</li>
-<li>Keep regular database copies (RDS snapshots) for data loss recovery.</li>
+</li>
+<li><strong>Disaster Recovery Plan:</strong> Use IaC (Infrastructure as Code) for rapid infrastructure restoration.</li>
 </ul>
-<h3 id="8-expected-results-of-the-project">8. Expected results of the project</h3>
+<h3 id="8-expected-results--team">8. Expected Results &amp; Team</h3>
+<h4 id="expected-results-of-the-project">Expected Results of the Project</h4>
 <ul>
 <li><strong>Automated financial data entry:</strong> The application helps users avoid manual entry, just take a photo of the invoice or record a voice for the system to automatically classify spending.</li>
 <li><strong>Intuitive financial management:</strong> Users can view spending charts, monthly reports, and receive savings suggestions based on consumer behavior.</li>
@@ -1239,13 +1309,47 @@ Access permissions defined through <strong>IAM Roles</strong> for ECS, S3, Cloud
 <li><strong>Stable, scalable system:</strong> Microservices architecture makes it easy to add new features such as spending reminders, AI predictive analysis, or expand to a mobile app.</li>
 <li><strong>Improving development team skills:</strong> Project members have practical access to DevOps processes, CI/CD implementation, and cloud-based application optimization.</li>
 </ul>
-<h3 id="9-project-limitations">9. Project limitations</h3>
+<h4 id="project-limitations">Project Limitations</h4>
 <ul>
 <li><strong>Vietnamese AI model is still limited:</strong> The ability to recognize regional voices or handwritten invoices has not yet achieved high accuracy.</li>
 <li><strong>No separate mobile application:</strong> The MVP version only supports the web platform, there is no native mobile app.</li>
-<li><strong>User limit:</strong> The current architecture is only optimized for 50–100 active users; when expanding the scale, the infrastructure needs to be restructured.</li>
-<li><strong>Internet connection dependent:</strong> All processing and storage operations are via the cloud, cannot operate offline.</li>
-<li><strong>Advanced security system has not been deployed:</strong> Only stops at Cognito authentication and basic encryption, no MFA (Multi-Factor Authentication) or in-depth security logs.</li>
+</ul>
+<h4 id="implementation-team">Implementation Team:</h4>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Name</th>
+          <th style="text-align: left">Role</th>
+          <th style="text-align: left">Email</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Le Vu Phuong Hoa</strong></td>
+          <td style="text-align: left">Backend Developer (Leader)</td>
+          <td style="text-align: left"><a href="mailto:hoalvpse181951@fpt.edu.vn">hoalvpse181951@fpt.edu.vn</a></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Nguyen Van Anh Duy</strong></td>
+          <td style="text-align: left">AI Developer (Member)</td>
+          <td style="text-align: left"><a href="mailto:duynvase181823@fpt.edu.vn">duynvase181823@fpt.edu.vn</a></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Uong Tuan Vu</strong></td>
+          <td style="text-align: left">Frontend Developer (Member)</td>
+          <td style="text-align: left"><a href="mailto:vuutse180241@fpt.edu.vn">vuutse180241@fpt.edu.vn</a></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Tran Nguyen Bao Minh</strong></td>
+          <td style="text-align: left">AI Developer (Member)</td>
+          <td style="text-align: left"><a href="mailto:baominhbrthcs@gmail.com">baominhbrthcs@gmail.com</a></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Mentor Support:</strong></p>
+<ul>
+<li><strong>Nguyen Gia Hung</strong> - Head of Solution Architects</li>
+<li><strong>Van Hoang Kha</strong> - Cloud Security Engineer</li>
 </ul>
 
 
@@ -1981,19 +2085,19 @@ Access permissions defined through <strong>IAM Roles</strong> for ECS, S3, Cloud
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../js/clipboard.min.js?1765011019"></script>
-    <script src="../js/perfect-scrollbar.min.js?1765011019"></script>
-    <script src="../js/perfect-scrollbar.jquery.min.js?1765011019"></script>
-    <script src="../js/jquery.sticky.js?1765011019"></script>
-    <script src="../js/featherlight.min.js?1765011019"></script>
-    <script src="../js/highlight.pack.js?1765011019"></script>
+    <script src="../js/clipboard.min.js?1765021312"></script>
+    <script src="../js/perfect-scrollbar.min.js?1765021312"></script>
+    <script src="../js/perfect-scrollbar.jquery.min.js?1765021312"></script>
+    <script src="../js/jquery.sticky.js?1765021312"></script>
+    <script src="../js/featherlight.min.js?1765021312"></script>
+    <script src="../js/highlight.pack.js?1765021312"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../js/modernizr.custom-3.6.0.js?1765011019"></script>
-    <script src="../js/learn.js?1765011019"></script>
-    <script src="../js/hugo-learn.js?1765011019"></script>
+    <script src="../js/modernizr.custom-3.6.0.js?1765021312"></script>
+    <script src="../js/learn.js?1765021312"></script>
+    <script src="../js/hugo-learn.js?1765021312"></script>
 
-    <link href="../mermaid/mermaid.css?1765011019" rel="stylesheet" />
-    <script src="../mermaid/mermaid.js?1765011019"></script>
+    <link href="../mermaid/mermaid.css?1765021312" rel="stylesheet" />
+    <script src="../mermaid/mermaid.js?1765021312"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
